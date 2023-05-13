@@ -1,0 +1,337 @@
+{
+  "id": 335,
+  "date": "2021-10-29T03:09:27",
+  "date_gmt": "2021-10-29T03:09:27",
+  "guid": { "rendered": "https://admin.dss-sport.ru/?page_id=335" },
+  "modified": "2022-01-13T01:16:18",
+  "modified_gmt": "2022-01-13T01:16:18",
+  "slug": "direkcziya",
+  "status": "publish",
+  "type": "page",
+  "link": "https://admin.dss-sport.ru/direkcziya/",
+  "title": { "rendered": "Дирекция" },
+  "content": { "rendered": "", "protected": false },
+  "excerpt": {
+    "rendered": "<p>Дирекция спортивных сооружений занимается обслуживанием и развитием спортивных сооружений в городе Улан-Удэ и Республики Бурятия</p>\n",
+    "protected": false
+  },
+  "author": 1,
+  "featured_media": 0,
+  "parent": 0,
+  "menu_order": 0,
+  "comment_status": "closed",
+  "ping_status": "closed",
+  "template": "category_origin_template.php",
+  "meta": [],
+  "acf": { "description": "", "taks": false, "image_url": false },
+  "childrens": [
+    {
+      "id": 337,
+      "slug": "rukovodstvo",
+      "title": "Руководство",
+      "excerpt": "",
+      "parent": 335,
+      "content": "<img width=\"750\" height=\"500\" src=\"https://admin.dss-sport.ru/wp-content/uploads/2022/02/ochirov-1024x683.jpg\" alt=\"\" loading=\"lazy\" srcset=\"https://admin.dss-sport.ru/wp-content/uploads/2022/02/ochirov-1024x683.jpg 1024w, https://admin.dss-sport.ru/wp-content/uploads/2022/02/ochirov-300x200.jpg 300w, https://admin.dss-sport.ru/wp-content/uploads/2022/02/ochirov-768x512.jpg 768w, https://admin.dss-sport.ru/wp-content/uploads/2022/02/ochirov.jpg 1200w\" sizes=\"(max-width: 750px) 100vw, 750px\" />\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t<ul><li><b>Директор</b>  </li><li><b>Очиров Виктор Цыдендоржиевич</b></li><li>тел +7 (3012) 21-10-41 </li><li>Прием по личным вопросам: Четверг с 15.00 до 16.00 часов </li><li>ул. Кирова, 1 (Центральный стадион), 4 этаж, каб. 408  </li><li>эл. адрес: priem@dss-sport.ru</li></ul>\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<img width=\"500\" height=\"674\" src=\"https://admin.dss-sport.ru/wp-content/uploads/2021/11/pokrovski1.jpg\" alt=\"\" loading=\"lazy\" srcset=\"https://admin.dss-sport.ru/wp-content/uploads/2021/11/pokrovski1.jpg 500w, https://admin.dss-sport.ru/wp-content/uploads/2021/11/pokrovski1-223x300.jpg 223w\" sizes=\"(max-width: 500px) 100vw, 500px\" />\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t<ul><li><b>Заместитель директора по общим вопросам</b></li><li><b>Покровский Григорий Иванович </b></li><li>тел +7 (3012) 21-10-41, доб. 108</li></ul>\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<img width=\"500\" height=\"674\" src=\"https://admin.dss-sport.ru/wp-content/uploads/2021/11/shtepa.jpg\" alt=\"\" loading=\"lazy\" srcset=\"https://admin.dss-sport.ru/wp-content/uploads/2021/11/shtepa.jpg 500w, https://admin.dss-sport.ru/wp-content/uploads/2021/11/shtepa-223x300.jpg 223w\" sizes=\"(max-width: 500px) 100vw, 500px\" />\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t<ul><li><b>Заместитель директора по развитию</b></li><li><b>Штэпа Дмитрий Валериевич</b></li><li>тел. +7 (3012) 21-10-41</li></ul>\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<img width=\"500\" height=\"674\" src=\"https://admin.dss-sport.ru/wp-content/uploads/2021/11/andreev.jpg\" alt=\"\" loading=\"lazy\" srcset=\"https://admin.dss-sport.ru/wp-content/uploads/2021/11/andreev.jpg 500w, https://admin.dss-sport.ru/wp-content/uploads/2021/11/andreev-223x300.jpg 223w\" sizes=\"(max-width: 500px) 100vw, 500px\" />\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t<ul><li><b>Заведующий ФСК</b>   </li><li><b>Андреев Дмитрий Николаевич</b></li><li>тел +7 (3012) 46-04-17</li></ul>\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<img width=\"500\" height=\"674\" src=\"https://admin.dss-sport.ru/wp-content/uploads/2021/11/pashkov.jpg\" alt=\"\" loading=\"lazy\" srcset=\"https://admin.dss-sport.ru/wp-content/uploads/2021/11/pashkov.jpg 500w, https://admin.dss-sport.ru/wp-content/uploads/2021/11/pashkov-223x300.jpg 223w\" sizes=\"(max-width: 500px) 100vw, 500px\" />\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t<ul><li><b>Заведующий Центральным стадионом</b> РБ </li><li><b>Пашков Роман Викторович</b></li><li>тел +7 (3012) 21-15-53 </li></ul>\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<img width=\"750\" height=\"1000\" src=\"https://admin.dss-sport.ru/wp-content/uploads/2021/11/budaevr.jpg\" alt=\"\" loading=\"lazy\" srcset=\"https://admin.dss-sport.ru/wp-content/uploads/2021/11/budaevr.jpg 768w, https://admin.dss-sport.ru/wp-content/uploads/2021/11/budaevr-225x300.jpg 225w\" sizes=\"(max-width: 750px) 100vw, 750px\" />\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t<ul><li><b>Заведующий Регионального центра по стрельбе из лука (лукодром)</b> </li><li><b style=\"font-family: var(--list--font-family); color: var( --e-global-color-text ); background-color: var(--global--color-background); font-size: var(--global--font-size-base);\">Будаев Роман Александрович</b></li><li>тел +7 (3012) 41-90-41</li></ul>\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<img width=\"524\" height=\"665\" src=\"https://admin.dss-sport.ru/wp-content/uploads/2021/11/bezymyannyj.png\" alt=\"\" loading=\"lazy\" srcset=\"https://admin.dss-sport.ru/wp-content/uploads/2021/11/bezymyannyj.png 524w, https://admin.dss-sport.ru/wp-content/uploads/2021/11/bezymyannyj-236x300.png 236w\" sizes=\"(max-width: 524px) 100vw, 524px\" />\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t<ul><li><b>Заведующий Ипподрома Улан-Удэ</b></li><li>Шантагарова Баирма Дашиевна</li><li>тел +7 (3012) 606-166</li></ul>",
+      "images": {
+        "thumbnail": null,
+        "medium": null,
+        "large": null,
+        "full": null
+      },
+      "acf": {
+        "description": "",
+        "taks": false,
+        "image_url": "https://admin.dss-sport.ru/wp-content/uploads/2022/01/56.jpg",
+        "short_desc": ""
+      },
+      "index": 0
+    },
+    {
+      "id": 339,
+      "slug": "sobytiya",
+      "title": "События",
+      "excerpt": "",
+      "parent": 335,
+      "content": "Добро пожаловать на наш сайт! Он создан, чтобы повысить уровень информационной открытости и доступности. Здесь Вы найдете необходимую информацию о деятельности Физкультурно-спортивного комплекса (ФСК), Центрального стадиона Республики Бурятия, Регионального центра по стрельбе из лука (Лукодрома), Центра единоборств, гостиничного комплекса в Максимихе.\nФизкультурно-спортивный комплекс  предлагает различные услуги, в первую очередь это плавательный бассейн с переменным дном, возможность заниматься в универсальном и  специализированных залах различными видами спорта, а также посещать тренажерный и фитнес-зал, оборудованные современными тренажёрами, а также СПА-центр.\nЦентральный стадион предоставляет беговые дорожки и футбольное поле для<b> </b>проведения тренировочных, а также корпоративных,  культурно-спортивных мероприятий и соревнований.\nРегиональный центр по стрельбе из лука (Лукодром) предоставляет помещения для занятий по стрельбе из лука, единоборствами, а так же в футбол, теннис и другие виды спорта.\nЕсли Вы хотите уехать от городской суеты предлагаем Вам посетить гостиничный комплекс на озере Байкал в курортном поселке Максимиха, где находится все необходимое для полноценного отдыха. Это комфортабельные номера, турецкий хамам и финская баня, бассейн, и конечно же, песчаный пляж на берегу священного озера Байкал.\nБолее подробно ознакомиться с нашими объектами можно на нашем сайте по разделам СПОРТ и ОТДЫХ.\nЗадать интересующие вопросы и внести предложения, касающиеся нашей деятельности Вы сможете в <a href=\"https://dss-sport.ru/page/management/reception\">Интернет-приемной</a>. Помните, что Ваше мнение для нас особенно ценно!\nЗаглядывайте к нам снова, и Вы всегда сможете открыть для себя что-то новое в спортивной и культурной жизни нашего города! Мы работаем для Вас, все наши услуги нацелены на проведение активного и здорового досуга.",
+      "images": {
+        "thumbnail": [
+          "https://admin.dss-sport.ru/wp-content/uploads/2022/01/470276-150x150.jpg",
+          150,
+          150,
+          true
+        ],
+        "medium": [
+          "https://admin.dss-sport.ru/wp-content/uploads/2022/01/470276-300x192.jpg",
+          300,
+          192,
+          true
+        ],
+        "large": [
+          "https://admin.dss-sport.ru/wp-content/uploads/2022/01/470276.jpg",
+          750,
+          481,
+          false
+        ],
+        "full": [
+          "https://admin.dss-sport.ru/wp-content/uploads/2022/01/470276.jpg",
+          1024,
+          657,
+          false
+        ]
+      },
+      "acf": {
+        "image_url": "https://admin.dss-sport.ru/wp-content/uploads/2022/01/470276.jpg"
+      },
+      "index": 0
+    },
+    {
+      "id": 341,
+      "slug": "foto",
+      "title": "Медиа",
+      "excerpt": "",
+      "parent": 335,
+      "content": "",
+      "images": {
+        "thumbnail": [
+          "https://admin.dss-sport.ru/wp-content/uploads/2022/03/stadion-150x150.jpg",
+          150,
+          150,
+          true
+        ],
+        "medium": [
+          "https://admin.dss-sport.ru/wp-content/uploads/2022/03/stadion-300x199.jpg",
+          300,
+          199,
+          true
+        ],
+        "large": [
+          "https://admin.dss-sport.ru/wp-content/uploads/2022/03/stadion-1024x680.jpg",
+          750,
+          498,
+          true
+        ],
+        "full": [
+          "https://admin.dss-sport.ru/wp-content/uploads/2022/03/stadion.jpg",
+          1890,
+          1255,
+          false
+        ]
+      },
+      "acf": {
+        "description": "",
+        "taks": false,
+        "image_url": "https://admin.dss-sport.ru/wp-content/uploads/2022/01/59.jpg",
+        "short_desc": "",
+        "parent_mark": true,
+        "children_view": "tabs"
+      },
+      "index": 0
+    },
+    {
+      "id": 343,
+      "slug": "dokument",
+      "title": "Документы",
+      "excerpt": "",
+      "parent": 335,
+      "content": "<h2>УСТАВНЫЕ ДОКУМЕНТЫ</h2>\t\t\n\t\t<ul><li><a href=\"https://disk.yandex.ru/i/pPzHJKdPFom6Tg\" target=\"_blank\" rel=\"noopener\">Устав с изменениями 2021 года</a></li><li><a href=\"https://disk.yandex.ru/d/IZwtSKIefCLc_Q\">Приказ №4 от 08.02.2022г. о назначении на должность директора ГАУ РБ \"Дирекции спортивных сооружений\" Очирова В.Ц.</a></li><li><a href=\"https://disk.yandex.ru/d/0uQKkIkPj7n3ZA\" target=\"_blank\" rel=\"noopener\">Выписка из ЕГРЮЛ Очиров В.Ц.</a></li><li><a href=\"https://disk.yandex.ru/i/tE1ZD95VO9hMxg\" target=\"_blank\" rel=\"noopener\">Карточка организации с реквизитами </a></li><li><a href=\"https://disk.yandex.ru/i/qdiAQDc5Engogw\" target=\"_blank\" rel=\"noopener\">Свидетельство о постановке в налоговую</a></li><li><a href=\"https://disk.yandex.ru/i/XijpSel1F10ZXA\" target=\"_blank\" rel=\"noopener\">Свидетельство о регистрации</a></li><li><a href=\"https://disk.yandex.ru/i/7vQJlY6nTvEMLA\" target=\"_blank\" rel=\"noopener\">Доступ к информационно-телекоммуникационным сетям</a></li><li><a href=\"https://disk.yandex.ru/d/zxyil69mFD0JMQ\" target=\"_blank\" rel=\"noopener\">Материально -техническое оснащение ФСК и ЦС</a></li></ul>\t\t\n\t\t\t<h2>РАСЦЕНКИ</h2>\t\t\n\t\t<ul><li><a href=\"https://disk.yandex.ru/d/3pkGnUmEPXk63g\">Приказ № 645 от 26.08.22 на платные услуги по всем объектам с 1 сентября 2022г.</a></li><li><a href=\"https://disk.yandex.ru/i/mhYvyMBScMk35g\" target=\"_blank\" rel=\"noopener\">Приказ №21 от 17.01.22 для СШ №3 о скидки на армспорт (до 31.05.22)</a></li><li><a href=\"https://disk.yandex.ru/i/tsX2blroL3wFhw\">Прейскурант на порчу имущества</a></li></ul>\t\t\n\t\t\t<h2>ДОГОВОР</h2>\t\t\n\t\t<ul><li><a href=\"https://disk.yandex.ru/i/2rd2OY4OAf_7Qw\">Публичный договор на возмездное оказание услуг</a></li><li><a href=\"https://disk.yandex.ru/i/4Be6Cb-wmzTP0Q\">Публичный договор</a></li></ul>\t\t\n\t\t\t<h2>СЕРТИФИКАТЫ</h2>\t\t\n\t\t<ul><li><a href=\"https://disk.yandex.ru/i/VF5eoMtmi-2uBA\" target=\"_blank\" rel=\"noopener\">Физкультурно-спортивный комплекс</a></li><li><a href=\"https://disk.yandex.ru/i/Vv_s3e4s2mPHcg\" target=\"_blank\" rel=\"noopener\">Центральный стадион РБ</a></li><li>Региональный центр по стрельбе из лука</li><li><a href=\"https://disk.yandex.ru/i/tUNK7yXbxGfn2A\" target=\"_blank\" rel=\"noopener\">Категория \"Одна звезда\" отель \"Байкал Park\"</a></li></ul>\t\t\n\t\t\t<h2>ПРАВИЛА</h2>\t\t\n\t\t<ul><li><a href=\"https://disk.yandex.ru/i/lRwRtolVjaRA4A\" target=\"_blank\" rel=\"noopener\">Политика обработки персональных данных клиентов</a></li><li><a href=\"https://disk.yandex.ru/i/00bMKwbP9BO14Q\" target=\"_blank\" rel=\"noopener\">Порядок обработки персональных данных</a></li><li><a href=\"https://disk.yandex.ru/i/wbR5hxir1vyW7A\" target=\"_blank\" rel=\"noopener\">Порядок предоставления помещений в аренду</a></li><li><a href=\"https://disk.yandex.ru/i/YvFAXCbf1YrVvQ\" target=\"_blank\" rel=\"noopener\">Правила распространения рекламы на спортивных объектах</a></li><li><a href=\"https://disk.yandex.ru/i/9pVHK3CTz1jnTQ\" target=\"_blank\" rel=\"noopener\">Регламент оказания платных услуг</a></li><li><a href=\"https://disk.yandex.ru/i/Dy1NCgXS9T-paw\" target=\"_blank\" rel=\"noopener\">Регламент заключения договоров</a></li><li><a href=\"https://disk.yandex.ru/i/srYTyHZyXlpyLA\" target=\"_blank\" rel=\"noopener\">Регламент работы с обращениями </a></li><li><a href=\"https://disk.yandex.ru/i/q_NrT8ue0pFOnQ\" target=\"_blank\" rel=\"noopener\">Правила посещения ФСК</a></li><li><a href=\"https://disk.yandex.ru/i/d4DYNIK_REzAtg\" target=\"_blank\" rel=\"noopener\">Правила пользования плавательным бассейном в ФСК</a></li><li><a href=\"https://disk.yandex.ru/i/zW7JxnpagqyjlA\" target=\"_blank\" rel=\"noopener\">Приказ №313 о работе бассейна и сауны в период ограничений </a></li><li><a href=\"https://disk.yandex.ru/i/tAOabw9rz6mS6A\" target=\"_blank\" rel=\"noopener\">Правила посещения DSS_Studio в ФСК ( СПА-центр)</a></li><li><a href=\"https://disk.yandex.ru/i/8vF173Q-C3gZaQ\" target=\"_blank\" rel=\"noopener\">Правила посещения ледового катка на ЦС</a></li><li><a href=\"https://disk.yandex.ru/i/H3mmGiDdnk6Tjw\" target=\"_blank\" rel=\"noopener\">Правила посещения стрелкового тира</a></li><li><a href=\"https://admin.dss-sport.ru/reglamentiruyushhie-dokumenty/neformalnaya-zanyatost-i-legalizacziya-trudovyh-otnoshenij/\">Неформальная занятость и легализация трудовых</a><a href=\"https://admin.dss-sport.ru/direkcziya/dokument/neformalnaya-zanyatost-i-legalizacziya-trudovyh-otnoshenij/\"> отношений</a></li></ul>\t\t\n\t\t\t<h2>ОТЧЕТЫ</h2>\t\t\n\t\t<ul><li><a href=\"https://disk.yandex.ru/i/LzXCjkrUpF_9SA\" target=\"_blank\" rel=\"noopener\">Госзадание на 2022 год</a></li><li><a href=\"https://disk.yandex.ru/i/21I-8eeOV9Tn4A\" target=\"_blank\" rel=\"noopener\">Госзадание на 2021 год</a></li><li><a href=\"https://disk.yandex.ru/i/UY-Lmh_XuTK4gw\" target=\"_blank\" rel=\"noopener\">Отчет о выполнении госзадания 2021 год</a></li><li><a href=\"https://disk.yandex.ru/i/Q4Bb6rb5_ewMnA\" target=\"_blank\" rel=\"noopener\">Предварительный отчет 2021 год</a></li><li><a href=\"https://disk.yandex.ru/i/DzQm-hYA8gg3_A\" target=\"_blank\" rel=\"noopener\">План финансово-хозяйственной деятельности 2020 год</a></li><li><a href=\"https://disk.yandex.ru/i/uQGwfQlHmbsfQg\" target=\"_blank\" rel=\"noopener\">Отчет о деятельности за 2019 год</a></li><li><a href=\"https://disk.yandex.ru/i/5wE4gykYsz9Xcw\" target=\"_blank\" rel=\"noopener\">План финансово-хозяйственной деятельности 2019 год</a></li><li><a href=\"https://disk.yandex.ru/i/wp0UU4g--sjq1g\" target=\"_blank\" rel=\"noopener\">Отчет о деятельности за 2018 год</a></li><li><a href=\"https://disk.yandex.ru/i/YDd3LxSysMatWw\">Отчет о деятельности за 2020 год</a></li><li><a href=\"https://disk.yandex.ru/i/6YqnYX7tDOd16A\">Отчет о проведении специальной оценки условий труда</a></li></ul>\t\t\n\t\t\t<h2>ЗАКУПКИ</h2>\t\t\n\t\t<ul>\n<li><a href=\"https://disk.yandex.ru/i/k_LJHvKBDQHtrg\" target=\"_blank\" rel=\"noopener\">Приказ № 40 от 26.01.2022г » Об утверждении перечня товаров, работ, услуг, закупка которых осуществляется у субъектов малого и среднего предпринимательства»</a></li>\n<li><a href=\"https://disk.yandex.ru/i/Qjj_OpxUSvce1A\">Приказ № 87/1 от 22 февраля 2022. Об утверждении перечня товаров, работ, услуг, закупа которых осуществляется у субъектов малого и среднего предпринимательства.&nbsp;&nbsp;</a></li>\n<li><a style=\"font-family: var(--list--font-family); font-size: var(--global--font-size-base);\" href=\"https://disk.yandex.ru/i/Pn7HFNPSQLk-WQ\" target=\"_blank\" rel=\"noopener\">Приказ № 86 от 22.02.2022г \"Об внесении изменений в приказ №40&nbsp;</a>...\"</li>\n<li><a href=\"https://disk.yandex.ru/i/Zv4yrbAKro9PyA\" target=\"_blank\" rel=\"noopener\">Приказ №133 от 04.03.2022г \"Об внесении изменений в приказ №86&nbsp;</a>...\"</li>\n<li>Приказ № 185 от 23.03.2022г. \"Об внесении изменений в приказ №133 от 04.03.2022г.\"</li>\n<li><a href=\"https://disk.yandex.ru/i/xYdd9Im3YgavcA\">Приказ № 196 от 30.03.2022 г. \"Об внесении изменений в приказе № 185 от 23.03.2022г\"</a></li>\n<li><a href=\"https://disk.yandex.ru/i/_QFMJzrGKV2r4Q\">Приказ № 245 от 12,04.2022 г. \"Об внесении изменений в приказе № 196 от 30.03.2022г\"</a></li>\n<li><a href=\"https://disk.yandex.ru/i/ix0v6tZmwIBUiw\">Приказ № 271 от 19.04.2022 г. \"Об внесении изменений в приказе № 245 от 12.04.2022г\"</a></li>\n<li><a href=\"https://disk.yandex.ru/i/UXX8wBPzm7-Fwg\">Приказ № 286 от 21.04.2022 г. \"Об внесении изменений в приказе № 271 от 19.04.2022г\"</a></li>\n<li><a href=\"https://disk.yandex.ru/i/fDEPiTXjC9sMwQ\">Приказ № 372 от 17.05.2022 г. \"Об внесении изменений в приказе № 286 от 21.04.2022г.\"</a></li>\n<li><a href=\"https://disk.yandex.ru/i/QIz4PzRQb-onYQ\">Приказ № 495 от 15.06.2022 г. \"Об внесении изменений в приказе № 480\" от 10 июня 2022 г.&nbsp;</a></li>\n<li><a href=\"https://disk.yandex.ru/i/WxFICR2-Ca0d1A\">Приказ № 501 \"Приказ о внесении изменений в приказе № 495\" от 15 июня 2022г.</a></li>\n<li><a href=\"https://disk.yandex.ru/i/VWx9cdFUU3vTcg\">Приказ № 515 \"Приказ о внесении изменений в приказе № 501\" от 17 июня 2022г.</a></li>\n<li><a href=\"https://disk.yandex.ru/i/8n9TOeNELtnRIw\">Приказ № 586 \"Приказ о внесении изменений в приказе № 515\" от 22 июня 2022г.</a>&nbsp;</li>\n<li><a href=\"https://disk.yandex.ru/i/k1uQRUu6r2aaqQ\">Приказ № 622 \"Приказ о внесении изменений в приказе № 586\" от 25 июня 2022г.&nbsp;</a></li>\n<li><a href=\"https://disk.yandex.ru/i/9lflJwRu4MYXmA\">Приказ № 636 \"Приказ о внесении изменений в приказе № 622\" от 10 августа 2022г.&nbsp;</a></li>\n<li><a href=\"https://disk.yandex.ru/i/c9Qr1HlNTM-IbA\">Приказ №761 \"Приказ о внесении изменений в приказе № № 636\"от 12.10.2022г.&nbsp;</a></li><li><br></li>\n</ul>\t\t\n\t\t\t<h2>ОХРАНА ТРУДА</h2>\t\t\n\t\t<ul><li><a href=\"https://disk.yandex.ru/i/TgKwJ48E_d2xIQ\" target=\"_blank\" rel=\"noopener\">Кодекс этики и служебного поведения сотрудников ДСС</a></li><li><a href=\"https://disk.yandex.ru/i/aircSVsGCUiqNQ\" target=\"_blank\" rel=\"noopener\">Постановление минтруда по  противодействию коррупции</a></li><li><a href=\"https://disk.yandex.ru/i/EFUrTVkXPvLeoA\" target=\"_blank\" rel=\"noopener\">Оргструктура ДСС</a></li><li> <a href=\"https://disk.yandex.ru/i/SyQW8oBo55CqoQ\" target=\"_blank\" rel=\"noopener\">Оценка условий труда РЦСЛ</a></li><li><a href=\"https://disk.yandex.ru/i/ql70_GxK24mzMg\" target=\"_blank\" rel=\"noopener\">Памятка антитеррор</a></li><li><a href=\"https://disk.yandex.ru/i/njDuUeL8xbJE0w\" target=\"_blank\" rel=\"noopener\">План мероприятий антитеррористической защищенности</a></li><li> <a href=\"https://disk.yandex.ru/i/_y9FkHhYuAMALw\" target=\"_blank\" rel=\"noopener\">Порядок установления уровней террористической опасности</a></li><li><a href=\"https://disk.yandex.ru/i/0akgLyoD06olVg\" target=\"_blank\" rel=\"noopener\">Приказ №93 об усилении противопожарной безопасности на спортивных объектов</a></li><li><a href=\"https://disk.yandex.ru/i/TzCf9oVqmg0kkg\" target=\"_blank\" rel=\"noopener\">Результаты СОУТ1</a></li><li><a href=\"https://disk.yandex.ru/i/D3nx_pz_D-GfXg\" target=\"_blank\" rel=\"noopener\">Результаты СОУТ2</a></li><li><a href=\"https://disk.yandex.ru/i/_GNFX7hfFqvvmQ\" target=\"_blank\" rel=\"noopener\">Результаты СОУТ3</a></li><li><a href=\"https://disk.yandex.ru/i/-Tlq7UnMygEmng\" target=\"_blank\" rel=\"noopener\">Условия труда</a></li><li><a href=\"https://disk.yandex.ru/i/Igt9cXOAbD6rzg\">Специальная оценка условий труда (инструктор по плаванию)</a></li><li><a href=\"https://disk.yandex.ru/i/UVCQ91DTcfL8_A\">МСМП-РА ГОиЧС об информации по антитерроризму.</a></li></ul>\t\t\n\t\t\t<h2>О НАЛОГОВОМ ВЫЧЕТЕ</h2>\t\t\n\t\t<ul><li><a href=\"https://disk.yandex.ru/i/trfWXa5RglRyMw\">О налоговом вычете за занятия спортом</a></li><li><a href=\"https://disk.yandex.ru/i/VkD7odq7LDxKaA\">Документы, предоставляемые для формирования перечня физкультурно-спортивных организаций (далее - ФСО), индивидуальных предпринимателей (далее - ИП)</a></li></ul>",
+      "images": {
+        "thumbnail": null,
+        "medium": null,
+        "large": null,
+        "full": null
+      },
+      "acf": {
+        "description": "",
+        "taks": false,
+        "image_url": "https://admin.dss-sport.ru/wp-content/uploads/2022/01/58.jpg",
+        "short_desc": ""
+      },
+      "index": 0
+    },
+    {
+      "id": 345,
+      "slug": "zakupki",
+      "title": "Закупки",
+      "excerpt": "",
+      "parent": 335,
+      "content": "<p><b style=\"color: var( --e-global-color-text ); font-size: var(--global--font-size-base); font-family: var( --e-global-typography-text-font-family ), Sans-serif; background-color: var(--global--color-background);\"> </b><u><b> <a style=\"font-size: var(--global--font-size-base); font-family: var( --e-global-typography-text-font-family ), Sans-serif;\" href=\"https://disk.yandex.ru/i/k_LJHvKBDQHtrg\" target=\"_blank\" rel=\"noopener\">Приказ № 40 от 26.01.2022г \" Об утверждении перечня товаров, работ, услуг, закупка которых осуществляется у субъектов малого и среднего предпринимательства\"</a></b></u></p><ul><li><a href=\"https://disk.yandex.ru/i/Pn7HFNPSQLk-WQ\" target=\"_blank\" rel=\"noopener\"><u><b>Приказ № 86 от 22.02.2022г \"Об внесении изменений в приказ № 40 от 26.01.2022г об утверждении перечня товаров, работ, услуг, закупка которых осуществляется у субъектов малого и среднего предпринимательства\"</b></u></a></li><li><a href=\"https://disk.yandex.ru/i/Zv4yrbAKro9PyA\" target=\"_blank\" rel=\"noopener\"><u><b>Приказ № 133 от 04.03.2022г \"Об внесении изменений в приказ № 86 от 22.02.2022г ......\"</b></u></a></li></ul><ul><li><strong><a href=\"https://disk.yandex.ru/i/Zv4yrbAKro9PyA\" target=\"_blank\" rel=\"noopener\">Приказ № 185 от 28.03.2022г \"Об внесении изменений в приказ № 133 от 04.03.2022г.\"</a></strong></li><li><a href=\"https://disk.yandex.ru/i/xYdd9Im3YgavcA\"><strong>Приказ №196 от 30.03.2022 \"О внесении изменений в Приказ №185 от 28.03.2022</strong></a></li><li><strong><a href=\"https://disk.yandex.ru/i/_QFMJzrGKV2r4Q\">Приказ № 245 от 12,04.2022 г. \"Об внесении изменений в приказе № 196 от 30.03.2022г\"</a></strong></li><li><a href=\"https://disk.yandex.ru/i/ix0v6tZmwIBUiw\"><strong>Приказ № 271 от 19.04.2022 г. \"Об внесении изменений в приказе № 245 от 12.04.2022г\"</strong></a></li><li><a href=\"https://disk.yandex.ru/i/UXX8wBPzm7-Fwg\"><strong>Приказ № 286 от 21.04.2022 г. \"Об внесении изменений в приказе № 271 от 19.04.2022г\"</strong></a></li><li><strong><a href=\"https://disk.yandex.ru/i/fDEPiTXjC9sMwQ\">Приказ № 372 от 17.05.2022 г. \"Об внесении изменений в приказе № 286 от 21.04.2022г.\"</a></strong></li><li><strong><a href=\"https://disk.yandex.ru/i/QIz4PzRQb-onYQ\">Приказ № 495 от 15.06.2022 г. \"Об внесении изменений в приказе № 480\" от 10 июня 2022 г. </a></strong></li><li><strong><a href=\"https://disk.yandex.ru/i/WxFICR2-Ca0d1A\">Приказ № 501 \"Приказ о внесении изменений в приказе № 495\" от 15 июня 2022г.</a></strong></li><li><strong><a href=\"https://disk.yandex.ru/i/VWx9cdFUU3vTcg\">Приказ № 515 \"Приказ о внесении изменений в приказе № 501\" от 17 июня 2022г.</a></strong></li><li><strong><a href=\"https://disk.yandex.ru/i/8n9TOeNELtnRIw\">Приказ № 586 \"Приказ о внесении изменений в приказе № 515\" от 22 июня 2022г.</a> </strong></li><li><strong><a href=\"https://disk.yandex.ru/i/k1uQRUu6r2aaqQ\">Приказ № 622 \"Приказ о внесении изменений в приказе № 586\" от 25 июня 2022г. </a></strong></li><li><strong><a href=\"https://disk.yandex.ru/i/9lflJwRu4MYXmA\">Приказ № 636 \"Приказ о внесении изменений в приказе № 622\" от 10 августа 2022г.</a></strong></li><li><strong><a href=\"https://disk.yandex.ru/i/c9Qr1HlNTM-IbA\">Приказ №761 \"Приказ о внесении изменений в приказе № № 636\"от 12.10.2022г. </a></strong></li></ul><b style=\"color: var( --e-global-color-text ); font-family: var( --e-global-typography-text-font-family ), Sans-serif; background-color: var(--global--color-background); font-size: var(--global--font-size-base);\">____________________________________________</b> <b>По всем вопросам обращаться:</b><b>Ведущий юрисконсульт - Жилкина Наталья Георгиевна</b><b>тел.: 8 (3012) 21-10-41  </b><b>эл. адрес:  zakupki@dss-sport.ru</b>",
+      "images": {
+        "thumbnail": null,
+        "medium": null,
+        "large": null,
+        "full": null
+      },
+      "acf": {
+        "description": "",
+        "taks": false,
+        "image_url": "https://admin.dss-sport.ru/wp-content/uploads/2022/01/60.jpg",
+        "short_desc": ""
+      },
+      "index": 0
+    },
+    {
+      "id": 347,
+      "slug": "vakansii",
+      "title": "Вакансии",
+      "excerpt": "",
+      "parent": 335,
+      "content": "<h3><strong>По всем вопросам обращаться в отдел кадров:</strong></h3>\r\n<ul>\r\n \t<li>Электронный адрес: ok@dss-sport.ru</li>\r\n \t<li>Телефон: 8 (3012) 21-14-74</li>\r\n \t<li>Адрес: г. Улан-Удэ, ул. Кирова, 1  (этаж 4)</li>\r\n</ul>\r\n<strong><span style=\"background-color: var(--global--color-background); color: var(--global--color-primary); font-family: var(--global--font-secondary); font-size: var(--global--font-size-base);\">Региональный центр единоборств -  </span></strong><strong><span style=\"background-color: var(--global--color-background); color: var(--global--color-primary); font-family: var(--global--font-secondary); font-size: var(--global--font-size-base);\">г. Улан-Удэ, </span><span style=\"background-color: var(--global--color-background); color: var(--global--color-primary); font-family: var(--global--font-secondary); font-size: var(--global--font-size-base);\">ул. ​</span><a class=\"_2lcm958\" style=\"background-color: var(--global--color-background); font-family: var(--global--font-secondary); font-size: var(--global--font-size-base);\" href=\"https://2gis.ru/ulanude/geo/70030076331225991\">Ринчино, 2Б/1</a></strong>\r\n<ul>\r\n \t<li>Уборщицы;</li>\r\n \t<li>Гардеробщицы.</li>\r\n</ul>\r\n<strong>Центральный стадион РБ -  </strong><strong>г. Улан-Удэ, ​<a class=\"_2lcm958\" href=\"https://2gis.ru/ulanude/geo/5207922724327477\">Кирова, 1</a></strong>\r\n<ul>\r\n \t<li>Мастер маникюра (телефон для справок  8-924-452-46-44 )</li>\r\n \t<li>Инструктор групповых программ (резюме отправлять на почту: or@dss-sport.ru)</li>\r\n \t<li>Уборщица служебных помещений - от 16 тыс. руб.</li>\r\n \t<li>Специалист по закупкам (223 ФЗ ) - от 40 тыс. руб.</li>\r\n</ul>\r\n<strong>Физкультурно-Спортивный комплекс (ФСК) -  </strong><strong>г. Улан-Удэ, ул. ​<a class=\"_2lcm958\" href=\"https://2gis.ru/ulanude/geo/5207922724329506\">Рылеева, 2</a></strong>\r\n<div>\r\n<ul>\r\n \t<li>Инструктор бассейна - от 25 тыс. руб. (высшее или среднее образование + разряд по плаванию)</li>\r\n \t<li>Инструктор групповых программ (резюме отправить сюда: or@dss-sport.ru)</li>\r\n \t<li>Дворник</li>\r\n</ul>\r\n<strong>Региональный центр по стрельбе из лука (Лукодром)- </strong><strong>г. Улан-Удэ, ​<a class=\"_2lcm958\" href=\"https://2gis.ru/ulanude/geo/70030076193170894\">Жердева, 93</a></strong>\r\n\r\n</div>\r\n<ul>\r\n \t<li>персонал набран, но вы можете оставить свои контакты в кадровый резерв</li>\r\n</ul>\r\n<div>\r\n\r\n<strong>Для всех сотрудников действуют специальные скидки и льготы на посещение тренажерного зала Атлет, бассейна ФСК,  и отдых в отеле \"Байкал Park\" и гостевой дом \"Надежда\" (подробнее об этом можно узнать после подписания трудового договора).</strong>\r\n\r\n</div>\r\n<div>\r\n<div><b><span style=\"color: #0000ff;\"> </span></b></div>\r\n</div>",
+      "images": {
+        "thumbnail": null,
+        "medium": null,
+        "large": null,
+        "full": null
+      },
+      "acf": {
+        "description": "",
+        "taks": false,
+        "image_url": "https://admin.dss-sport.ru/wp-content/uploads/2022/01/62.jpg",
+        "short_desc": ""
+      },
+      "index": 0
+    },
+    {
+      "id": 349,
+      "slug": "partnery",
+      "title": "Партнеры",
+      "excerpt": "",
+      "parent": 335,
+      "content": "<a href=\"http://gto03.ru/\">Сдача норм ГТО  в Бурятии </a>",
+      "images": {
+        "thumbnail": null,
+        "medium": null,
+        "large": null,
+        "full": null
+      },
+      "acf": {
+        "description": "",
+        "taks": false,
+        "image_url": "https://admin.dss-sport.ru/wp-content/uploads/2022/01/mrk8369.jpg",
+        "short_desc": "Вот вам яркий пример современных тенденций - внедрение современных методик позволяет выполнить важные задания по разработке системы массового участия."
+      },
+      "index": 0
+    },
+    {
+      "id": 351,
+      "slug": "vazhnye-ssylki",
+      "title": "Важные ссылки",
+      "excerpt": "",
+      "parent": 335,
+      "content": "<table width=\"66%\">\r\n<tbody>\r\n<tr>\r\n<td><strong>Министерство спорта Российской Федерации</strong>\r\n<a href=\"http://www.minsport.gov.ru/\">http://www.minsport.gov.ru/</a></td>\r\n</tr>\r\n<tr>\r\n<td><strong>Официальный портал органов государственной власти Республики Бурятия</strong>\r\n<a href=\"http://egov-buryatia.ru/\">http://egov-buryatia.ru/</a></td>\r\n</tr>\r\n<tr>\r\n<td><strong>Министерство спорта и молодежной политики Республики Бурятия</strong>\r\n<a href=\"https://egov-buryatia.ru/minsport/\">https://egov-buryatia.ru/minsport/</a></td>\r\n</tr>\r\n<tr>\r\n<td><strong>Центр спортивной подготовки «Школа высшего спортивного мастерства»</strong>\r\n<a href=\"http://www.shvsm03.ru/\">http://www.shvsm03.ru/</a></td>\r\n</tr>\r\n<tr>\r\n<td><strong>АУ РБ \"Республиканская спортивная школа олимпийского резерва\"</strong>\r\n<a href=\"http://www.xn----7sbac2bdhjbltp.xn--p1ai/\">http://www.байкал-олимп.рф/</a></td>\r\n</tr>\r\n<tr>\r\n<td><strong>Всероссийский реестр спорта</strong>\r\n<a href=\"http://sport-register.ru/\">http://sport-register.ru/</a></td>\r\n</tr>\r\n<tr>\r\n<td><strong>Портал государственных услуг Российской Федерации</strong>\r\n<a href=\"https://www.gosuslugi.ru/\">https://www.gosuslugi.ru/</a></td>\r\n</tr>\r\n<tr>\r\n<td><strong>ВФСК ГТО</strong>\r\n<a href=\"http://www.gto.ru/\">http://www.gto.ru</a></td>\r\n</tr>\r\n<tr>\r\n<td><strong>ВФСК ГТО Республика Бурятия\r\n</strong><a href=\"http://gto03.ru/\">http://www.gto03.ru</a></td>\r\n</tr>\r\n</tbody>\r\n</table>",
+      "images": {
+        "thumbnail": null,
+        "medium": null,
+        "large": null,
+        "full": null
+      },
+      "acf": {
+        "description": "",
+        "taks": false,
+        "image_url": "https://admin.dss-sport.ru/wp-content/uploads/2022/01/59.jpg",
+        "short_desc": ""
+      },
+      "index": 0
+    },
+    {
+      "id": 353,
+      "slug": "vopros",
+      "title": "Интернет-приемная",
+      "excerpt": "",
+      "parent": 335,
+      "content": "",
+      "images": {
+        "thumbnail": [
+          "https://admin.dss-sport.ru/wp-content/uploads/2022/01/58-150x150.jpg",
+          150,
+          150,
+          true
+        ],
+        "medium": [
+          "https://admin.dss-sport.ru/wp-content/uploads/2022/01/58-300x300.jpg",
+          300,
+          300,
+          true
+        ],
+        "large": [
+          "https://admin.dss-sport.ru/wp-content/uploads/2022/01/58-1024x1024.jpg",
+          750,
+          750,
+          true
+        ],
+        "full": [
+          "https://admin.dss-sport.ru/wp-content/uploads/2022/01/58.jpg",
+          1080,
+          1080,
+          false
+        ]
+      },
+      "acf": {
+        "linked_link": "/page/management/reception",
+        "image_url": "https://admin.dss-sport.ru/wp-content/uploads/2022/01/62.jpg"
+      },
+      "index": 0
+    },
+    {
+      "id": 355,
+      "slug": "kontakty",
+      "title": "Контакты",
+      "excerpt": "",
+      "parent": 335,
+      "content": "<h2>ГАУ РБ \"ДИРЕКЦИЯ СПОРТИВНЫХ СООРУЖЕНИЙ\"</h2>\t\t\n\t\t<h3><strong>г. Улан-Удэ, ул. Кирова, 1</strong></h3><p><strong>Режим работы: 08:30 - 17:30</strong></p><p><strong>Пятница: 08:30 - 16:30</strong></p><p><strong>Перерыв на обед: 12:30 - 13:30</strong></p> \t\t\n\t\t<ul><li><b>Приемная</b>: <b>(3012) 21-10-41 </b></li></ul><p><b>почта: </b>priem@dss-sport.ru</p><ul><li><b>Отдел закупок</b>: <b>(3012) 21-10-41 </b><strong> доб. 109,</strong></li></ul><p><strong>почта: </strong>zakupki@dss-sport.ru</p><ul><li><b>Пресс-служба: </b><b>(3012) 21-08-74 </b></li></ul><p> <strong>почта:</strong> info@dss-sport.ru</p><ul><li><b>Отдел развития: </b><b>(3012) 21-08-74   </b></li></ul><p><strong>почта: </strong>or@dss-sport.ru</p><ul><li><b>Договорной отдел: </b><b>(3012) 21-08-74   </b></li></ul><p><strong>почта: </strong>manager@dss-sport.ru</p><ul><li><strong>Отдел кадров</strong><strong>:</strong> <b>(3012) 21-14-74   </b></li></ul><p><strong>почта:</strong> ok@dss-sport.ru</p><ul><li><b>Отдел проведения мероприятий</b>: <b>(3012) 21-10-41 </b>доб. 136</li></ul><p><strong>почта:</strong> opm@dss-sport.ru</p><ul><li><strong>Отдел ГТО: </strong><b>(3012) 21-13-97 </b></li></ul><p><strong>почта:</strong> gto03bur@yandex.ru</p><ul><li><b>Юридический отдел: </b><b>(3012) 21-10-41 </b> доб. 142</li></ul><p><strong>почта:</strong> jurist_new@dss-sport.ru</p><ul><li><strong>Централизованная бухгалтерия МСМП: </strong><b>(3012) 37-40-04</b></li></ul><p><strong>почта:</strong> tsb.minsport03@yandex.ru</p><p> </p><b> </b><p><strong>Центральный стадион Республики Бурятия</strong></p><p><strong>Режим работы:</strong></p><ul><li><pre>Тренажерный зал \"Атлет\" - 9:00 - 21:00 (ежедневно)</pre></li><li><pre>Легкоатлетические дорожки, футбольное поле, мини- футбольное поле - <em>по записи;</em></pre></li><li><pre>В зимний период каток и лыжня </pre></li></ul><ul><li>Телефон для справок: <strong>8 (3012) 21-15-53</strong> администратор (тренажерный зал, каток и лыжня)<b>.</b></li></ul><p><em><strong>Центр стрелковой подготовки:</strong></em></p><p><strong>Режим работы: 9:00 - 20:30 (ежедневно)</strong></p><ul><li><pre>Дистанции: 10м, 25м, 50м;</pre></li><li><pre>Секция по пулевой стрельбе.</pre></li></ul><pre>Телефон для справок: <b style=\"font-size: large;\">8 (3012) 21-49-28</b></pre><p><strong>Физкультурно-спортивный комплекс (ФСК) </strong>ул. Рылеева, 2</p><p><strong>Режим работы:</strong></p><ul><li><pre>Администрация 8:30 - 17:30; </pre></li><li><pre>В пятницу до 16:30;  </pre></li><li><pre>Перерыв на обед: 12:30 - 13:30; </pre></li><li><pre>Бассейн: 7:00 - 22:00;</pre></li><li><pre>Тренажерный зал: 9:00 - 21:00</pre></li></ul><pre>Телефон для справок/факс <b>8 (3012) 46-04-17 - приемная</b></pre><p>Телефон для справок/факс<b> 8 (3012) 45-30-36 - call-центр</b></p><pre><b>Центр спортивной подготовки (секции по плаванию, футболу, баскетболу, фитнесу)</b></pre><p>Режим работы - по записи в группы</p><pre> </pre><ul><li>тел.<b> 8 (3012) </b><b>500-888</b></li><li>тел.<b> 8 (3012) 45-30-36</b></li></ul><b>СПА-центр в ФСК</b>  <ul><li>тел.<b> 8 (3012) 45-40-26</b></li></ul><p><b>Региональный центр по стрельбе из лука \"МЭРГЭН\"</b></p><p>г Улан-Удэ, ул Жердева, 93</p><p>тел.: 41-90-41</p><p>тел.: 8-9025-30-67-30</p><p> </p><pre> </pre><b>Региональный центр единоборств \"ПАТРИОТ\"</b>г Улан-Удэ, ул Ринчино, 2 Б / 1тел.:______________ <pre> </pre><b>Ипподром Улан-Удэ</b>г Улан-Удэ, п Верхняя березовка, ул. Ипподром, 5 тел.: (3012) 606-166 <pre><b>Спортивно-туристский центры:</b></pre><p><b> </b></p><p><b>Отель и спорткомплекс \"Байкал Park\"  </b></p><p>Бурятия, Баргузинский район, п Максимиха, ул Опытная, 1</p><ul><li><pre>тел. <b>8 (3012) 385-888</b></pre></li><li><pre>тел.: +7 9834 385-888</pre></li><li><pre>эл. адрес:<b> </b><b>baikal.park@dss-sport.ru</b></pre></li></ul><b>Гостевой дом \"Надежда\"</b>Бурятия, Баргузинский район, п Максимиха, ул Лесная, 4<ul><li>тел. <b>8 (3012) 385-888</b></li><li>тел.: +7 9834 385-888</li><li>эл. адрес:<b> manager@dss-sport.ru </b></li></ul> <b>База отдыха \"Олимп\" </b>Бурятия, Тункинский район, п Аршан<ul><li>Эл. адрес: priem@dss-sport.ru</li></ul><p><b>Хостел \"Юниор\" в ФСК</b></p><ul><li><pre>тел.<b> 8 (3012) 645-888</b></pre></li><li><pre>тел. <b>8 (3012) 44-17-33 </b></pre></li><li><pre>эл. адрес:<b> hostel@dss-sport.ru </b></pre></li></ul>",
+      "images": {
+        "thumbnail": null,
+        "medium": null,
+        "large": null,
+        "full": null
+      },
+      "acf": {
+        "description": "",
+        "taks": false,
+        "image_url": "https://admin.dss-sport.ru/wp-content/uploads/2022/01/58.jpg",
+        "short_desc": ""
+      },
+      "index": 0
+    }
+  ],
+  "thumb_img": false,
+  "root_parent": false,
+  "_links": {
+    "self": [{ "href": "https://admin.dss-sport.ru/wp-json/wp/v2/pages/335" }],
+    "collection": [
+      { "href": "https://admin.dss-sport.ru/wp-json/wp/v2/pages" }
+    ],
+    "about": [
+      { "href": "https://admin.dss-sport.ru/wp-json/wp/v2/types/page" }
+    ],
+    "author": [
+      {
+        "embeddable": true,
+        "href": "https://admin.dss-sport.ru/wp-json/wp/v2/users/1"
+      }
+    ],
+    "replies": [
+      {
+        "embeddable": true,
+        "href": "https://admin.dss-sport.ru/wp-json/wp/v2/comments?post=335"
+      }
+    ],
+    "version-history": [
+      {
+        "count": 6,
+        "href": "https://admin.dss-sport.ru/wp-json/wp/v2/pages/335/revisions"
+      }
+    ],
+    "predecessor-version": [
+      {
+        "id": 7659,
+        "href": "https://admin.dss-sport.ru/wp-json/wp/v2/pages/335/revisions/7659"
+      }
+    ],
+    "wp:attachment": [
+      { "href": "https://admin.dss-sport.ru/wp-json/wp/v2/media?parent=335" }
+    ],
+    "curies": [
+      { "name": "wp", "href": "https://api.w.org/{rel}", "templated": true }
+    ]
+  }
+}

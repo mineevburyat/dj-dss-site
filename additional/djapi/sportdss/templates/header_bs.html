@@ -1,0 +1,41 @@
+{% load static %}
+
+<header>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="/dss">
+            <img src="{% static '/img/logo-blue.svg' %}">
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            {% for menuitem in mainmenu %}
+            <li class="nav-item">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-expanded="false">
+                {{ menuitem.newname|upper }} 
+                <!-- <span class="sr-only">
+                    (current)
+                </span> -->
+              </a>
+                <div class="dropdown-menu ">
+                    {% for submenu in menuitem.get_submenu %}
+                        <a href="/page/sport/983" class="dropdown-item dropdown__link">
+                            <div class="link__group">
+                              <div class="link__title">{{ submenu.name| upper }}</div>
+                              <div class="link__subtitle">{{ submenu.display_objects }}</div>
+                            </div>
+                        </a>
+                    {% endfor %}
+                </div>
+            </li>
+            {% endfor %}
+          </ul>
+          <form class="form-inline my-2 my-lg-0">
+            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+          </form>
+        </div>
+      </nav>
+</header>

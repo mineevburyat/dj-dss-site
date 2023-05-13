@@ -1,0 +1,15 @@
+.promo {
+    padding-top: 80px;
+}
+
+.mybrand {
+    font-size: 14px;
+    line-height: 1;
+}
+
+.my-bg-section {
+    background-color: #ccc;
+    min-height: 75vh;
+    border: 1px solid red;
+    max-width: 530px;
+}

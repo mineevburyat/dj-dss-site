@@ -1,0 +1,20 @@
+{% extends "base_generic.html" %}
+{% block title %}<title>Школьная библиотека - главная </title>{% endblock %}
+{% block content %}
+<h1>Школьная библиотека</h1>
+
+  <p>Добро пожаловать в <em>Школьную библиотеку</em>, написанную под руководством the Mozilla Developer Network.</p>
+
+<h2>Содержание</h2>
+
+  <p>Коллекция нашей библиотеки:</p>
+  <ul>
+    <li><strong>Всего книг:</strong> {{ num_books }}</li>
+    <li><strong>Твердые копии:</strong> {{ num_instances }}</li>
+    <li><strong>Копии доступные сейчас:</strong> {{ num_instances_available }}</li>
+    <li><strong>Всего авторов:</strong> {{ num_authors }}</li>
+    <li><strong>Всего жанров:</strong> {{ num_genre }}</li>
+    <li><strong>Всего языков:</strong> {{ num_lang }}</li>
+  </ul>
+
+{% endblock %}

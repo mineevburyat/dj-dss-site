@@ -1,0 +1,181 @@
+{
+  "id": 299,
+  "date": "2021-10-25T04:58:39",
+  "date_gmt": "2021-10-25T04:58:39",
+  "guid": { "rendered": "https://admin.dss-sport.ru/?page_id=299" },
+  "modified": "2022-01-13T04:44:58",
+  "modified_gmt": "2022-01-13T04:44:58",
+  "slug": "recreation",
+  "status": "publish",
+  "type": "page",
+  "link": "https://admin.dss-sport.ru/recreation/",
+  "title": { "rendered": "Отдых" },
+  "content": { "rendered": "", "protected": false },
+  "excerpt": {
+    "rendered": "<p>Предлагаем комплексный подход по восстановлению здоровья </p>\n",
+    "protected": false
+  },
+  "author": 1,
+  "featured_media": 0,
+  "parent": 0,
+  "menu_order": 0,
+  "comment_status": "closed",
+  "ping_status": "closed",
+  "template": "category_origin_template.php",
+  "meta": [],
+  "acf": { "description": "", "taks": false, "image_url": false },
+  "childrens": [
+    {
+      "id": 327,
+      "slug": "sauna",
+      "title": "Сауны",
+      "excerpt": "",
+      "parent": 299,
+      "content": "",
+      "images": {
+        "thumbnail": null,
+        "medium": null,
+        "large": null,
+        "full": null
+      },
+      "acf": {
+        "description": "ФСК, ЦСРБ, РЦЕ, БП",
+        "taks": false,
+        "image_url": "https://admin.dss-sport.ru/wp-content/uploads/2021/11/1dsc08970.jpg",
+        "parent_mark": true,
+        "children_view": "pages",
+        "short_desc": "Вы можете отдохнуть в наших саунах в бассейне ФСК, в тренажерном зале на Центральном стадионе и в отеле \"Байкал Парк\"  "
+      },
+      "index": 0
+    },
+    {
+      "id": 329,
+      "slug": "dss_studio_fsk",
+      "title": "DSS_STUDIO в ФСК",
+      "excerpt": "",
+      "parent": 299,
+      "content": "<h3><i><b>Приглашаем Вас провести время с пользой для красоты и здоровья в студии  \"DSS_Studio\" в двух наших филиалах г. Улан-Удэ!</b></i></h3><i><strong> </strong></i><i><strong> </strong></i><a style=\"font-size: var(--global--font-size-base);\" href=\"https://dss-sport.ru/page/vacation/357\" target=\"_blank\" rel=\"noopener\">Филиал №2 здесь &gt;&gt;&gt;</a><p style=\"margin-bottom: 4.0pt; line-height: normal;\"><b>Филиал №1 \"DSS_Studio\" - </b><b style=\"font-size: 14pt; background-color: var(--global--color-background);\">Физкультурно-спортивный комплекс, </b></p><p style=\"margin-bottom: 4.0pt; line-height: normal;\"><b style=\"font-size: 14pt; background-color: var(--global--color-background);\">Адрес: г. Улан-Удэ, ул. Рылеева, 2 </b></p><p style=\"margin-bottom: 4.0pt; line-height: normal;\">Часы работы: с 09:00 до 21:00 (ежедневно)<b><br /></b></p><p style=\"margin-bottom: 4.0pt; line-height: normal;\"><b>Телефон для справок: </b>45-40-26, 45-30-36 </p><ul><li>Кедровая фито-бочка</li><li>Солярий  вертикальный</li><li>Солярий горизонтальный</li><li>Массажные кресла</li><li>Массажные кровати (Нуга-Бест)</li><li>Ручной массаж</li></ul><b>РАСЦЕНКИ УКАЗАНЫ НИЖЕ</b><p style=\"margin-bottom: 4.0pt; line-height: normal;\"> </p><h3><b> </b></h3><h3><b>1. Кедровая фитобочка</b><b style=\"font-family: Roboto, sans-serif; background-color: var(--global--color-background); font-size: var(--global--font-size-base);\"> </b></h3>Попробуйте уникальный старославянский метод восстановления здоровья с помощью травяного пара из целебных трав и массажных масел в специальной фитобочке.Фитобочка оказывает многостороннее действие на весь организм, ведь при этом с целебным паром контактирует все тело, за исключением головы. Невозможно перечислить все положительные эффекты от сеанса в фитобочке, но основные направления воздействия все же выделить можно:<ul><li> Разогревается и распаривается кожа, открываются и очищаются поры;</li><li>Расширяются кровеносные сосуды, улучшается крово- и лимфообращение;</li><li>Активизируется обмен веществ;</li><li>Через кожу с потом усиленно выводятся соли, шлаки и токсины, а вместо этого кожа напитывается целебными веществами и эфирными маслами;</li><li>Повышается иммунитет, нормализуется работа дыхательной, нервной, сердечно-сосудистой, мочеполовой, эндокринной систем;</li><li>Омолаживается и подтягивается кожа, уменьшаются явления целлюлита, становятся менее заметными растяжки, уходит лишний вес.</li></ul> В стоимость процедуры фитобочки входит: фитопакет на выбор(детский, противоцеллюлитный, общеукрепляющий, успокаивающий, противоостеохондрозный), 2 индивидуальные  салфетки – под ноги и на скамью.С собой желательно иметь: большое полотенце, тапочки, купальный костюм.Продолжительность процедуры фитобочки  – не более 20 минут. Сделать посещение фитобочки еще более эффективным позволят представленные в магазине Спа-центра маски для лица,пилинги, скрабы, масла для волос, а после сеанса Вы сможете насладится чашечкой целебного фиточая либо провести сеанс массажа в массажных креслах или массажных кроватях Нуга Бест.Кедровая фитобочка – это залог Вашего здоровья и легкий способ быть в форме!<h3 style=\"font-family: var(--heading--font-family); font-weight: var(--heading--font-weight); font-size: var(--heading--font-size-h3); letter-spacing: normal; line-height: var(--heading--line-height-h3); max-width: var(--global--spacing-measure);\"> </h3><h3 style=\"font-family: var(--heading--font-family); font-weight: var(--heading--font-weight); font-size: var(--heading--font-size-h3); letter-spacing: normal; line-height: var(--heading--line-height-h3); max-width: var(--global--spacing-measure);\">2. Солярий</h3>Солярий — современный и безопасный способ обзавестись золотым загаром. Всем известно, что UV-излучение бывает трех видов: А, В и С. В отличии от солнца, лампы солярия не излучают опасные для здоровья человека С-лучи, что делает использование солярия более безопасным.Солярии бывают горизонтальными и вертикальными .<ul><li>Горизонтальный солярий — отличный способ отдохнуть после утомительного рабочего дня. Время пребывания в горизонтальном солярии может доходить до 20 минут (в зависимости от мощности ламп).</li><li>Вертикальный же солярий больше понравится активным людям, которые не хотят терять ни минуты, тем более, что с зажигательной музыкой  они пролетают незаметно. Как правило, лампы для вертикального солярия гораздо более мощные, чем для горизонтального.</li></ul>В нашем Спа-центре  администраторы помогут определить оптимальную для Вас индивидуальную программу посещений солярия и подберут необходимые косметику и аксессуары, такие как индивидуальные шапочка, защита для глаз, стикини для груди, защитный увлажняющий крем для загара в солярии, средства, усиливающие загар, а так же успокаивающие и закрепляющие средства после загара. Мы предлагаем несколько линий профессиональной косметики для загара в солярии:<ul><li>SOLEO (Польша),</li><li>Emerald Bay (США),</li><li>SolBianca (Россия),</li></ul>то позволяет подобрать средства с учетом любого бюджета   и сделать качественный загар доступным для всех.Стоимость 1 минуты всего 12  рублей, также действуют абонементы на 50 и 100 минут .Солярий ФСК- твое персональное солнце! <h3 style=\"font-family: var(--heading--font-family); font-weight: var(--heading--font-weight); font-size: var(--heading--font-size-h3); letter-spacing: normal; line-height: var(--heading--line-height-h3); max-width: var(--global--spacing-measure);\">3. Массажные кресла и массажные кровати</h3><b style=\"font-size: var(--global--font-size-base); background-color: var(--global--color-background);\">Польза массажного кресла:</b><ul><li>Снимает мышечное напряжение, особенно в области спины и шеи.</li><li>Улучшает кровообращение и тем самым помогает улучшить доставку кислорода во все ткани организма.</li><li>Способствует улучшению обмена веществ и выведению из организма шлаков.</li><li>Помогает снизить отечность.</li><li>Хорошей профилактикой остеохондроза и различных искривлений позвоночника.</li><li>Оказывает благоприятное воздействие на позвоночник, который у современного человека подвержен повышенным нагрузкам, особенно в условиях малоподвижного образа жизни.</li><li>Положительно влияет на психоэмоциональное состояние человека, помогает справиться со стрессами, хронической усталостью и бессонницей.</li></ul><b>Польза массажной кровати:</b><ul><li>Многофункциональная массажная кровать «Luxtug» (Нуга-Бест) предназначена для эффективной комплексной профилактики и вспомогательного лечения широкого спектра заболеваний   при помощи эффекта точечного массажа (по типу давления пальцами). При использовании массажной кровати, человеческое тело собственным весом обеспечивает стабильное давление проектора на мышцы спины, тем самым достигается эффект точечного массажа и прогревания и профилактика заболеваний позвоночного столба. При работе массажной кровати 8 нефритовых роликов взаимодействуют с точками в области позвоночника, при этом возникает эффект точечного массажа и вытяжение позвоночника, расслабляющего мышцы спины и тем самым стимулирующего нервные окончания.  Кроме того, при точечном массаже при помощи массажной кровати возникает эффект растягивания (распрямления) межпозвоночных дисков и межпозвонковых связок, способствуя коррекции и исправлению неправильного положения позвонков.</li><li>Рекомендуем совмещать сеанс массажа после посещения фитобочки.</li></ul> <h3 style=\"font-family: var(--heading--font-family); font-weight: var(--heading--font-weight); font-size: var(--heading--font-size-h3); letter-spacing: normal; line-height: var(--heading--line-height-h3); max-width: var(--global--spacing-measure);\">4. Ручной массаж</h3>Ценность массажа, заключается в том, что в организме человека во время сеанса ускоряется течение лимфы и крови, что приводит к улучшению обменных процессов в организме на разных уровнях, поднимается местное питание тканей, они освобождаются от вредных элементов, повышается общий мышечный тонус, кожа освобождается от поверхностного слоя, возбуждается деятельность потовых желез. <b>Часы работы: с 09:00 до 21:00  (ежедневно)</b><b style=\"background-color: var(--global--color-background); font-size: var(--global--font-size-base);\">Телефон для записи и справок: 45-40-26, 45-30-36 </b> \t\t\n\t\t\t<h2>Расценки DSS_Studio ФСК</h2>\t\t\n\t\t<table width=\"99%\"><tbody><tr><td width=\"75%\"><p><strong>Наименование услуги</strong></p></td><td width=\"24%\"><p><strong>Стоимость в руб. (в т.ч. НДС 20%)</strong></p></td></tr><tr><td colspan=\"2\" width=\"100%\"><p><strong>СОЛЯРИЙ</strong></p></td></tr><tr><td width=\"75%\"><p>Разовое посещение 1 минута</p></td><td width=\"24%\"><p style=\"text-align: center;\">15 руб.</p></td></tr><tr><td width=\"75%\"><p>Абонемент на 50 минут  (действует 60 дней)</p></td><td width=\"24%\"><p style=\"text-align: center;\">650 руб.</p></td></tr><tr><td width=\"75%\"><p>Абонемент на 100 минут (действует 90 дней)</p></td><td width=\"24%\"><p style=\"text-align: center;\">1100 руб.</p></td></tr><tr><td colspan=\"2\" width=\"100%\"><p><strong>УХОД ЗА ЛИЦОМ</strong></p></td></tr><tr><td width=\"75%\"><p>Классический массаж лица (30 мин)</p></td><td width=\"24%\"><p style=\"text-align: center;\">500 руб.</p></td></tr><tr><td width=\"75%\"><p>Массаж лица + альгинатная маска по типу кожи (60 мин)</p></td><td width=\"24%\"><p style=\"text-align: center;\">1000 руб.</p></td></tr><tr><td width=\"75%\"><p>Альгинатная маска</p></td><td width=\"24%\"><p style=\"text-align: center;\">300 руб.</p></td></tr><tr><td width=\"75%\"><p>Очищение, питание, увлажнение</p></td><td width=\"24%\"><p style=\"text-align: center;\">500 руб.</p></td></tr><tr><td colspan=\"2\" width=\"100%\"><p><strong>ФИТОБОЧКА (сеанс 20 минут)</strong></p></td></tr><tr><td width=\"75%\"><p>Разовое посещение (сеанс)</p></td><td width=\"24%\"><p style=\"text-align: center;\">250 руб.</p></td></tr><tr><td width=\"75%\"><p>Абонемент на 4 сеанса (действует 60 дней)</p></td><td width=\"24%\"><p style=\"text-align: center;\">900 руб.</p></td></tr><tr><td width=\"75%\"><p>Абонемент на 6 сеансов (действует 60 дней)</p></td><td width=\"24%\"><p style=\"text-align: center;\">1 270 руб.</p></td></tr><tr><td width=\"75%\"><p>Абонемент на 8 сеансов (действует 60 дней)</p></td><td width=\"24%\"><p style=\"text-align: center;\">1 600 руб.</p></td></tr><tr><td colspan=\"2\" width=\"100%\"><p><strong>МАССАЖНЫЕ КРЕСЛА / КРОВАТИ (сеанс 20 минут)</strong></p></td></tr><tr><td width=\"75%\"><p>Разовое посещение (сеанс)</p></td><td width=\"24%\"><p style=\"text-align: center;\">120 руб.</p></td></tr><tr><td width=\"75%\"><p>Абонемент на 4 сеанса (действует 60 дней)</p></td><td width=\"24%\"><p style=\"text-align: center;\">430 руб.</p></td></tr><tr><td width=\"75%\"><p>Абонемент на 6 сеансов (действует 60 дней)</p></td><td width=\"24%\"><p style=\"text-align: center;\">600 руб.</p></td></tr><tr><td width=\"75%\"><p>Абонемент на 8 сеансов (действует 60 дней)</p></td><td width=\"24%\"><p style=\"text-align: center;\">770 руб.</p></td></tr><tr><td colspan=\"2\" width=\"100%\"><p><strong>КОМПЛЕКС: ФИТОБОЧКА (сеанс 20 минут)  +</strong></p><p><strong>МАССАЖНОЕ  КРЕСЛО / КРОВАТЬ (сеанс 20 минут) + ФИТОЧАЙ</strong></p></td></tr><tr><td width=\"75%\"><p>Разовое посещение (сеанс 40 минут)</p></td><td width=\"24%\"><p style=\"text-align: center;\">330 руб.</p></td></tr><tr><td width=\"75%\"><p>Абонемент на 4 сеанса (действует 60 дней)</p></td><td width=\"24%\"><p style=\"text-align: center;\">1 200 руб.</p></td></tr><tr><td width=\"75%\"><p>Абонемент на 6 сеансов (действует 60 дней)</p></td><td width=\"24%\"><p style=\"text-align: center;\">1 700 руб.</p></td></tr><tr><td width=\"75%\"><p>Абонемент на 8 сеансов (действует 60 дней)</p></td><td width=\"24%\"><p style=\"text-align: center;\">2 200 руб.</p></td></tr><tr><td colspan=\"2\" width=\"100%\"><p><strong>УСЛУГИ ПО УХОДУ ЗА ТЕЛОМ</strong></p></td></tr><tr><td width=\"75%\"><p>Классический общий   (сеанс 35 мин)</p></td><td width=\"24%\"><p style=\"text-align: center;\">800 руб.</p></td></tr><tr><td width=\"75%\"><p>Классический общий   (сеанс 60 мин)</p></td><td width=\"24%\"><p style=\"text-align: center;\">1 200 руб.</p></td></tr><tr><td width=\"75%\"><p>Голова (сеанс 15 мин)</p></td><td width=\"24%\"><p style=\"text-align: center;\">500 руб.</p></td></tr><tr><td width=\"75%\"><p>шейно-воротниковая зона (сеанс 15 мин)</p></td><td width=\"24%\"><p style=\"text-align: center;\">500 руб.</p></td></tr><tr><td width=\"75%\"><p>Кисти и предплечья(сеанс 15 мин)</p></td><td width=\"24%\"><p style=\"text-align: center;\">500 руб.</p></td></tr><tr><td width=\"75%\"><p>Спина  (сеанс 30 мин)</p></td><td width=\"24%\"><p style=\"text-align: center;\">700 руб.</p></td></tr><tr><td width=\"75%\"><p>Крестцово-поясничный отдел (сеанс 15 мин)</p></td><td width=\"24%\"><p style=\"text-align: center;\">500 руб.</p></td></tr><tr><td width=\"75%\"><p>Ноги  (сеанс 30 мин)</p></td><td width=\"24%\"><p style=\"text-align: center;\">700 руб.</p></td></tr><tr><td width=\"75%\"><p>Медовый (сеанс 60 мин)</p></td><td width=\"24%\"><p style=\"text-align: center;\">1 500 руб.</p></td></tr><tr><td width=\"75%\"><p>Антицеллюлитный - общий (сеанс 60 мин)</p></td><td width=\"24%\"><p style=\"text-align: center;\">1 500 руб.</p></td></tr><tr><td width=\"75%\"><p>Антицеллюлитный - бедра (сеанс 30 мин)</p></td><td width=\"24%\"><p style=\"text-align: center;\">800 руб.</p></td></tr><tr><td width=\"75%\"><p>Антицеллюлитный - живот (сеанс 30 мин)</p></td><td width=\"24%\"><p style=\"text-align: center;\">800 руб.</p></td></tr><tr><td width=\"75%\"><p>Комплексный антицеллюлитный  - общий + скрабирование+ обертывание  (сеанс 1 час 30 мин)</p></td><td width=\"24%\"><p style=\"text-align: center;\">1 800 руб.</p></td></tr><tr><td width=\"75%\"><p>Обертывание (сеанс 60 мин)</p></td><td width=\"24%\"><p style=\"text-align: center;\">800 руб.</p></td></tr></tbody></table><p><strong><i>* Срок действия абонемента – 60 дней.<br /></i><i>** Срок действия абонемента – 90 дней.</i></strong></p><p><strong><i>Спа-центр ФСК -  профессиональный массаж, доступный каждому!</i></strong></p>",
+      "images": {
+        "thumbnail": null,
+        "medium": null,
+        "large": null,
+        "full": null
+      },
+      "acf": {
+        "description": "ФСК",
+        "taks": false,
+        "image_url": "https://admin.dss-sport.ru/wp-content/uploads/2022/01/kea03415.jpg",
+        "short_desc": "Здесь вы можете воспользоваться вертикальным и горизонтальным солярием, фито-бочками, услугами массажиста, массажными креслами и кроватями"
+      },
+      "index": 0
+    },
+    {
+      "id": 331,
+      "slug": "hotels",
+      "title": "ГОСТИНИЦЫ",
+      "excerpt": "",
+      "parent": 299,
+      "content": "<h2>Отель Байкал Park п. Максимиха</h2>\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<img width=\"750\" height=\"243\" src=\"https://admin.dss-sport.ru/wp-content/uploads/2022/02/mrk_0908-2-panorama.png\" alt=\"\" loading=\"lazy\" srcset=\"https://admin.dss-sport.ru/wp-content/uploads/2022/02/mrk_0908-2-panorama.png 800w, https://admin.dss-sport.ru/wp-content/uploads/2022/02/mrk_0908-2-panorama-300x97.png 300w, https://admin.dss-sport.ru/wp-content/uploads/2022/02/mrk_0908-2-panorama-768x249.png 768w\" sizes=\"(max-width: 750px) 100vw, 750px\" />\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t<p><em><strong><a href=\"https://dss-sport.ru/page/vacation/979\">Отель Байкал Park п. Максимиха</a></strong></em></p><p><a href=\"https://dss-sport.ru/page/vacation/979\"><em><strong>Расценки</strong></em></a></p><p> </p>",
+      "images": {
+        "thumbnail": null,
+        "medium": null,
+        "large": null,
+        "full": null
+      },
+      "acf": {
+        "description": "г. Улан-Удэ, п. Максимиха",
+        "taks": false,
+        "image_url": "https://admin.dss-sport.ru/wp-content/uploads/2022/01/luka1336-1.jpg",
+        "parent_mark": true,
+        "children_view": "pages",
+        "short_desc": "Приглашаем отдохнуть в наших местах отдыха: отель \"Байкал Парк\", хостел \"Юниор\", гостевой дом \"Надежда\""
+      },
+      "index": 0
+    },
+    {
+      "id": 357,
+      "slug": "dss_studio_cs",
+      "title": "DSS_STUDIO  в ЦС",
+      "excerpt": "",
+      "parent": 299,
+      "content": "<h3><i><b>Приглашаем Вас провести время с пользой для красоты и здоровья в студии  «DSS_Studio» в двух наших филиалах г. Улан-Удэ!</b></i></h3><p style=\"line-height: var(--wp--typography--line-height, var(--global--line-height-body)); color: #050505;\"><a href=\"https://dss-sport.ru/page/vacation/329\" target=\"_blank\" rel=\"noopener\"><u>Филиал №1 здесь &gt;&gt;&gt;&gt;&gt;</u></a></p><p style=\"line-height: var(--wp--typography--line-height, var(--global--line-height-body)); color: #050505; font-weight: 600;\">Филиал №2 \"DSS_Studio\"  - Центральный стадион РБ</p><p style=\"line-height: var(--wp--typography--line-height, var(--global--line-height-body)); color: #050505; font-weight: 600;\">Адрес: ул. Кирова, 1, г. Улан-Удэ </p><p style=\"line-height: var(--wp--typography--line-height, var(--global--line-height-body)); color: #050505; font-weight: 600;\">Телефон для справок: 21-15-53</p><ul><li>Вертикальный солярий;</li><li>Маникюр и педикюр, запись по телефону 8-924-452-46-44 или самостоятельно по ссылке <a style=\"font-family: var(--list--font-family); font-size: var(--global--font-size-base);\" href=\"https://n592688.yclients.com/\" target=\"_blank\" rel=\"noopener\">https://n592688.yclients.com/</a></li><li>Элитные японские массажные кресла от производителя \"Yamaguchi\". </li></ul><b>Солярий*</b>Солярий — современный и безопасный способ обзавестись золотым загаром. Всем известно, что UV-излучение бывает трех видов: А, В и С. В отличии от солнца, лампы солярия не излучают опасные для здоровья человека С-лучи, что делает использование солярия более безопасным. Солярии бывают горизонтальными и вертикальными . <ul><li>Горизонтальный солярий — отличный способ отдохнуть после утомительного рабочего дня. Время пребывания в горизонтальном солярии может доходить до 20 минут (в зависимости от мощности ламп). </li><li>Вертикальный же солярий больше понравится активным людям, которые не хотят терять ни минуты, тем более, что с зажигательной музыкой  они пролетают незаметно. Как правило, лампы для вертикального солярия гораздо более мощные, чем для горизонтального. </li></ul>В нашем центре, администраторы помогут Вам подобрать оптимальную и индивидуальную программу посещений солярия,  а также подберут все необходимое для посещения солярия от косметики до аксессуаров (индивидуальные шапочка, защита для глаз, стикини для груди, защитный увлажняющий крем для загара в солярии, средства, усиливающие загар, успокаивающие и закрепляющие средства после загара). Мы предлагаем несколько линий профессиональной косметики для загара в солярии: <ul><li>SOLEO (Польша), </li><li>Emerald Bay (США), </li><li>SolBianca (Россия),</li></ul>\t\t\n\t\t\t<h2>Расценки DSS_Studio</h2>\t\t\n\t\t<table width=\"100%\"><tbody><tr><td width=\"61%\"><p><strong>Наименование услуги</strong></p></td><td width=\"38%\"><p><strong>Стоимость в руб.(в т.ч.НДС 20%)</strong></p></td></tr><tr><td colspan=\"2\" width=\"100%\"><p><strong>СОЛЯРИЙ</strong></p></td></tr><tr><td width=\"61%\"><p>Разовое посещение 1 минута</p></td><td width=\"38%\"><p style=\"text-align: center;\">15 руб.</p></td></tr><tr><td width=\"61%\"><p>Абонемент на 50 минут  (действует 60 дней)</p></td><td width=\"38%\"><p style=\"text-align: center;\">650 руб.</p></td></tr><tr><td width=\"61%\"><p>Абонемент на 100 минут (действует 90 дней)</p></td><td width=\"38%\"><p style=\"text-align: center;\">1100 руб.</p></td></tr><tr><td colspan=\"2\" width=\"100%\"><p><strong>УХОД ЗА ЛИЦОМ</strong></p></td></tr><tr><td width=\"61%\"><p>Классический массаж лица (30 мин)</p></td><td width=\"38%\"><p style=\"text-align: center;\">500 руб.</p></td></tr><tr><td width=\"61%\"><p>Массаж лица + альгинатная маска по типу кожи (60 мин)</p></td><td width=\"38%\"><p style=\"text-align: center;\">1000 руб.</p></td></tr><tr><td width=\"61%\"><p>Альгинатная маска</p></td><td width=\"38%\"><p style=\"text-align: center;\">300 руб.</p></td></tr><tr><td width=\"61%\"><p>Очищение, питание, увлажнение</p></td><td width=\"38%\"><p style=\"text-align: center;\">500 руб.</p></td></tr><tr><td colspan=\"2\" width=\"100%\"><p><strong>НОГТЕВОЙ СЕРВИС</strong></p></td></tr><tr><td colspan=\"2\" width=\"100%\"><p><strong>Маникюр:</strong></p></td></tr><tr><td width=\"61%\"><p>Маникюр комбинированный без покрытия / мужской маникюр</p></td><td width=\"38%\"><p style=\"text-align: center;\">700 руб.</p></td></tr><tr><td width=\"61%\"><p>Маникюр комбинированный с покрытием (гель лак)</p></td><td width=\"38%\"><p style=\"text-align: center;\">1300 руб.</p></td></tr><tr><td width=\"61%\"><p>Укрепление ногтей гелем, полигелем</p></td><td width=\"38%\"><p style=\"text-align: center;\">+100 руб.</p></td></tr><tr><td colspan=\"2\" width=\"100%\"><p><strong>Наращивание и коррекция:</strong></p></td></tr><tr><td width=\"61%\"><p>Наращивание ногтей + гель лак с покрытием</p></td><td width=\"38%\"><p style=\"text-align: center;\">1700 руб.</p></td></tr><tr><td width=\"61%\"><p>Коррекция нарощенных ногтей с покрытием</p></td><td width=\"38%\"><p style=\"text-align: center;\">1400 руб.</p></td></tr><tr><td colspan=\"2\" width=\"100%\"><p><strong>Педикюр:</strong></p></td></tr><tr><td width=\"61%\"><p>Пальчики (обработка ногтей, без снятия и покрытия)</p></td><td width=\"38%\"><p style=\"text-align: center;\">900 руб.</p></td></tr><tr><td width=\"61%\"><p>Пальчики (обработка ногтей и покрытие гель лаком)</p></td><td width=\"38%\"><p style=\"text-align: center;\">1300 руб.</p></td></tr><tr><td width=\"61%\"><p>Педикюр (полная обработка стопы и пальчиков</p><p>БЕЗ ПОКРЫТИЯ)</p></td><td width=\"38%\"><p style=\"text-align: center;\">1300 руб.</p></td></tr><tr><td width=\"61%\"><p>Педикюр (полная обработка стопы и пальчиков</p><p>С ПОКРЫТИЕМ)</p></td><td width=\"38%\"><p style=\"text-align: center;\">1600 руб.</p></td></tr><tr><td colspan=\"2\" width=\"100%\"><p><strong>Дополнительные услуги и дизайн ногтей: </strong></p></td></tr><tr><td width=\"61%\"><p>Снятие гель лака (без последующего покрытия)</p></td><td width=\"38%\"><p style=\"text-align: center;\">300 руб.</p></td></tr><tr><td width=\"61%\"><p>Ремонт ногтя</p></td><td width=\"38%\"><p style=\"text-align: center;\">100 руб.</p></td></tr><tr><td width=\"61%\"><p>Френч</p></td><td width=\"38%\"><p style=\"text-align: center;\">200 руб.</p></td></tr><tr><td width=\"61%\"><p>Инкрустация ногтя</p></td><td width=\"38%\"><p style=\"text-align: center;\">от 50 руб.</p></td></tr><tr><td width=\"61%\"><p>Дизайн ногтя (простой)</p></td><td width=\"38%\"><p style=\"text-align: center;\">50 руб.</p></td></tr><tr><td width=\"61%\"><p>Роспись ногтя</p></td><td width=\"38%\"><p style=\"text-align: center;\">100 руб.</p></td></tr></tbody></table>",
+      "images": {
+        "thumbnail": null,
+        "medium": null,
+        "large": null,
+        "full": null
+      },
+      "acf": {
+        "description": "Центральный стадион РБ",
+        "taks": false,
+        "image_url": "https://admin.dss-sport.ru/wp-content/uploads/2022/01/nogti.jpg",
+        "short_desc": "Здесь вы можете воспользоваться услугами ногтевого сервиса и солярием, а так же массажными креслами"
+      },
+      "index": 0
+    },
+    {
+      "id": 365,
+      "slug": "kulturno-massovye-meropriyatiya",
+      "title": "Культурно-массовые мероприятия",
+      "excerpt": "",
+      "parent": 299,
+      "content": "",
+      "images": {
+        "thumbnail": null,
+        "medium": null,
+        "large": null,
+        "full": null
+      },
+      "acf": {
+        "description": "",
+        "taks": false,
+        "image_url": "https://admin.dss-sport.ru/wp-content/uploads/2022/01/470276.jpg",
+        "parent_mark": true,
+        "children_view": "pages",
+        "short_desc": ""
+      },
+      "index": 0
+    }
+  ],
+  "thumb_img": false,
+  "root_parent": false,
+  "_links": {
+    "self": [{ "href": "https://admin.dss-sport.ru/wp-json/wp/v2/pages/299" }],
+    "collection": [
+      { "href": "https://admin.dss-sport.ru/wp-json/wp/v2/pages" }
+    ],
+    "about": [
+      { "href": "https://admin.dss-sport.ru/wp-json/wp/v2/types/page" }
+    ],
+    "author": [
+      {
+        "embeddable": true,
+        "href": "https://admin.dss-sport.ru/wp-json/wp/v2/users/1"
+      }
+    ],
+    "replies": [
+      {
+        "embeddable": true,
+        "href": "https://admin.dss-sport.ru/wp-json/wp/v2/comments?post=299"
+      }
+    ],
+    "version-history": [
+      {
+        "count": 5,
+        "href": "https://admin.dss-sport.ru/wp-json/wp/v2/pages/299/revisions"
+      }
+    ],
+    "predecessor-version": [
+      {
+        "id": 1687,
+        "href": "https://admin.dss-sport.ru/wp-json/wp/v2/pages/299/revisions/1687"
+      }
+    ],
+    "wp:attachment": [
+      { "href": "https://admin.dss-sport.ru/wp-json/wp/v2/media?parent=299" }
+    ],
+    "curies": [
+      { "name": "wp", "href": "https://api.w.org/{rel}", "templated": true }
+    ]
+  }
+}

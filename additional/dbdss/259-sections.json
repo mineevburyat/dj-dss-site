@@ -1,0 +1,296 @@
+{
+  "id": 259,
+  "date": "2021-10-21T05:13:31",
+  "date_gmt": "2021-10-21T05:13:31",
+  "guid": { "rendered": "https://admin.dss-sport.ru/?page_id=259" },
+  "modified": "2022-02-10T06:29:02",
+  "modified_gmt": "2022-02-10T06:29:02",
+  "slug": "sportsections",
+  "status": "publish",
+  "type": "page",
+  "link": "https://admin.dss-sport.ru/sport/sportsections/",
+  "title": { "rendered": "Спортивные СЕКЦИИ" },
+  "content": {
+    "rendered": "<div>Мы создаем условия для привлечения всех слоев населения к здоровому образу жизни через спортивные секции. Мы принимаем прямое участие в оздоровлении нации и улучшении качества жизни населения страны.</div>\n<div></div>\n<div></div>\n<div><strong>Если Вы тренер и готовы развивать новое спортивное направление на наших объектах, то свяжитесь с нами по телефону 21-08-74</strong></div>\n<div><strong><span style=\"color: #004a80; font-size: large;\"> </span></strong></div>\n",
+    "protected": false
+  },
+  "excerpt": {
+    "rendered": "<p>Мы создаем условия для привлечения всех слоев населения к здоровому образу жизни через спортивные секции. Мы принимаем прямое участие в оздоровлении нации и улучшении качества жизни населения страны. Если Вы тренер и готовы развивать новое спортивное направление на наших объектах, то свяжитесь с нами по телефону 21-08-74  </p>\n",
+    "protected": false
+  },
+  "author": 1,
+  "featured_media": 0,
+  "parent": 2,
+  "menu_order": 0,
+  "comment_status": "closed",
+  "ping_status": "closed",
+  "template": "elementor_canvas",
+  "meta": [],
+  "acf": {
+    "description": "ФСК, РЦСЛ, РЦЕ, ЦСРБ",
+    "taks": false,
+    "image_url": "https://admin.dss-sport.ru/wp-content/uploads/2022/01/scale_1200.jpg",
+    "parent_mark": true,
+    "children_view": "tabs",
+    "short_desc": "Здесь можно выбрать спортивную секцию и заняться спортом  с инструктором"
+  },
+  "childrens": [
+    {
+      "id": 983,
+      "slug": "swimming",
+      "title": "Спортивный центр плавания",
+      "excerpt": "",
+      "parent": 259,
+      "content": "<ul>\n\t\t\t\t\t\t\t<li>\n\t\t\t\t\t\t\t\t\t\tзанятия по плаванию для взрослых и детей с 7 лет в 50-метровом бассейне\n\t\t\t\t\t\t\t\t\t</li>\n\t\t\t\t\t\t\t\t<li>\n\t\t\t\t\t\t\t\t\t\tАдрес: г Улан-Удэ ул. Рылеева, 2\n\t\t\t\t\t\t\t\t\t</li>\n\t\t\t\t\t\t\t\t<li>\n\t\t\t\t\t\t\t\t\t\t(3012) 500-888 \n\t\t\t\t\t\t\t\t\t</li>\n\t\t\t\t\t\t\t\t<li>\n\t\t\t\t\t\t\t\t\t\tРежим работы - по записи\n\t\t\t\t\t\t\t\t\t</li>\n\t\t\t\t\t\t</ul>\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<img width=\"750\" height=\"500\" src=\"https://admin.dss-sport.ru/wp-content/uploads/2022/01/dsc09667-1024x683.jpg\" alt=\"\" loading=\"lazy\" srcset=\"https://admin.dss-sport.ru/wp-content/uploads/2022/01/dsc09667-1024x683.jpg 1024w, https://admin.dss-sport.ru/wp-content/uploads/2022/01/dsc09667-300x200.jpg 300w, https://admin.dss-sport.ru/wp-content/uploads/2022/01/dsc09667-768x512.jpg 768w, https://admin.dss-sport.ru/wp-content/uploads/2022/01/dsc09667.jpg 1200w\" sizes=\"(max-width: 750px) 100vw, 750px\" />\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<img width=\"724\" height=\"1024\" src=\"https://admin.dss-sport.ru/wp-content/uploads/2022/11/instr-kopiya-1.png\" alt=\"\" loading=\"lazy\" srcset=\"https://admin.dss-sport.ru/wp-content/uploads/2022/11/instr-kopiya-1.png 724w, https://admin.dss-sport.ru/wp-content/uploads/2022/11/instr-kopiya-1-212x300.png 212w\" sizes=\"(max-width: 724px) 100vw, 724px\" />\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<img width=\"724\" height=\"1024\" src=\"https://admin.dss-sport.ru/wp-content/uploads/2022/04/1-724x1024.png\" alt=\"\" loading=\"lazy\" srcset=\"https://admin.dss-sport.ru/wp-content/uploads/2022/04/1-724x1024.png 724w, https://admin.dss-sport.ru/wp-content/uploads/2022/04/1-212x300.png 212w, https://admin.dss-sport.ru/wp-content/uploads/2022/04/1-768x1086.png 768w, https://admin.dss-sport.ru/wp-content/uploads/2022/04/1-1086x1536.png 1086w, https://admin.dss-sport.ru/wp-content/uploads/2022/04/1.png 1414w\" sizes=\"(max-width: 724px) 100vw, 724px\" />\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<img width=\"724\" height=\"1024\" src=\"https://admin.dss-sport.ru/wp-content/uploads/2022/04/3-724x1024.png\" alt=\"\" loading=\"lazy\" srcset=\"https://admin.dss-sport.ru/wp-content/uploads/2022/04/3-724x1024.png 724w, https://admin.dss-sport.ru/wp-content/uploads/2022/04/3-212x300.png 212w, https://admin.dss-sport.ru/wp-content/uploads/2022/04/3-768x1086.png 768w, https://admin.dss-sport.ru/wp-content/uploads/2022/04/3-1086x1536.png 1086w, https://admin.dss-sport.ru/wp-content/uploads/2022/04/3.png 1414w\" sizes=\"(max-width: 724px) 100vw, 724px\" />\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<img width=\"724\" height=\"1024\" src=\"https://admin.dss-sport.ru/wp-content/uploads/2022/04/4-724x1024.png\" alt=\"\" loading=\"lazy\" srcset=\"https://admin.dss-sport.ru/wp-content/uploads/2022/04/4-724x1024.png 724w, https://admin.dss-sport.ru/wp-content/uploads/2022/04/4-212x300.png 212w, https://admin.dss-sport.ru/wp-content/uploads/2022/04/4-768x1086.png 768w, https://admin.dss-sport.ru/wp-content/uploads/2022/04/4-1086x1536.png 1086w, https://admin.dss-sport.ru/wp-content/uploads/2022/04/4.png 1414w\" sizes=\"(max-width: 724px) 100vw, 724px\" />\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<img width=\"724\" height=\"1024\" src=\"https://admin.dss-sport.ru/wp-content/uploads/2022/04/5-724x1024.png\" alt=\"\" loading=\"lazy\" srcset=\"https://admin.dss-sport.ru/wp-content/uploads/2022/04/5-724x1024.png 724w, https://admin.dss-sport.ru/wp-content/uploads/2022/04/5-212x300.png 212w, https://admin.dss-sport.ru/wp-content/uploads/2022/04/5-768x1086.png 768w, https://admin.dss-sport.ru/wp-content/uploads/2022/04/5-1086x1536.png 1086w, https://admin.dss-sport.ru/wp-content/uploads/2022/04/5.png 1414w\" sizes=\"(max-width: 724px) 100vw, 724px\" />\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<img width=\"724\" height=\"1024\" src=\"https://admin.dss-sport.ru/wp-content/uploads/2022/04/6-724x1024.png\" alt=\"\" loading=\"lazy\" srcset=\"https://admin.dss-sport.ru/wp-content/uploads/2022/04/6-724x1024.png 724w, https://admin.dss-sport.ru/wp-content/uploads/2022/04/6-212x300.png 212w, https://admin.dss-sport.ru/wp-content/uploads/2022/04/6-768x1086.png 768w, https://admin.dss-sport.ru/wp-content/uploads/2022/04/6-1086x1536.png 1086w, https://admin.dss-sport.ru/wp-content/uploads/2022/04/6.png 1414w\" sizes=\"(max-width: 724px) 100vw, 724px\" />\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<img width=\"724\" height=\"1024\" src=\"https://admin.dss-sport.ru/wp-content/uploads/2022/04/9-724x1024.png\" alt=\"\" loading=\"lazy\" srcset=\"https://admin.dss-sport.ru/wp-content/uploads/2022/04/9-724x1024.png 724w, https://admin.dss-sport.ru/wp-content/uploads/2022/04/9-212x300.png 212w, https://admin.dss-sport.ru/wp-content/uploads/2022/04/9-768x1086.png 768w, https://admin.dss-sport.ru/wp-content/uploads/2022/04/9-1086x1536.png 1086w, https://admin.dss-sport.ru/wp-content/uploads/2022/04/9.png 1414w\" sizes=\"(max-width: 724px) 100vw, 724px\" />\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<img width=\"724\" height=\"1024\" src=\"https://admin.dss-sport.ru/wp-content/uploads/2022/04/10-724x1024.png\" alt=\"\" loading=\"lazy\" srcset=\"https://admin.dss-sport.ru/wp-content/uploads/2022/04/10-724x1024.png 724w, https://admin.dss-sport.ru/wp-content/uploads/2022/04/10-212x300.png 212w, https://admin.dss-sport.ru/wp-content/uploads/2022/04/10-768x1086.png 768w, https://admin.dss-sport.ru/wp-content/uploads/2022/04/10-1086x1536.png 1086w, https://admin.dss-sport.ru/wp-content/uploads/2022/04/10.png 1414w\" sizes=\"(max-width: 724px) 100vw, 724px\" />\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<img width=\"724\" height=\"1024\" src=\"https://admin.dss-sport.ru/wp-content/uploads/2022/05/71-724x1024.png\" alt=\"\" loading=\"lazy\" srcset=\"https://admin.dss-sport.ru/wp-content/uploads/2022/05/71-724x1024.png 724w, https://admin.dss-sport.ru/wp-content/uploads/2022/05/71-212x300.png 212w, https://admin.dss-sport.ru/wp-content/uploads/2022/05/71-768x1086.png 768w, https://admin.dss-sport.ru/wp-content/uploads/2022/05/71-1086x1536.png 1086w, https://admin.dss-sport.ru/wp-content/uploads/2022/05/71.png 1414w\" sizes=\"(max-width: 724px) 100vw, 724px\" />\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<img width=\"724\" height=\"1024\" src=\"https://admin.dss-sport.ru/wp-content/uploads/2022/04/8-724x1024.png\" alt=\"\" loading=\"lazy\" srcset=\"https://admin.dss-sport.ru/wp-content/uploads/2022/04/8-724x1024.png 724w, https://admin.dss-sport.ru/wp-content/uploads/2022/04/8-212x300.png 212w, https://admin.dss-sport.ru/wp-content/uploads/2022/04/8-768x1086.png 768w, https://admin.dss-sport.ru/wp-content/uploads/2022/04/8-1086x1536.png 1086w, https://admin.dss-sport.ru/wp-content/uploads/2022/04/8.png 1414w\" sizes=\"(max-width: 724px) 100vw, 724px\" />\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<img width=\"729\" height=\"1024\" src=\"https://admin.dss-sport.ru/wp-content/uploads/2022/09/bezymyannyj-1-729x1024.png\" alt=\"\" loading=\"lazy\" srcset=\"https://admin.dss-sport.ru/wp-content/uploads/2022/09/bezymyannyj-1-729x1024.png 729w, https://admin.dss-sport.ru/wp-content/uploads/2022/09/bezymyannyj-1-214x300.png 214w, https://admin.dss-sport.ru/wp-content/uploads/2022/09/bezymyannyj-1-768x1078.png 768w, https://admin.dss-sport.ru/wp-content/uploads/2022/09/bezymyannyj-1-1094x1536.png 1094w, https://admin.dss-sport.ru/wp-content/uploads/2022/09/bezymyannyj-1-1459x2048.png 1459w, https://admin.dss-sport.ru/wp-content/uploads/2022/09/bezymyannyj-1-1568x2201.png 1568w\" sizes=\"(max-width: 729px) 100vw, 729px\" />\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t<table width=\"690\"><tbody><tr><td rowspan=\"3\" width=\"331\"><p style=\"text-align: center;\"><strong>Индивидуально (сеанс)</strong></p></td><td colspan=\"2\" width=\"359\"><p style=\"text-align: center;\"><strong>Стоимость в руб. (НДС не облагается)</strong></p></td></tr><tr><td width=\"265\"><p style=\"text-align: center;\">Дети с 7 до 17 лет</p></td><td width=\"94\"><p style=\"text-align: center;\">700 руб.</p></td></tr><tr><td width=\"265\"><p style=\"text-align: center;\">Взрослые с 18 лет</p></td><td style=\"text-align: center;\" width=\"94\"><p>900 руб.</p></td></tr><tr><td rowspan=\"5\" width=\"331\"><p>Сплит занятие в паре</p><p>(СЕАНС: цена указана за 2 чел.)</p></td><td width=\"265\"><p style=\"text-align: center;\">Дети с 7 до 17 лет</p></td><td rowspan=\"2\" width=\"94\"><p style=\"text-align: center;\">1 200 руб. </p></td></tr><tr><td width=\"265\"> </td></tr><tr><td width=\"265\"><p style=\"text-align: center;\">Ребенок с 7 до 17 лет + взрослый</p></td><td width=\"94\"><p style=\"text-align: center;\">1 350 руб.</p></td></tr><tr><td width=\"265\"><p style=\"text-align: center;\">Взрослые с 18 лет</p></td><td rowspan=\"2\" width=\"94\"><p style=\"text-align: center;\">1 500 руб.</p></td></tr><tr><td width=\"265\"> </td></tr><tr><td width=\"331\"><p>В группе на курс 3 месяца/ 24 занятия *</p></td><td width=\"265\"><p style=\"text-align: center;\">Дети с 7 до 17 лет</p></td><td width=\"94\"><p style=\"text-align: center;\">6 000 руб.</p></td></tr><tr><td width=\"331\"><p>В группе на курс 3 месяца/ 36 занятий</p><p>(для продолжающих) **</p></td><td width=\"265\"><p style=\"text-align: center;\">Дети с 7 до 17 лет</p></td><td width=\"94\"><p style=\"text-align: center;\">7 200 руб.</p></td></tr><tr><td width=\"331\"><p>В группе на курс 1 месяц/ 8 занятий ***</p></td><td width=\"265\"><p style=\"text-align: center;\">Дети с 7 до 17 лет</p></td><td width=\"94\"><p style=\"text-align: center;\">2 800 руб.</p></td></tr><tr><td width=\"331\"><p>В группе на курс 1 месяц/ 8 занятий</p></td><td width=\"265\"><p style=\"text-align: center;\">Взрослые с 18 лет</p></td><td width=\"94\"><p style=\"text-align: center;\">3 400 руб.</p></td></tr><tr><td rowspan=\"2\" width=\"331\"><p>Абонемент**** на 4 индивидуальных занятий (срок действия 90 дней, с момента активации)</p></td><td width=\"265\"><p style=\"text-align: center;\">Дети с 7 до 17 лет</p></td><td width=\"94\"><p style=\"text-align: center;\">2 600 руб.</p></td></tr><tr><td width=\"265\"><p style=\"text-align: center;\">Взрослые с 18 лет</p></td><td width=\"94\"><p style=\"text-align: center;\">3 400 руб.</p></td></tr><tr><td rowspan=\"2\" width=\"331\"><p>Абонемент**** на 8индивидуальных занятий (срок действия 90 дней, с момента активации)</p></td><td width=\"265\"><p style=\"text-align: center;\">Дети с 7 до 17 лет</p></td><td width=\"94\"><p style=\"text-align: center;\">5 000 руб.</p></td></tr><tr><td width=\"265\"><p style=\"text-align: center;\">Взрослые с 18 лет</p></td><td width=\"94\"><p style=\"text-align: center;\">6 400 руб.</p></td></tr><tr><td colspan=\"3\" width=\"690\"><p>*   Оплата за курс производится единовременно до начала занятий.</p><p>** Группы формируются из числа детей, прошедших два курса по три месяца (24 занятия); Возможна оплата в рассрочку на три месяца) ежемесячно по 2400 руб. до начала занятий).</p><p>*** Группы формируются из числа детей, прошедших курс сроком три месяца (24 занятия), и детей, умеющих плавать; оплата за курс производится единовременно до начало занятий.</p></td></tr><tr><td colspan=\"3\" width=\"690\"><p>****<strong><em> (срок активации 60 дней, по истечению данного срока обязательства исполнителя прекращаются). </em></strong></p></td></tr></tbody></table>Спортивный центр ДСС был создан с целью объединения разных спортивных направлений, занятия по которым проводят инструкторы ГАУ РБ \"Дирекция спортивных сооружений\". В Центре проводятся занятия по оздоровительному плаванию, комбинированному фитнесу \"СКИВ КРОСС\".\n&nbsp;\n<b>Преимущества Центра:&nbsp;</b>\n<ul>\n<li><b>Один менеджер по четырем направлениям,&nbsp;</b></li>\n<li><b>Единый телефон для консультаций и записи в группы - 500-888, дополнительные: 45-30-36</b></li>\n<li><b>Руководитель и сотрудники Центра всегда открыты для диалога.</b></li>\n</ul>\n<p><b>***</b></p><p><b>Мы запустили <em>мобильное</em> приложение, которое позволит вам:<br /><img src=\"https://vk.com/emoji/e/e29c85.png\" alt=\"✅\" /> видеть остатки занятий по абонементам,<br /><img src=\"https://vk.com/emoji/e/e29c85.png\" alt=\"✅\" /> приобретать новые абонементы онлайн.</b></p><p><b><img src=\"https://vk.com/emoji/e/e29da4.png\" alt=\"❤\" /> Для этого:<br />1) сообщите администратору или кассиру свой НОМЕР ТЕЛЕФОНА,</b></p><p><b>2) скачайте <em>мобильное</em> приложение ДСС в Google Play</b></p><p><b>3) в мобильном приложении заполните свои данные: номер телефона и номер универсальной карты.</b></p>",
+      "images": {
+        "thumbnail": null,
+        "medium": null,
+        "large": null,
+        "full": null
+      },
+      "acf": {
+        "description": "",
+        "taks": false,
+        "image_url": false,
+        "short_desc": "Вот вам яркий пример современных тенденций - внедрение современных методик позволяет выполнить важные задания по разработке системы массового участия."
+      },
+      "index": 0
+    },
+    {
+      "id": 2170,
+      "slug": "football",
+      "title": "Футбол",
+      "excerpt": "",
+      "parent": 259,
+      "content": "<p style=\"line-height: var(--wp--typography--line-height, var(--global--line-height-body));\">Приглашаем ваших детей на ежемесячный набор в секцию по футболу для мальчиков от 5 до 17 лет.</p><p style=\"line-height: var(--wp--typography--line-height, var(--global--line-height-body));\">Здесь вашего ребенка всегда ждет профессиональный тренерский состав,  командные игры, выездные турниры и сборы. </p><p style=\"line-height: var(--wp--typography--line-height, var(--global--line-height-body));\">Занятия проводятся на футбольных площадках:</p><ul style=\"padding-left: calc(2 * var(--global--spacing-horizontal)); font-family: var(--list--font-family);\"><li>Физкультурно-спортивный комплекс (ул. Рылеева, 2);</li></ul><p style=\"line-height: var(--wp--typography--line-height, var(--global--line-height-body));\">Стоимость занятий</p><table><tbody><tr><td rowspan=\"2\" width=\"170\"><p style=\"text-align: center;\"><strong>Категория</strong></p></td><td style=\"text-align: center;\" colspan=\"2\" width=\"340\"><p><strong>Стоимость в руб. (НДС не облагается)</strong></p></td></tr><tr><td width=\"170\"><p style=\"text-align: center;\"><strong>1 занятие</strong></p></td><td style=\"text-align: center;\" width=\"170\"><p><strong>Абонемент* 8 занятий</strong></p></td></tr><tr><td width=\"170\"><p style=\"text-align: center;\"><strong>Дети с 5 до 7 лет</strong></p></td><td style=\"text-align: center;\" width=\"170\"><p><strong>300 руб.</strong></p></td><td width=\"170\"><p style=\"text-align: center;\"><strong>2 000 руб.</strong></p></td></tr><tr><td style=\"text-align: center;\" width=\"170\"><p><strong>Дети с 8 до 17 лет</strong></p></td><td style=\"text-align: center;\" width=\"170\"><p><strong>350 руб.</strong></p></td><td width=\"170\"><p style=\"text-align: center;\"><strong>2 000 руб.</strong></p></td></tr></tbody></table><p>*Срок действия абонемента - 30 дней с момента активации.<strong><em>(срок активации  60 дней, по истечению данного срока обязательства исполнителя прекращаются). </em></strong><strong><em>(при заключении договора на длительный срок, срок активации абонемента 365 дней, по истечению данного срока обязательства исполнителя прекращаются). </em></strong></p><ul><li><strong>Телефон для справок: 500-888</strong></li></ul>\t\t\n\t\t\t<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/p-cmRjhc8g8\" title=\"YouTube video player\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen></iframe>",
+      "images": {
+        "thumbnail": null,
+        "medium": null,
+        "large": null,
+        "full": null
+      },
+      "acf": {
+        "description": "",
+        "taks": false,
+        "image_url": false,
+        "short_desc": ""
+      },
+      "index": 0
+    },
+    {
+      "id": 2174,
+      "slug": "edinoborstva",
+      "title": "Единоборства",
+      "excerpt": "",
+      "parent": 259,
+      "content": "<img width=\"750\" height=\"561\" src=\"https://admin.dss-sport.ru/wp-content/uploads/2021/11/04-1024x766.jpg\" alt=\"\" loading=\"lazy\" srcset=\"https://admin.dss-sport.ru/wp-content/uploads/2021/11/04-1024x766.jpg 1024w, https://admin.dss-sport.ru/wp-content/uploads/2021/11/04-300x225.jpg 300w, https://admin.dss-sport.ru/wp-content/uploads/2021/11/04-768x575.jpg 768w, https://admin.dss-sport.ru/wp-content/uploads/2021/11/04.jpg 1280w\" sizes=\"(max-width: 750px) 100vw, 750px\" />\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<img width=\"750\" height=\"561\" src=\"https://admin.dss-sport.ru/wp-content/uploads/2021/11/01-1024x766.jpg\" alt=\"\" loading=\"lazy\" srcset=\"https://admin.dss-sport.ru/wp-content/uploads/2021/11/01-1024x766.jpg 1024w, https://admin.dss-sport.ru/wp-content/uploads/2021/11/01-300x225.jpg 300w, https://admin.dss-sport.ru/wp-content/uploads/2021/11/01-768x575.jpg 768w, https://admin.dss-sport.ru/wp-content/uploads/2021/11/01.jpg 1280w\" sizes=\"(max-width: 750px) 100vw, 750px\" />\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t<p><strong> </strong></p><p><strong>Занятия проводятся в Региональном центре по стрельбе из лука</strong></p><ul><li>г Улан-Удэ ул Жердева, 93</li><li>(3012) 41-90-41 или 8-9025-30-67-30</li></ul><p><b><strong> </strong></b></p><p><b><strong>ЗАНЯТИЯ проводятся по следующим видам единоборств:</strong></b></p><ul><li><b><strong>бокс, </strong></b></li><li><b><strong>тайский бокс, </strong></b></li><li><b><strong>тхэкводно, </strong></b></li><li><b><strong>кикбоксинг</strong></b></li></ul><b> </b><p><b>Стоимость (длительность занятия - 1 час):</b></p><ul><li>1000 руб. - 1 занятие (индивидуальное)</li><li>350 руб. - 1 занятие (в группе с тренером)</li><li>3 000 руб. - Абонемент 12 занятий в месяц (в группе с тренером)</li></ul>",
+      "images": {
+        "thumbnail": null,
+        "medium": null,
+        "large": null,
+        "full": null
+      },
+      "acf": {
+        "description": "",
+        "taks": false,
+        "image_url": false,
+        "short_desc": ""
+      },
+      "index": 0
+    },
+    {
+      "id": 2176,
+      "slug": "archery",
+      "title": "Стрельба из лука",
+      "excerpt": "",
+      "parent": 259,
+      "content": "<ul><li>Занятия проводятся в Региональном центре по стрельбе из лука</li><li>Адрес: г Улан-Удэ ул. Жердева, 93</li><li>(3012) 41-90-41 - администратор</li><li>8-9025-30-67-30 - администратор</li></ul>\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<img width=\"750\" height=\"501\" src=\"https://admin.dss-sport.ru/wp-content/uploads/2022/01/ee388cb96617449073726198398b45fa.jpg\" alt=\"\" loading=\"lazy\" srcset=\"https://admin.dss-sport.ru/wp-content/uploads/2022/01/ee388cb96617449073726198398b45fa.jpg 808w, https://admin.dss-sport.ru/wp-content/uploads/2022/01/ee388cb96617449073726198398b45fa-300x200.jpg 300w, https://admin.dss-sport.ru/wp-content/uploads/2022/01/ee388cb96617449073726198398b45fa-768x513.jpg 768w\" sizes=\"(max-width: 750px) 100vw, 750px\" />\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t<section data-id=\"20f5145\" data-element_type=\"section\"><h2>Расценки на услуги</h2></section><section data-id=\"beda175\" data-element_type=\"section\"><p><b><strong>РЕГИОНАЛЬНОГО ЦЕНТРА ПО СТРЕЛЬБЕ ИЗ ЛУКА</strong></b></p><p><b><strong> ЗАНЯТИЯ ПО СТРЕЛЬБЕ ИЗ ЛУКА ( дети от 11-12 лет и старше ):</strong></b></p><table width=\"701\"><tbody><tr><td width=\"404\"><p style=\"text-align: center;\"><strong>Наименование услуги</strong></p></td><td width=\"296\"><p style=\"text-align: center;\"><strong>Стоимость</strong></p></td></tr><tr><td width=\"404\"><p>1 занятие (в группе с тренером) / час</p></td><td width=\"296\"><p style=\"text-align: center;\">350 руб.</p></td></tr><tr><td width=\"404\"><p>Абонемент на календарный месяц в группе с тренером</p><p>(Количество занятий и расписание согласовывается с тренером. Пропущенные занятия на следующий месяц не переносятся!)</p></td><td width=\"296\"><p style=\"text-align: center;\">3 000  руб.</p></td></tr><tr><td colspan=\"1\"> Индивидуальное занятие с тренером / час</td><td style=\"text-align: center;\" colspan=\"1\">1 000 руб.</td></tr></tbody></table></section>",
+      "images": {
+        "thumbnail": null,
+        "medium": null,
+        "large": null,
+        "full": null
+      },
+      "acf": {
+        "description": "",
+        "taks": false,
+        "image_url": false,
+        "short_desc": ""
+      },
+      "index": 0
+    },
+    {
+      "id": 2178,
+      "slug": "airgun",
+      "title": "Стрельба из пневматического оружия",
+      "excerpt": "",
+      "parent": 259,
+      "content": "<ul><li>Занятия проводятся в Центре стрелковой подготовки</li></ul><ul><li>Адрес: г Улан-Удэ ул. Кирова, 1 в цокольном этаже Центрального стадиона</li><li><b>ВНИМАНИЕ - в январе 2022 года тир закрыт на ремонт</b><br /></li></ul><ul><li>8 (3012) 21-49-28 - запись на занятие</li></ul><ul><li>8 (3012) 21-15-53 - касса</li></ul><ul><li>Режим работы - по записи</li></ul>\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<img width=\"400\" height=\"266\" src=\"https://admin.dss-sport.ru/wp-content/uploads/2022/01/05.jpg\" alt=\"\" loading=\"lazy\" srcset=\"https://admin.dss-sport.ru/wp-content/uploads/2022/01/05.jpg 400w, https://admin.dss-sport.ru/wp-content/uploads/2022/01/05-300x200.jpg 300w\" sizes=\"(max-width: 400px) 100vw, 400px\" />\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t<p style=\"font-weight: 400;\"><b><strong>Оказание физкультурно-оздоровительных услуг в центре стрелковой подготовки</strong></b></p><table style=\"font-weight: 400;\" width=\"690\"><tbody><tr><td width=\"387\"><p><b><strong>Категория</strong></b></p></td><td width=\"161\"><p style=\"text-align: center;\"><b><strong>Абонемент*</strong></b></p></td><td width=\"142\"><p style=\"text-align: center;\">Стоимость в руб.<b><strong>(НДС не облагается)</strong></b></p></td></tr><tr><td width=\"387\"><p><b><strong>Начальный курс (дети  от 12 до 17 лет).</strong></b></p><p><b><strong>Срок подготовки - 2 месяца.</strong></b></p></td><td width=\"161\"><p style=\"text-align: center;\">8 занятий в месяц</p></td><td width=\"142\"><p style=\"text-align: center;\">1700 руб.</p></td></tr><tr><td width=\"387\"><p><b><strong>Специальная подготовка (дети  от 10 до 17 лет).</strong></b></p><p><b><strong>Формируется из числа детей прошедших начальный курс (Срок подготовки 1 месяц)</strong></b></p></td><td width=\"161\"><p style=\"text-align: center;\">8 занятий в месяц</p></td><td width=\"142\"><p style=\"text-align: center;\">1300 руб.</p></td></tr><tr><td width=\"387\"><p><b><strong>Взрослые  с 18 лет и старше </strong></b></p><p><b><strong>(Срок подготовки 1 месяц )</strong></b></p></td><td width=\"161\"><p style=\"text-align: center;\">8 занятий в месяц</p></td><td width=\"142\"><p style=\"text-align: center;\">2000 руб.</p></td></tr></tbody></table><p style=\"font-weight: 400;\">*Срок действия абонемента - 30 дней с момента активации.</p><p><em>(срок активации 60 дней, по истечению данного обязательства исполнителя прекращаются).</em></p>",
+      "images": {
+        "thumbnail": null,
+        "medium": null,
+        "large": null,
+        "full": null
+      },
+      "acf": {
+        "description": "",
+        "taks": false,
+        "image_url": false,
+        "short_desc": ""
+      },
+      "index": 0
+    },
+    {
+      "id": 2183,
+      "slug": "athletics",
+      "title": "Легкая атлетика",
+      "excerpt": "",
+      "parent": 259,
+      "content": "<img width=\"750\" height=\"226\" src=\"https://admin.dss-sport.ru/wp-content/uploads/2022/01/dsc_2166-panorama_2-1024x309.jpg\" alt=\"\" loading=\"lazy\" srcset=\"https://admin.dss-sport.ru/wp-content/uploads/2022/01/dsc_2166-panorama_2-1024x309.jpg 1024w, https://admin.dss-sport.ru/wp-content/uploads/2022/01/dsc_2166-panorama_2-300x90.jpg 300w, https://admin.dss-sport.ru/wp-content/uploads/2022/01/dsc_2166-panorama_2-768x232.jpg 768w, https://admin.dss-sport.ru/wp-content/uploads/2022/01/dsc_2166-panorama_2.jpg 1280w\" sizes=\"(max-width: 750px) 100vw, 750px\" />\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t<p>К Вашим услугам беговые дорожки и легкоатлетические секторы для групповых и индивидуальных занятий.</p><ul><li>Адрес: Центральный стадион РБ, г. Улан-Удэ, ул. Кирова, 1</li></ul><p><strong>Для самостоятельного бега:</strong></p><ul><li>0 руб с человека -  ежедневно с 6 до 9 утра с 20 апреля по 31 октября (кроме закрытия стадиона на спортивные мероприятия)</li></ul><table><tbody><tr><td width=\"156\"><p style=\"text-align: center;\"><strong>Наименование</strong></p></td><td width=\"156\"><p style=\"text-align: center;\"><strong>Количество дорожек, ед.</strong></p></td><td width=\"156\"><p style=\"text-align: center;\"><strong>Стоимость, руб./час (НДС не облагается)</strong></p></td></tr><tr><td width=\"156\"><p><strong>Для индивидуальных легкоатлетических занятий с предоставлением раздевалки (с 9:00 ч. до 20:00 ч. / с чел.)*</strong></p></td><td width=\"156\"><p style=\"text-align: center;\"><strong>1</strong></p></td><td width=\"156\"><p style=\"text-align: center;\"><strong>155 руб.</strong></p></td></tr><tr><td rowspan=\"2\" width=\"156\"><p><strong>Для групповых легкоатлетических занятий (свыше 10 чел.)**</strong></p></td><td width=\"156\"><p style=\"text-align: center;\"><strong>4</strong></p></td><td width=\"156\"><p style=\"text-align: center;\"><strong>800 руб.</strong></p></td></tr><tr><td width=\"156\"><p style=\"text-align: center;\"><strong>8</strong></p></td><td width=\"156\"><p style=\"text-align: center;\"><strong>1 600 руб.</strong></p></td></tr></tbody></table><p>*За исключением дней для проведения мероприятий.</p><p><em>**Примечание: без предоставления раздевалок.</em></p><ul><li>Телефон кассы: (3012) 21-15-53</li></ul><ul><li>Занятия проводит СДЮШОР №1 по легкой атлетике -  подробнее по телефону (3012) 45-60-77</li></ul>",
+      "images": {
+        "thumbnail": null,
+        "medium": null,
+        "large": null,
+        "full": null
+      },
+      "acf": {
+        "description": "",
+        "taks": false,
+        "image_url": false,
+        "short_desc": "Вот вам яркий пример современных тенденций - внедрение современных методик позволяет выполнить важные задания по разработке системы массового участия."
+      },
+      "index": 0
+    },
+    {
+      "id": 2190,
+      "slug": "akvafitnes",
+      "title": "Аквафитнес",
+      "excerpt": "",
+      "parent": 259,
+      "content": "<img width=\"750\" height=\"433\" src=\"https://admin.dss-sport.ru/wp-content/uploads/2022/01/5e0k06cokko-1024x591.jpg\" alt=\"\" loading=\"lazy\" srcset=\"https://admin.dss-sport.ru/wp-content/uploads/2022/01/5e0k06cokko-1024x591.jpg 1024w, https://admin.dss-sport.ru/wp-content/uploads/2022/01/5e0k06cokko-300x173.jpg 300w, https://admin.dss-sport.ru/wp-content/uploads/2022/01/5e0k06cokko-768x443.jpg 768w, https://admin.dss-sport.ru/wp-content/uploads/2022/01/5e0k06cokko.jpg 1080w\" sizes=\"(max-width: 750px) 100vw, 750px\" />\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\n\t\t<p>В Улан-Удэ в бассейне ФСК компания АКВАЛАЙФ проводит занятия по аквафитнесу. </p><b>Стоимость:</b> <ul><li>Абонемент 4 занятия - 2 000 руб. ( со скидкой для новичков 1 900 руб.)</li><li>Абонемент 8 занятий  -3 800 руб. ( со скидкой для новичков 3 420 руб.)</li></ul><b>Контакты для записи на занятия:</b><ul><li>Вконтакте https://vk.com/aqualiferb </li><li>Инстаграм https://www.instagram.com/aqua_life/</li><li>Телефон  +7 (924) 655-51-24 Елена </li></ul> \t\t\n\t\t\t<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/Y8BAAwVp7FA\" title=\"YouTube video player\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen></iframe>\t\t\n\t\t\t<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/xwWb7MnpOF8\" title=\"YouTube video player\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen></iframe>",
+      "images": {
+        "thumbnail": null,
+        "medium": null,
+        "large": null,
+        "full": null
+      },
+      "acf": {
+        "description": "",
+        "taks": false,
+        "image_url": false,
+        "short_desc": ""
+      },
+      "index": 0
+    },
+    {
+      "id": 2366,
+      "slug": "weightlifting",
+      "title": "Тяжелая атлетика",
+      "excerpt": "",
+      "parent": 259,
+      "content": "<span style=\"color: #003562; font-size: large;\"><b>Уважаемые посетители!</b></span>\r\n\r\n<span style=\"color: #003562; font-size: large;\"><b>Вы можете заняться тяжелой атлетикой под руководством наших опытных инструкторов в сети тренажерных залов \"АТЛЕТ\"</b></span>\r\n\r\nЗалы оснащены профессиональным спортивным оборудованием от ведущих мировых производителей.\r\nВыгодная система абонемента, <strong>опытные инструкторы помогут вам сделать красивое тело. </strong>\r\n\r\n<strong>Выбирайте ближайший к Вам зал и смотрите подробности!</strong>\r\n<ul>\r\n \t<li>г Улан-Удэ, ул. Рылеева, 2, <span style=\"font-size: large;\"><b>  <a href=\"https://dss-sport.ru/page/sport/375\">подробнее&gt;&gt;&gt;</a></b></span></li>\r\n \t<li>г. Улан-Удэ, ул. Кирова, 1, <b> <a href=\"https://dss-sport.ru/page/sport/377\"><span style=\"font-size: large;\">подробнее&gt;&gt;&gt;</span></a></b></li>\r\n \t<li>г. Улан-Удэ, 103 квартал, <strong><a href=\"https://dss-sport.ru/page/sport/4479\">подробнее &gt;&gt;&gt;</a></strong></li>\r\n</ul>",
+      "images": {
+        "thumbnail": null,
+        "medium": null,
+        "large": null,
+        "full": null
+      },
+      "acf": {
+        "description": "",
+        "taks": false,
+        "image_url": false,
+        "short_desc": "Вот вам яркий пример современных тенденций - внедрение современных методик позволяет выполнить важные задания по разработке системы массового участия."
+      },
+      "index": 0
+    },
+    {
+      "id": 2413,
+      "slug": "skates",
+      "title": "Катание на коньках",
+      "excerpt": "",
+      "parent": 259,
+      "content": "<b><span style=\"font-size: large;\">На Центральном стадионе в зимний сезон (с 5 декабря по 5 марта) работает секция по катанию на коньках. </span></b>\r\n<ul>\r\n \t<li>Адрес: г Улан-Удэ ул Кирова, 1</li>\r\n \t<li><b><span style=\"font-size: large;\">Занятия проводятся с опытным инструктором каждую субботу и воскресенье с 12:00 до 17:00. </span></b></li>\r\n</ul>\r\n<b><span style=\"font-size: large;\">Стоимость обучения :</span></b>\r\n<ul>\r\n \t<li><b><span style=\"font-size: large;\"> индивидуальное занятие - 700 руб., </span></b></li>\r\n \t<li><b><span style=\"font-size: large;\">в группе - 400 руб. </span></b></li>\r\n \t<li><b><span style=\"font-size: large;\">Дополнительно оплачивается прокат коньков (200 руб.) и детская поддержка (50 руб.). </span></b></li>\r\n</ul>\r\n<b><span style=\"font-size: large;\">Для многодетных и малообеспеченных семей действует скидка 25%. </span></b>\r\n\r\n<b><span style=\"font-size: large;\">Запись и оплата осуществляется в кассе тренажерного зала на Центральном стадионе РБ.</span><span style=\"font-size: x-large;\"> </span></b>",
+      "images": {
+        "thumbnail": null,
+        "medium": null,
+        "large": null,
+        "full": null
+      },
+      "acf": {
+        "description": "Центральный стадион РБ",
+        "taks": false,
+        "image_url": false,
+        "short_desc": ""
+      },
+      "index": 0
+    },
+    {
+      "id": 2487,
+      "slug": "sapkayak",
+      "title": "Сапы и каяки",
+      "excerpt": "",
+      "parent": 259,
+      "content": "&nbsp;\n&nbsp;\n&nbsp;<p>Федерация экстремальных видов спорта и путешествий «Байкальский экстрим» запустили учебную школу по водным видам спорта в бассейне ФСК г Улан-Удэ. </p><p> </p><p>Оксана Климова, вице-президент федерации экстремальных видов спорта и путешествий Бурятии «Байкальский экстрим»: «Хочется сказать про интерес родителей к обучению, все они стараются наравне с детьми изучить азы новых  видов спорта. Но любое начинание требует тренировок, так что сегодня даже бывалые родители падали и окунались в воду. Детишки молодцы, более устойчивые».</p><p> </p><p> </p><p>Группы состоят из 8-12 детей и 3-6 родителей. Группы формируются из числа детей, умеющих плавать или очень хорошо держащихся на воде при сопровождении родителей.</p><p> </p><ul><li>Телефон для справок  8-914-636-06-36 Окса</li></ul>\t\t\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<img width=\"750\" height=\"507\" src=\"https://admin.dss-sport.ru/wp-content/uploads/2022/01/10681_o-1024x692.jpg\" alt=\"\" loading=\"lazy\" srcset=\"https://admin.dss-sport.ru/wp-content/uploads/2022/01/10681_o-1024x692.jpg 1024w, https://admin.dss-sport.ru/wp-content/uploads/2022/01/10681_o-300x203.jpg 300w, https://admin.dss-sport.ru/wp-content/uploads/2022/01/10681_o-768x519.jpg 768w, https://admin.dss-sport.ru/wp-content/uploads/2022/01/10681_o-1536x1037.jpg 1536w, https://admin.dss-sport.ru/wp-content/uploads/2022/01/10681_o-1568x1059.jpg 1568w, https://admin.dss-sport.ru/wp-content/uploads/2022/01/10681_o.jpg 1599w\" sizes=\"(max-width: 750px) 100vw, 750px\" />",
+      "images": {
+        "thumbnail": null,
+        "medium": null,
+        "large": null,
+        "full": null
+      },
+      "acf": {
+        "description": "",
+        "taks": false,
+        "image_url": false,
+        "short_desc": ""
+      },
+      "index": 0
+    }
+  ],
+  "thumb_img": false,
+  "root_parent": 2,
+  "_links": {
+    "self": [{ "href": "https://admin.dss-sport.ru/wp-json/wp/v2/pages/259" }],
+    "collection": [
+      { "href": "https://admin.dss-sport.ru/wp-json/wp/v2/pages" }
+    ],
+    "about": [
+      { "href": "https://admin.dss-sport.ru/wp-json/wp/v2/types/page" }
+    ],
+    "author": [
+      {
+        "embeddable": true,
+        "href": "https://admin.dss-sport.ru/wp-json/wp/v2/users/1"
+      }
+    ],
+    "replies": [
+      {
+        "embeddable": true,
+        "href": "https://admin.dss-sport.ru/wp-json/wp/v2/comments?post=259"
+      }
+    ],
+    "version-history": [
+      {
+        "count": 20,
+        "href": "https://admin.dss-sport.ru/wp-json/wp/v2/pages/259/revisions"
+      }
+    ],
+    "predecessor-version": [
+      {
+        "id": 4511,
+        "href": "https://admin.dss-sport.ru/wp-json/wp/v2/pages/259/revisions/4511"
+      }
+    ],
+    "up": [
+      {
+        "embeddable": true,
+        "href": "https://admin.dss-sport.ru/wp-json/wp/v2/pages/2"
+      }
+    ],
+    "wp:attachment": [
+      { "href": "https://admin.dss-sport.ru/wp-json/wp/v2/media?parent=259" }
+    ],
+    "curies": [
+      { "name": "wp", "href": "https://api.w.org/{rel}", "templated": true }
+    ]
+  }
+}

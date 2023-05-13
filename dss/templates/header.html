@@ -1,0 +1,63 @@
+{% load static %}
+<header>
+    <div class="container-fluid">
+      <nav class="navbar navbar-expand-lg navbar-light bg-light row">
+          <a class="navbar-brand w-25 d-flex ml-auto" href={% url 'index' %}>
+              <img src={% static "img/logo-icon.png" %} height="50" class="mh-100 d-inline-block align-text-top mr-1">
+              <span class="text-primary text-wrap w-50 mybrand">ДИРЕКЦИЯ СПОРТИВНЫХ СООРУЖЕНИЙ</span>
+          </a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+              {% load menubuilder %}{% menu mainmenu %}
+              {% for item in menuitems %}
+              <li class="nav-item w-25" >
+                <a class="nav-link text-wrap text-center" href="{{ item.url }}" title="{{ item.title|escape }}">
+                  {{ item.title }}
+                  {% if item.current %}
+                  <span class="sr-only">
+                      (текущий)
+                  </span>
+                  {% endif %}
+                </a>
+              </li>
+              {% endfor %}
+                
+                <div class="dropdown-menu ">
+                  <a href="/page/sport/983" class="dropdown-item dropdown__link">
+                    <div class="link__group">
+                      <div class="link__title">ПЛАВАТЕЛЬНЫЙ БАССЕЙН</div>
+                      <div class="link__subtitle text-muted">ФСК</div>
+                    </div>
+                  </a>
+                  <a href="/page/sport/983" class="dropdown-item dropdown__link">
+                    <div class="link__group">
+                      <div class="link__title">ФУТБОЛ НА ОТКРЫТОМ ПОЛЕ</div>
+                      <div class="link__subtitle text-muted">ФСК</div>
+                    </div>
+                  </a>
+                  <a href="/page/sport/983" class="dropdown-item dropdown__link">
+                    <div class="link__group">
+                      <div class="link__title">КОММАНДНЫЕ ИГРЫ В СПОРТИВНЫХ ЗАЛАХ</div>
+                      <div class="link__subtitle text-muted">ФСК</div>
+                    </div>
+                  </a>
+                  <a href="/page/sport/983" class="dropdown-item dropdown__link">
+                    <div class="link__group">
+                      <div class="link__title">ЕДИНОБОРСТВА</div>
+                      <div class="link__subtitle text-muted">РЦЕ</div>
+                    </div>
+                  </a>
+                </div>
+              </li>
+            </ul>
+            <div class="btn-group">
+              <button class="btn"><i class="bi bi-person-fill-lock"></i></button>
+              <button class="btn"><i class="bi bi-translate"></i></button>
+            </div>
+          </div>
+      </nav>
+    </div>
+  </header>
