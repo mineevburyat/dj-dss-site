@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block sidebar %}
+<div>Тут подменю приложения сервисы (перечисляем сервисы по категориям)</div>
+{% endblock %}
+
+{% block content %}
+<main class="container-fluid">
+    <h2>Список сервисов</h2>
+  <div class="row">
+    {% for service in services %}
+    <div class="col-md">
+      подробная детальная информация
+      {{ service }}
+      <img src='{{ service.icon.url }}'>
+      <img src='{{ service.photo.url }}'>
+      {{ service.description|safe }}
+    </div>
+    {% endfor %}
+  </div>
+</main>
+{% endblock %}

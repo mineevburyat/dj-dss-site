@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block sidebar %}
+<div>Тут подменю приложения сервисы (перечисляем сервисы по категориям)</div>
+{% endblock %}
+
+{% block content %}
+<main class="container-fluid">
+  <div class="row">
+    <div class="col-md">
+      тут начальная страница раздела сервисы с категорией {{ category }}
+    </div>
+  </div>
+</main>
+{% endblock %}
