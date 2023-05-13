@@ -1,6 +1,6 @@
 from django.contrib import admin
 from django.urls import path
-from .views import IndexView, ServiceViewByCategory, DetailService, ListService
+from .views import ServiceViewByCategory, DetailService, ListService
 
 app_name = 'app_services'
 

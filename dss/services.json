@@ -1,0 +1,86 @@
+[
+  {
+    "model": "app_services.service",
+    "pk": 1,
+    "fields": {
+      "name": "Плавательный бассейн",
+      "description": "<h2><strong><em>Самый большой плавательный бассейн г. Улан-Удэ.&nbsp;</em></strong></h2>\r\n\r\n<ul>\r\n\t<li>Объем бассейна &mdash; 4 000 куб.м.;</li>\r\n\t<li>Площадь зеркала воды &mdash; 1250&nbsp;&nbsp;кв.м.;&nbsp;</li>\r\n\t<li>Длина чаши бассейна &mdash; 50 м.;&nbsp;</li>\r\n\t<li>Ширина чаши бассейна &ndash; 25 м.;</li>\r\n\t<li>В бассейне 10 дорожек;</li>\r\n\t<li>Глубина бассейна&nbsp; &mdash; 3 м.</li>\r\n\t<li><em>Пропускная способность&nbsp; бассейна до 120 человек за сеанс.</em></li>\r\n\t<li>3 безопасные дорожки с переменной глубиной от 6 до 1,2&nbsp; м.&nbsp;&nbsp;</li>\r\n</ul>\r\n\r\n<p>Вода в бассейне проходит многоступенчатую комбинированную очистку, включающую в себя механическую фильтрацию, химическую очистку и обработку ультрафиолетом.</p>",
+      "category": "Spt",
+      "slug": "swimming_pool",
+      "icon": "services/icon1.png",
+      "photo": "services/bassein-768x512.jpg"
+    }
+  },
+  {
+    "model": "app_services.service",
+    "pk": 2,
+    "fields": {
+      "name": "Футбол",
+      "description": "<p>Приглашаем ваших детей на ежемесячный набор в секцию по футболу для мальчиков от 5 до 17 лет.</p>\r\n\r\n<p>Здесь вашего ребенка всегда ждет профессиональный тренерский состав,&nbsp; командные игры, выездные турниры и сборы.&nbsp;</p>\r\n\r\n<p><strong>Занятия проводятся на футбольных площадках.</strong></p>",
+      "category": "Sec",
+      "slug": "football",
+      "icon": "",
+      "photo": ""
+    }
+  },
+  {
+    "model": "app_services.service",
+    "pk": 3,
+    "fields": {
+      "name": "Занятие по плаванию в паре (сплит)",
+      "description": "<p>Занятие предназначено бла бла бла</p>\r\n\r\n<table style=\"width:690px\">\r\n\t<tbody>\r\n\t\t<tr>\r\n\t\t\t<td>\r\n\t\t\t<p>Дети с 7 до 17 лет</p>\r\n\t\t\t</td>\r\n\t\t\t<td>\r\n\t\t\t<p>1 200 руб.&nbsp;</p>\r\n\t\t\t</td>\r\n\t\t</tr>\r\n\t\t<tr>\r\n\t\t\t<td>\r\n\t\t\t<p>Ребенок с 7 до 17 лет + взрослый</p>\r\n\t\t\t</td>\r\n\t\t\t<td>1 350 руб.</td>\r\n\t\t</tr>\r\n\t\t<tr>\r\n\t\t\t<td>\r\n\t\t\t<p>Взрослые с 18 лет</p>\r\n\t\t\t</td>\r\n\t\t\t<td rowspan=\"2\">\r\n\t\t\t<p>1 500 руб.</p>\r\n\t\t\t</td>\r\n\t\t</tr>\r\n\t</tbody>\r\n</table>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p>цена указана за 2 человек. Сеанс 40 минут.</p>",
+      "category": "Sec",
+      "slug": "split_swimming_lesson",
+      "icon": "",
+      "photo": ""
+    }
+  },
+  {
+    "model": "app_services.service",
+    "pk": 4,
+    "fields": {
+      "name": "Групповое плавание на 24 занятия для начинающих",
+      "description": "<p>В секцию принимаются дети с 7 до 17 лет.</p>\r\n\r\n<p>Группа для начинающих</p>\r\n\r\n<p>Цена 6000 руб.</p>\r\n\r\n<p>24 занятия в течении 3 месяцев</p>\r\n\r\n<p>&nbsp;</p>",
+      "category": "Sec",
+      "slug": "gruppovoe-plavanie-na-24-zanyatiya-dlya-nachinayushih",
+      "icon": "",
+      "photo": ""
+    }
+  },
+  {
+    "model": "app_services.service",
+    "pk": 5,
+    "fields": {
+      "name": "Лови волну",
+      "description": "<table>\r\n\t<tbody>\r\n\t\t<tr>\r\n\t\t\t<td><strong>Время посещения</strong></td>\r\n\t\t\t<td><strong>Стоимость в руб. (НДС не облагается)</strong></td>\r\n\t\t</tr>\r\n\t\t<tr>\r\n\t\t\t<td><strong>07:00</strong></td>\r\n\t\t\t<td rowspan=\"5\">\r\n\t\t\t<p><strong>680 руб.</strong></p>\r\n\t\t\t</td>\r\n\t\t</tr>\r\n\t\t<tr>\r\n\t\t\t<td><strong>08:15</strong></td>\r\n\t\t</tr>\r\n\t\t<tr>\r\n\t\t\t<td><strong>12:00</strong></td>\r\n\t\t</tr>\r\n\t\t<tr>\r\n\t\t\t<td><strong>12:45</strong></td>\r\n\t\t</tr>\r\n\t\t<tr>\r\n\t\t\t<td><strong>13:30</strong></td>\r\n\t\t</tr>\r\n\t</tbody>\r\n</table>",
+      "category": "Spt",
+      "slug": "lovi-volnu",
+      "icon": "",
+      "photo": ""
+    }
+  },
+  {
+    "model": "app_services.service",
+    "pk": 6,
+    "fields": {
+      "name": "Разовое самостоятельное посещение бассейна",
+      "description": "<table style=\"width:690px\">\r\n\t<tbody>\r\n\t\t<tr>\r\n\t\t\t<td><strong>Категория населения</strong></td>\r\n\t\t\t<td><strong>Стоимость в руб. (НДС не облагается)</strong></td>\r\n\t\t</tr>\r\n\t\t<tr>\r\n\t\t\t<td><strong>ДЕТИ до 17 лет&nbsp;</strong></td>\r\n\t\t\t<td><strong>&nbsp;120 руб.</strong></td>\r\n\t\t</tr>\r\n\t\t<tr>\r\n\t\t\t<td><strong>ВЗРОСЛЫЕ</strong></td>\r\n\t\t\t<td><strong>280 руб.</strong></td>\r\n\t\t</tr>\r\n\t\t<tr>\r\n\t\t\t<td><strong>САУНА*(в период сеанса плавания при приобретении браслета в кассе)</strong></td>\r\n\t\t\t<td><strong>100 руб.</strong></td>\r\n\t\t</tr>\r\n\t</tbody>\r\n</table>",
+      "category": "Spt",
+      "slug": "razovoe-samostoyatelnoe-poseshenie-bassejna",
+      "icon": "",
+      "photo": ""
+    }
+  },
+  {
+    "model": "app_services.service",
+    "pk": 7,
+    "fields": {
+      "name": "Абонемент на бассейн",
+      "description": "<h2><strong>Абонемент* 30 дней (сеанс 45 мин.)</strong></h2>\r\n\r\n<p>&nbsp;</p>",
+      "category": "Spt",
+      "slug": "abonement-na-bassejn",
+      "icon": "",
+      "photo": ""
+    }
+  }
+]
