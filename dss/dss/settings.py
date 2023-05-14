@@ -38,6 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'ckeditor',
+    'schedule',
+    'djangobower',
     'menu',
     'app_objects',
     'app_services',
@@ -149,3 +151,16 @@ CKEDITOR_CONFIGS = {
             ]),
         },
 }
+
+STATICFILES_FINDERS = [
+    'django.contrib.staticfiles.finders.FileSystemFinder',
+    'django.contrib.staticfiles.finders.AppDirectoriesFinder',
+    'djangobower.finders.BowerFinder',
+
+]
+BOWER_COMPONENTS_ROOT = '/home/dj-dss-site/dss/components/'
+BOWER_INSTALLED_APPS = (
+    'jquery',
+    'jquery-ui',
+    'bootstrap'
+)

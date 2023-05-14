@@ -164,3 +164,11 @@ class Subunit(models.Model):
         return f'{self.name} ({self.slug}) на {self.obj}'
     # def get_absolute_url(self):
     #     return reverse('objects:detail_sub', kwargs={"slug": self.slug})
+    
+class Contact(models.Model):
+    '''\
+        Контакт с менеджером'''
+    class Meta:
+        verbose_name = 'Подразделение'
+        verbose_name_plural = 'Подразделения'
+    MAX_LENGTH_NAME = 35
