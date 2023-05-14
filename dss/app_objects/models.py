@@ -56,39 +56,16 @@ class Object(models.Model):
         blank=True,
         null=True
     )
-    # contacts = models.CharField(
-    #     'контакты', 
-    #     max_length=200
-    # )
-    # category = models.ForeignKey(
-    #     BaseCategory, 
-    #     verbose_name='Категория',
-    #     on_delete=models.SET_NULL,
-    #     null=True,
-    #     blank=True
-    # )
-    # service = models.ManyToManyField(
-    #     Service,
-    #     help_text='выберите доступные на объекте спортивные и прочие услуги, спортивные секции. ',
-    #     null=True,
-    #     blank=True
-    # )
+    
 
     def __str__(self):
         return f'{self.short_name} ({self.name})'
     
-    def save(self, *args, **kwargs):
-        self.slug = translite(self.short_name)
-        super(self).save(*args, **kwargs)
-
-    # def display_service(self):
-    #     '''Показать привязанные к объекту услуги (спортивные и прочие)'''
-    #     serv_lst = [service for service in self.service.all() if service.category.id == 2 or service.category.id == 299]
-    #     return ', '.join([service.name for service in self.service.all()])
-    # display_service.short_description = 'Услуги'
-
-    # def display_sportsection(self):
-    #     '''Показать привязанные к объекту спортивные секции'''
-    #     serv_lst = [service for service in self.service.all()]
-    #     return ', '.join([item.name for item in serv_lst if item.category.id == 259])
-    # display_sportsection.short_description = 'Спортивные секции'
+    
+class Subunit(models.Model):
+    '''\
+        Подразделения объекта: бассейн, тренажерка, зал, поле, аренда'''
+    name = models.CharField(
+        'название направления',
+        
+    )
