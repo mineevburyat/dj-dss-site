@@ -1,30 +1,6 @@
 [
   {
     "model": "app_services.service",
-    "pk": 1,
-    "fields": {
-      "name": "Плавательный бассейн",
-      "description": "<h2><strong><em>Самый большой плавательный бассейн г. Улан-Удэ.&nbsp;</em></strong></h2>\r\n\r\n<ul>\r\n\t<li>Объем бассейна &mdash; 4 000 куб.м.;</li>\r\n\t<li>Площадь зеркала воды &mdash; 1250&nbsp;&nbsp;кв.м.;&nbsp;</li>\r\n\t<li>Длина чаши бассейна &mdash; 50 м.;&nbsp;</li>\r\n\t<li>Ширина чаши бассейна &ndash; 25 м.;</li>\r\n\t<li>В бассейне 10 дорожек;</li>\r\n\t<li>Глубина бассейна&nbsp; &mdash; 3 м.</li>\r\n\t<li><em>Пропускная способность&nbsp; бассейна до 120 человек за сеанс.</em></li>\r\n\t<li>3 безопасные дорожки с переменной глубиной от 6 до 1,2&nbsp; м.&nbsp;&nbsp;</li>\r\n</ul>\r\n\r\n<p>Вода в бассейне проходит многоступенчатую комбинированную очистку, включающую в себя механическую фильтрацию, химическую очистку и обработку ультрафиолетом.</p>",
-      "category": "sport",
-      "slug": "swimming_pool",
-      "icon": "services/icon1.png",
-      "photo": "services/bassein-768x512.jpg"
-    }
-  },
-  {
-    "model": "app_services.service",
-    "pk": 2,
-    "fields": {
-      "name": "Футбол",
-      "description": "<p>Приглашаем ваших детей на ежемесячный набор в секцию по футболу для мальчиков от 5 до 17 лет.</p>\r\n\r\n<p>Здесь вашего ребенка всегда ждет профессиональный тренерский состав,&nbsp; командные игры, выездные турниры и сборы.&nbsp;</p>\r\n\r\n<p><strong>Занятия проводятся на футбольных площадках.</strong></p>",
-      "category": "section",
-      "slug": "football",
-      "icon": "",
-      "photo": ""
-    }
-  },
-  {
-    "model": "app_services.service",
     "pk": 3,
     "fields": {
       "name": "Занятие по плаванию в паре (сплит)",
@@ -81,6 +57,54 @@
       "slug": "abonement-na-bassejn",
       "icon": "",
       "photo": ""
+    }
+  },
+  {
+    "model": "app_services.varioussport",
+    "pk": 1,
+    "fields": {
+      "name": "Легкая атлетика",
+      "slug": "athletics"
+    }
+  },
+  {
+    "model": "app_services.varioussport",
+    "pk": 2,
+    "fields": {
+      "name": "Тяжелая атлетика",
+      "slug": "weightlifting"
+    }
+  },
+  {
+    "model": "app_services.varioussport",
+    "pk": 3,
+    "fields": {
+      "name": "Стрельба из лука",
+      "slug": "archery"
+    }
+  },
+  {
+    "model": "app_services.varioussport",
+    "pk": 4,
+    "fields": {
+      "name": "Футболл",
+      "slug": "football"
+    }
+  },
+  {
+    "model": "app_services.varioussport",
+    "pk": 5,
+    "fields": {
+      "name": "Пулевая стрельба",
+      "slug": "shooting"
+    }
+  },
+  {
+    "model": "app_services.varioussport",
+    "pk": 6,
+    "fields": {
+      "name": "Плавание",
+      "slug": "swimming"
     }
   }
 ]
