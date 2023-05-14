@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Service
+from .models import Service, VariousSport
 from django.db import models
 from django.forms import TextInput
 
@@ -21,3 +21,7 @@ class ServiceAdmin(admin.ModelAdmin):
         form = super(ServiceAdmin, self).get_form(request, obj, **kwargs)
         form.base_fields['name'].widget.attrs['style'] = 'width: 40em;'
         return form
+    
+@admin.register(VariousSport)
+class VariousSportAdmin(admin.ModelAdmin):
+    pass

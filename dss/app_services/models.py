@@ -5,41 +5,6 @@ from django.utils.safestring import mark_safe
 from ckeditor_uploader.fields import RichTextUploadingField
 
 
-# Create your models here.
-# class ServiceCategory(models.Model):
-#     '''\
-#         Основные категории услуг
-#         Пункты главного меню'''
-#     class Meta:
-#         verbose_name = 'Категория (пункт меню)'
-#         verbose_name_plural = 'Категории (пункты меню)'
-#     id = models.PositiveIntegerField(
-#         'id категории',
-#         unique=True,
-#         primary_key=True
-#     )
-#     title = models.CharField(
-#         'старое название',
-#         max_length=25
-#     )
-#     newname = models.CharField(
-#         'новое название',
-#         max_length=25,
-#         null=True,
-#         blank=True
-#     )
-#     slug = models.CharField(
-#         'Слуг для url',
-#         max_length=15,
-#         help_text='краткое название пути в url',
-#         null=True,
-#         blank=True
-#     )
-
-#     def __str__(self):
-#         return f'{self.newname} ({self.title})'
-
-
 class Service(models.Model):
     '''\
         Услуги согласно категории:
@@ -125,3 +90,19 @@ class Service(models.Model):
     # def display_objects(self):
     #     lst = [item.short_name for item in Object.objects.filter(service = self.id) ]
     #     return ' '.join(lst)
+    
+class VariousSport(models.Model):
+    class Meta:
+        verbose_name = 'Вид спорта'
+        verbose_name_plural = 'Виды спорта'
+    name = models.CharField(
+        'Название спорта',
+        max_length=60
+    )
+    slug = models.CharField(
+        'название на английском',
+        max_length=60
+    )
+    
+    def __str__(self):
+        return f"{self.name} ({self.slug})"
