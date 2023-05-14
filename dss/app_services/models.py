@@ -51,11 +51,11 @@ class Service(models.Model):
     MAX_NAME_LENGTH = 60
 
     CHOICE_CATEGORY = (
-        ('Spt', 'Спортивные услуги'),
-        ('Sec', 'Спортивные секции'),
-        ('Oth', 'Прочие услуги')
+        ('sport', 'Спортивные услуги'),
+        ('section', 'Спортивные секции'),
+        ('other', 'Прочие услуги')
     )
-    MAX_PREF_LENGTH = 4
+    MAX_PREF_LENGTH = 10
 
     name = models.CharField(
         'название услуги',

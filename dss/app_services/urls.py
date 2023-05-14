@@ -1,11 +1,11 @@
 from django.contrib import admin
 from django.urls import path
-from .views import ServiceViewByCategory, DetailService, ListService
+from .views import DetailServiceView, ListServiceView
 
 app_name = 'app_services'
 
 urlpatterns = [
-    path('', ListService.as_view(), name='all'),
-    path('<str:category>/', ServiceViewByCategory.as_view(), name='categoryservice'),
-    path('detail/<str:slug>', DetailService.as_view(), name='detail'),
+    path('', ListServiceView.as_view(), name='all'),
+    path('<str:category>/', ListServiceView.as_view(), name='categoryservice'),
+    path('detail/<str:slug>', DetailServiceView.as_view(), name='detail'),
 ]

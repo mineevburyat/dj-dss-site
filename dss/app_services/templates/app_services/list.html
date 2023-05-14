@@ -14,8 +14,14 @@
     <div class="col-md">
       подробная детальная информация
       {{ service }}
-      <img src='{{ service.icon.url }}'>
-      <img src='{{ service.photo.url }}'>
+      {% if service.icon %}
+        <img src='{{ service.icon.url }}'>
+      {% else %}
+        <img src="/media/emptyicon.png">
+      {% endif %}
+      {% if service.phone %}
+        <img src='{{ service.photo.url }}'>
+      {% endif %}
       {{ service.description|safe }}
     </div>
     {% endfor %}
