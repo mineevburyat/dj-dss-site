@@ -92,6 +92,8 @@ class Service(models.Model):
     #     return ' '.join(lst)
     
 class VariousSport(models.Model):
+    '''\
+        вид спорта: по общероссийской классификации'''
     class Meta:
         verbose_name = 'Вид спорта'
         verbose_name_plural = 'Виды спорта'
@@ -106,3 +108,26 @@ class VariousSport(models.Model):
     
     def __str__(self):
         return f"{self.name} ({self.slug})"
+    
+class TypeSportForMenu(models.Model):
+    '''\
+        Разбиение видов спорта на исскуственные типы для меню'''
+    class Meta:
+        verbose_name = 'Вид спорта'
+        verbose_name_plural = 'Виды спорта'
+    name = models.CharField(
+        'Название типа спорта',
+        max_length=60
+    )
+    slug = models.CharField(
+        'название на английском',
+        max_length=60
+    )
+    order = models.SmallIntegerField(
+        'сортировка',
+        default=255
+    )
+    icon = models.ImageField(
+        'иконка',
+        upload_to='menu/typesport'
+    )
