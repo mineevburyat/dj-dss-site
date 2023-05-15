@@ -6,21 +6,22 @@ from .models import Service
 from django.views.generic.base import TemplateView
 from django.views.generic.detail import DetailView
 from django.views.generic import ListView
+from common.mixins import TitleMixin
 # from common.mixins import TitleMixin
 
 
-class DetailServiceView(DetailView):
+class DetailServiceView(TitleMixin, DetailView):
     model = Service
     context_object_name = 'service'
     template_name = 'app_services/detail.html'
-    # title = "Магазин Store - главная"
+    title = "ДСС: подробнее"
     
 
-class ListServiceView(ListView):
+class ListServiceView(TitleMixin, ListView):
     model = Service
     context_object_name = 'services'
     template_name = 'app_services/list.html'
-    # title = "Магазин Store - главная"
+    title = "ДСС: список"
     
     def get_queryset(self):
         category = self.kwargs.get('category')

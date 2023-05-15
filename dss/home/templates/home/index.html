@@ -1,0 +1,70 @@
+{% extends 'home/base.html' %}
+
+{% load static %}
+
+{% block content %}
+<main class="container-fluid">
+  <div class="row">
+    <div class="col-md">
+      <div class="card bg-warning text-center">
+        <img src="{% static 'home/img/rest-image.png' %}" alt="" class="card-img" style="filter: brightness(20%)"/>
+        <div class="card-img-overlay card-body">
+          <h3 class="card-title display-4">
+            <a href="/category/sport" class="card-link">ОБЪЕКТЫ</a>
+          </h3>
+          <nav class="nav flex-column">
+            <a href="/page/sport/235" class="btn btn-outline-primary">ФСК</a>
+            <a href="/page/sport/292" class="btn btn-outline-primary">ЦСРБ</a>
+            <a href="/page/sport/246" class="btn btn-outline-primary">РЦЕ ПАТРИОТ</a>
+            <a href="/page/sport/257" class="btn btn-outline-primary">РЦСЛ МЭРГЭН</a>
+            <a href="/page/sport/251" class="btn btn-outline-primary">БАЙКАЛ ПАРК</a>
+            <a href="/page/sport/259" class="btn btn-outline-primary">ИППОДРОМ</a>
+          </nav>
+        </div>
+      </div>
+    </div>
+    <div class="col-md">
+      <div class="card bg-danger text-center">
+        <img src="{% static 'home/img/sport-image.png' %}" alt="" class="card-img" style="filter: brightness(60%)"/>
+        <div class="card-img-overlay card-body">
+          <h3 class="card-title display-4">
+            <a href="/category/sport" class="card-link">СПОРТ</a>
+          </h3>
+          <nav class="nav flex-column mt-5">
+            <a href="/page/sport/235" class="btn btn-outline-warning font-weight-bold ">БАССЕЙН</a>
+            <a href="/page/sport/292" class="btn btn-outline-warning">ТРЕНАЖЕРНЫЕ ЗАЛЫ</a>
+            <a href="/page/sport/246" class="btn btn-outline-warning">ФУТБОЛЬНЫЕ ПОЛЯ</a>
+            <a href="/page/sport/257" class="btn btn-outline-warning">СТРЕЛЬБА ИЗ ЛУКА</a>
+            <a href="/page/sport/251" class="btn btn-outline-warning">ЕДИНОБОРСТВА</a>
+            <a href="/page/sport/259" class="btn btn-outline-warning">КОННЫЙ СПОРТ</a>
+            <a href="/page/sport/294" class="btn btn-outline-warning">ЗИМНИЕ ВИДЫ СПОРТА</a>
+          </nav>
+        </div>
+      </div>
+    </div>
+    <div class="col-md">
+      <div class="card bg-primary text-center">
+        <img src="{% static 'home/img/rest-image.png' %}" alt="" class="card-img" style="filter: brightness(20%)"/>
+        <div class="card-img-overlay card-body">
+          <h3 class="card-title display-4">
+            <a href="/category/sport" class="card-link text-danger">ОТДЫХ</a>
+          </h3>
+          <nav class="nav flex-column">
+            <a href="/page/sport/235" class="btn btn-outline-danger">ГОСТИНИЦА</a>
+            <a href="/page/sport/292" class="btn btn-outline-danger">ХОСТЕЛ</a>
+            <a href="/page/sport/246" class="btn btn-outline-danger">SPA</a>
+            <a href="/page/sport/257" class="btn btn-outline-danger">КРАСОТА</a>
+            <a href="/page/sport/251" class="btn btn-outline-danger">КОНФЕРЕНЦ-ЗАЛ</a>
+            <a href="/page/sport/259" class="btn btn-outline-danger">АРЕНДА</a>
+            <a href="/page/sport/294" class="btn btn-outline-danger">САУНЫ</a>
+            <a href="/page/sport/251" class="btn btn-outline-danger">КОНФЕРЕНЦ-ЗАЛ</a>
+            <a href="/page/sport/259" class="btn btn-outline-danger">АРЕНДА</a>
+            <a href="/page/sport/294" class="btn btn-outline-danger">САУНЫ</a>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+{% endblock %}
+

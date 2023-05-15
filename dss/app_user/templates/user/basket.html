@@ -1,0 +1,46 @@
+<div class="col-lg-5">
+    <h4 class="mt-3 mb-3 d-flex justify-content-between align-items-center mb-3">
+        Корзина <span class="badge badge-secondary badge-pill">{{ basket.total_quantity }}</span>
+    </h4>
+    {% for inbasket in basket %}
+    <div class="card mb-3">
+        <div class="card-body">
+            <h5 class="card-title">{{ inbasket.product.name }}</h5>
+            <p class="card-text mb-0">{{ inbasket.product.short_description}}</p>
+            <p class="card-text mt-0">цена: {{ inbasket.product.price}}</p>
+        </div>
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item bg-light">
+                <div class="row text-center">
+                    <div class="col-lg-4">
+                        <input name="basketID" type="number" class="form-control"
+                               value="{{ inbasket.quantity }}" min="0">
+                    </div>
+                    <div class="col-lg-4">{{ inbasket.sum }}</div>
+                    <div class="col-lg-4">
+                        <a href={% url 'product:remove_product_from_basket' inbasket.product.id %}>
+                            <i class="fas fa-trash"></i>
+                        </a>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+    {% empty %}
+    <div class="card mb-3">
+        <p>Корзина пуста</p>
+    </div>
+    {% endfor %}
+    <div class="card mb-3">
+        <div class="card-footer">
+            <p class="float-left">Итого</p>
+            <h4 class="float-right">{{ basket.total_sum }}</h4>
+        </div>
+    </div>
+    <a class="btn btn-success btn-lg float-right 
+    {% if not basket %} disabled {% endif %}" 
+    href="../orders/order-create.html">
+    
+        Оформить заказ
+    </a>
+</div>

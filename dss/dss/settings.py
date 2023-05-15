@@ -38,12 +38,14 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'ckeditor',
-    'schedule',
-    'djangobower',
+    # 'schedule',
+    # 'djangobower',
+    'home',
     'menu',
     'app_objects',
     'app_services',
     'app_about',
+    'app_user',
 ]
 
 MIDDLEWARE = [
@@ -123,10 +125,10 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
 STATIC_URL = 'static/'
-# STATIC_ROOT = BASE_DIR / 'static'
+STATIC_ROOT = BASE_DIR / 'static'
 STATICFILES_DIRS = [
-    BASE_DIR / "static",
-]
+    
+    ]
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
@@ -152,15 +154,22 @@ CKEDITOR_CONFIGS = {
         },
 }
 
-STATICFILES_FINDERS = [
-    'django.contrib.staticfiles.finders.FileSystemFinder',
-    'django.contrib.staticfiles.finders.AppDirectoriesFinder',
-    'djangobower.finders.BowerFinder',
+# STATICFILES_FINDERS = [
+#     'django.contrib.staticfiles.finders.FileSystemFinder',
+#     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
+#     'djangobower.finders.BowerFinder',
 
-]
+# ]
 BOWER_COMPONENTS_ROOT = '/home/dj-dss-site/dss/components/'
 BOWER_INSTALLED_APPS = (
     'jquery',
     'jquery-ui',
     'bootstrap'
 )
+
+DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+AUTH_USER_MODEL = 'app_user.User'
+LOGIN_URL = '/user/login'
+LOGIN_REDIRECT_URL = '/'
+LOGOUT_REDIRECT_URL = '/'
