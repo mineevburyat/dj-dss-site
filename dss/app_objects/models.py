@@ -1,13 +1,15 @@
 from django.db import models
 from django.urls import reverse
 from common.utils import translite
+from django.utils.safestring import mark_safe
 from ckeditor_uploader.fields import RichTextUploadingField
 # Create your models here.
 
 class Object(models.Model):
     '''\
-        Информация о объектах дирекции
-        название, адрес, геометка
+        Информация о объектах
+        название, адрес, геометка.
+        Выводиться в меню как название и иконка, ранжируется по важности
     '''
     class Meta:
         verbose_name = 'Объект'
@@ -40,7 +42,7 @@ class Object(models.Model):
     )
     description = RichTextUploadingField(
         'краткое описание', 
-        max_length=1000,
+        max_length=3000,
         blank=True,
         null=True
     )
@@ -57,31 +59,39 @@ class Object(models.Model):
         blank=True,
         null=True
     )
-    # subunit = models.ForeignKey(
-    #     'Subunit',
-    #     on_delete=models.PROTECT,
-    #     null=True,
-    #     blank=True,
-    #     verbose_name='Подразделение'
-    # )
+    order = models.SmallIntegerField(
+        'Сортировка',
+        default=100,
+    )
 
     def __str__(self):
         return f'{self.short_name} ({self.name})'
     
+    def get_icon_url(self):
+        if not self.icon:
+            return '/media/emptyicon.png'
+        return self.icon.url
+    
+    def icon_html_img(self):
+        return mark_safe(
+            f'<img src="{self.get_icon_url()}" width="50" height="50" />')
+    icon_html_img.short_description = 'Иконка'
+    
     # def get_absolute_url(self):
         # return reverse('objects:detail_obj', kwargs={"slug": self.slug})
     
-class Resource(models.Model):
+    
+class TypeStock(models.Model):
     '''\
-        Ресурсы: тренажерный зал, футбольное поле'''
+        Типы материального фонда для меню: категорирование имеющихся материальных ресурсов. То что можно сдать в аренду, забронировать. Выводиться в меню в виде названия и иконки, можно ранжировать по важности'''
     class Meta:
-        verbose_name = 'Спортивный ресурс'
-        verbose_name_plural = 'Спортивные ресурсы'
+        verbose_name = 'Тип ресурса'
+        verbose_name_plural = 'Типы ресурсов'
         
     name = models.CharField(
         'название',
         max_length=25,
-        help_text='стадион, универсальный зал и пр.'
+        help_text='стадион, универсальный зал и пр. без конкретики'
     )
     slug = models.SlugField(
         'slug имя в url',
@@ -91,27 +101,42 @@ class Resource(models.Model):
         help_text='желательно английское название'
     )
     icon = models.ImageField(
-        'пиктограмка',
+        'файл иконки',
         upload_to='objects',
         blank=True,
         null=True
+    )
+    order = models.IntegerField(
+        'сортировка',
+        default=100
     )
     
     def __str__(self):
         return f'{self.name} ({self.slug})'
     
+    def get_icon_url(self):
+        if not self.icon:
+            return '/media/emptyicon.png'
+        return self.icon.url
+    
+    def icon_html_img(self):
+        return mark_safe(
+            f'<img src="{self.get_icon_url()}" width="50" height="50" />')
+    icon_html_img.short_description = 'Иконка'
+    
+    
 class Subunit(models.Model):
     '''\
-        Подразделения объекта: бассейн, тренажерка, зал, поле, аренда.
+        Конкретный ресурс со своими характеристиками и расписанием бронирования: дорожка бассейна, тренажерка, зал, поле, площадь для аренды.
         С конкретными характеристиками, расписанием и контактами'''
     class Meta:
-        verbose_name = 'Подразделение'
-        verbose_name_plural = 'Подразделения'
-    MAX_LENGTH_NAME = 35
+        verbose_name = 'Ресурс'
+        verbose_name_plural = 'Ресурсы'
+    MAX_LENGTH_NAME = 45
     name = models.CharField(
         'название конкретного ресурса',
         max_length=MAX_LENGTH_NAME,
-        help_text='подразделение, отдел, направление'
+        help_text='дрожка бассейна №1, мини-поле №2'
     )
     slug = models.SlugField(
         'slug имя в url',
@@ -121,25 +146,18 @@ class Subunit(models.Model):
         help_text='только латинские буквы и цифры'
     )
     description = RichTextUploadingField(
-        'Описание подразделения, характеристики',
+        'Описание ресурса, характеристики',
         max_length=1000,
         blank=True,
         null=True
     )
     resource = models.ForeignKey(
-        Resource,
+        TypeStock,
         on_delete=models.PROTECT,
         default=None,
         null=True,
         blank=True,
-        verbose_name='спортивный ресурс'
-    )
-    photo = models.ImageField(
-        'фотография',
-        help_text='в будущем набор фотографий для слайдера',
-        upload_to='objects',
-        blank=True,
-        null=True
+        verbose_name='тип ресурса'
     )
     obj = models.ForeignKey(
         Object,
@@ -151,13 +169,17 @@ class Subunit(models.Model):
     )
     contact = models.CharField(
         'Телефон',
-        help_text='по сути объект с названием типом связи и пр. возможно несколько',
-        max_length=25
+        help_text='ссылки на контакт TODO',
+        max_length=25,
+        blank=True,
+        null=True
     )
     shedule = models.CharField(
         'график работы',
         help_text='режим работы, график, сан. день (как календарь)',
-        max_length=25
+        max_length=25,
+        blank=True,
+        null=True
     )
     
     def __str__(self):
@@ -167,8 +189,8 @@ class Subunit(models.Model):
     
 class Contact(models.Model):
     '''\
-        Контакт с менеджером'''
+        Контакт с менеджером ресурса'''
     class Meta:
-        verbose_name = 'Подразделение'
-        verbose_name_plural = 'Подразделения'
+        verbose_name = 'Контакт'
+        verbose_name_plural = 'Контакты'
     MAX_LENGTH_NAME = 35

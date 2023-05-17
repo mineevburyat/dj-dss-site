@@ -113,8 +113,8 @@ class TypeSportForMenu(models.Model):
     '''\
         Разбиение видов спорта на исскуственные типы для меню'''
     class Meta:
-        verbose_name = 'Вид спорта'
-        verbose_name_plural = 'Виды спорта'
+        verbose_name = 'Тип спорта'
+        verbose_name_plural = 'Типы спорта'
     name = models.CharField(
         'Название типа спорта',
         max_length=60
@@ -131,3 +131,6 @@ class TypeSportForMenu(models.Model):
         'иконка',
         upload_to='menu/typesport'
     )
+    
+    def __str__(self):
+        return f"{self.name} ({self.slug})"

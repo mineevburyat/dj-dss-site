@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Service, VariousSport
+from .models import Service, VariousSport, TypeSportForMenu
 from django.db import models
 from django.forms import TextInput
 
@@ -23,5 +23,10 @@ class ServiceAdmin(admin.ModelAdmin):
         return form
     
 @admin.register(VariousSport)
+class VariousSportAdmin(admin.ModelAdmin):
+    pass
+
+
+@admin.register(TypeSportForMenu)
 class VariousSportAdmin(admin.ModelAdmin):
     pass
