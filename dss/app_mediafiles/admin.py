@@ -5,7 +5,7 @@ from .models import Icon, Tag, Image
     
 @admin.register(Icon)
 class ObjectAdmin(admin.ModelAdmin):
-    list_display = ('icon_html_card',)
+    list_display = ('name', 'icon_html_img', 'img_size')
     save_on_top = True
  
 @admin.register(Tag)   
