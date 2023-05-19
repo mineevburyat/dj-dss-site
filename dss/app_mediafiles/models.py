@@ -65,7 +65,7 @@ class Icon(models.Model):
     icon_html_img.short_description = 'Иконка'
     
     def __str__(self):
-        return f'{self.name}'
+        return f'{self.name} (иконка)'
     
     def img_size(self):
         """Image size."""
@@ -88,7 +88,7 @@ class Image(models.Model):
         verbose_name = 'Фото'
         verbose_name_plural = 'Фотографии'
     name = models.CharField('название (alt)', max_length=60)
-    description = models.CharField('описание', max_length=260)
+    description = models.TextField('описание', max_length=260)
     image = models.ImageField('файл картинки', upload_to=path_photo_file)
     tags = models.ManyToManyField(Tag, blank=True)
     created = models.DateTimeField('дата создания', auto_now_add=True)
@@ -105,57 +105,33 @@ class Image(models.Model):
         blank=True,
         null=True)
     
+    def get_path_forigin(self):
+        return self.image.name
+    
+    def get_path_fmedium(self):
+        return self.thumbnail_middle.name
+    
+    def get_path_fsmall(self):
+        return self.thumbnail_small.name
+    
     def get_img_url(self):
         if not self.image:
-            return '/media/emptyicon.png'
+            return '/media/emptyhumbnail.png'
         return self.image.url
     
-    def photo_html_img(self):
+    def photo_img(self):
         return mark_safe(
-            f'<img src="{self.get_icon_url()}" alt="{self.name}" style="width:25%">')
-    photo_html_img.short_description = 'Картинка'
+            f'<img src="{self.get_img_url()}" alt="{self.name}" style="width:50%;">')
+    photo_img.short_description = 'Картинка'
+    
+    def thumbnail_html(self):
+        return mark_safe(f'<a href="{self.image.url}"><img border="0" alt="" src="{self.thumbnail_small.url}" height="50" /></a>')
+    thumbnail_html.allow_tags = True
+    thumbnail_html.short_description = 'изображение'
     
     def __str__(self):
         return self.name
     
-    # def save(self, *args, **kwargs):
-    #     """После сохранения получить размеры оригинала и сгенерировать две миниатюры. Поговаривают что переопределять этот метод очень плохая практика с закладыванеим мины, но пока так. Альтернатива - сигналы pre_save и post_save"""
-    #     super(Image, self).save(*args, **kwargs)
-    #     # image = PImage.open(car.photo)
-    #     im = PImage.open(Path(settings.MEDIA_ROOT, self.image.name))
-    #     self.width, self.height = im.size
-    #     self.update
-    #     # получаем имя и расширение файла
-    #     extention = Path(self.image.name).suffix[1:]
-    #     fname = Path(self.image.name).stem
-    #     # генерируем и сохраняем среднюю миниатюру
-    #     thbnail_medium = im.copy()
-    #     thbnail_medium.thumbnail((self.width // 4, self.height // 4),
-    #                              PImage.ANTIALIAS)
-    #     newfilename = f"thumbnail_medium_{fname}.{extention}"
-    #     path = Path(settings.MEDIA_ROOT, IMAGE_FOLDER_PHOTO, THUB_MIDDLE, newfilename)
-    #     print(path)
-    #     thbnail_medium.save(path)
-    #     with open(path, 'br') as f:
-    #         print(path)
-    #         self.thumbnail_middle.save(
-    #             Path(IMAGE_FOLDER_PHOTO, THUB_MIDDLE, newfilename),
-    #             File(f),
-    #             save=False)
-    #     # генерируем и сохраняем маленькую миниатюру
-    #     thbnail_small = thbnail_medium.copy()
-    #     thbnail_small.thumbnail((self.width // 8, self.height //8),
-    #                             PImage.ANTIALIAS)
-    #     newfilename = f"thumbnail_small_{fname}.{extention}"
-    #     path = Path(settings.MEDIA_ROOT, IMAGE_FOLDER_PHOTO, THUB_SMALL, newfilename)
-    #     thbnail_small.save(path)
-    #     with open(path, 'br') as f:
-    #         self.thumbnail_small.save(
-    #             Path(IMAGE_FOLDER_PHOTO, THUB_SMALL, newfilename),
-    #             File(f),
-    #             save=False)
-        
-
     def img_size(self):
         """Image size."""
         return "%s x %s" % (self.width, self.height)
@@ -166,66 +142,41 @@ class Image(models.Model):
         return ','.join(lst)
     tags.short_description = 'тэги'
     
-    def get_thumbnail_html(self):
-        return mark_safe(f'<a href="{self.image.url}"><img border="0" alt="" src="{self.image.url}" height="40" /></a>')
-    get_thumbnail_html.allow_tags = True
-    get_thumbnail_html.short_description = 'изображение'
+    
 
 
 @receiver(post_save, sender=Image)
 def fill_field_image(sender, instance, created, **kwargs):
+    '''после сохранения экземпляра с оригинальной фотографией, узнать его размеры и сгенерировать миниатюры из него'''
     if created:
         im = PImage.open(Path(settings.MEDIA_ROOT, instance.image.name))
         instance.width, instance.height = im.size
         format = im.format
         instance.save()
+        # имя и расширение
         extention = Path(instance.image.name).suffix[1:]
         fname = Path(instance.image.name).stem
+        # миниатюра среднего размера
         thbnail_medium = im.resize((instance.width // 4, instance.height // 4))
-        newfilename = f"medium_{fname}.{extention}"
+        newfilename = f"m_{fname}.{extention}"
         file_bufer = BytesIO()
         thbnail_medium.save(file_bufer, format)
-        # path = Path(settings.MEDIA_ROOT, IMAGE_FOLDER_PHOTO, THUB_MIDDLE, newfilename)
+        file_bufer.seek(0)
         instance.thumbnail_middle.save(
                 newfilename,
-                ContentFile(file_bufer.read()))
+                ContentFile(file_bufer.read()),
+                save=False)
+        file_bufer.close()
+        # миниатюра самая маленькая
+        newfilename = f"s_{fname}.{extention}"
+        thumbnail_small = thbnail_medium.resize((instance.width // 8, instance.height // 8))
+        file_bufer = BytesIO()
+        thumbnail_small.save(file_bufer, format)
+        file_bufer.seek(0)
+        instance.thumbnail_small.save(
+            newfilename,
+                ContentFile(file_bufer.read()),
+                save=False)
+        file_bufer.close()
         instance.save()
-        
-        
-# def save(self, *args, **kwargs):
-    #     """После сохранения получить размеры оригинала и сгенерировать две миниатюры. Поговаривают что переопределять этот метод очень плохая практика с закладыванеим мины, но пока так. Альтернатива - сигналы pre_save и post_save"""
-    #     super(Image, self).save(*args, **kwargs)
-    #     # image = PImage.open(car.photo)
-    #     im = PImage.open(Path(settings.MEDIA_ROOT, self.image.name))
-    #     self.width, self.height = im.size
-    #     self.update
-    #     # получаем имя и расширение файла
-    #     extention = Path(self.image.name).suffix[1:]
-    #     fname = Path(self.image.name).stem
-    #     # генерируем и сохраняем среднюю миниатюру
-    #     thbnail_medium = im.copy()
-    #     thbnail_medium.thumbnail((self.width // 4, self.height // 4),
-    #                              PImage.ANTIALIAS)
-    #     newfilename = f"thumbnail_medium_{fname}.{extention}"
-    #     path = Path(settings.MEDIA_ROOT, IMAGE_FOLDER_PHOTO, THUB_MIDDLE, newfilename)
-    #     print(path)
-    #     thbnail_medium.save(path)
-    #     with open(path, 'br') as f:
-    #         print(path)
-    #         self.thumbnail_middle.save(
-    #             Path(IMAGE_FOLDER_PHOTO, THUB_MIDDLE, newfilename),
-    #             File(f),
-    #             save=False)
-    #     # генерируем и сохраняем маленькую миниатюру
-    #     thbnail_small = thbnail_medium.copy()
-    #     thbnail_small.thumbnail((self.width // 8, self.height //8),
-    #                             PImage.ANTIALIAS)
-    #     newfilename = f"thumbnail_small_{fname}.{extention}"
-    #     path = Path(settings.MEDIA_ROOT, IMAGE_FOLDER_PHOTO, THUB_SMALL, newfilename)
-    #     thbnail_small.save(path)
-    #     with open(path, 'br') as f:
-    #         self.thumbnail_small.save(
-    #             Path(IMAGE_FOLDER_PHOTO, THUB_SMALL, newfilename),
-    #             File(f),
-    #             save=False)
         

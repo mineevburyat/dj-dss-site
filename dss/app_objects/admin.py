@@ -7,7 +7,7 @@ from .models import Object, Subunit, TypeStock
 @admin.register(Object)
 class ObjectAdmin(admin.ModelAdmin):
     list_display = ('short_name', 'name', 'slug', 'icon_html_img', 'order')
-    ordering = ('order',)
+    # ordering = ('order',)
     readonly_fields = ('icon_html_img',)
     prepopulated_fields = {"slug": ("short_name",)}
     fields = [('short_name', 'slug', 'order'),
