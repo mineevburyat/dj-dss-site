@@ -3,7 +3,72 @@ from django.urls import reverse
 from common.utils import translite
 from django.utils.safestring import mark_safe
 from ckeditor_uploader.fields import RichTextUploadingField
+from app_mediafiles.models import Icon, Image
 
+class VariousSport(models.Model):
+    '''\
+        вид спорта: по общероссийской классификации'''
+    class Meta:
+        verbose_name = 'Вид спорта'
+        verbose_name_plural = 'Виды спорта'
+    name = models.CharField(
+        'Название спорта',
+        max_length=60,
+        unique=True
+    )
+    slug = models.CharField(
+        'название на английском',
+        max_length=60,
+        unique=True,
+        db_index=True
+    )
+    
+    def __str__(self):
+        return f"{self.name} ({self.slug})"
+    
+class TypeService(models.Model):
+    '''\
+        Группировка услуг на исскуственные типы для меню'''
+    class Meta:
+        verbose_name = 'Тип услуги'
+        verbose_name_plural = 'Типы услуг'
+    name = models.CharField(
+        'Название группы услуг',
+        max_length=60,
+        unique=True,
+        db_index=True
+    )
+    slug = models.CharField(
+        'название на английском',
+        max_length=60,
+        unique=True,
+        db_index=True
+    )
+    order = models.SmallIntegerField(
+        'сортировка',
+        default=255
+    )
+    icon = models.ForeignKey(
+        Icon,
+        verbose_name='иконка',
+        on_delete=models.PROTECT,
+        default=14
+    )
+    
+    def __str__(self):
+        return f"{self.name} ({self.slug})"
+    
+    def get_icon_url(self):
+        return self.icon.get_icon_url()
+    
+    def icon_html_img(self):
+        return mark_safe(
+            f'<img src="{self.get_icon_url()}" width="65"/>')
+    icon_html_img.short_description = 'Иконка'
+    
+    # def display_objects(self):
+    #     lst = [item.short_name for item in Object.objects.filter(service = self.id) ]
+    #     return ' '.join(lst)
 
 class Service(models.Model):
     '''\
@@ -44,93 +109,45 @@ class Service(models.Model):
         null=True,
         help_text='только латинские буквы и цифры'
     )
-    icon = models.ImageField(
-        'файл иконки',
-        upload_to='services',
-        blank=True,
-        null=True
-    )
-    photo = models.ImageField(
-        'файл фотографии',
-        help_text='в будущем набор фотографий для слайдера',
-        upload_to='services',
-        blank=True,
-        null=True
+    typeservice = models.ForeignKey(
+        TypeService,
+        verbose_name='группа услуг',
+        on_delete=models.PROTECT,
+        default=1
     )
     
     def __str__(self):
         return f"{self.name}"
 
-    # def save(self, *args, **kwargs):
-    #     self.slug = translite(self.name)
-    #     super(self).save(*args, **kwargs)
-        
     def get_absolute_url(self):
         return reverse('services:detail', kwargs={"slug": self.slug})
     
     def get_icon_url(self):
-        if not self.icon:
-            return '/media/emptyicon.png'
-        return self.icon.url
+        return self.typeservice.icon.get_icon_url()
     
     def icon_html_img(self):
-        return mark_safe(
-            f'<img src="{self.get_icon_url()}" width="50" height="50" />')
+        return mark_safe(f'<img src="{self.get_icon_url()}" width="65"/>')
     icon_html_img.short_description = 'Иконка'
     
-    def get_photo_url(self):
-        if not self.photo:
-            return '/media/emptyphoto.jpg'
-        return self.photo.url
-    
-    def photo_html_img(self):
-        return mark_safe(
-            f'<img src="{self.get_photo_url()}" width="150"/>')
-    photo_html_img.short_description = 'Фото'
     # def display_objects(self):
     #     lst = [item.short_name for item in Object.objects.filter(service = self.id) ]
     #     return ' '.join(lst)
     
-class VariousSport(models.Model):
+
+class ServiceGallery(models.Model):
     '''\
-        вид спорта: по общероссийской классификации'''
+        Галерея фотографий с услугами'''
     class Meta:
-        verbose_name = 'Вид спорта'
-        verbose_name_plural = 'Виды спорта'
-    name = models.CharField(
-        'Название спорта',
-        max_length=60
-    )
-    slug = models.CharField(
-        'название на английском',
-        max_length=60
-    )
+        verbose_name = 'Галерея фотографий услуги'
+        verbose_name_plural = 'Галерея фотографий услуг'
     
-    def __str__(self):
-        return f"{self.name} ({self.slug})"
-    
-class TypeSportForMenu(models.Model):
-    '''\
-        Разбиение видов спорта на исскуственные типы для меню'''
-    class Meta:
-        verbose_name = 'Тип спорта'
-        verbose_name_plural = 'Типы спорта'
-    name = models.CharField(
-        'Название типа спорта',
-        max_length=60
+    obj = models.ForeignKey(
+        Service,
+        verbose_name='Услуга',
+        on_delete=models.PROTECT
     )
-    slug = models.CharField(
-        'название на английском',
-        max_length=60
+    photos = models.ForeignKey(
+        Image,
+        verbose_name='фотографии',
+        on_delete=models.PROTECT
     )
-    order = models.SmallIntegerField(
-        'сортировка',
-        default=255
-    )
-    icon = models.ImageField(
-        'иконка',
-        upload_to='menu/typesport'
-    )
-    
-    def __str__(self):
-        return f"{self.name} ({self.slug})"

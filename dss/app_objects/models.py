@@ -3,6 +3,7 @@ from django.urls import reverse
 from common.utils import translite
 from django.utils.safestring import mark_safe
 from ckeditor_uploader.fields import RichTextUploadingField
+from app_mediafiles.models import Icon, Image
 # Create your models here.
 
 class Object(models.Model):
@@ -46,18 +47,11 @@ class Object(models.Model):
         blank=True,
         null=True
     )
-    icon = models.ImageField(
-        'пиктограмка',
-        upload_to='objects',
-        blank=True,
-        null=True
-    )
-    photo = models.ImageField(
-        'фотография объекта',
-        help_text='в будущем набор фотографий для слайдера',
-        upload_to='objects',
-        blank=True,
-        null=True
+    icon_lib = models.ForeignKey(
+        Icon,
+        verbose_name='иконка',
+        on_delete=models.PROTECT,
+        default=14
     )
     order = models.SmallIntegerField(
         'Сортировка',
@@ -68,9 +62,8 @@ class Object(models.Model):
         return f'{self.short_name} ({self.name})'
     
     def get_icon_url(self):
-        if not self.icon:
-            return '/media/emptyicon.png'
-        return self.icon.url
+        if self.icon_lib:
+            return self.icon_lib.get_icon_url()
     
     def icon_html_img(self):
         return mark_safe(
@@ -100,11 +93,10 @@ class TypeStock(models.Model):
         max_length=25,
         help_text='желательно английское название'
     )
-    icon = models.ImageField(
-        'файл иконки',
-        upload_to='objects',
-        blank=True,
-        null=True
+    icon = models.ForeignKey(
+        Icon,
+        verbose_name='файл иконки',
+        on_delete=models.PROTECT
     )
     order = models.IntegerField(
         'сортировка',
@@ -117,7 +109,7 @@ class TypeStock(models.Model):
     def get_icon_url(self):
         if not self.icon:
             return '/media/emptyicon.png'
-        return self.icon.url
+        return self.icon.get_icon_url()
     
     def icon_html_img(self):
         return mark_safe(
@@ -187,6 +179,42 @@ class Subunit(models.Model):
     # def get_absolute_url(self):
     #     return reverse('objects:detail_sub', kwargs={"slug": self.slug})
     
+class ObjectPhoto(models.Model):
+    '''\
+        Связь объекта с его фотографиями'''
+    class Meta:
+        verbose_name = 'Фотография объекта'
+        verbose_name_plural = 'Фотографии объектов'
+    
+    obj = models.ForeignKey(
+        Object,
+        verbose_name='Объект',
+        on_delete=models.PROTECT
+    )
+    photos = models.ManyToManyField(
+        Image,
+        verbose_name='фотографии',
+        blank=True
+    )
+    
+class ObjectGallery(models.Model):
+    '''\
+        Галерея фотографий с объектами'''
+    class Meta:
+        verbose_name = 'Галерея фотографий объекта'
+        verbose_name_plural = 'Галереи фотографий объектов'
+    
+    obj = models.ForeignKey(
+        Object,
+        verbose_name='Объект',
+        on_delete=models.PROTECT
+    )
+    photos = models.ForeignKey(
+        Image,
+        verbose_name='фотографии',
+        on_delete=models.PROTECT
+    )
+
 class Contact(models.Model):
     '''\
         Контакт с менеджером ресурса'''

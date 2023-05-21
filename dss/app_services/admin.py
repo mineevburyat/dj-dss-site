@@ -1,22 +1,23 @@
 from django.contrib import admin
-from .models import Service, VariousSport, TypeSportForMenu
+from .models import Service, VariousSport, TypeService, ServiceGallery
 from django.db import models
 from django.forms import TextInput
 
 # Register your models here.
 @admin.register(Service)
 class ServiceAdmin(admin.ModelAdmin):
-    list_display = ('icon_html_img', 'name', 'category', 'slug', 'photo')
+    list_display = ('icon_html_img', 'name', 'slug', 'category', 'typeservice')
+    list_display_links = ('name', 'slug')
     formfield_overrides = {
         models.CharField: {'widget': TextInput(attrs={'size': '20'})},
     }
     prepopulated_fields = {"slug": ("name",)}
-    fields = ['category', 
+    fields = [('category', 'typeservice'),
               ('name', 'slug'), 
               'description', 
-              ('icon_html_img', 'icon'),
-              ('photo_html_img', 'photo')]
-    readonly_fields = ('icon_html_img', 'photo_html_img')
+            ]
+    list_filter = ('category', 'typeservice')
+    
     def get_form(self, request, obj=None, **kwargs):
         form = super(ServiceAdmin, self).get_form(request, obj, **kwargs)
         form.base_fields['name'].widget.attrs['style'] = 'width: 40em;'
@@ -24,9 +25,24 @@ class ServiceAdmin(admin.ModelAdmin):
     
 @admin.register(VariousSport)
 class VariousSportAdmin(admin.ModelAdmin):
-    pass
+    list_display = ('pk', 'name', 'slug')
+    list_editable = ('name', 'slug')
+    ordering = ('pk',)
 
 
-@admin.register(TypeSportForMenu)
-class VariousSportAdmin(admin.ModelAdmin):
+@admin.register(TypeService)
+class TypeServiceAdmin(admin.ModelAdmin):
+    list_display = ('name', 'slug', 'order', 'icon_html_img')
+    ordering = ('order', 'pk')
+    list_editable = ('slug', 'order')
+    fields = (
+        ('name', 'slug'),
+        ('order', 'icon'),
+        'icon_html_img'
+    )
+    readonly_fields = ('icon_html_img',)
+    
+    
+@admin.register(ServiceGallery)
+class ServiceGalleryAdmin(admin.ModelAdmin):
     pass
