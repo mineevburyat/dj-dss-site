@@ -3,6 +3,9 @@ from django.db import models
 # Create your models here.
 
 class Contact(models.Model):
+    class Meta:
+        verbose_name = 'Контакт'
+        verbose_name_plural = 'Контакты'
     name = models.CharField(
         'название',
         max_length=65,
