@@ -88,7 +88,7 @@ class Image(models.Model):
         verbose_name = 'Фото'
         verbose_name_plural = 'Фотографии'
     name = models.CharField('название (alt)', max_length=60)
-    description = models.TextField('описание', max_length=260)
+    description = models.TextField('описание', max_length=300)
     image = models.ImageField('файл картинки', upload_to=path_photo_file)
     tags = models.ManyToManyField(Tag, blank=True)
     created = models.DateTimeField('дата создания', auto_now_add=True)
@@ -109,10 +109,12 @@ class Image(models.Model):
         return self.image.name
     
     def get_path_fmedium(self):
-        return self.thumbnail_middle.name
+        if self.thumbnail_middle:
+            return self.thumbnail_middle.name
     
     def get_path_fsmall(self):
-        return self.thumbnail_small.name
+        if self.thumbnail_small:
+            return self.thumbnail_small.name
     
     def get_img_url(self):
         if not self.image:
@@ -125,7 +127,12 @@ class Image(models.Model):
     photo_img.short_description = 'Картинка'
     
     def thumbnail_html(self):
-        return mark_safe(f'<a href="{self.image.url}"><img border="0" alt="" src="{self.thumbnail_small.url}" height="50" /></a>')
+        if self.thumbnail_small:
+            return mark_safe(f'<a href="{self.image.url}"><img border="0" alt="" src="{self.thumbnail_small.url}" height="50" /></a>')
+        elif self.thumbnail_middle:
+            return mark_safe(f'<a href="{self.image.url}"><img border="0" alt="" src="{self.thumbnail_middle.url}" height="50" /></a>')
+        else:
+            return mark_safe(f'<a href="{self.image.url}"><img border="0" alt="" src="{self.image.url}" height="50" /></a>')
     thumbnail_html.allow_tags = True
     thumbnail_html.short_description = 'изображение'
     
@@ -157,26 +164,28 @@ def fill_field_image(sender, instance, created, **kwargs):
         extention = Path(instance.image.name).suffix[1:]
         fname = Path(instance.image.name).stem
         # миниатюра среднего размера
-        thbnail_medium = im.resize((instance.width // 4, instance.height // 4))
-        newfilename = f"m_{fname}.{extention}"
-        file_bufer = BytesIO()
-        thbnail_medium.save(file_bufer, format)
-        file_bufer.seek(0)
-        instance.thumbnail_middle.save(
-                newfilename,
-                ContentFile(file_bufer.read()),
-                save=False)
-        file_bufer.close()
+        if not instance.thumbnail_middle:
+            thbnail_medium = im.resize((instance.width // 4, instance.height // 4))
+            newfilename = f"m_{fname}.{extention}"
+            file_bufer = BytesIO()
+            thbnail_medium.save(file_bufer, format)
+            file_bufer.seek(0)
+            instance.thumbnail_middle.save(
+                    newfilename,
+                    ContentFile(file_bufer.read()),
+                    save=False)
+            file_bufer.close()
         # миниатюра самая маленькая
-        newfilename = f"s_{fname}.{extention}"
-        thumbnail_small = thbnail_medium.resize((instance.width // 8, instance.height // 8))
-        file_bufer = BytesIO()
-        thumbnail_small.save(file_bufer, format)
-        file_bufer.seek(0)
-        instance.thumbnail_small.save(
-            newfilename,
-                ContentFile(file_bufer.read()),
-                save=False)
-        file_bufer.close()
+        if not instance.thumbnail_small:
+            newfilename = f"s_{fname}.{extention}"
+            thumbnail_small = im.resize((instance.width // 8, instance.height // 8))
+            file_bufer = BytesIO()
+            thumbnail_small.save(file_bufer, format)
+            file_bufer.seek(0)
+            instance.thumbnail_small.save(
+                newfilename,
+                    ContentFile(file_bufer.read()),
+                    save=False)
+            file_bufer.close()
         instance.save()
         

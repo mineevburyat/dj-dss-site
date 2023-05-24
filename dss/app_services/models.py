@@ -134,15 +134,15 @@ class Service(models.Model):
     #     return ' '.join(lst)
     
 
-class ServiceGallery(models.Model):
+class TypeServiceGallery(models.Model):
     '''\
-        Галерея фотографий с услугами'''
+        Галерея фотографий с типами услуг, используется в слайдере'''
     class Meta:
-        verbose_name = 'Галерея фотографий услуги'
+        verbose_name = 'Фотография вида услуг'
         verbose_name_plural = 'Галерея фотографий услуг'
     
-    obj = models.ForeignKey(
-        Service,
+    typeservice = models.ForeignKey(
+        TypeService,
         verbose_name='Услуга',
         on_delete=models.PROTECT
     )
@@ -151,3 +151,14 @@ class ServiceGallery(models.Model):
         verbose_name='фотографии',
         on_delete=models.PROTECT
     )
+    def get_html_photo(self):
+        return self.photos.thumbnail_html()
+    get_html_photo.short_description = 'фото'
+    
+    def get_name(self):
+        return self.typeservice.name
+    get_name.short_description = 'имя'
+
+    def get_img_size(self):
+        return self.photos.img_size()
+    get_img_size.short_description = 'размер'

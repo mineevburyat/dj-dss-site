@@ -49,7 +49,8 @@ INSTALLED_APPS = [
     'app_services',
     'app_about',
     'app_user',
-    'app_contacts'
+    'app_contacts',
+    'app_piplscard',
 ]
 
 MIDDLEWARE = [

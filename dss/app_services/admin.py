@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Service, VariousSport, TypeService, ServiceGallery
+from .models import Service, VariousSport, TypeService, TypeServiceGallery
 from django.db import models
 from django.forms import TextInput
 
@@ -43,6 +43,7 @@ class TypeServiceAdmin(admin.ModelAdmin):
     readonly_fields = ('icon_html_img',)
     
     
-@admin.register(ServiceGallery)
-class ServiceGalleryAdmin(admin.ModelAdmin):
-    pass
+@admin.register(TypeServiceGallery)
+class TypeServiceGalleryAdmin(admin.ModelAdmin):
+    list_display = ('get_name', 'get_html_photo', 'get_img_size')
+    list_filter = ('typeservice',)

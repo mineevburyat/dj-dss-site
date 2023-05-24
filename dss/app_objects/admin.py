@@ -56,4 +56,5 @@ class OblectsPhotoAdmin(admin.ModelAdmin):
     
 @admin.register(ObjectGallery)
 class OblectGalleryAdmin(admin.ModelAdmin):
-    pass
+    list_display = ('get_short_name', 'get_html_photo', 'get_img_size')
+    list_filter = ('obj',)

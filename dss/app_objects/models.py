@@ -215,10 +215,14 @@ class ObjectGallery(models.Model):
         on_delete=models.PROTECT
     )
 
-class Contact(models.Model):
-    '''\
-        Контакт с менеджером ресурса'''
-    class Meta:
-        verbose_name = 'Контакт'
-        verbose_name_plural = 'Контакты'
-    MAX_LENGTH_NAME = 35
+    def get_html_photo(self):
+        return self.photos.thumbnail_html()
+    get_html_photo.short_description = 'фото'
+    
+    def get_short_name(self):
+        return self.obj.short_name
+    get_short_name.short_description = 'имя'
+
+    def get_img_size(self):
+        return self.photos.img_size()
+    get_img_size.short_description = 'размер'

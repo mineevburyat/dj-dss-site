@@ -28,7 +28,10 @@ class ImageAdmin(admin.ModelAdmin):
                        'get_path_fsmall')
     # list_filter = ["tags"]
     fields = (
-        ('photo_img', 'img_size', 'created'),
+        ('photo_img', 'img_size'),
         ('name', 'description', 'image'),
-        ('get_path_forigin', 'get_path_fmedium', 'get_path_fsmall')
+        'tags',
+        ('get_path_forigin', 'get_path_fmedium', 'get_path_fsmall', 'created')
     )
+    list_filter = ('tags',)
+    filter_horizontal = ('tags',)
