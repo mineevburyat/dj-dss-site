@@ -10,9 +10,10 @@
         <img src="{% static 'home/img/rest-image.png' %}" alt="" class="card-img" style="filter: brightness(20%)"/>
         <div class="card-img-overlay card-body">
           <h3 class="card-title display-4">
-            <a href="{% static 'objects' %}" class="card-link">ОБЪЕКТЫ</a>
+            <a href="{% url 'objects:index' %}" class="card-link">ОБЪЕКТЫ</a>
           </h3>
           <nav class="nav flex-column">
+            {{ objects }}
             <a href="/page/sport/235" class="btn btn-outline-primary">ФСК</a>
             <a href="/page/sport/292" class="btn btn-outline-primary">ЦСРБ</a>
             <a href="/page/sport/246" class="btn btn-outline-primary">РЦЕ ПАТРИОТ</a>
@@ -28,7 +29,7 @@
         <img src="{% static 'home/img/sport-image.png' %}" alt="" class="card-img" style="filter: brightness(60%)"/>
         <div class="card-img-overlay card-body">
           <h3 class="card-title display-4">
-            <a href="/category/sport" class="card-link">СПОРТ</a>
+            <a href="{% url 'services:all' %}" class="card-link">СПОРТ</a>
           </h3>
           <nav class="nav flex-column mt-5">
             <a href="/page/sport/235" class="btn btn-outline-warning font-weight-bold ">БАССЕЙН</a>
@@ -47,7 +48,7 @@
         <img src="{% static 'home/img/rest-image.png' %}" alt="" class="card-img" style="filter: brightness(20%)"/>
         <div class="card-img-overlay card-body">
           <h3 class="card-title display-4">
-            <a href="/category/sport" class="card-link text-danger">ОТДЫХ</a>
+            <a href="{% url 'services:all' %}" class="card-link text-danger">ОТДЫХ</a>
           </h3>
           <nav class="nav flex-column">
             <a href="/page/sport/235" class="btn btn-outline-danger">ГОСТИНИЦА</a>
