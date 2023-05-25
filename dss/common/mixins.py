@@ -7,10 +7,10 @@ class TitleMixin:
         return context
 
 
-class CategoryMixin:
-    category = None
+class ObjectsMixin:
+    objects = None
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context["category"] = self.category
+        context["objects"] = self.objects
         return context

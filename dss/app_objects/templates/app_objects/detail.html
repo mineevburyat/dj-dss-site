@@ -1,0 +1,25 @@
+{% extends 'home/base2lv.html' %}
+
+{% load static %}
+
+{% block sidebar %}
+<div>Тут подменю приложения объекты (перечисляем объекты)</div>
+{% endblock %}
+
+{% block content %}
+<main class="container-fluid">
+  <div class="row">
+    <div class="col-md">
+      <h2 class="text-center">{{ object.name }}</h2>
+      <h3 class="text-center h6">{{ object.short_name }}</h3>
+      <div>
+        {{ object.description | safe}}
+      </div>
+      <div>Перечисляем группы ресурсов которые ведут на детальный ресурс со списком услуг
+        
+      </div>
+
+    </div>
+  </div>
+</main>
+{% endblock %}

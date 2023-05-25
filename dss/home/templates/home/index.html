@@ -13,13 +13,9 @@
             <a href="{% url 'objects:index' %}" class="card-link">ОБЪЕКТЫ</a>
           </h3>
           <nav class="nav flex-column">
-            {{ objects }}
-            <a href="/page/sport/235" class="btn btn-outline-primary">ФСК</a>
-            <a href="/page/sport/292" class="btn btn-outline-primary">ЦСРБ</a>
-            <a href="/page/sport/246" class="btn btn-outline-primary">РЦЕ ПАТРИОТ</a>
-            <a href="/page/sport/257" class="btn btn-outline-primary">РЦСЛ МЭРГЭН</a>
-            <a href="/page/sport/251" class="btn btn-outline-primary">БАЙКАЛ ПАРК</a>
-            <a href="/page/sport/259" class="btn btn-outline-primary">ИППОДРОМ</a>
+            {% for object in objects %}
+            <a href="{% url 'objects:detail' object.slug %}" class="btn btn-outline-primary">{{ object.short_name }}</a>
+            {% endfor %}
           </nav>
         </div>
       </div>
