@@ -12,20 +12,20 @@
     {% for object in objects %}
     <div class="col-md-4">
       <div class="card h-100">
-        <img src="..." class="card-img-top" alt="...">
+        <img src="{{object.get_random_photo}}" class="card-img-top" alt="...">
         <div class="card-body">
           <h5 class="card-title">{{ object.name }}</h5>
           <p class="card-text">{{ object.description|safe|truncatechars:160}}</p>
-          <a href="#" class="btn btn-primary">Подробнее</a>
+          <a href="{% url 'objects:detail' object.slug %}" class="btn btn-primary">Подробнее</a>
         </div>
         <ul class="list-group list-group-flush">
-          <li class="list-group-item">Ссылка на тип ресурса</li>
-          <li class="list-group-item">A second item</li>
-          <li class="list-group-item">A third item</li>
+          {% for stock in object.get_types_stocks %}
+          <li class="list-group-item"><a href="#" class="card-link">{{ stock.name }}</a></li>
+          {% endfor %}
         </ul>
-        <div class="card-body">
-          <a href="#" class="card-link">Связаться с администратором</a>
-          <a href="#" class="card-link">Another link</a>
+        <div class="d-flex align-content-end">
+            <a href="#" class="btn btn-warning">Связаться с администратором</a>
+          <a href="#" class="btn btn-primary">Another link</a>
         </div>
       </div>
     </div>

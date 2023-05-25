@@ -4,6 +4,7 @@ from common.utils import translite
 from django.utils.safestring import mark_safe
 from ckeditor_uploader.fields import RichTextUploadingField
 from app_mediafiles.models import Icon, Image
+import random
 # Create your models here.
 
 class Object(models.Model):
@@ -57,6 +58,11 @@ class Object(models.Model):
         'Сортировка',
         default=100,
     )
+    type_stock = models.ManyToManyField(
+        'TypeStock',
+        verbose_name='группа ресурсов',
+        help_text='имеющиеся на объекте типы ресурсов',
+    )
 
     def __str__(self):
         return f'{self.short_name} ({self.name})'
@@ -70,9 +76,21 @@ class Object(models.Model):
             f'<img src="{self.get_icon_url()}" width="50" height="50" />')
     icon_html_img.short_description = 'Иконка'
     
+    def get_types_stocks(self):
+        res = []
+        for item in self.type_stock.all():
+            res.append(item)
+        return res
     # def get_absolute_url(self):
         # return reverse('objects:detail_obj', kwargs={"slug": self.slug})
     
+    def get_random_photo(self):
+        photos = []
+        for gallery in ObjectGallery.objects.filter(obj=self):
+            photos.append(gallery.photos.get_url_middle_img())
+        if photos:
+            return random.choice(photos)
+            
     
 class TypeStock(models.Model):
     '''\
@@ -189,7 +207,7 @@ class ObjectPhoto(models.Model):
     obj = models.ForeignKey(
         Object,
         verbose_name='Объект',
-        on_delete=models.PROTECT
+        on_delete=models.PROTECT,
     )
     photos = models.ManyToManyField(
         Image,
@@ -207,7 +225,8 @@ class ObjectGallery(models.Model):
     obj = models.ForeignKey(
         Object,
         verbose_name='Объект',
-        on_delete=models.PROTECT
+        on_delete=models.PROTECT,
+        related_name='gallery'
     )
     photos = models.ForeignKey(
         Image,

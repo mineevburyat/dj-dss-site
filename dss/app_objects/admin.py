@@ -12,8 +12,11 @@ class ObjectAdmin(admin.ModelAdmin):
     prepopulated_fields = {"slug": ("short_name",)}
     fields = [('short_name', 'slug', 'order'),
               ('name', 'icon_lib'),
-              'address', 'description',
-              'icon_html_img']
+              ('address', 'icon_html_img'),
+              'description',
+              'type_stock'
+              ]
+    filter_horizontal = ('type_stock',)
     formfield_overrides = {
         models.CharField: {'widget': TextInput(attrs={'size': '20'})},
     }
