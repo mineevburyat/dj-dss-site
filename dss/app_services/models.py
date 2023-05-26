@@ -83,7 +83,8 @@ class Service(models.Model):
     CHOICE_CATEGORY = (
         ('sport', 'Спортивные услуги'),
         ('section', 'Спортивные секции'),
-        ('other', 'Прочие услуги')
+        ('relax', 'Отдых'),
+        ('other', 'Прочие услуги'),
     )
     MAX_PREF_LENGTH = 10
 

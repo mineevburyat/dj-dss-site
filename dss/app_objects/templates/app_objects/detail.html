@@ -15,8 +15,10 @@
       <div>
         {{ object.description | safe}}
       </div>
-      <div>Перечисляем группы ресурсов которые ведут на детальный ресурс со списком услуг
-        
+      <div>
+        {% for stock in object.get_types_stocks %}
+          {{stock}}
+        {% endfor %}
       </div>
 
     </div>

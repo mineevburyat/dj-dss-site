@@ -17,7 +17,7 @@ class Object(models.Model):
         verbose_name = 'Объект'
         verbose_name_plural = 'Объекты'
 
-    MAX_SHORT_NAME = 15
+    MAX_SHORT_NAME = 20
     MAX_LONG_NAME = 250
 
     short_name = models.CharField(
@@ -119,6 +119,10 @@ class TypeStock(models.Model):
     order = models.IntegerField(
         'сортировка',
         default=100
+    )
+    description = RichTextUploadingField(
+        'краткое описание',
+        max_length=1500
     )
     
     def __str__(self):
