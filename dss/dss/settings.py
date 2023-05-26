@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-8g18t5#6y&a_ux%pvzz0ue_^2&cf5ed$vllo@+u#!o-ed%igvk
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['127.0.0.1', 'localhost', '192.168.88.24']
 
 
 # Application definition
@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     # 'djangobower',
     # 'django_jsonform',
     # 'sliderapp',
+    'common',
     'home',
     'app_mediafiles',
     'menu',
@@ -93,8 +94,12 @@ WSGI_APPLICATION = 'dss.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'dss_bd',
+        'USER': 'dss_db_user',
+        'PASSWORD': '34652817',
+        'HOST': 'localhost',
+        'PORT': '',
     }
 }
 
