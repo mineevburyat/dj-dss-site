@@ -122,7 +122,8 @@ class TypeStock(models.Model):
     )
     description = RichTextUploadingField(
         'краткое описание',
-        max_length=1500
+        max_length=1500,
+        default=''
     )
     
     def __str__(self):

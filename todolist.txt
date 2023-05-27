@@ -5,3 +5,14 @@
 прочие услуги это конференц-залы, Аренда
 отдых это турбазы и хостелы
 сауна сопутсвующая кроме патриота
+
+настройка postgree
+1) sudo apt install libpq-dev postgresql postgresql-contrib
+2) sudo -u postgres psql
+3) CREATE DATABASE myproject;
+4)CREATE USER myprojectuser WITH PASSWORD 'password';
+5) ALTER ROLE myprojectuser SET client_encoding TO 'utf8';
+ALTER ROLE myprojectuser SET default_transaction_isolation TO 'read committed';
+ALTER ROLE myprojectuser SET timezone TO 'UTC';
+6) GRANT ALL PRIVILEGES ON DATABASE myproject TO myprojectuser;
+7) \Quick

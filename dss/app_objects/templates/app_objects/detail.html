@@ -11,13 +11,30 @@
   <div class="row">
     <div class="col-md">
       <h2 class="text-center">{{ object.name }}</h2>
-      <h3 class="text-center h6">{{ object.short_name }}</h3>
+      <h3 class="text-center h6 text-secondary">{{ object.short_name }}</h3>
       <div>
         {{ object.description | safe}}
       </div>
-      <div>
-        {% for stock in object.get_types_stocks %}
-          {{stock}}
+      <h4>{{object.name}} включает в себя:</h4>
+      <div class="row">
+          {% for stock in object.get_types_stocks %}
+          <div class="col-md-4">
+            <div class="card h-100">
+              <!-- <img src="" class="card-img-top" alt="..."> -->
+              <div class="card-body">
+                <h5 class="card-title">{{ stock.name }}</h5>
+                <p class="card-text">{{ stock.description|safe|truncatechars:160}}</p>
+                <a href="{% url 'objects:detail' object.slug %}" class="btn btn-primary">Подробнее</a>
+              </div>
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item"><a href="#" class="card-link">список услуг</a></li>
+              </ul>
+              <div class="d-flex align-content-end">
+                  <a href="#" class="btn btn-warning">Связаться с администратором</a>
+                <a href="#" class="btn btn-primary">Another link</a>
+              </div>
+            </div>
+          </div>
         {% endfor %}
       </div>
 

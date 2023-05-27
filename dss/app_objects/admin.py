@@ -35,7 +35,8 @@ class ResourceAdmin(admin.ModelAdmin):
     readonly_fields = ('icon_html_img',)
     prepopulated_fields = {"slug": ("name",)}
     fields = [('name', 'slug', 'order'),
-              ('icon_html_img','icon')]
+              ('icon_html_img','icon'),
+              'description']
 
 @admin.register(Subunit)
 class SubunitAdmin(admin.ModelAdmin):
@@ -52,9 +53,9 @@ class SubunitAdmin(admin.ModelAdmin):
     #     form.base_fields['address'].widget.attrs['style'] = 'width: 50em;'
     #     return form
     
-@admin.register(ObjectPhoto)
-class OblectsPhotoAdmin(admin.ModelAdmin):
-    list_display = ('obj', )
+# @admin.register(ObjectPhoto)
+# class OblectsPhotoAdmin(admin.ModelAdmin):
+#     list_display = ('obj', )
     
     
 @admin.register(ObjectGallery)
