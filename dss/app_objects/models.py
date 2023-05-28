@@ -202,23 +202,23 @@ class Subunit(models.Model):
     # def get_absolute_url(self):
     #     return reverse('objects:detail_sub', kwargs={"slug": self.slug})
     
-class ObjectPhoto(models.Model):
-    '''\
-        Связь объекта с его фотографиями'''
-    class Meta:
-        verbose_name = 'Фотография объекта'
-        verbose_name_plural = 'Фотографии объектов'
+# class ObjectPhoto(models.Model):
+#     '''\
+#         Связь объекта с его фотографиями'''
+#     class Meta:
+#         verbose_name = 'Фотография объекта'
+#         verbose_name_plural = 'Фотографии объектов'
     
-    obj = models.ForeignKey(
-        Object,
-        verbose_name='Объект',
-        on_delete=models.PROTECT,
-    )
-    photos = models.ManyToManyField(
-        Image,
-        verbose_name='фотографии',
-        blank=True
-    )
+#     obj = models.ForeignKey(
+#         Object,
+#         verbose_name='Объект',
+#         on_delete=models.PROTECT,
+#     )
+#     photos = models.ManyToManyField(
+#         Image,
+#         verbose_name='фотографии',
+#         blank=True
+#     )
     
 class ObjectGallery(models.Model):
     '''\
