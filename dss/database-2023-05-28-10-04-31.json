@@ -1,0 +1,2618 @@
+[
+{
+    "model": "auth.permission",
+    "fields": {
+        "name": "Can add log entry",
+        "content_type": [
+            "admin",
+            "logentry"
+        ],
+        "codename": "add_logentry"
+    }
+},
+{
+    "model": "auth.permission",
+    "fields": {
+        "name": "Can change log entry",
+        "content_type": [
+            "admin",
+            "logentry"
+        ],
+        "codename": "change_logentry"
+    }
+},
+{
+    "model": "auth.permission",
+    "fields": {
+        "name": "Can delete log entry",
+        "content_type": [
+            "admin",
+            "logentry"
+        ],
+        "codename": "delete_logentry"
+    }
+},
+{
+    "model": "auth.permission",
+    "fields": {
+        "name": "Can view log entry",
+        "content_type": [
+            "admin",
+            "logentry"
+        ],
+        "codename": "view_logentry"
+    }
+},
+{
+    "model": "auth.permission",
+    "fields": {
+        "name": "Can add permission",
+        "content_type": [
+            "auth",
+            "permission"
+        ],
+        "codename": "add_permission"
+    }
+},
+{
+    "model": "auth.permission",
+    "fields": {
+        "name": "Can change permission",
+        "content_type": [
+            "auth",
+            "permission"
+        ],
+        "codename": "change_permission"
+    }
+},
+{
+    "model": "auth.permission",
+    "fields": {
+        "name": "Can delete permission",
+        "content_type": [
+            "auth",
+            "permission"
+        ],
+        "codename": "delete_permission"
+    }
+},
+{
+    "model": "auth.permission",
+    "fields": {
+        "name": "Can view permission",
+        "content_type": [
+            "auth",
+            "permission"
+        ],
+        "codename": "view_permission"
+    }
+},
+{
+    "model": "auth.permission",
+    "fields": {
+        "name": "Can add group",
+        "content_type": [
+            "auth",
+            "group"
+        ],
+        "codename": "add_group"
+    }
+},
+{
+    "model": "auth.permission",
+    "fields": {
+        "name": "Can change group",
+        "content_type": [
+            "auth",
+            "group"
+        ],
+        "codename": "change_group"
+    }
+},
+{
+    "model": "auth.permission",
+    "fields": {
+        "name": "Can delete group",
+        "content_type": [
+            "auth",
+            "group"
+        ],
+        "codename": "delete_group"
+    }
+},
+{
+    "model": "auth.permission",
+    "fields": {
+        "name": "Can view group",
+        "content_type": [
+            "auth",
+            "group"
+        ],
+        "codename": "view_group"
+    }
+},
+{
+    "model": "auth.permission",
+    "fields": {
+        "name": "Can add content type",
+        "content_type": [
+            "contenttypes",
+            "contenttype"
+        ],
+        "codename": "add_contenttype"
+    }
+},
+{
+    "model": "auth.permission",
+    "fields": {
+        "name": "Can change content type",
+        "content_type": [
+            "contenttypes",
+            "contenttype"
+        ],
+        "codename": "change_contenttype"
+    }
+},
+{
+    "model": "auth.permission",
+    "fields": {
+        "name": "Can delete content type",
+        "content_type": [
+            "contenttypes",
+            "contenttype"
+        ],
+        "codename": "delete_contenttype"
+    }
+},
+{
+    "model": "auth.permission",
+    "fields": {
+        "name": "Can view content type",
+        "content_type": [
+            "contenttypes",
+            "contenttype"
+        ],
+        "codename": "view_contenttype"
+    }
+},
+{
+    "model": "auth.permission",
+    "fields": {
+        "name": "Can add session",
+        "content_type": [
+            "sessions",
+            "session"
+        ],
+        "codename": "add_session"
+    }
+},
+{
+    "model": "auth.permission",
+    "fields": {
+        "name": "Can change session",
+        "content_type": [
+            "sessions",
+            "session"
+        ],
+        "codename": "change_session"
+    }
+},
+{
+    "model": "auth.permission",
+    "fields": {
+        "name": "Can delete session",
+        "content_type": [
+            "sessions",
+            "session"
+        ],
+        "codename": "delete_session"
+    }
+},
+{
+    "model": "auth.permission",
+    "fields": {
+        "name": "Can view session",
+        "content_type": [
+            "sessions",
+            "session"
+        ],
+        "codename": "view_session"
+    }
+},
+{
+    "model": "auth.permission",
+    "fields": {
+        "name": "Can add Иконка",
+        "content_type": [
+            "app_mediafiles",
+            "icon"
+        ],
+        "codename": "add_icon"
+    }
+},
+{
+    "model": "auth.permission",
+    "fields": {
+        "name": "Can change Иконка",
+        "content_type": [
+            "app_mediafiles",
+            "icon"
+        ],
+        "codename": "change_icon"
+    }
+},
+{
+    "model": "auth.permission",
+    "fields": {
+        "name": "Can delete Иконка",
+        "content_type": [
+            "app_mediafiles",
+            "icon"
+        ],
+        "codename": "delete_icon"
+    }
+},
+{
+    "model": "auth.permission",
+    "fields": {
+        "name": "Can view Иконка",
+        "content_type": [
+            "app_mediafiles",
+            "icon"
+        ],
+        "codename": "view_icon"
+    }
+},
+{
+    "model": "auth.permission",
+    "fields": {
+        "name": "Can add Метка",
+        "content_type": [
+            "app_mediafiles",
+            "tag"
+        ],
+        "codename": "add_tag"
+    }
+},
+{
+    "model": "auth.permission",
+    "fields": {
+        "name": "Can change Метка",
+        "content_type": [
+            "app_mediafiles",
+            "tag"
+        ],
+        "codename": "change_tag"
+    }
+},
+{
+    "model": "auth.permission",
+    "fields": {
+        "name": "Can delete Метка",
+        "content_type": [
+            "app_mediafiles",
+            "tag"
+        ],
+        "codename": "delete_tag"
+    }
+},
+{
+    "model": "auth.permission",
+    "fields": {
+        "name": "Can view Метка",
+        "content_type": [
+            "app_mediafiles",
+            "tag"
+        ],
+        "codename": "view_tag"
+    }
+},
+{
+    "model": "auth.permission",
+    "fields": {
+        "name": "Can add Фото",
+        "content_type": [
+            "app_mediafiles",
+            "image"
+        ],
+        "codename": "add_image"
+    }
+},
+{
+    "model": "auth.permission",
+    "fields": {
+        "name": "Can change Фото",
+        "content_type": [
+            "app_mediafiles",
+            "image"
+        ],
+        "codename": "change_image"
+    }
+},
+{
+    "model": "auth.permission",
+    "fields": {
+        "name": "Can delete Фото",
+        "content_type": [
+            "app_mediafiles",
+            "image"
+        ],
+        "codename": "delete_image"
+    }
+},
+{
+    "model": "auth.permission",
+    "fields": {
+        "name": "Can view Фото",
+        "content_type": [
+            "app_mediafiles",
+            "image"
+        ],
+        "codename": "view_image"
+    }
+},
+{
+    "model": "auth.permission",
+    "fields": {
+        "name": "Can add menu",
+        "content_type": [
+            "menu",
+            "menu"
+        ],
+        "codename": "add_menu"
+    }
+},
+{
+    "model": "auth.permission",
+    "fields": {
+        "name": "Can change menu",
+        "content_type": [
+            "menu",
+            "menu"
+        ],
+        "codename": "change_menu"
+    }
+},
+{
+    "model": "auth.permission",
+    "fields": {
+        "name": "Can delete menu",
+        "content_type": [
+            "menu",
+            "menu"
+        ],
+        "codename": "delete_menu"
+    }
+},
+{
+    "model": "auth.permission",
+    "fields": {
+        "name": "Can view menu",
+        "content_type": [
+            "menu",
+            "menu"
+        ],
+        "codename": "view_menu"
+    }
+},
+{
+    "model": "auth.permission",
+    "fields": {
+        "name": "Can add menu item",
+        "content_type": [
+            "menu",
+            "menuitem"
+        ],
+        "codename": "add_menuitem"
+    }
+},
+{
+    "model": "auth.permission",
+    "fields": {
+        "name": "Can change menu item",
+        "content_type": [
+            "menu",
+            "menuitem"
+        ],
+        "codename": "change_menuitem"
+    }
+},
+{
+    "model": "auth.permission",
+    "fields": {
+        "name": "Can delete menu item",
+        "content_type": [
+            "menu",
+            "menuitem"
+        ],
+        "codename": "delete_menuitem"
+    }
+},
+{
+    "model": "auth.permission",
+    "fields": {
+        "name": "Can view menu item",
+        "content_type": [
+            "menu",
+            "menuitem"
+        ],
+        "codename": "view_menuitem"
+    }
+},
+{
+    "model": "auth.permission",
+    "fields": {
+        "name": "Can add Объект",
+        "content_type": [
+            "app_objects",
+            "object"
+        ],
+        "codename": "add_object"
+    }
+},
+{
+    "model": "auth.permission",
+    "fields": {
+        "name": "Can change Объект",
+        "content_type": [
+            "app_objects",
+            "object"
+        ],
+        "codename": "change_object"
+    }
+},
+{
+    "model": "auth.permission",
+    "fields": {
+        "name": "Can delete Объект",
+        "content_type": [
+            "app_objects",
+            "object"
+        ],
+        "codename": "delete_object"
+    }
+},
+{
+    "model": "auth.permission",
+    "fields": {
+        "name": "Can view Объект",
+        "content_type": [
+            "app_objects",
+            "object"
+        ],
+        "codename": "view_object"
+    }
+},
+{
+    "model": "auth.permission",
+    "fields": {
+        "name": "Can add Тип ресурса",
+        "content_type": [
+            "app_objects",
+            "typestock"
+        ],
+        "codename": "add_typestock"
+    }
+},
+{
+    "model": "auth.permission",
+    "fields": {
+        "name": "Can change Тип ресурса",
+        "content_type": [
+            "app_objects",
+            "typestock"
+        ],
+        "codename": "change_typestock"
+    }
+},
+{
+    "model": "auth.permission",
+    "fields": {
+        "name": "Can delete Тип ресурса",
+        "content_type": [
+            "app_objects",
+            "typestock"
+        ],
+        "codename": "delete_typestock"
+    }
+},
+{
+    "model": "auth.permission",
+    "fields": {
+        "name": "Can view Тип ресурса",
+        "content_type": [
+            "app_objects",
+            "typestock"
+        ],
+        "codename": "view_typestock"
+    }
+},
+{
+    "model": "auth.permission",
+    "fields": {
+        "name": "Can add Ресурс",
+        "content_type": [
+            "app_objects",
+            "subunit"
+        ],
+        "codename": "add_subunit"
+    }
+},
+{
+    "model": "auth.permission",
+    "fields": {
+        "name": "Can change Ресурс",
+        "content_type": [
+            "app_objects",
+            "subunit"
+        ],
+        "codename": "change_subunit"
+    }
+},
+{
+    "model": "auth.permission",
+    "fields": {
+        "name": "Can delete Ресурс",
+        "content_type": [
+            "app_objects",
+            "subunit"
+        ],
+        "codename": "delete_subunit"
+    }
+},
+{
+    "model": "auth.permission",
+    "fields": {
+        "name": "Can view Ресурс",
+        "content_type": [
+            "app_objects",
+            "subunit"
+        ],
+        "codename": "view_subunit"
+    }
+},
+{
+    "model": "auth.permission",
+    "fields": {
+        "name": "Can add Фотография объекта",
+        "content_type": [
+            "app_objects",
+            "objectphoto"
+        ],
+        "codename": "add_objectphoto"
+    }
+},
+{
+    "model": "auth.permission",
+    "fields": {
+        "name": "Can change Фотография объекта",
+        "content_type": [
+            "app_objects",
+            "objectphoto"
+        ],
+        "codename": "change_objectphoto"
+    }
+},
+{
+    "model": "auth.permission",
+    "fields": {
+        "name": "Can delete Фотография объекта",
+        "content_type": [
+            "app_objects",
+            "objectphoto"
+        ],
+        "codename": "delete_objectphoto"
+    }
+},
+{
+    "model": "auth.permission",
+    "fields": {
+        "name": "Can view Фотография объекта",
+        "content_type": [
+            "app_objects",
+            "objectphoto"
+        ],
+        "codename": "view_objectphoto"
+    }
+},
+{
+    "model": "auth.permission",
+    "fields": {
+        "name": "Can add Галерея фотографий объекта",
+        "content_type": [
+            "app_objects",
+            "objectgallery"
+        ],
+        "codename": "add_objectgallery"
+    }
+},
+{
+    "model": "auth.permission",
+    "fields": {
+        "name": "Can change Галерея фотографий объекта",
+        "content_type": [
+            "app_objects",
+            "objectgallery"
+        ],
+        "codename": "change_objectgallery"
+    }
+},
+{
+    "model": "auth.permission",
+    "fields": {
+        "name": "Can delete Галерея фотографий объекта",
+        "content_type": [
+            "app_objects",
+            "objectgallery"
+        ],
+        "codename": "delete_objectgallery"
+    }
+},
+{
+    "model": "auth.permission",
+    "fields": {
+        "name": "Can view Галерея фотографий объекта",
+        "content_type": [
+            "app_objects",
+            "objectgallery"
+        ],
+        "codename": "view_objectgallery"
+    }
+},
+{
+    "model": "auth.permission",
+    "fields": {
+        "name": "Can add Тип услуги",
+        "content_type": [
+            "app_services",
+            "typeservice"
+        ],
+        "codename": "add_typeservice"
+    }
+},
+{
+    "model": "auth.permission",
+    "fields": {
+        "name": "Can change Тип услуги",
+        "content_type": [
+            "app_services",
+            "typeservice"
+        ],
+        "codename": "change_typeservice"
+    }
+},
+{
+    "model": "auth.permission",
+    "fields": {
+        "name": "Can delete Тип услуги",
+        "content_type": [
+            "app_services",
+            "typeservice"
+        ],
+        "codename": "delete_typeservice"
+    }
+},
+{
+    "model": "auth.permission",
+    "fields": {
+        "name": "Can view Тип услуги",
+        "content_type": [
+            "app_services",
+            "typeservice"
+        ],
+        "codename": "view_typeservice"
+    }
+},
+{
+    "model": "auth.permission",
+    "fields": {
+        "name": "Can add Вид спорта",
+        "content_type": [
+            "app_services",
+            "varioussport"
+        ],
+        "codename": "add_varioussport"
+    }
+},
+{
+    "model": "auth.permission",
+    "fields": {
+        "name": "Can change Вид спорта",
+        "content_type": [
+            "app_services",
+            "varioussport"
+        ],
+        "codename": "change_varioussport"
+    }
+},
+{
+    "model": "auth.permission",
+    "fields": {
+        "name": "Can delete Вид спорта",
+        "content_type": [
+            "app_services",
+            "varioussport"
+        ],
+        "codename": "delete_varioussport"
+    }
+},
+{
+    "model": "auth.permission",
+    "fields": {
+        "name": "Can view Вид спорта",
+        "content_type": [
+            "app_services",
+            "varioussport"
+        ],
+        "codename": "view_varioussport"
+    }
+},
+{
+    "model": "auth.permission",
+    "fields": {
+        "name": "Can add Фотография вида услуг",
+        "content_type": [
+            "app_services",
+            "typeservicegallery"
+        ],
+        "codename": "add_typeservicegallery"
+    }
+},
+{
+    "model": "auth.permission",
+    "fields": {
+        "name": "Can change Фотография вида услуг",
+        "content_type": [
+            "app_services",
+            "typeservicegallery"
+        ],
+        "codename": "change_typeservicegallery"
+    }
+},
+{
+    "model": "auth.permission",
+    "fields": {
+        "name": "Can delete Фотография вида услуг",
+        "content_type": [
+            "app_services",
+            "typeservicegallery"
+        ],
+        "codename": "delete_typeservicegallery"
+    }
+},
+{
+    "model": "auth.permission",
+    "fields": {
+        "name": "Can view Фотография вида услуг",
+        "content_type": [
+            "app_services",
+            "typeservicegallery"
+        ],
+        "codename": "view_typeservicegallery"
+    }
+},
+{
+    "model": "auth.permission",
+    "fields": {
+        "name": "Can add Услуга",
+        "content_type": [
+            "app_services",
+            "service"
+        ],
+        "codename": "add_service"
+    }
+},
+{
+    "model": "auth.permission",
+    "fields": {
+        "name": "Can change Услуга",
+        "content_type": [
+            "app_services",
+            "service"
+        ],
+        "codename": "change_service"
+    }
+},
+{
+    "model": "auth.permission",
+    "fields": {
+        "name": "Can delete Услуга",
+        "content_type": [
+            "app_services",
+            "service"
+        ],
+        "codename": "delete_service"
+    }
+},
+{
+    "model": "auth.permission",
+    "fields": {
+        "name": "Can view Услуга",
+        "content_type": [
+            "app_services",
+            "service"
+        ],
+        "codename": "view_service"
+    }
+},
+{
+    "model": "auth.permission",
+    "fields": {
+        "name": "Can add user",
+        "content_type": [
+            "app_user",
+            "user"
+        ],
+        "codename": "add_user"
+    }
+},
+{
+    "model": "auth.permission",
+    "fields": {
+        "name": "Can change user",
+        "content_type": [
+            "app_user",
+            "user"
+        ],
+        "codename": "change_user"
+    }
+},
+{
+    "model": "auth.permission",
+    "fields": {
+        "name": "Can delete user",
+        "content_type": [
+            "app_user",
+            "user"
+        ],
+        "codename": "delete_user"
+    }
+},
+{
+    "model": "auth.permission",
+    "fields": {
+        "name": "Can view user",
+        "content_type": [
+            "app_user",
+            "user"
+        ],
+        "codename": "view_user"
+    }
+},
+{
+    "model": "auth.permission",
+    "fields": {
+        "name": "Can add verifide user",
+        "content_type": [
+            "app_user",
+            "verifideuser"
+        ],
+        "codename": "add_verifideuser"
+    }
+},
+{
+    "model": "auth.permission",
+    "fields": {
+        "name": "Can change verifide user",
+        "content_type": [
+            "app_user",
+            "verifideuser"
+        ],
+        "codename": "change_verifideuser"
+    }
+},
+{
+    "model": "auth.permission",
+    "fields": {
+        "name": "Can delete verifide user",
+        "content_type": [
+            "app_user",
+            "verifideuser"
+        ],
+        "codename": "delete_verifideuser"
+    }
+},
+{
+    "model": "auth.permission",
+    "fields": {
+        "name": "Can view verifide user",
+        "content_type": [
+            "app_user",
+            "verifideuser"
+        ],
+        "codename": "view_verifideuser"
+    }
+},
+{
+    "model": "auth.permission",
+    "fields": {
+        "name": "Can add Контакт",
+        "content_type": [
+            "app_contacts",
+            "contact"
+        ],
+        "codename": "add_contact"
+    }
+},
+{
+    "model": "auth.permission",
+    "fields": {
+        "name": "Can change Контакт",
+        "content_type": [
+            "app_contacts",
+            "contact"
+        ],
+        "codename": "change_contact"
+    }
+},
+{
+    "model": "auth.permission",
+    "fields": {
+        "name": "Can delete Контакт",
+        "content_type": [
+            "app_contacts",
+            "contact"
+        ],
+        "codename": "delete_contact"
+    }
+},
+{
+    "model": "auth.permission",
+    "fields": {
+        "name": "Can view Контакт",
+        "content_type": [
+            "app_contacts",
+            "contact"
+        ],
+        "codename": "view_contact"
+    }
+},
+{
+    "model": "auth.permission",
+    "fields": {
+        "name": "Can add сотрудник",
+        "content_type": [
+            "app_piplscard",
+            "piple"
+        ],
+        "codename": "add_piple"
+    }
+},
+{
+    "model": "auth.permission",
+    "fields": {
+        "name": "Can change сотрудник",
+        "content_type": [
+            "app_piplscard",
+            "piple"
+        ],
+        "codename": "change_piple"
+    }
+},
+{
+    "model": "auth.permission",
+    "fields": {
+        "name": "Can delete сотрудник",
+        "content_type": [
+            "app_piplscard",
+            "piple"
+        ],
+        "codename": "delete_piple"
+    }
+},
+{
+    "model": "auth.permission",
+    "fields": {
+        "name": "Can view сотрудник",
+        "content_type": [
+            "app_piplscard",
+            "piple"
+        ],
+        "codename": "view_piple"
+    }
+},
+{
+    "model": "auth.permission",
+    "fields": {
+        "name": "Can add график работы подразделения",
+        "content_type": [
+            "app_shedule",
+            "shedule"
+        ],
+        "codename": "add_shedule"
+    }
+},
+{
+    "model": "auth.permission",
+    "fields": {
+        "name": "Can change график работы подразделения",
+        "content_type": [
+            "app_shedule",
+            "shedule"
+        ],
+        "codename": "change_shedule"
+    }
+},
+{
+    "model": "auth.permission",
+    "fields": {
+        "name": "Can delete график работы подразделения",
+        "content_type": [
+            "app_shedule",
+            "shedule"
+        ],
+        "codename": "delete_shedule"
+    }
+},
+{
+    "model": "auth.permission",
+    "fields": {
+        "name": "Can view график работы подразделения",
+        "content_type": [
+            "app_shedule",
+            "shedule"
+        ],
+        "codename": "view_shedule"
+    }
+},
+{
+    "model": "auth.permission",
+    "fields": {
+        "name": "Can add бронирование ресурса",
+        "content_type": [
+            "app_booking",
+            "subunitbooking"
+        ],
+        "codename": "add_subunitbooking"
+    }
+},
+{
+    "model": "auth.permission",
+    "fields": {
+        "name": "Can change бронирование ресурса",
+        "content_type": [
+            "app_booking",
+            "subunitbooking"
+        ],
+        "codename": "change_subunitbooking"
+    }
+},
+{
+    "model": "auth.permission",
+    "fields": {
+        "name": "Can delete бронирование ресурса",
+        "content_type": [
+            "app_booking",
+            "subunitbooking"
+        ],
+        "codename": "delete_subunitbooking"
+    }
+},
+{
+    "model": "auth.permission",
+    "fields": {
+        "name": "Can view бронирование ресурса",
+        "content_type": [
+            "app_booking",
+            "subunitbooking"
+        ],
+        "codename": "view_subunitbooking"
+    }
+},
+{
+    "model": "sessions.session",
+    "pk": "bqb6juiwg4clnnz91bz5z9xk57za94k0",
+    "fields": {
+        "session_data": ".eJxVjDsOwjAQBe_iGllO4t9S0ucM0Xp3jQMokeKkQtwdWUoB7ZuZ91YTHnuZjirbNLO6qk5dfreE9JSlAX7gcl81rcu-zUk3RZ-06nFled1O9--gYC2ttmBSjtlYHlwOBn2fsqDxQySKiSU69hJsD9I7GyB0ZENmQCED4Eh9vvYEOFA:1q2lbK:dK5OQ24Gmv1W-S6exXDRzcegDnYf4InjuBxGQZuKh5g",
+        "expire_date": "2023-06-10T04:32:22.817Z"
+    }
+},
+{
+    "model": "app_mediafiles.icon",
+    "pk": 1,
+    "fields": {
+        "name": "иконка бассейн",
+        "image": "imagelibrary/icon/ee1d9b0e-9cd4-42d9-95fd-80fc01ab1c95.png",
+        "created": "2023-05-19T15:30:48.694Z",
+        "width": 60,
+        "height": 60
+    }
+},
+{
+    "model": "app_mediafiles.icon",
+    "pk": 2,
+    "fields": {
+        "name": "иконка штанга (фитнес)",
+        "image": "imagelibrary/icon/21b0dfde-6417-46e6-b66f-ab722f089ddc.png",
+        "created": "2023-05-19T15:32:31.146Z",
+        "width": 60,
+        "height": 60
+    }
+},
+{
+    "model": "app_mediafiles.icon",
+    "pk": 3,
+    "fields": {
+        "name": "иконка баскетбол",
+        "image": "imagelibrary/icon/f3ee9692-b85e-4cae-b0a4-600035e363e3.png",
+        "created": "2023-05-19T15:33:09.084Z",
+        "width": 60,
+        "height": 60
+    }
+},
+{
+    "model": "app_mediafiles.icon",
+    "pk": 4,
+    "fields": {
+        "name": "иконка кубок",
+        "image": "imagelibrary/icon/0a06af6c-bae5-47f7-92e8-0a9bcdfa41e2.png",
+        "created": "2023-05-19T16:14:57.340Z",
+        "width": 61,
+        "height": 60
+    }
+},
+{
+    "model": "app_mediafiles.icon",
+    "pk": 5,
+    "fields": {
+        "name": "иконка футбол",
+        "image": "imagelibrary/icon/6646e8c4-2696-4999-afbc-094fc7640cec.png",
+        "created": "2023-05-19T16:15:27.661Z",
+        "width": 60,
+        "height": 60
+    }
+},
+{
+    "model": "app_mediafiles.icon",
+    "pk": 6,
+    "fields": {
+        "name": "иконка лукодром",
+        "image": "imagelibrary/icon/da32c290-edd0-4a51-8497-f61b1095b893.png",
+        "created": "2023-05-19T16:15:56.252Z",
+        "width": 61,
+        "height": 60
+    }
+},
+{
+    "model": "app_mediafiles.icon",
+    "pk": 7,
+    "fields": {
+        "name": "иконка тир",
+        "image": "imagelibrary/icon/92e92341-ca67-43a1-bf86-0a8eee3ebb73.png",
+        "created": "2023-05-19T16:16:22.705Z",
+        "width": 61,
+        "height": 60
+    }
+},
+{
+    "model": "app_mediafiles.icon",
+    "pk": 8,
+    "fields": {
+        "name": "иконка настольный тенис",
+        "image": "imagelibrary/icon/a08c002e-e7e3-43a3-bad8-bf27b85f7864.png",
+        "created": "2023-05-19T16:16:41.543Z",
+        "width": 61,
+        "height": 60
+    }
+},
+{
+    "model": "app_mediafiles.icon",
+    "pk": 9,
+    "fields": {
+        "name": "иконка коньки",
+        "image": "imagelibrary/icon/22b14046-cb92-4bce-a333-48f270f9add8.png",
+        "created": "2023-05-19T16:17:03.027Z",
+        "width": 61,
+        "height": 60
+    }
+},
+{
+    "model": "app_mediafiles.icon",
+    "pk": 11,
+    "fields": {
+        "name": "иконка бокс",
+        "image": "imagelibrary/icon/2278af00-92a4-4c03-9ca4-f2fb43523c97.png",
+        "created": "2023-05-19T16:18:05.522Z",
+        "width": 61,
+        "height": 60
+    }
+},
+{
+    "model": "app_mediafiles.icon",
+    "pk": 12,
+    "fields": {
+        "name": "иконка легкая атлетика",
+        "image": "imagelibrary/icon/12627ac1-0f5a-490f-90d0-21203e7e4769.png",
+        "created": "2023-05-19T16:18:20.066Z",
+        "width": 61,
+        "height": 60
+    }
+},
+{
+    "model": "app_mediafiles.icon",
+    "pk": 13,
+    "fields": {
+        "name": "иконка конный спорт",
+        "image": "imagelibrary/icon/b03fe64e-2a83-4816-9210-f74adcf9c966.png",
+        "created": "2023-05-19T16:18:42.642Z",
+        "width": 61,
+        "height": 60
+    }
+},
+{
+    "model": "app_mediafiles.icon",
+    "pk": 14,
+    "fields": {
+        "name": "иконка пустая",
+        "image": "imagelibrary/icon/d7b81556-19ed-4500-a702-1a78127a4949.jpg",
+        "created": "2023-05-20T09:45:18.453Z",
+        "width": 60,
+        "height": 41
+    }
+},
+{
+    "model": "app_mediafiles.icon",
+    "pk": 15,
+    "fields": {
+        "name": "иконка сауна",
+        "image": "imagelibrary/icon/c390aba9-3e5a-4c78-bc3a-6f914ea347cb.png",
+        "created": "2023-05-22T06:26:36.398Z",
+        "width": 60,
+        "height": 60
+    }
+},
+{
+    "model": "app_mediafiles.icon",
+    "pk": 16,
+    "fields": {
+        "name": "иконка SPA",
+        "image": "imagelibrary/icon/3a8748da-997c-4149-b124-c8756c272d15.png",
+        "created": "2023-05-22T06:36:52.341Z",
+        "width": 60,
+        "height": 60
+    }
+},
+{
+    "model": "app_mediafiles.icon",
+    "pk": 17,
+    "fields": {
+        "name": "иконка гостиница",
+        "image": "imagelibrary/icon/7b3f2889-89c7-4fcc-b4f7-932a773f76da.png",
+        "created": "2023-05-22T06:37:14.496Z",
+        "width": 60,
+        "height": 60
+    }
+},
+{
+    "model": "app_mediafiles.icon",
+    "pk": 18,
+    "fields": {
+        "name": "иконка календарь",
+        "image": "imagelibrary/icon/abfe0b5f-1492-4b9c-989b-7134e6a19839.png",
+        "created": "2023-05-22T06:48:32.434Z",
+        "width": 60,
+        "height": 60
+    }
+},
+{
+    "model": "app_mediafiles.icon",
+    "pk": 19,
+    "fields": {
+        "name": "иконка медиабиблиотека",
+        "image": "imagelibrary/icon/375bde65-60a3-4c08-a2ff-e83e3f4aace5.png",
+        "created": "2023-05-22T06:55:29.138Z",
+        "width": 60,
+        "height": 60
+    }
+},
+{
+    "model": "app_mediafiles.icon",
+    "pk": 20,
+    "fields": {
+        "name": "иконка документы",
+        "image": "imagelibrary/icon/ab1982a1-e62c-45e4-a914-df07dae9edd2.png",
+        "created": "2023-05-22T06:55:58.898Z",
+        "width": 60,
+        "height": 60
+    }
+},
+{
+    "model": "app_mediafiles.icon",
+    "pk": 21,
+    "fields": {
+        "name": "иконка торги",
+        "image": "imagelibrary/icon/200989f2-f3c6-4412-913c-9d69e8da5299.png",
+        "created": "2023-05-22T06:56:28.608Z",
+        "width": 61,
+        "height": 60
+    }
+},
+{
+    "model": "app_mediafiles.icon",
+    "pk": 22,
+    "fields": {
+        "name": "иконка адресная книга",
+        "image": "imagelibrary/icon/f1bda879-b9bd-4bf7-a876-a55ad851212f.png",
+        "created": "2023-05-22T06:56:41.586Z",
+        "width": 61,
+        "height": 60
+    }
+},
+{
+    "model": "app_mediafiles.icon",
+    "pk": 23,
+    "fields": {
+        "name": "иконка парнерам",
+        "image": "imagelibrary/icon/3b181376-be3e-4d0e-8b27-b779ea3bdcd8.png",
+        "created": "2023-05-22T06:57:07.559Z",
+        "width": 61,
+        "height": 60
+    }
+},
+{
+    "model": "app_mediafiles.icon",
+    "pk": 24,
+    "fields": {
+        "name": "иконка ресурсы интернет",
+        "image": "imagelibrary/icon/993093d0-01f3-4ee3-a818-69d059059fd5.png",
+        "created": "2023-05-22T06:57:17.553Z",
+        "width": 61,
+        "height": 60
+    }
+},
+{
+    "model": "app_mediafiles.icon",
+    "pk": 25,
+    "fields": {
+        "name": "иконка диалог",
+        "image": "imagelibrary/icon/6f0dc6ac-66cb-4ffa-91a1-eeb526f84716.png",
+        "created": "2023-05-22T06:57:56.642Z",
+        "width": 61,
+        "height": 60
+    }
+},
+{
+    "model": "app_mediafiles.icon",
+    "pk": 26,
+    "fields": {
+        "name": "иконка адрес",
+        "image": "imagelibrary/icon/a664e761-437c-4ba7-8dff-d72133fcb900.png",
+        "created": "2023-05-22T06:58:17.324Z",
+        "width": 61,
+        "height": 60
+    }
+},
+{
+    "model": "app_mediafiles.tag",
+    "pk": 1,
+    "fields": {
+        "tag": "тренер"
+    }
+},
+{
+    "model": "app_mediafiles.tag",
+    "pk": 2,
+    "fields": {
+        "tag": "объект"
+    }
+},
+{
+    "model": "app_mediafiles.tag",
+    "pk": 3,
+    "fields": {
+        "tag": "услуга"
+    }
+},
+{
+    "model": "app_mediafiles.image",
+    "pk": 1,
+    "fields": {
+        "name": "центральный стадион общий вид",
+        "description": "центральный стадион вмещает в себя 10000 зрителей",
+        "image": "imagelibrary/photo/e0bf6497-d231-4825-99c0-75a339dbd603.jpg",
+        "created": "2023-05-21T03:02:19.600Z",
+        "width": 1890,
+        "height": 1255,
+        "thumbnail_middle": "imagelibrary/photo/thumbnail_middle/m_e0bf6497-d231-4825-99c0-75a339dbd603_GJiOaI6.jpg",
+        "thumbnail_small": "imagelibrary/photo/thumbnail_small/s_e0bf6497-d231-4825-99c0-75a339dbd603_bvqznpr.jpg",
+        "tags": []
+    }
+},
+{
+    "model": "app_mediafiles.image",
+    "pk": 2,
+    "fields": {
+        "name": "Мини-футбольное поле на ФСК",
+        "description": "льадлвпвп",
+        "image": "imagelibrary/photo/556208d4-4837-402a-b0cd-a21b65ce665a.jpg",
+        "created": "2023-05-21T03:34:31.008Z",
+        "width": 768,
+        "height": 512,
+        "thumbnail_middle": "imagelibrary/photo/thumbnail_middle/m_556208d4-4837-402a-b0cd-a21b65ce665a_QmyHHMz.jpg",
+        "thumbnail_small": "imagelibrary/photo/thumbnail_small/s_556208d4-4837-402a-b0cd-a21b65ce665a_2kHYI6D.jpg",
+        "tags": []
+    }
+},
+{
+    "model": "app_mediafiles.image",
+    "pk": 3,
+    "fields": {
+        "name": "бассейн справа",
+        "description": "ываывап",
+        "image": "imagelibrary/photo/053f0adf-0d52-457d-80ee-fc846c205277.jpg",
+        "created": "2023-05-21T15:26:40.768Z",
+        "width": 768,
+        "height": 512,
+        "thumbnail_middle": "imagelibrary/photo/thumbnail_middle/m_053f0adf-0d52-457d-80ee-fc846c205277_Sdy7avI.jpg",
+        "thumbnail_small": "imagelibrary/photo/thumbnail_small/s_053f0adf-0d52-457d-80ee-fc846c205277_l9xLeAX.jpg",
+        "tags": []
+    }
+},
+{
+    "model": "app_mediafiles.image",
+    "pk": 4,
+    "fields": {
+        "name": "Специализированный зал ФСК",
+        "description": "ывяы",
+        "image": "imagelibrary/photo/5eb5b804-920b-4ffd-aaf7-866406faba16.jpg",
+        "created": "2023-05-22T08:57:59.904Z",
+        "width": 1440,
+        "height": 1042,
+        "thumbnail_middle": "imagelibrary/photo/thumbnail_middle/m_5eb5b804-920b-4ffd-aaf7-866406faba16.jpg",
+        "thumbnail_small": "imagelibrary/photo/thumbnail_small/s_5eb5b804-920b-4ffd-aaf7-866406faba16.jpg",
+        "tags": []
+    }
+},
+{
+    "model": "app_mediafiles.image",
+    "pk": 5,
+    "fields": {
+        "name": "Универсальный зал ФСК",
+        "description": "чсача",
+        "image": "imagelibrary/photo/c02eafc2-12d8-496d-82a9-8e31808aee2c.jpg",
+        "created": "2023-05-22T08:58:25.741Z",
+        "width": 960,
+        "height": 720,
+        "thumbnail_middle": "imagelibrary/photo/thumbnail_middle/m_c02eafc2-12d8-496d-82a9-8e31808aee2c.jpg",
+        "thumbnail_small": "imagelibrary/photo/thumbnail_small/s_c02eafc2-12d8-496d-82a9-8e31808aee2c.jpg",
+        "tags": []
+    }
+},
+{
+    "model": "app_mediafiles.image",
+    "pk": 6,
+    "fields": {
+        "name": "ФСК общий вид",
+        "description": "смчм",
+        "image": "imagelibrary/photo/09009e21-2add-4e1c-92ae-dce91035a27a.jpg",
+        "created": "2023-05-22T08:59:08.247Z",
+        "width": 768,
+        "height": 255,
+        "thumbnail_middle": "imagelibrary/photo/thumbnail_middle/m_09009e21-2add-4e1c-92ae-dce91035a27a.jpg",
+        "thumbnail_small": "imagelibrary/photo/thumbnail_small/s_09009e21-2add-4e1c-92ae-dce91035a27a.jpg",
+        "tags": []
+    }
+},
+{
+    "model": "app_mediafiles.image",
+    "pk": 7,
+    "fields": {
+        "name": "Тренажерный зал \"Атлет\"",
+        "description": "Фитнес и прочие ништяки",
+        "image": "imagelibrary/photo/68bf5c32-7562-4489-94eb-ea247d44f893.jpg",
+        "created": "2023-05-22T09:00:47.054Z",
+        "width": 2560,
+        "height": 1280,
+        "thumbnail_middle": "imagelibrary/photo/thumbnail_middle/m_68bf5c32-7562-4489-94eb-ea247d44f893.jpg",
+        "thumbnail_small": "imagelibrary/photo/thumbnail_small/s_68bf5c32-7562-4489-94eb-ea247d44f893.jpg",
+        "tags": []
+    }
+},
+{
+    "model": "app_mediafiles.image",
+    "pk": 12,
+    "fields": {
+        "name": "тренер Зарубиню В.Ю.",
+        "description": "Дипломированный специалист по физической культуре, спорту.\r\nКМС по пауэрлифтингу.\r\nПроводит групповые и индивидуальные занятия.",
+        "image": "imagelibrary/photo/e9bea971-03ae-48d9-a268-b5b7fca243af.jpg",
+        "created": "2023-05-23T07:56:45.301Z",
+        "width": 369,
+        "height": 521,
+        "thumbnail_middle": "imagelibrary/photo/thumbnail_middle/m_e9bea971-03ae-48d9-a268-b5b7fca243af.jpg",
+        "thumbnail_small": "imagelibrary/photo/thumbnail_small/s_e9bea971-03ae-48d9-a268-b5b7fca243af.jpg",
+        "tags": [
+            1
+        ]
+    }
+},
+{
+    "model": "app_mediafiles.image",
+    "pk": 13,
+    "fields": {
+        "name": "тренер Соболев И.Н.",
+        "description": "Дипломированный специалист по физической культуре и спорту.\r\nПроводит групповые и индивидуальные занятия.",
+        "image": "imagelibrary/photo/ec8cb5b7-b376-4a16-b504-b5e93b1a1a83.jpg",
+        "created": "2023-05-23T08:03:28.107Z",
+        "width": 398,
+        "height": 521,
+        "thumbnail_middle": "imagelibrary/photo/thumbnail_middle/m_ec8cb5b7-b376-4a16-b504-b5e93b1a1a83.jpg",
+        "thumbnail_small": "imagelibrary/photo/thumbnail_small/s_ec8cb5b7-b376-4a16-b504-b5e93b1a1a83.jpg",
+        "tags": [
+            1
+        ]
+    }
+},
+{
+    "model": "app_mediafiles.image",
+    "pk": 14,
+    "fields": {
+        "name": "тренер Казаненко А.Ю.",
+        "description": "Персональный тренер, общий стаж тренировок более 8 лет.",
+        "image": "imagelibrary/photo/ae5f5385-aae4-4a23-963a-96e0bac23a2c.jpg",
+        "created": "2023-05-23T08:08:47.991Z",
+        "width": 459,
+        "height": 521,
+        "thumbnail_middle": "imagelibrary/photo/thumbnail_middle/m_ae5f5385-aae4-4a23-963a-96e0bac23a2c.jpg",
+        "thumbnail_small": "imagelibrary/photo/thumbnail_small/s_ae5f5385-aae4-4a23-963a-96e0bac23a2c.jpg",
+        "tags": [
+            1
+        ]
+    }
+},
+{
+    "model": "app_mediafiles.image",
+    "pk": 15,
+    "fields": {
+        "name": "тренер Тюкавкина А. А.",
+        "description": "Инструктор тренажёрного зала (школа фитнеса Варвары Медведевой)\r\nВысшее физкультурно-педагогическое образование.\r\nМастер спорта России по пауэрлифтингу (ФПР).\r\nНеоднократный победитель и призёр соревнований по пауэрлифтингу.",
+        "image": "imagelibrary/photo/a0b0418f-96d5-4d8c-a2d5-4c5d46a8cd90.jpg",
+        "created": "2023-05-23T08:31:12.571Z",
+        "width": 307,
+        "height": 492,
+        "thumbnail_middle": "imagelibrary/photo/thumbnail_middle/m_a0b0418f-96d5-4d8c-a2d5-4c5d46a8cd90.jpg",
+        "thumbnail_small": "imagelibrary/photo/thumbnail_small/s_a0b0418f-96d5-4d8c-a2d5-4c5d46a8cd90.jpg",
+        "tags": [
+            1
+        ]
+    }
+},
+{
+    "model": "app_mediafiles.image",
+    "pk": 16,
+    "fields": {
+        "name": "лукодром общий вид",
+        "description": "вамчвапмчвапмв",
+        "image": "imagelibrary/photo/b7b6971f-183a-4f11-8bb9-282241c20ec9.jpg",
+        "created": "2023-05-25T03:08:56.467Z",
+        "width": 768,
+        "height": 512,
+        "thumbnail_middle": "imagelibrary/photo/thumbnail_middle/m_b7b6971f-183a-4f11-8bb9-282241c20ec9.jpg",
+        "thumbnail_small": "imagelibrary/photo/thumbnail_small/s_b7b6971f-183a-4f11-8bb9-282241c20ec9.jpg",
+        "tags": [
+            2
+        ]
+    }
+},
+{
+    "model": "menu.menu",
+    "pk": 1,
+    "fields": {
+        "name": "mainmenu",
+        "slug": "mainmenu",
+        "base_url": null,
+        "description": ""
+    }
+},
+{
+    "model": "menu.menuitem",
+    "pk": 1,
+    "fields": {
+        "menu": 1,
+        "order": 10,
+        "link_url": "/objects",
+        "title": "Спортивные объекты",
+        "login_required": false,
+        "anonymous_only": false
+    }
+},
+{
+    "model": "menu.menuitem",
+    "pk": 2,
+    "fields": {
+        "menu": 1,
+        "order": 20,
+        "link_url": "/services/sport",
+        "title": "Спортивные услуги",
+        "login_required": false,
+        "anonymous_only": false
+    }
+},
+{
+    "model": "menu.menuitem",
+    "pk": 3,
+    "fields": {
+        "menu": 1,
+        "order": 30,
+        "link_url": "/services/section",
+        "title": "Спортивные секции",
+        "login_required": false,
+        "anonymous_only": false
+    }
+},
+{
+    "model": "menu.menuitem",
+    "pk": 4,
+    "fields": {
+        "menu": 1,
+        "order": 40,
+        "link_url": "/services/other",
+        "title": "Прочие услуги",
+        "login_required": false,
+        "anonymous_only": false
+    }
+},
+{
+    "model": "menu.menuitem",
+    "pk": 5,
+    "fields": {
+        "menu": 1,
+        "order": 50,
+        "link_url": "/about",
+        "title": "О нас",
+        "login_required": false,
+        "anonymous_only": false
+    }
+},
+{
+    "model": "menu.menuitem",
+    "pk": 6,
+    "fields": {
+        "menu": 1,
+        "order": 60,
+        "link_url": "/forpartner",
+        "title": "Партнерам",
+        "login_required": false,
+        "anonymous_only": false
+    }
+},
+{
+    "model": "app_objects.object",
+    "pk": 1,
+    "fields": {
+        "short_name": "ФСК",
+        "name": "Физкультурно-спортивный комплекс",
+        "slug": "fsk",
+        "address": "г. Улан-Удэ, ул. Рылеева, 2",
+        "description": "<p>Площадь строения составляет более 32 тысяч квадратных метров. Расположен в центре города.</p>\r\n\r\n<p>В комплексе предусмотрено все необходимое для занятий спортом: бассейн, спортивные залы, командные раздевалки, тренерские, судейские, гардеробные, технические и административно-бытовые помещения.</p>\r\n\r\n<p>Официальное открытие Физкультурно-спортивного комплекса (ФСК) в г. Улан-Удэ состоялось <strong>25-го февраля 2012 года.</strong></p>\r\n\r\n<p>На объекте проводятся культурно-массовые мероприятия, возможно проведение выставок, конференций (<strong>отсылка к парнерским предложениям</strong>)</p>\r\n\r\n<p><strong>Отсылка истории в новостях (отобрать все новости с тэгом)</strong></p>\r\n\r\n<p><strong>Отсылка к контактам</strong></p>\r\n\r\n<p><strong>Отсылка к геометке</strong></p>\r\n\r\n<p><strong>Слайдер с фотогалереей по тэгам</strong></p>\r\n\r\n<p>&nbsp;</p>",
+        "icon_lib": 5,
+        "order": 100,
+        "type_stock": [
+            1,
+            3,
+            4,
+            7
+        ]
+    }
+},
+{
+    "model": "app_objects.object",
+    "pk": 2,
+    "fields": {
+        "short_name": "Лукодром (РЦСЛ)",
+        "name": "Региональный центр по стрельбе из лука \"Мэргэн\"",
+        "slug": "rcsl-mergen",
+        "address": "г Улан-Удэ ул. Жердева, 93",
+        "description": "<p><strong>Новый Лукодром</strong>&nbsp;&mdash; на сегодняшний день, является первым крытым специализированным спортивным объектом для проведения тренировочных и спортивных мероприятий по стрельбе из лука на территории России. Площадь Лукодрома рассчитана на олимпийские дистанции &mdash; 5 131,2 кв.м. На 1 этаже расположен универсальный зал 78 х 36 м..</p>\r\n\r\n<p>С появлением спортивного объекта, &mdash; дает значительное преимущество и возможность бурятским спортсменам в круглогодичном режиме проводить тренировочный процесс по олимпийской программе.</p>\r\n\r\n<p>Региональный центр по стрельбе из лука, также предусмотрен для маломобильных людей.</p>\r\n\r\n<p>Спортивный объект полностью оснащен вспомогательными помещениями: кафе, гардеробная, тренерские, раздевалки.&nbsp;</p>",
+        "icon_lib": 6,
+        "order": 200,
+        "type_stock": [
+            5
+        ]
+    }
+},
+{
+    "model": "app_objects.object",
+    "pk": 3,
+    "fields": {
+        "short_name": "Стадион",
+        "name": "Центральный стадион республики Бурятия",
+        "slug": "csrb",
+        "address": "ул. Кирова, 1",
+        "description": "<p>главная спортивная арена в городе Улан-Удэ и в целом Республики Бурятия, расположенная в центре города на набережной реки Селенга. Является самым большим спортивным объектом в Бурятии. Торжественное открытие стадиона состоялось 29 июня 2011 года, оно было приурочено к празднованию 350-летия вхождения Бурятии в состав Российского государства.</p>\r\n\r\n<ul>\r\n\t<li>Стадион оснащен современным оборудованием и способен вмещать до 10 000 зрителей, на футбольном поле положено искусственное покрытие Duraspine Ultra 60 последнего поколения.&nbsp;</li>\r\n\t<li>Легкоатлетическое ядро с синтетическими беговыми дорожками &laquo;Эластур&raquo;, которое сертифицировано Международной Федерации легкой атлетики, позволяет проводить соревнования всероссийского и международного уровня.</li>\r\n\t<li>В зимний период чаша стадиона превращается в ледовый каток, а по периметру прокладывается лыжня.</li>\r\n\t<li>В здании Центрального стадиона расположен тренажерный зал,&nbsp;конференц-зал и арт-площадка.</li>\r\n\t<li>Рядом со стадионом располагается поле для игр в мини-футбол и площадка для занятий воркаут и ГТО, хоккейная коробка (заливается льдом с ноября по март).</li>\r\n</ul>",
+        "icon_lib": 12,
+        "order": 100,
+        "type_stock": [
+            2,
+            6
+        ]
+    }
+},
+{
+    "model": "app_objects.object",
+    "pk": 4,
+    "fields": {
+        "short_name": "Центр единоборс",
+        "name": "Региональный центр единоборств",
+        "slug": "centr-edinobors",
+        "address": "смиси",
+        "description": "",
+        "icon_lib": 14,
+        "order": 100,
+        "type_stock": [
+            3
+        ]
+    }
+},
+{
+    "model": "app_objects.object",
+    "pk": 5,
+    "fields": {
+        "short_name": "Байкал Парк",
+        "name": "Отель Байкал Парк",
+        "slug": "bajkal-park",
+        "address": "Республика Бурятия, Баргузинский район, п. Максимиха, ул. Опытная, 1",
+        "description": "<p>Отель &laquo;Байкал Park&raquo; расположен в 240 километрах от города Улан-Удэ, в курортном поселке Максимиха, в 1,5 км от берега озера Байкал. Это одно из тех мест, где в любое время года можно насладиться красотами местной природы, пением птиц, свежим байкальским воздухом и чистейшей байкальской водой. Отель имеет самую большую территорию среди отелей на Байкале.&nbsp;</p>",
+        "icon_lib": 17,
+        "order": 100,
+        "type_stock": [
+            3,
+            4
+        ]
+    }
+},
+{
+    "model": "app_objects.object",
+    "pk": 6,
+    "fields": {
+        "short_name": "ГД Надежда",
+        "name": "Гостевой дом Надежда",
+        "slug": "gd-nadezhda",
+        "address": "Республика Бурятия, Баргузинский район, п. Максимиха, ул. Лесная, 4",
+        "description": "<h4>В летний период в курортном поселке Максимиха, для Вас работает гостевой дом &laquo;Надежда&raquo;, который располагается в 100 метрах от оз. Байкал.</h4>\r\n\r\n<ul>\r\n\t<li>Номера эконом-класса (без удобств);</li>\r\n\t<li>Первая линия от оз. Байкал;</li>\r\n\t<li>Большая территория для установки палаток;</li>\r\n\t<li>На территории есть баня;</li>\r\n\t<li>Бесплатная стоянка.</li>\r\n</ul>",
+        "icon_lib": 17,
+        "order": 100,
+        "type_stock": [
+            7
+        ]
+    }
+},
+{
+    "model": "app_objects.typestock",
+    "pk": 1,
+    "fields": {
+        "name": "Плавательный бассейн",
+        "slug": "plavatelnyj-bassejn",
+        "icon": 1,
+        "order": 100,
+        "description": "<ul>\r\n\t<li>Объем бассейна &mdash; 4 000 куб.м.;</li>\r\n\t<li>Площадь зеркала воды &mdash; 1250&nbsp;&nbsp;кв.м.;&nbsp;</li>\r\n\t<li>Длина чаши бассейна &mdash; 50 м.;&nbsp;</li>\r\n\t<li>Ширина чаши бассейна &ndash; 25 м.;</li>\r\n\t<li>В бассейне 10 дорожек;</li>\r\n\t<li>Глубина бассейна&nbsp; &mdash; 3 м.</li>\r\n\t<li><em>Пропускная способность&nbsp; бассейна до 120 человек за сеанс.</em></li>\r\n</ul>\r\n\r\n<p>Для начинающих пловцов есть 3 безопасные дорожки с переменной глубиной от 6 до 1,2&nbsp; м.&nbsp;&nbsp;</p>\r\n\r\n<p>Вода в бассейне проходит многоступенчатую комбинированную очистку, включающую в себя механическую фильтрацию, химическую очистку и обработку ультрафиолетом.</p>\r\n\r\n<p><strong>Бассейн в ФСК работает ежедневно по сеансам, кроме:</strong></p>\r\n\r\n<p>&mdash; первого понедельника каждого месяца (санитарный день)</p>\r\n\r\n<p>&mdash; спортивных мероприятий (уведомляем в новостях на нашем сайте и в соцсетях)</p>\r\n\r\n<p>&mdash; техническое обслуживание (уведомляем в новостях на нашем сайте и в соцсетях)</p>"
+    }
+},
+{
+    "model": "app_objects.typestock",
+    "pk": 2,
+    "fields": {
+        "name": "Стадион",
+        "slug": "stadion",
+        "icon": 4,
+        "order": 100,
+        "description": ""
+    }
+},
+{
+    "model": "app_objects.typestock",
+    "pk": 3,
+    "fields": {
+        "name": "Спортивный зал",
+        "slug": "sportivnyj-zal",
+        "icon": 4,
+        "order": 100,
+        "description": ""
+    }
+},
+{
+    "model": "app_objects.typestock",
+    "pk": 4,
+    "fields": {
+        "name": "Футбол на открытом поле",
+        "slug": "futbol-na-otkrytom-pole",
+        "icon": 5,
+        "order": 100,
+        "description": ""
+    }
+},
+{
+    "model": "app_objects.typestock",
+    "pk": 5,
+    "fields": {
+        "name": "Лукодром",
+        "slug": "lukodrom",
+        "icon": 6,
+        "order": 100,
+        "description": ""
+    }
+},
+{
+    "model": "app_objects.typestock",
+    "pk": 6,
+    "fields": {
+        "name": "Беговая дорожка",
+        "slug": "begovaya-dorozhka",
+        "icon": 12,
+        "order": 100,
+        "description": ""
+    }
+},
+{
+    "model": "app_objects.typestock",
+    "pk": 7,
+    "fields": {
+        "name": "Тренажерный зал \"Атлет\"",
+        "slug": "trenazhernyj-zal-atlet",
+        "icon": 2,
+        "order": 100,
+        "description": "<p>Оснащен профессиональным спортивным оборудованием от ведущих мировых производителей. Силовая зона представлена многофункциональными тренажерами со встроенной и свободной весовой категорией. Имеются мужские и женские раздевалки с душевыми кабинками.</p>"
+    }
+},
+{
+    "model": "app_objects.subunit",
+    "pk": 1,
+    "fields": {
+        "name": "Мини-футбольное поле № 1 на ФСК",
+        "slug": "mini-futbolnoe-pole-1-na-fsk",
+        "description": "<p><strong><strong>Оказание физкультурно-оздоровительных услуг на мини &mdash; футбольной&nbsp; площадке&nbsp;</strong></strong></p>\r\n\r\n<p><strong><strong>ул. Рылеева, 2&nbsp;</strong></strong></p>",
+        "resource": 4,
+        "obj": 1,
+        "contact": null,
+        "shedule": null
+    }
+},
+{
+    "model": "app_objects.subunit",
+    "pk": 2,
+    "fields": {
+        "name": "Дорожка бассейна №1",
+        "slug": "dorozhka-bassejna-1",
+        "description": "<p>345</p>",
+        "resource": 1,
+        "obj": 1,
+        "contact": null,
+        "shedule": null
+    }
+},
+{
+    "model": "app_objects.objectgallery",
+    "pk": 1,
+    "fields": {
+        "obj": 1,
+        "photos": 2
+    }
+},
+{
+    "model": "app_objects.objectgallery",
+    "pk": 2,
+    "fields": {
+        "obj": 1,
+        "photos": 6
+    }
+},
+{
+    "model": "app_objects.objectgallery",
+    "pk": 3,
+    "fields": {
+        "obj": 1,
+        "photos": 4
+    }
+},
+{
+    "model": "app_objects.objectgallery",
+    "pk": 4,
+    "fields": {
+        "obj": 3,
+        "photos": 7
+    }
+},
+{
+    "model": "app_objects.objectgallery",
+    "pk": 5,
+    "fields": {
+        "obj": 2,
+        "photos": 16
+    }
+},
+{
+    "model": "app_services.varioussport",
+    "pk": 1,
+    "fields": {
+        "name": "Легкая атлетика",
+        "slug": "athletics"
+    }
+},
+{
+    "model": "app_services.varioussport",
+    "pk": 2,
+    "fields": {
+        "name": "Тяжелая атлетика",
+        "slug": "weightlifting"
+    }
+},
+{
+    "model": "app_services.varioussport",
+    "pk": 3,
+    "fields": {
+        "name": "Стрельба из лука",
+        "slug": "archery"
+    }
+},
+{
+    "model": "app_services.varioussport",
+    "pk": 4,
+    "fields": {
+        "name": "Футболл",
+        "slug": "football"
+    }
+},
+{
+    "model": "app_services.varioussport",
+    "pk": 5,
+    "fields": {
+        "name": "Пулевая стрельба",
+        "slug": "shooting"
+    }
+},
+{
+    "model": "app_services.varioussport",
+    "pk": 6,
+    "fields": {
+        "name": "Плавание",
+        "slug": "swimming"
+    }
+},
+{
+    "model": "app_services.typeservice",
+    "pk": 1,
+    "fields": {
+        "name": "Командные игры в спортзалах",
+        "slug": "commandgame",
+        "order": 255,
+        "icon": 3
+    }
+},
+{
+    "model": "app_services.typeservice",
+    "pk": 2,
+    "fields": {
+        "name": "Плавание",
+        "slug": "swimming",
+        "order": 10,
+        "icon": 1
+    }
+},
+{
+    "model": "app_services.typeservice",
+    "pk": 3,
+    "fields": {
+        "name": "Игры на открытом поле",
+        "slug": "Opengame",
+        "order": 255,
+        "icon": 5
+    }
+},
+{
+    "model": "app_services.typeservice",
+    "pk": 4,
+    "fields": {
+        "name": "Фитнес и тренажеры",
+        "slug": "bodybilding",
+        "order": 255,
+        "icon": 2
+    }
+},
+{
+    "model": "app_services.typeservice",
+    "pk": 5,
+    "fields": {
+        "name": "Культурно-массовые мероприятия",
+        "slug": "pipls",
+        "order": 255,
+        "icon": 14
+    }
+},
+{
+    "model": "app_services.typeservice",
+    "pk": 6,
+    "fields": {
+        "name": "Гостиницы и хостелы",
+        "slug": "hotel",
+        "order": 255,
+        "icon": 14
+    }
+},
+{
+    "model": "app_services.typeservice",
+    "pk": 7,
+    "fields": {
+        "name": "Зимние виды спорта",
+        "slug": "wintergame",
+        "order": 255,
+        "icon": 9
+    }
+},
+{
+    "model": "app_services.typeservice",
+    "pk": 8,
+    "fields": {
+        "name": "SPA",
+        "slug": "spa",
+        "order": 255,
+        "icon": 14
+    }
+},
+{
+    "model": "app_services.typeservice",
+    "pk": 9,
+    "fields": {
+        "name": "Аренда помещений",
+        "slug": "square",
+        "order": 255,
+        "icon": 14
+    }
+},
+{
+    "model": "app_services.service",
+    "pk": 3,
+    "fields": {
+        "name": "Занятие по плаванию в паре (сплит)",
+        "description": "<p>Занятие предназначено бла бла бла</p>\r\n\r\n<table style=\"width:690px\">\r\n\t<tbody>\r\n\t\t<tr>\r\n\t\t\t<td>\r\n\t\t\t<p>Дети с 7 до 17 лет</p>\r\n\t\t\t</td>\r\n\t\t\t<td>\r\n\t\t\t<p>1 200 руб.&nbsp;</p>\r\n\t\t\t</td>\r\n\t\t</tr>\r\n\t\t<tr>\r\n\t\t\t<td>\r\n\t\t\t<p>Ребенок с 7 до 17 лет + взрослый</p>\r\n\t\t\t</td>\r\n\t\t\t<td>1 350 руб.</td>\r\n\t\t</tr>\r\n\t\t<tr>\r\n\t\t\t<td>\r\n\t\t\t<p>Взрослые с 18 лет</p>\r\n\t\t\t</td>\r\n\t\t\t<td rowspan=\"2\">\r\n\t\t\t<p>1 500 руб.</p>\r\n\t\t\t</td>\r\n\t\t</tr>\r\n\t</tbody>\r\n</table>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p>цена указана за 2 человек. Сеанс 40 минут.</p>",
+        "category": "section",
+        "slug": "split_swimming_lesson",
+        "typeservice": 1
+    }
+},
+{
+    "model": "app_services.service",
+    "pk": 4,
+    "fields": {
+        "name": "Групповое плавание на 24 занятия для начинающих",
+        "description": "<p>В секцию принимаются дети с 7 до 17 лет.</p>\r\n\r\n<p>Группа для начинающих</p>\r\n\r\n<p>Цена 6000 руб.</p>\r\n\r\n<p>24 занятия в течении 3 месяцев</p>\r\n\r\n<p>&nbsp;</p>",
+        "category": "section",
+        "slug": "gruppovoe-plavanie-na-24-zanyatiya-dlya-nachinayushih",
+        "typeservice": 1
+    }
+},
+{
+    "model": "app_services.service",
+    "pk": 5,
+    "fields": {
+        "name": "Лови волну",
+        "description": "<table>\r\n\t<tbody>\r\n\t\t<tr>\r\n\t\t\t<td><strong>Время посещения</strong></td>\r\n\t\t\t<td><strong>Стоимость в руб. (НДС не облагается)</strong></td>\r\n\t\t</tr>\r\n\t\t<tr>\r\n\t\t\t<td><strong>07:00</strong></td>\r\n\t\t\t<td rowspan=\"5\">\r\n\t\t\t<p><strong>680 руб.</strong></p>\r\n\t\t\t</td>\r\n\t\t</tr>\r\n\t\t<tr>\r\n\t\t\t<td><strong>08:15</strong></td>\r\n\t\t</tr>\r\n\t\t<tr>\r\n\t\t\t<td><strong>12:00</strong></td>\r\n\t\t</tr>\r\n\t\t<tr>\r\n\t\t\t<td><strong>12:45</strong></td>\r\n\t\t</tr>\r\n\t\t<tr>\r\n\t\t\t<td><strong>13:30</strong></td>\r\n\t\t</tr>\r\n\t</tbody>\r\n</table>",
+        "category": "sport",
+        "slug": "lovi-volnu",
+        "typeservice": 2
+    }
+},
+{
+    "model": "app_services.service",
+    "pk": 6,
+    "fields": {
+        "name": "Разовое самостоятельное посещение бассейна",
+        "description": "<table style=\"width:690px\">\r\n\t<tbody>\r\n\t\t<tr>\r\n\t\t\t<td><strong>Категория населения</strong></td>\r\n\t\t\t<td><strong>Стоимость в руб. (НДС не облагается)</strong></td>\r\n\t\t</tr>\r\n\t\t<tr>\r\n\t\t\t<td><strong>ДЕТИ до 17 лет&nbsp;</strong></td>\r\n\t\t\t<td><strong>&nbsp;120 руб.</strong></td>\r\n\t\t</tr>\r\n\t\t<tr>\r\n\t\t\t<td><strong>ВЗРОСЛЫЕ</strong></td>\r\n\t\t\t<td><strong>280 руб.</strong></td>\r\n\t\t</tr>\r\n\t\t<tr>\r\n\t\t\t<td><strong>САУНА*(в период сеанса плавания при приобретении браслета в кассе)</strong></td>\r\n\t\t\t<td><strong>100 руб.</strong></td>\r\n\t\t</tr>\r\n\t</tbody>\r\n</table>",
+        "category": "sport",
+        "slug": "razovoe-samostoyatelnoe-poseshenie-bassejna",
+        "typeservice": 2
+    }
+},
+{
+    "model": "app_services.service",
+    "pk": 7,
+    "fields": {
+        "name": "Абонемент на бассейн",
+        "description": "<h2><strong>Абонемент* 30 дней (сеанс 45 мин.)</strong></h2>\r\n\r\n<p>&nbsp;</p>",
+        "category": "sport",
+        "slug": "abonement-na-bassejn",
+        "typeservice": 2
+    }
+},
+{
+    "model": "app_services.typeservicegallery",
+    "pk": 1,
+    "fields": {
+        "typeservice": 2,
+        "photos": 3
+    }
+},
+{
+    "model": "app_services.typeservicegallery",
+    "pk": 2,
+    "fields": {
+        "typeservice": 1,
+        "photos": 5
+    }
+},
+{
+    "model": "app_user.user",
+    "fields": {
+        "password": "pbkdf2_sha256$600000$sVFMARrijG6mwRuFChuXeg$nkCtt+ah6d61wBjhE+vpF9sgHH/01HDP/BlPflCXaq0=",
+        "last_login": "2023-05-27T04:32:22.785Z",
+        "is_superuser": true,
+        "username": "mineev",
+        "first_name": "",
+        "last_name": "",
+        "email": "",
+        "is_staff": true,
+        "is_active": true,
+        "date_joined": "2023-05-25T11:13:23.022Z",
+        "image": "",
+        "is_verified_email": false,
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "app_contacts.contact",
+    "pk": 1,
+    "fields": {
+        "name": "Приемная ДСС",
+        "phone": "(3012) 21-10-41",
+        "phone_add": null,
+        "email": "dss-sport@govrb.ru"
+    }
+},
+{
+    "model": "app_contacts.contact",
+    "pk": 2,
+    "fields": {
+        "name": "Отдел закупок",
+        "phone": "(3012) 21-10-41",
+        "phone_add": "109,",
+        "email": "zakupki@dss-sport.ru"
+    }
+},
+{
+    "model": "app_contacts.contact",
+    "pk": 3,
+    "fields": {
+        "name": "Пресс-служба",
+        "phone": "(3012) 21-08-74",
+        "phone_add": null,
+        "email": "info@dss-sport.ru"
+    }
+},
+{
+    "model": "app_contacts.contact",
+    "pk": 4,
+    "fields": {
+        "name": "Отдел развития",
+        "phone": "(3012) 21-08-74",
+        "phone_add": null,
+        "email": "or@dss-sport.ru"
+    }
+},
+{
+    "model": "app_contacts.contact",
+    "pk": 5,
+    "fields": {
+        "name": "Договорной отдел",
+        "phone": "(3012) 21-08-7",
+        "phone_add": null,
+        "email": "manager@dss-sport.ru"
+    }
+},
+{
+    "model": "app_contacts.contact",
+    "pk": 6,
+    "fields": {
+        "name": "Отдел кадров",
+        "phone": "(3012) 21-14-74",
+        "phone_add": null,
+        "email": "ok@dss-sport.ru"
+    }
+},
+{
+    "model": "app_contacts.contact",
+    "pk": 7,
+    "fields": {
+        "name": "Отдел проведения мероприятий",
+        "phone": "(3012) 21-10-41",
+        "phone_add": "136",
+        "email": "opm@dss-sport.ru"
+    }
+},
+{
+    "model": "app_contacts.contact",
+    "pk": 8,
+    "fields": {
+        "name": "Отдел ГТО",
+        "phone": "(3012) 21-13-97",
+        "phone_add": null,
+        "email": "gto03bur@yandex.ru"
+    }
+},
+{
+    "model": "app_contacts.contact",
+    "pk": 9,
+    "fields": {
+        "name": "Юридический отдел",
+        "phone": "(3012) 21-10-41",
+        "phone_add": "142",
+        "email": "jurist_new@dss-sport.ru"
+    }
+},
+{
+    "model": "app_contacts.contact",
+    "pk": 10,
+    "fields": {
+        "name": "Централизованная бухгалтерия МСМП",
+        "phone": "(3012) 37-40-04",
+        "phone_add": null,
+        "email": "tsb.minsport03@yandex.ru"
+    }
+},
+{
+    "model": "app_contacts.contact",
+    "pk": 11,
+    "fields": {
+        "name": "Администратор ЦСРБ",
+        "phone": "8 (3012) 21-15-",
+        "phone_add": null,
+        "email": "ok@dss-sport.ru"
+    }
+},
+{
+    "model": "app_contacts.contact",
+    "pk": 12,
+    "fields": {
+        "name": "Справки тир ЦСРБ",
+        "phone": "(3012) 21-49-28",
+        "phone_add": null,
+        "email": null
+    }
+},
+{
+    "model": "app_contacts.contact",
+    "pk": 13,
+    "fields": {
+        "name": "Приемная ФСК",
+        "phone": "(3012) 46-04-17",
+        "phone_add": null,
+        "email": null
+    }
+},
+{
+    "model": "app_contacts.contact",
+    "pk": 14,
+    "fields": {
+        "name": "call-центр ФСК",
+        "phone": "(3012) 45-30-36",
+        "phone_add": null,
+        "email": null
+    }
+},
+{
+    "model": "app_contacts.contact",
+    "pk": 15,
+    "fields": {
+        "name": "Центр спортивной подготовки",
+        "phone": "(3012) 500-888",
+        "phone_add": "45-30",
+        "email": null
+    }
+},
+{
+    "model": "app_contacts.contact",
+    "pk": 16,
+    "fields": {
+        "name": "SPA-центр",
+        "phone": "(3012) 45-40-26",
+        "phone_add": null,
+        "email": null
+    }
+},
+{
+    "model": "app_contacts.contact",
+    "pk": 17,
+    "fields": {
+        "name": "Администратор РЦСЛ Мэргэн",
+        "phone": "41-90-41",
+        "phone_add": null,
+        "email": null
+    }
+},
+{
+    "model": "app_contacts.contact",
+    "pk": 18,
+    "fields": {
+        "name": "Администратор РЦЕ Патриот",
+        "phone": "407-888",
+        "phone_add": null,
+        "email": null
+    }
+},
+{
+    "model": "app_contacts.contact",
+    "pk": 19,
+    "fields": {
+        "name": "Ресепшен РЦЕ Патриот",
+        "phone": "379 — 366",
+        "phone_add": null,
+        "email": null
+    }
+},
+{
+    "model": "app_contacts.contact",
+    "pk": 20,
+    "fields": {
+        "name": "Администратор Ипподром",
+        "phone": "(3012) 606-166",
+        "phone_add": null,
+        "email": null
+    }
+},
+{
+    "model": "app_contacts.contact",
+    "pk": 21,
+    "fields": {
+        "name": "Центр спортивной подготовки 2",
+        "phone": "(3012) 45-30-36",
+        "phone_add": null,
+        "email": null
+    }
+},
+{
+    "model": "app_contacts.contact",
+    "pk": 22,
+    "fields": {
+        "name": "Администратор Байкал Парк",
+        "phone": "(3012) 385-888",
+        "phone_add": null,
+        "email": "baikal.park@dss-sport.ru"
+    }
+},
+{
+    "model": "app_contacts.contact",
+    "pk": 23,
+    "fields": {
+        "name": "Администратор Байкал Парк (сот)",
+        "phone": "7 9834 385-888",
+        "phone_add": null,
+        "email": "baikal.park@dss-sport.ru"
+    }
+},
+{
+    "model": "app_contacts.contact",
+    "pk": 24,
+    "fields": {
+        "name": "Гостевой дом «Надежда»",
+        "phone": "8 (3012) 385-88",
+        "phone_add": null,
+        "email": null
+    }
+},
+{
+    "model": "app_contacts.contact",
+    "pk": 25,
+    "fields": {
+        "name": "Гостевой дом «Надежда» (сот)",
+        "phone": "+7 9834 385-88",
+        "phone_add": null,
+        "email": "manager@dss-sport.ru"
+    }
+},
+{
+    "model": "app_contacts.contact",
+    "pk": 26,
+    "fields": {
+        "name": "Хостел «Юниор» в ФСК",
+        "phone": "8 (3012) 645-88",
+        "phone_add": null,
+        "email": "hostel@dss-sport.ru"
+    }
+},
+{
+    "model": "app_contacts.contact",
+    "pk": 27,
+    "fields": {
+        "name": "Хостел «Юниор» в ФСК 2",
+        "phone": "3012) 44-17-33",
+        "phone_add": null,
+        "email": "hostel@dss-sport.ru"
+    }
+},
+{
+    "model": "app_piplscard.piple",
+    "pk": 2,
+    "fields": {
+        "fullname": "Зарубин Вячеслав Юрьевич",
+        "description": "<ul>\r\n\t<li>Дипломированный специалист по физической культуре, спорту.</li>\r\n\t<li>КМС по пауэрлифтингу.</li>\r\n\t<li>Проводит групповые и индивидуальные занятия.</li>\r\n</ul>",
+        "photo": 12
+    }
+},
+{
+    "model": "app_piplscard.piple",
+    "pk": 3,
+    "fields": {
+        "fullname": "Соболев Иван Николаевич",
+        "description": "<ul>\r\n\t<li>Дипломированный специалист по физической культуре и спорту.</li>\r\n</ul>\r\n\r\n<ul>\r\n\t<li>Дипломированный специалист по физической культуре и спорту.</li>\r\n\t<li>Проводит групповые и индивидуальные занятия.</li>\r\n</ul>",
+        "photo": 13
+    }
+},
+{
+    "model": "app_piplscard.piple",
+    "pk": 4,
+    "fields": {
+        "fullname": "Казаненко Александр Юрьевич",
+        "description": "<p>Персональный тренер, общий стаж тренировок более 8 лет. Поможет решить следующие задачи:</p>\r\n\r\n<ul>\r\n\t<li>Набор мышечной массы;</li>\r\n</ul>\r\n\r\n<ul>\r\n\t<li>Жиросжигание;</li>\r\n\t<li>Работа с собственным весом;</li>\r\n</ul>\r\n\r\n<ul>\r\n\t<li>Функциональный тренинг;</li>\r\n</ul>\r\n\r\n<ul>\r\n\t<li>Работа на силовые показатели;</li>\r\n</ul>\r\n\r\n<ul>\r\n\t<li>Коррекция фигуры.</li>\r\n</ul>",
+        "photo": 14
+    }
+},
+{
+    "model": "app_piplscard.piple",
+    "pk": 5,
+    "fields": {
+        "fullname": "Тюкавкина Алина Алексеевна",
+        "description": "<ul>\r\n\t<li>Инструктор тренажёрного зала (школа фитнеса Варвары Медведевой)</li>\r\n</ul>\r\n\r\n<ul>\r\n\t<li>Высшее физкультурно-педагогическое образование</li>\r\n\t<li>Мастер спорта России по пауэрлифтингу (ФПР).</li>\r\n</ul>\r\n\r\n<ul>\r\n\t<li>Неоднократный победитель и призёр соревнований по пауэрлифтингу.</li>\r\n</ul>\r\n\r\n<ul>\r\n\t<li>Снижение веса.</li>\r\n</ul>\r\n\r\n<ul>\r\n\t<li>Набор мышечной массы.</li>\r\n</ul>\r\n\r\n<ul>\r\n\t<li>Коррекция фигуры.</li>\r\n</ul>\r\n\r\n<ul>\r\n\t<li>Улучшение физических качеств.</li>\r\n</ul>",
+        "photo": 15
+    }
+},
+{
+    "model": "app_shedule.shedule",
+    "pk": 1,
+    "fields": {
+        "name": "Бассейн",
+        "opening_house": [
+            {
+                "Mon": true,
+                "time_list": [
+                    {
+                        "end": "21:45",
+                        "start": "07:00"
+                    }
+                ]
+            },
+            {
+                "Tue": true,
+                "time_list": [
+                    {
+                        "end": "21:45",
+                        "start": "07:00"
+                    }
+                ]
+            },
+            {
+                "Wed": true,
+                "time_list": [
+                    {
+                        "end": "21:45",
+                        "start": "07:00"
+                    }
+                ]
+            },
+            {
+                "Tuh": true,
+                "time_list": [
+                    {
+                        "end": "21:45",
+                        "start": "07:00"
+                    }
+                ]
+            },
+            {
+                "Fr": true,
+                "time_list": [
+                    {
+                        "end": "21:45",
+                        "start": "07:00"
+                    }
+                ]
+            },
+            {
+                "Sat": true,
+                "time_list": [
+                    {
+                        "end": "21:45",
+                        "start": "08:15"
+                    }
+                ]
+            },
+            {
+                "Sun": true,
+                "time_list": [
+                    {
+                        "end": "21:45",
+                        "start": "08:15"
+                    }
+                ]
+            }
+        ],
+        "exeption_day": [
+            {
+                "2023-02-06": {
+                    "end": "",
+                    "work": false,
+                    "start": "",
+                    "reason": "санитарный день"
+                }
+            },
+            {
+                "2023-03-06": {
+                    "end": "",
+                    "work": false,
+                    "start": "",
+                    "reason": "санитарный день"
+                }
+            },
+            {
+                "2023-04-03": {
+                    "end": "",
+                    "work": false,
+                    "start": "",
+                    "reason": "санитарный день"
+                }
+            },
+            {
+                "2023-05-04": {
+                    "end": "",
+                    "work": false,
+                    "start": "",
+                    "reason": "санитарный день"
+                }
+            },
+            {
+                "2023-06-05": {
+                    "end": "",
+                    "work": false,
+                    "start": "",
+                    "reason": "санитарный день"
+                }
+            },
+            {
+                "2023-07-03": {
+                    "end": "",
+                    "work": false,
+                    "start": "",
+                    "reason": "санитарный день"
+                }
+            },
+            {
+                "2023-10-02": {
+                    "end": "",
+                    "work": false,
+                    "start": "",
+                    "reason": "санитарный день"
+                }
+            },
+            {
+                "2023-10-30": {
+                    "end": "",
+                    "work": false,
+                    "start": "",
+                    "reason": "санитарный день"
+                }
+            },
+            {
+                "2023-12-04": {
+                    "end": "",
+                    "work": false,
+                    "start": "",
+                    "reason": "санитарный день"
+                }
+            },
+            {
+                "2023-12-29": {
+                    "end": "",
+                    "work": false,
+                    "start": "",
+                    "reason": "санитарный день"
+                }
+            },
+            {
+                "2023-05-22": {
+                    "end": "21:45",
+                    "work": true,
+                    "start": "15:45",
+                    "reason": "важное объявление"
+                }
+            }
+        ]
+    }
+}
+]

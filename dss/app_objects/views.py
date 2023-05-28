@@ -19,7 +19,7 @@ class DetailObjectView(TitleMixin, ObjectsMixin, DetailView):
         
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context['gallery'] = ObjectGallery.objects.filter(obj=self.request.)
+        context['gallery'] = ObjectGallery.objects.filter(obj=self.object)
         return context
 
 class ListObjectsView(TitleMixin, ListView):
