@@ -3,8 +3,16 @@
 {% load static %}
 
 {% block sidebar %}
-<div>Тут подменю приложения объекты (перечисляем объекты)</div>
+<ul class="nav flex-column">
+  {% for object in objects %}
+  <li class="nav-item">
+    <a class="nav-link active" href="{% url 'objects:detail' object.slug %}">{{object.short_name}}</a>
+  </li>
+  {% endfor %}
+</ul>
 {% endblock %}
+
+
 
 {% block content %}
 <main class="container-fluid">

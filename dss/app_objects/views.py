@@ -1,6 +1,6 @@
 from django.views.generic.base import TemplateView
-from common.mixins import TitleMixin
-from .models import Object
+from common.mixins import TitleMixin, ObjectsMixin
+from .models import Object, ObjectGallery
 from django.views.generic.detail import DetailView
 from django.views.generic import ListView
 
@@ -10,12 +10,17 @@ class IndexView(TitleMixin, TemplateView):
     title = "ДСС:объекты"
     
 
-class DetailObjectView(TitleMixin, DetailView):
+class DetailObjectView(TitleMixin, ObjectsMixin, DetailView):
     model = Object
     context_object_name = 'object'
     template_name = 'app_objects/detail.html'
     title = "ДСС: подробнее"
-    
+    objects = Object.objects.all()
+        
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['gallery'] = ObjectGallery.objects.filter(obj=self.request.)
+        return context
 
 class ListObjectsView(TitleMixin, ListView):
     model = Object
