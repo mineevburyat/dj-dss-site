@@ -19,7 +19,13 @@ class DetailObjectView(TitleMixin, ObjectsMixin, DetailView):
         
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context['gallery'] = ObjectGallery.objects.filter(obj=self.object)
+        id = self.object.pk
+        gallery = ObjectGallery.objects.filter(obj=id)
+        photos = []
+        for photo in gallery:
+            photos.append(photo.photos)
+        context['object_id'] = id
+        context['photos'] = photos
         return context
 
 class ListObjectsView(TitleMixin, ListView):
@@ -27,6 +33,7 @@ class ListObjectsView(TitleMixin, ListView):
     context_object_name = 'objects'
     template_name = 'app_objects/index.html'
     title = "ДСС: список объектов"
+    ordering = ('-order', 'pk')
     
     # def get_queryset(self):
     #     category = self.kwargs.get('category')

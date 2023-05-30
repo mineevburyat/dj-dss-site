@@ -118,7 +118,7 @@ class Image(models.Model):
         
     def get_url_middle_img(self):
         if self.thumbnail_small:
-            return self.thumbnail_middle.url
+            return self.image.url
     
     def get_img_url(self):
         if not self.image:
