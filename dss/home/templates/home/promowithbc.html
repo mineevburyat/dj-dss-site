@@ -1,0 +1,41 @@
+<div class="container-fluid">
+    <div class="row">
+      {{object}}
+        <div class="col">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb" itemscope itemtype="https://schema.org/BreadcrumbList">
+                  <li class="breadcrumb-item" itemprop='itemListElement' itemscope itemtype='https://schema.org/ListItem'>
+                    <a href="{% url 'home:index' %}" itemprop="item">
+                      <span itemprop="name">Главная</span>
+                    </a>
+                  </li>
+                  <li class="breadcrumb-item" itemprop='itemListElement' itemscope itemtype='https://schema.org/ListItem'>
+                    <a href="{% url 'objects:index' %}" itemprop="item">
+                      <span itemprop="name">Объекты</span>
+                    </a>
+                  </li>
+                  <li class="breadcrumb-item active" aria-current="page">
+                    <a href="#" itemprop="item"> 
+                      <span itemprop="name">{{object.short_name}}</span>
+                    </a>
+                  </li>
+                </ol>
+              </nav>
+        </div>
+        <div class="col-9">
+            <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+                <div class="carousel-inner">
+                  <div class="carousel-item active">
+                    <img class="d-block w-100" src="..." alt="Первый слайд">
+                  </div>
+                  <div class="carousel-item">
+                    <img class="d-block w-100" src="..." alt="Второй слайд">
+                  </div>
+                  <div class="carousel-item">
+                    <img class="d-block w-100" src="..." alt="Третий слайд">
+                  </div>
+                </div>
+              </div>
+            </div>
+    </div>
+</div>

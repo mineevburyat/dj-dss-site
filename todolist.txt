@@ -5,6 +5,9 @@
 прочие услуги это конференц-залы, Аренда
 отдых это турбазы и хостелы
 сауна сопутсвующая кроме патриота
+микроразметка для снипетов shema.org
+карта сайта, карта бд и дерево путей
+sitemap.xml
 
 настройка postgree
 1) sudo apt install libpq-dev postgresql postgresql-contrib

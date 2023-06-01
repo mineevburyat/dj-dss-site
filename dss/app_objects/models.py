@@ -87,7 +87,10 @@ class Object(models.Model):
     def get_random_photo(self):
         photos = []
         for gallery in ObjectGallery.objects.filter(obj=self):
-            photos.append(gallery.photos.get_url_middle_img())
+            photos.append(
+                {'url': gallery.photos.get_url_middle_img(),
+                 'alt': gallery.photos.name}
+            )
         if photos:
             return random.choice(photos)
             
