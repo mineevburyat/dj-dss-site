@@ -1971,10 +1971,11 @@
     "model": "app_services.typeservice",
     "pk": 1,
     "fields": {
-        "name": "Командные игры в спортзалах",
+        "name": "спортзалы",
         "slug": "commandgame",
-        "order": 255,
-        "icon": 3
+        "order": 100,
+        "icon": 3,
+        "category": "sport"
     }
 },
 {
@@ -1983,18 +1984,20 @@
     "fields": {
         "name": "Плавание",
         "slug": "swimming",
-        "order": 10,
-        "icon": 1
+        "order": 255,
+        "icon": 1,
+        "category": "sport"
     }
 },
 {
     "model": "app_services.typeservice",
     "pk": 3,
     "fields": {
-        "name": "Игры на открытом поле",
-        "slug": "Opengame",
-        "order": 255,
-        "icon": 5
+        "name": "Футбол",
+        "slug": "futboll",
+        "order": 230,
+        "icon": 5,
+        "category": "sport"
     }
 },
 {
@@ -2003,8 +2006,9 @@
     "fields": {
         "name": "Фитнес и тренажеры",
         "slug": "bodybilding",
-        "order": 255,
-        "icon": 2
+        "order": 240,
+        "icon": 2,
+        "category": "sport"
     }
 },
 {
@@ -2014,27 +2018,30 @@
         "name": "Культурно-массовые мероприятия",
         "slug": "pipls",
         "order": 255,
-        "icon": 14
+        "icon": 14,
+        "category": "other"
     }
 },
 {
     "model": "app_services.typeservice",
     "pk": 6,
     "fields": {
-        "name": "Гостиницы и хостелы",
+        "name": "хостелы",
         "slug": "hotel",
-        "order": 255,
-        "icon": 14
+        "order": 20,
+        "icon": 14,
+        "category": "relax"
     }
 },
 {
     "model": "app_services.typeservice",
     "pk": 7,
     "fields": {
-        "name": "Зимние виды спорта",
+        "name": "Зимний спорт",
         "slug": "wintergame",
-        "order": 255,
-        "icon": 9
+        "order": 5,
+        "icon": 9,
+        "category": "sport"
     }
 },
 {
@@ -2043,8 +2050,9 @@
     "fields": {
         "name": "SPA",
         "slug": "spa",
-        "order": 255,
-        "icon": 14
+        "order": 10,
+        "icon": 14,
+        "category": "relax"
     }
 },
 {
@@ -2054,7 +2062,30 @@
         "name": "Аренда помещений",
         "slug": "square",
         "order": 255,
-        "icon": 14
+        "icon": 14,
+        "category": "other"
+    }
+},
+{
+    "model": "app_services.typeservice",
+    "pk": 10,
+    "fields": {
+        "name": "Турбазы",
+        "slug": "kemping",
+        "order": 255,
+        "icon": 14,
+        "category": "relax"
+    }
+},
+{
+    "model": "app_services.typeservice",
+    "pk": 11,
+    "fields": {
+        "name": "Лукодром",
+        "slug": "luk",
+        "order": 90,
+        "icon": 6,
+        "category": "sport"
     }
 },
 {
@@ -2110,6 +2141,17 @@
         "category": "sport",
         "slug": "abonement-na-bassejn",
         "typeservice": 2
+    }
+},
+{
+    "model": "app_services.service",
+    "pk": 8,
+    "fields": {
+        "name": "Разовое посещение с 9 до 17",
+        "description": "<p>чсмачп</p>",
+        "category": "sport",
+        "slug": "razovoe-poseshenie-s-9-do-17",
+        "typeservice": 4
     }
 },
 {

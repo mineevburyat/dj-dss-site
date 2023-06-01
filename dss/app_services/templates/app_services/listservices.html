@@ -1,0 +1,20 @@
+{% extends 'home/base2lv.html' %}
+
+{% load static %}
+
+{% block sidebar %}
+<div>
+  <ul>
+  {% for item in typeservices %}
+    <li>{{item.name}} </li>
+  {% endfor %}
+  </ul>
+</div>
+{% endblock %}
+
+{% block content %}
+<main class="container-fluid">
+    <h2>Услуги {{currenttype}}</h2>
+    {{services}}
+</main>
+{% endblock %}

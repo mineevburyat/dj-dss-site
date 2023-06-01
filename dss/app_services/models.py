@@ -5,6 +5,15 @@ from django.utils.safestring import mark_safe
 from ckeditor_uploader.fields import RichTextUploadingField
 from app_mediafiles.models import Icon, Image
 
+# искуственные категории услуг
+MAX_PREF_LENGTH = 10
+CHOICE_CATEGORY = (
+        ('sport', 'Спортивные услуги'),
+        ('section', 'Спортивные секции'),
+        ('relax', 'Отдых'),
+        ('other', 'Прочие услуги'),
+    )
+
 class VariousSport(models.Model):
     '''\
         вид спорта: по общероссийской классификации'''
@@ -32,6 +41,7 @@ class TypeService(models.Model):
     class Meta:
         verbose_name = 'Тип услуги'
         verbose_name_plural = 'Типы услуг'
+        
     name = models.CharField(
         'Название группы услуг',
         max_length=60,
@@ -53,6 +63,12 @@ class TypeService(models.Model):
         verbose_name='иконка',
         on_delete=models.PROTECT,
         default=14
+    )
+    category = models.CharField(
+        'категория услуги',
+        choices=CHOICE_CATEGORY,
+        max_length=MAX_PREF_LENGTH,
+        default='other'
     )
     
     def __str__(self):
@@ -79,15 +95,7 @@ class Service(models.Model):
         verbose_name_plural = 'Услуги'
 
     MAX_NAME_LENGTH = 60
-
-    CHOICE_CATEGORY = (
-        ('sport', 'Спортивные услуги'),
-        ('section', 'Спортивные секции'),
-        ('relax', 'Отдых'),
-        ('other', 'Прочие услуги'),
-    )
-    MAX_PREF_LENGTH = 10
-
+    
     name = models.CharField(
         'название услуги',
         max_length=MAX_NAME_LENGTH

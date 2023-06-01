@@ -3,18 +3,17 @@
 {% load static %}
 
 {% block content %}
-<main class="container-fluid">
   <div class="row">
     <div class="col-md">
       <div class="card bg-warning text-center">
         <img src="{% static 'home/img/rest-image.png' %}" alt="" class="card-img" style="filter: brightness(20%)"/>
         <div class="card-img-overlay card-body">
-          <h3 class="card-title display-4">
+          <h3 class="card-title display-6">
             <a href="{% url 'objects:index' %}" class="card-link">ОБЪЕКТЫ</a>
           </h3>
           <nav class="nav flex-column">
             {% for object in objects %}
-            <a href="{% url 'objects:detail' object.slug %}" class="btn btn-outline-primary">{{ object.short_name }}</a>
+            <a href="{% url 'objects:detail' object.slug %}" class="btn btn-outline-primary">{{ object.short_name|upper }}</a>
             {% endfor %}
           </nav>
         </div>
@@ -24,17 +23,18 @@
       <div class="card bg-danger text-center">
         <img src="{% static 'home/img/sport-image.png' %}" alt="" class="card-img" style="filter: brightness(60%)"/>
         <div class="card-img-overlay card-body">
-          <h3 class="card-title display-4">
-            <a href="{% url 'services:all' %}" class="card-link">СПОРТ</a>
+          <h3 class="card-title display-6">
+            {% with category='sport' %}
+            <a href="{% url 'services:categoryservice' category %}" class="card-link">СПОРТ</a>
           </h3>
-          <nav class="nav flex-column mt-5">
-            <a href="/page/sport/235" class="btn btn-outline-warning font-weight-bold ">БАССЕЙН</a>
-            <a href="/page/sport/292" class="btn btn-outline-warning">СПОРТИВНЫЕ ЗАЛЫ</a>
-            <a href="/page/sport/246" class="btn btn-outline-warning">ФУТБОЛЬНЫЕ ПОЛЯ</a>
-            <a href="/page/sport/257" class="btn btn-outline-warning">ЛУКОДРОМ</a>
-            <a href="/page/sport/251" class="btn btn-outline-warning">ФИТНЕС</a>
-            <a href="/page/sport/259" class="btn btn-outline-warning">СПОРТСЕКЦИИ</a>
-            <a href="/page/sport/294" class="btn btn-outline-warning">ЗИМНИЕ ВИДЫ СПОРТА</a>
+          <nav class="nav flex-column mt-1">
+            {% for sportservice in sportservices %}
+            <a href="{% url 'services:listservice' category sportservice.slug %}" class="btn btn-outline-warning font-weight-bold ">{{sportservice.name|upper}}</a>
+            {% endfor %}
+            {% endwith %}
+            {% with category='section' %}
+            <a href="{% url 'services:categoryservice' category %}" class="btn btn-outline-warning font-weight-bold ">СПОРТИВНЫЕ СЕКЦИИ</a>
+            {% endwith %}
           </nav>
         </div>
       </div>
@@ -43,18 +43,20 @@
       <div class="card bg-primary text-center">
         <img src="{% static 'home/img/rest-image.png' %}" alt="" class="card-img" style="filter: brightness(20%)"/>
         <div class="card-img-overlay card-body">
-          <h3 class="card-title display-4">
-            <a href="{% url 'services:all' %}" class="card-link text-danger">ОТДЫХ</a>
+          <h3 class="card-title display-6">
+            {% with category='relax' %}
+            <a href="{% url 'services:categoryservice' category %}" class="card-link text-danger">РЕЛАКС</a>
           </h3>
           <nav class="nav flex-column">
-            <a href="/page/sport/235" class="btn btn-outline-danger">ХОСТЕЛЫ</a>
-            <a href="/page/sport/292" class="btn btn-outline-danger">ТУРБАЗЫ</a>
-            <a href="/page/sport/246" class="btn btn-outline-danger">SPA</a>
+            {% for relaxservice in relaxservices %}
+              <a href="{% url 'services:listservice' category relaxservice.slug %}" class="btn btn-outline-warning font-weight-bold ">{{relaxservice.name|upper}}</a>
+            {% endfor %}
+            {% endwith %}
           </nav>
         </div>
       </div>
     </div>
   </div>
-</main>
+
 {% endblock %}
 
