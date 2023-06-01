@@ -1,0 +1,112 @@
+{
+  "id": 7694,
+  "date": "2022-10-20T23:49:39",
+  "date_gmt": "2022-10-20T23:49:39",
+  "guid": {
+    "rendered": "https://admin.dss-sport.ru/wp-content/uploads/2022/10/photo_2022-10-21_07-39-07.jpg"
+  },
+  "modified": "2022-10-20T23:49:39",
+  "modified_gmt": "2022-10-20T23:49:39",
+  "slug": "photo_2022-10-21_07-39-07",
+  "status": "inherit",
+  "type": "attachment",
+  "link": "https://admin.dss-sport.ru/page/uncategorized/7693/attachment/photo_2022-10-21_07-39-07/",
+  "title": { "rendered": "photo_2022-10-21_07-39-07" },
+  "author": 2,
+  "comment_status": "open",
+  "ping_status": "closed",
+  "template": "",
+  "meta": [],
+  "acf": [],
+  "description": {
+    "rendered": "<p class=\"attachment\"><a href='https://admin.dss-sport.ru/wp-content/uploads/2022/10/photo_2022-10-21_07-39-07.jpg'><img width=\"300\" height=\"200\" src=\"https://admin.dss-sport.ru/wp-content/uploads/2022/10/photo_2022-10-21_07-39-07-300x200.jpg\" class=\"attachment-medium size-medium\" alt=\"\" decoding=\"async\" loading=\"lazy\" srcset=\"https://admin.dss-sport.ru/wp-content/uploads/2022/10/photo_2022-10-21_07-39-07-300x200.jpg 300w, https://admin.dss-sport.ru/wp-content/uploads/2022/10/photo_2022-10-21_07-39-07-1024x683.jpg 1024w, https://admin.dss-sport.ru/wp-content/uploads/2022/10/photo_2022-10-21_07-39-07-768x512.jpg 768w, https://admin.dss-sport.ru/wp-content/uploads/2022/10/photo_2022-10-21_07-39-07.jpg 1152w\" sizes=\"(max-width: 300px) 100vw, 300px\" style=\"width:100%;height:66.67%;max-width:1152px;\" /></a></p>\n"
+  },
+  "caption": { "rendered": "" },
+  "alt_text": "",
+  "media_type": "image",
+  "mime_type": "image/jpeg",
+  "media_details": {
+    "width": 1152,
+    "height": 768,
+    "file": "2022/10/photo_2022-10-21_07-39-07.jpg",
+    "filesize": 46492,
+    "sizes": {
+      "medium": {
+        "file": "photo_2022-10-21_07-39-07-300x200.jpg",
+        "width": 300,
+        "height": 200,
+        "filesize": 10996,
+        "mime_type": "image/jpeg",
+        "source_url": "https://admin.dss-sport.ru/wp-content/uploads/2022/10/photo_2022-10-21_07-39-07-300x200.jpg"
+      },
+      "large": {
+        "file": "photo_2022-10-21_07-39-07-1024x683.jpg",
+        "width": 1024,
+        "height": 683,
+        "filesize": 49028,
+        "mime_type": "image/jpeg",
+        "source_url": "https://admin.dss-sport.ru/wp-content/uploads/2022/10/photo_2022-10-21_07-39-07-1024x683.jpg"
+      },
+      "thumbnail": {
+        "file": "photo_2022-10-21_07-39-07-150x150.jpg",
+        "width": 150,
+        "height": 150,
+        "filesize": 5700,
+        "mime_type": "image/jpeg",
+        "source_url": "https://admin.dss-sport.ru/wp-content/uploads/2022/10/photo_2022-10-21_07-39-07-150x150.jpg"
+      },
+      "medium_large": {
+        "file": "photo_2022-10-21_07-39-07-768x512.jpg",
+        "width": 768,
+        "height": 512,
+        "filesize": 33816,
+        "mime_type": "image/jpeg",
+        "source_url": "https://admin.dss-sport.ru/wp-content/uploads/2022/10/photo_2022-10-21_07-39-07-768x512.jpg"
+      },
+      "full": {
+        "file": "photo_2022-10-21_07-39-07.jpg",
+        "width": 1152,
+        "height": 768,
+        "mime_type": "image/jpeg",
+        "source_url": "https://admin.dss-sport.ru/wp-content/uploads/2022/10/photo_2022-10-21_07-39-07.jpg"
+      }
+    },
+    "image_meta": {
+      "aperture": "0",
+      "credit": "",
+      "camera": "",
+      "caption": "",
+      "created_timestamp": "0",
+      "copyright": "",
+      "focal_length": "0",
+      "iso": "0",
+      "shutter_speed": "0",
+      "title": "",
+      "orientation": "0",
+      "keywords": []
+    }
+  },
+  "post": 7693,
+  "source_url": "https://admin.dss-sport.ru/wp-content/uploads/2022/10/photo_2022-10-21_07-39-07.jpg",
+  "_links": {
+    "self": [{ "href": "https://admin.dss-sport.ru/wp-json/wp/v2/media/7694" }],
+    "collection": [
+      { "href": "https://admin.dss-sport.ru/wp-json/wp/v2/media" }
+    ],
+    "about": [
+      { "href": "https://admin.dss-sport.ru/wp-json/wp/v2/types/attachment" }
+    ],
+    "author": [
+      {
+        "embeddable": true,
+        "href": "https://admin.dss-sport.ru/wp-json/wp/v2/users/2"
+      }
+    ],
+    "replies": [
+      {
+        "embeddable": true,
+        "href": "https://admin.dss-sport.ru/wp-json/wp/v2/comments?post=7694"
+      }
+    ]
+  }
+}
