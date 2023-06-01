@@ -11,7 +11,10 @@ class IndexView(TitleMixin, ObjectsMixin, TemplateView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context['sportservices'] = TypeService.objects.filter(category='sport').order_by('-order')
+        context['sportservices'] = TypeService.objects\
+            .filter(category='sport')\
+            .filter(active=True)\
+            .order_by('-order')
         context['relaxservices'] = TypeService.objects.filter(category='relax').order_by('-order')
         return context
     

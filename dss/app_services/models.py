@@ -70,6 +70,16 @@ class TypeService(models.Model):
         max_length=MAX_PREF_LENGTH,
         default='other'
     )
+    description = models.TextField(
+        'Описание группы услуг',
+        max_length=800,
+        default='необходимо заполнить',
+        help_text='кратко описываем группу услуг'
+    )
+    active = models.BooleanField(
+        'активно',
+        default=True
+    )
     
     def __str__(self):
         return f"{self.name} ({self.slug})"
@@ -160,6 +170,7 @@ class TypeServiceGallery(models.Model):
         verbose_name='фотографии',
         on_delete=models.PROTECT
     )
+    
     def get_html_photo(self):
         return self.photos.thumbnail_html()
     get_html_photo.short_description = 'фото'

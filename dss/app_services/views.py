@@ -8,6 +8,7 @@ from django.views.generic.detail import DetailView
 from django.views.generic import ListView
 from common.mixins import TitleMixin
 from django.http import Http404
+from django.db.models import Q
 # from common.mixins import TitleMixin
 
 
@@ -57,7 +58,6 @@ class ListTypeServiceView(TitleMixin, TemplateView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         category = self.kwargs.get('category')
-        typeservices = TypeService.objects.filter(category=category)
         context['category'] = category
         txt_category = None
         for item in CHOICE_CATEGORY:
@@ -66,6 +66,14 @@ class ListTypeServiceView(TitleMixin, TemplateView):
                 break
         if not txt_category:
             raise Http404
+        if category == "other":
+            typeservices = TypeService.objects.filter(
+                Q(category='relax') | Q(category=category))\
+                    .order_by('-order')
+            # typeservices += TypeService.objects.filter(category=category).order_by('-order')
+        else:
+            typeservices = TypeService.objects.filter(category=category).order_by('-order')
+        
         context['title'] = f"ДСС: {txt_category}"
         context['typeservices'] = typeservices
         context['categoryname'] = txt_category
