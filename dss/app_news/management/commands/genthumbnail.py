@@ -1,9 +1,8 @@
 
 from app_news.models import ImageMedia
 from django.core.management.base import BaseCommand
-from io import BytesIO  
+from io import BytesIO
 from django.core.files.base import ContentFile
-from app_news.models import ImageMedia
 from pathlib import Path
 from PIL import Image as PImage
 from django.db.models.signals import post_save

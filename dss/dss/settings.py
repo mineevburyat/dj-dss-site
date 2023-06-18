@@ -56,6 +56,7 @@ INSTALLED_APPS = [
     'app_piplscard',
     'app_shedule',
     'app_booking',
+    'app_news',
 ]
 
 MIDDLEWARE = [
