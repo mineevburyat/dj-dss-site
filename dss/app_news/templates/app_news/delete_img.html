@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
+    <link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css"
+    />
+    <style>
+        .thumb {
+            height: 65vh;
+        }
+        .img_window {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            width: 100%
+        }
+        .nav_btn {
+            display: flex;
+            align-items: center;
+            background: #ccc;
+            justify-content: center;
+        }
+        .help_text {
+            font-size: 10px;
+            color: #6c757d;
+            margin-top: 0;
+            text-align: center;
+            display: block;
+        }
+        .input_field {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            display: block;
+            box-sizing: border-box;
+            padding: 2px;
+            
+        }
+        .input_container {
+            margin:0;
+            padding:0;
+            margin-top: 10px;
+            align-text: center;
+        }
+        .error_text {
+            font-size: 10px;
+            color: #BC7A00;
+            margin-top: 0;
+            text-align: center;
+            display: block;
+        }
+    </style>
+</head>
+<body class="container-fluid">
+    <div class="row">
+        <h2>Удаление картинки из медиабиблиотеки</h2>
+        <p>
+        <form method="POST">
+            {% csrf_token %}
+            {{form.as_p}}
+        <button type="submit" class="btn btn-danger">подтверждаю</button>
+        </form>
+        </p>
+    </div>
+    
+</body>
+</html>

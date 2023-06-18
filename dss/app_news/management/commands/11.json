@@ -1,0 +1,1185 @@
+[
+    {
+        "id": 8351,
+        "date": "2023-06-15T11:20:09",
+        "date_gmt": "2023-06-15T03:20:09",
+        "guid": {
+            "rendered": "https:\/\/admin.dss-sport.ru\/wp-content\/uploads\/2023\/06\/obyavlenie.png"
+        },
+        "modified": "2023-06-15T11:20:09",
+        "modified_gmt": "2023-06-15T03:20:09",
+        "slug": "obyavlenie",
+        "status": "inherit",
+        "type": "attachment",
+        "link": "https:\/\/admin.dss-sport.ru\/page\/uncategorized\/8350\/attachment\/obyavlenie\/",
+        "title": {
+            "rendered": "\u041e\u0431\u044a\u044f\u0432\u043b\u0435\u043d\u0438\u0435"
+        },
+        "author": 2,
+        "comment_status": "open",
+        "ping_status": "closed",
+        "template": "",
+        "meta": [],
+        "acf": [],
+        "description": {
+            "rendered": "<p class=\"attachment\"><a href='https:\/\/admin.dss-sport.ru\/wp-content\/uploads\/2023\/06\/obyavlenie.png'><img width=\"300\" height=\"300\" src=\"https:\/\/admin.dss-sport.ru\/wp-content\/uploads\/2023\/06\/obyavlenie-300x300.png\" class=\"attachment-medium size-medium\" alt=\"\" decoding=\"async\" loading=\"lazy\" srcset=\"https:\/\/admin.dss-sport.ru\/wp-content\/uploads\/2023\/06\/obyavlenie-300x300.png 300w, https:\/\/admin.dss-sport.ru\/wp-content\/uploads\/2023\/06\/obyavlenie-1024x1024.png 1024w, https:\/\/admin.dss-sport.ru\/wp-content\/uploads\/2023\/06\/obyavlenie-150x150.png 150w, https:\/\/admin.dss-sport.ru\/wp-content\/uploads\/2023\/06\/obyavlenie-768x768.png 768w, https:\/\/admin.dss-sport.ru\/wp-content\/uploads\/2023\/06\/obyavlenie.png 1200w\" sizes=\"(max-width: 300px) 100vw, 300px\" style=\"width:100%;height:100%;max-width:1200px;\" \/><\/a><\/p>\n"
+        },
+        "caption": {
+            "rendered": ""
+        },
+        "alt_text": "",
+        "media_type": "image",
+        "mime_type": "image\/png",
+        "media_details": {
+            "width": 1200,
+            "height": 1200,
+            "file": "2023\/06\/obyavlenie.png",
+            "filesize": 1084081,
+            "sizes": {
+                "medium": {
+                    "file": "obyavlenie-300x300.png",
+                    "width": 300,
+                    "height": 300,
+                    "filesize": 110394,
+                    "mime_type": "image\/png",
+                    "source_url": "https:\/\/admin.dss-sport.ru\/wp-content\/uploads\/2023\/06\/obyavlenie-300x300.png"
+                },
+                "large": {
+                    "file": "obyavlenie-1024x1024.png",
+                    "width": 1024,
+                    "height": 1024,
+                    "filesize": 926274,
+                    "mime_type": "image\/png",
+                    "source_url": "https:\/\/admin.dss-sport.ru\/wp-content\/uploads\/2023\/06\/obyavlenie-1024x1024.png"
+                },
+                "thumbnail": {
+                    "file": "obyavlenie-150x150.png",
+                    "width": 150,
+                    "height": 150,
+                    "filesize": 32106,
+                    "mime_type": "image\/png",
+                    "source_url": "https:\/\/admin.dss-sport.ru\/wp-content\/uploads\/2023\/06\/obyavlenie-150x150.png"
+                },
+                "medium_large": {
+                    "file": "obyavlenie-768x768.png",
+                    "width": 768,
+                    "height": 768,
+                    "filesize": 566310,
+                    "mime_type": "image\/png",
+                    "source_url": "https:\/\/admin.dss-sport.ru\/wp-content\/uploads\/2023\/06\/obyavlenie-768x768.png"
+                },
+                "full": {
+                    "file": "obyavlenie.png",
+                    "width": 1200,
+                    "height": 1200,
+                    "mime_type": "image\/png",
+                    "source_url": "https:\/\/admin.dss-sport.ru\/wp-content\/uploads\/2023\/06\/obyavlenie.png"
+                }
+            },
+            "image_meta": {
+                "aperture": "0",
+                "credit": "",
+                "camera": "",
+                "caption": "",
+                "created_timestamp": "0",
+                "copyright": "",
+                "focal_length": "0",
+                "iso": "0",
+                "shutter_speed": "0",
+                "title": "",
+                "orientation": "0",
+                "keywords": []
+            }
+        },
+        "post": 8350,
+        "source_url": "https:\/\/admin.dss-sport.ru\/wp-content\/uploads\/2023\/06\/obyavlenie.png",
+        "_links": {
+            "self": [
+                {
+                    "href": "https:\/\/admin.dss-sport.ru\/wp-json\/wp\/v2\/media\/8351"
+                }
+            ],
+            "collection": [
+                {
+                    "href": "https:\/\/admin.dss-sport.ru\/wp-json\/wp\/v2\/media"
+                }
+            ],
+            "about": [
+                {
+                    "href": "https:\/\/admin.dss-sport.ru\/wp-json\/wp\/v2\/types\/attachment"
+                }
+            ],
+            "author": [
+                {
+                    "embeddable": true,
+                    "href": "https:\/\/admin.dss-sport.ru\/wp-json\/wp\/v2\/users\/2"
+                }
+            ],
+            "replies": [
+                {
+                    "embeddable": true,
+                    "href": "https:\/\/admin.dss-sport.ru\/wp-json\/wp\/v2\/comments?post=8351"
+                }
+            ]
+        }
+    },
+    {
+        "id": 8338,
+        "date": "2023-06-12T14:52:06",
+        "date_gmt": "2023-06-12T06:52:06",
+        "guid": {
+            "rendered": "https:\/\/admin.dss-sport.ru\/wp-content\/uploads\/2023\/06\/33bfb0fb-e59d-4109-a888-655af8cd78e3.jpeg"
+        },
+        "modified": "2023-06-12T14:52:06",
+        "modified_gmt": "2023-06-12T06:52:06",
+        "slug": "33bfb0fb-e59d-4109-a888-655af8cd78e3",
+        "status": "inherit",
+        "type": "attachment",
+        "link": "https:\/\/admin.dss-sport.ru\/page\/uncategorized\/8337\/attachment\/33bfb0fb-e59d-4109-a888-655af8cd78e3\/",
+        "title": {
+            "rendered": "33BFB0FB-E59D-4109-A888-655AF8CD78E3"
+        },
+        "author": 2,
+        "comment_status": "open",
+        "ping_status": "closed",
+        "template": "",
+        "meta": [],
+        "acf": [],
+        "description": {
+            "rendered": "<p class=\"attachment\"><a href='https:\/\/admin.dss-sport.ru\/wp-content\/uploads\/2023\/06\/33bfb0fb-e59d-4109-a888-655af8cd78e3.jpeg'><img width=\"300\" height=\"155\" src=\"https:\/\/admin.dss-sport.ru\/wp-content\/uploads\/2023\/06\/33bfb0fb-e59d-4109-a888-655af8cd78e3-300x155.jpeg\" class=\"attachment-medium size-medium\" alt=\"\" decoding=\"async\" loading=\"lazy\" srcset=\"https:\/\/admin.dss-sport.ru\/wp-content\/uploads\/2023\/06\/33bfb0fb-e59d-4109-a888-655af8cd78e3-300x155.jpeg 300w, https:\/\/admin.dss-sport.ru\/wp-content\/uploads\/2023\/06\/33bfb0fb-e59d-4109-a888-655af8cd78e3-768x398.jpeg 768w, https:\/\/admin.dss-sport.ru\/wp-content\/uploads\/2023\/06\/33bfb0fb-e59d-4109-a888-655af8cd78e3.jpeg 960w\" sizes=\"(max-width: 300px) 100vw, 300px\" style=\"width:100%;height:51.77%;max-width:960px;\" \/><\/a><\/p>\n"
+        },
+        "caption": {
+            "rendered": ""
+        },
+        "alt_text": "",
+        "media_type": "image",
+        "mime_type": "image\/jpeg",
+        "media_details": {
+            "width": 960,
+            "height": 497,
+            "file": "2023\/06\/33bfb0fb-e59d-4109-a888-655af8cd78e3.jpeg",
+            "filesize": 249765,
+            "sizes": {
+                "medium": {
+                    "file": "33bfb0fb-e59d-4109-a888-655af8cd78e3-300x155.jpeg",
+                    "width": 300,
+                    "height": 155,
+                    "filesize": 22173,
+                    "mime_type": "image\/jpeg",
+                    "source_url": "https:\/\/admin.dss-sport.ru\/wp-content\/uploads\/2023\/06\/33bfb0fb-e59d-4109-a888-655af8cd78e3-300x155.jpeg"
+                },
+                "thumbnail": {
+                    "file": "33bfb0fb-e59d-4109-a888-655af8cd78e3-150x150.jpeg",
+                    "width": 150,
+                    "height": 150,
+                    "filesize": 17073,
+                    "mime_type": "image\/jpeg",
+                    "source_url": "https:\/\/admin.dss-sport.ru\/wp-content\/uploads\/2023\/06\/33bfb0fb-e59d-4109-a888-655af8cd78e3-150x150.jpeg"
+                },
+                "medium_large": {
+                    "file": "33bfb0fb-e59d-4109-a888-655af8cd78e3-768x398.jpeg",
+                    "width": 768,
+                    "height": 398,
+                    "filesize": 49086,
+                    "mime_type": "image\/jpeg",
+                    "source_url": "https:\/\/admin.dss-sport.ru\/wp-content\/uploads\/2023\/06\/33bfb0fb-e59d-4109-a888-655af8cd78e3-768x398.jpeg"
+                },
+                "full": {
+                    "file": "33bfb0fb-e59d-4109-a888-655af8cd78e3.jpeg",
+                    "width": 960,
+                    "height": 497,
+                    "mime_type": "image\/jpeg",
+                    "source_url": "https:\/\/admin.dss-sport.ru\/wp-content\/uploads\/2023\/06\/33bfb0fb-e59d-4109-a888-655af8cd78e3.jpeg"
+                }
+            },
+            "image_meta": {
+                "aperture": "0",
+                "credit": "",
+                "camera": "",
+                "caption": "",
+                "created_timestamp": "0",
+                "copyright": "",
+                "focal_length": "0",
+                "iso": "0",
+                "shutter_speed": "0",
+                "title": "",
+                "orientation": "0",
+                "keywords": []
+            }
+        },
+        "post": 8337,
+        "source_url": "https:\/\/admin.dss-sport.ru\/wp-content\/uploads\/2023\/06\/33bfb0fb-e59d-4109-a888-655af8cd78e3.jpeg",
+        "_links": {
+            "self": [
+                {
+                    "href": "https:\/\/admin.dss-sport.ru\/wp-json\/wp\/v2\/media\/8338"
+                }
+            ],
+            "collection": [
+                {
+                    "href": "https:\/\/admin.dss-sport.ru\/wp-json\/wp\/v2\/media"
+                }
+            ],
+            "about": [
+                {
+                    "href": "https:\/\/admin.dss-sport.ru\/wp-json\/wp\/v2\/types\/attachment"
+                }
+            ],
+            "author": [
+                {
+                    "embeddable": true,
+                    "href": "https:\/\/admin.dss-sport.ru\/wp-json\/wp\/v2\/users\/2"
+                }
+            ],
+            "replies": [
+                {
+                    "embeddable": true,
+                    "href": "https:\/\/admin.dss-sport.ru\/wp-json\/wp\/v2\/comments?post=8338"
+                }
+            ]
+        }
+    },
+    {
+        "id": 8320,
+        "date": "2023-06-02T13:55:07",
+        "date_gmt": "2023-06-02T05:55:07",
+        "guid": {
+            "rendered": "https:\/\/admin.dss-sport.ru\/wp-content\/uploads\/2023\/06\/shema-czs.jpg"
+        },
+        "modified": "2023-06-02T13:55:07",
+        "modified_gmt": "2023-06-02T05:55:07",
+        "slug": "shema-czs",
+        "status": "inherit",
+        "type": "attachment",
+        "link": "https:\/\/admin.dss-sport.ru\/sport\/futbol\/attachment\/shema-czs\/",
+        "title": {
+            "rendered": "\u0421\u0445\u0435\u043c\u0430 \u0426\u0421"
+        },
+        "author": 2,
+        "comment_status": "open",
+        "ping_status": "closed",
+        "template": "",
+        "meta": [],
+        "acf": [],
+        "description": {
+            "rendered": "<p class=\"attachment\"><a href='https:\/\/admin.dss-sport.ru\/wp-content\/uploads\/2023\/06\/shema-czs.jpg'><img width=\"286\" height=\"300\" src=\"https:\/\/admin.dss-sport.ru\/wp-content\/uploads\/2023\/06\/shema-czs-286x300.jpg\" class=\"attachment-medium size-medium\" alt=\"\" decoding=\"async\" loading=\"lazy\" srcset=\"https:\/\/admin.dss-sport.ru\/wp-content\/uploads\/2023\/06\/shema-czs-286x300.jpg 286w, https:\/\/admin.dss-sport.ru\/wp-content\/uploads\/2023\/06\/shema-czs-975x1024.jpg 975w, https:\/\/admin.dss-sport.ru\/wp-content\/uploads\/2023\/06\/shema-czs-768x806.jpg 768w, https:\/\/admin.dss-sport.ru\/wp-content\/uploads\/2023\/06\/shema-czs-1463x1536.jpg 1463w, https:\/\/admin.dss-sport.ru\/wp-content\/uploads\/2023\/06\/shema-czs-1568x1646.jpg 1568w, https:\/\/admin.dss-sport.ru\/wp-content\/uploads\/2023\/06\/shema-czs.jpg 1747w\" sizes=\"(max-width: 286px) 100vw, 286px\" style=\"width:100%;height:104.98%;max-width:1747px;\" \/><\/a><\/p>\n"
+        },
+        "caption": {
+            "rendered": ""
+        },
+        "alt_text": "",
+        "media_type": "image",
+        "mime_type": "image\/jpeg",
+        "media_details": {
+            "width": 1747,
+            "height": 1834,
+            "file": "2023\/06\/shema-czs.jpg",
+            "filesize": 600620,
+            "sizes": {
+                "medium": {
+                    "file": "shema-czs-286x300.jpg",
+                    "width": 286,
+                    "height": 300,
+                    "filesize": 27703,
+                    "mime_type": "image\/jpeg",
+                    "source_url": "https:\/\/admin.dss-sport.ru\/wp-content\/uploads\/2023\/06\/shema-czs-286x300.jpg"
+                },
+                "large": {
+                    "file": "shema-czs-975x1024.jpg",
+                    "width": 975,
+                    "height": 1024,
+                    "filesize": 156013,
+                    "mime_type": "image\/jpeg",
+                    "source_url": "https:\/\/admin.dss-sport.ru\/wp-content\/uploads\/2023\/06\/shema-czs-975x1024.jpg"
+                },
+                "thumbnail": {
+                    "file": "shema-czs-150x150.jpg",
+                    "width": 150,
+                    "height": 150,
+                    "filesize": 9753,
+                    "mime_type": "image\/jpeg",
+                    "source_url": "https:\/\/admin.dss-sport.ru\/wp-content\/uploads\/2023\/06\/shema-czs-150x150.jpg"
+                },
+                "medium_large": {
+                    "file": "shema-czs-768x806.jpg",
+                    "width": 768,
+                    "height": 806,
+                    "filesize": 113893,
+                    "mime_type": "image\/jpeg",
+                    "source_url": "https:\/\/admin.dss-sport.ru\/wp-content\/uploads\/2023\/06\/shema-czs-768x806.jpg"
+                },
+                "1536x1536": {
+                    "file": "shema-czs-1463x1536.jpg",
+                    "width": 1463,
+                    "height": 1536,
+                    "filesize": 278479,
+                    "mime_type": "image\/jpeg",
+                    "source_url": "https:\/\/admin.dss-sport.ru\/wp-content\/uploads\/2023\/06\/shema-czs-1463x1536.jpg"
+                },
+                "post-thumbnail": {
+                    "file": "shema-czs-1568x1646.jpg",
+                    "width": 1568,
+                    "height": 1646,
+                    "filesize": 308693,
+                    "mime_type": "image\/jpeg",
+                    "source_url": "https:\/\/admin.dss-sport.ru\/wp-content\/uploads\/2023\/06\/shema-czs-1568x1646.jpg"
+                },
+                "full": {
+                    "file": "shema-czs.jpg",
+                    "width": 1747,
+                    "height": 1834,
+                    "mime_type": "image\/jpeg",
+                    "source_url": "https:\/\/admin.dss-sport.ru\/wp-content\/uploads\/2023\/06\/shema-czs.jpg"
+                }
+            },
+            "image_meta": {
+                "aperture": "0",
+                "credit": "",
+                "camera": "",
+                "caption": "",
+                "created_timestamp": "0",
+                "copyright": "",
+                "focal_length": "0",
+                "iso": "0",
+                "shutter_speed": "0",
+                "title": "",
+                "orientation": "0",
+                "keywords": []
+            }
+        },
+        "post": 246,
+        "source_url": "https:\/\/admin.dss-sport.ru\/wp-content\/uploads\/2023\/06\/shema-czs.jpg",
+        "_links": {
+            "self": [
+                {
+                    "href": "https:\/\/admin.dss-sport.ru\/wp-json\/wp\/v2\/media\/8320"
+                }
+            ],
+            "collection": [
+                {
+                    "href": "https:\/\/admin.dss-sport.ru\/wp-json\/wp\/v2\/media"
+                }
+            ],
+            "about": [
+                {
+                    "href": "https:\/\/admin.dss-sport.ru\/wp-json\/wp\/v2\/types\/attachment"
+                }
+            ],
+            "author": [
+                {
+                    "embeddable": true,
+                    "href": "https:\/\/admin.dss-sport.ru\/wp-json\/wp\/v2\/users\/2"
+                }
+            ],
+            "replies": [
+                {
+                    "embeddable": true,
+                    "href": "https:\/\/admin.dss-sport.ru\/wp-json\/wp\/v2\/comments?post=8320"
+                }
+            ]
+        }
+    },
+    {
+        "id": 8309,
+        "date": "2023-05-31T14:18:15",
+        "date_gmt": "2023-05-31T06:18:15",
+        "guid": {
+            "rendered": "https:\/\/admin.dss-sport.ru\/wp-content\/uploads\/2023\/05\/prikaz-\u2116478-ot-24.05.2023.pdf"
+        },
+        "modified": "2023-05-31T14:18:15",
+        "modified_gmt": "2023-05-31T06:18:15",
+        "slug": "prikaz-%e2%84%96478-ot-24-05-2023",
+        "status": "inherit",
+        "type": "attachment",
+        "link": "https:\/\/admin.dss-sport.ru\/pravila-poseshheniya-trenazhernogo-zala\/attachment\/prikaz-%e2%84%96478-ot-24-05-2023\/",
+        "title": {
+            "rendered": "\u041f\u0440\u0438\u043a\u0430\u0437 \u2116478 \u043e\u0442 24.05.2023"
+        },
+        "author": 2,
+        "comment_status": "open",
+        "ping_status": "closed",
+        "template": "",
+        "meta": [],
+        "acf": [],
+        "description": {
+            "rendered": "<p class=\"attachment\"><a href='https:\/\/admin.dss-sport.ru\/wp-content\/uploads\/2023\/05\/prikaz-\u2116478-ot-24.05.2023.pdf'><img width=\"212\" height=\"300\" src=\"https:\/\/admin.dss-sport.ru\/wp-content\/uploads\/2023\/05\/prikaz-\u2116478-ot-24.05.2023-pdf-212x300.jpg\" class=\"attachment-medium size-medium\" alt=\"\" decoding=\"async\" loading=\"lazy\" \/><\/a><\/p>\n"
+        },
+        "caption": {
+            "rendered": ""
+        },
+        "alt_text": "",
+        "media_type": "file",
+        "mime_type": "application\/pdf",
+        "media_details": {
+            "sizes": {
+                "full": {
+                    "file": "prikaz-\u2116478-ot-24.05.2023-pdf.jpg",
+                    "width": 1058,
+                    "height": 1495,
+                    "mime_type": "application\/pdf",
+                    "source_url": "https:\/\/admin.dss-sport.ru\/wp-content\/uploads\/2023\/05\/prikaz-\u2116478-ot-24.05.2023-pdf.jpg"
+                },
+                "medium": {
+                    "file": "prikaz-\u2116478-ot-24.05.2023-pdf-212x300.jpg",
+                    "width": 212,
+                    "height": 300,
+                    "filesize": 12560,
+                    "mime_type": "image\/jpeg",
+                    "source_url": "https:\/\/admin.dss-sport.ru\/wp-content\/uploads\/2023\/05\/prikaz-\u2116478-ot-24.05.2023-pdf-212x300.jpg"
+                },
+                "large": {
+                    "file": "prikaz-\u2116478-ot-24.05.2023-pdf-725x1024.jpg",
+                    "width": 725,
+                    "height": 1024,
+                    "filesize": 92734,
+                    "mime_type": "image\/jpeg",
+                    "source_url": "https:\/\/admin.dss-sport.ru\/wp-content\/uploads\/2023\/05\/prikaz-\u2116478-ot-24.05.2023-pdf-725x1024.jpg"
+                },
+                "thumbnail": {
+                    "file": "prikaz-\u2116478-ot-24.05.2023-pdf-106x150.jpg",
+                    "width": 106,
+                    "height": 150,
+                    "filesize": 5598,
+                    "mime_type": "image\/jpeg",
+                    "source_url": "https:\/\/admin.dss-sport.ru\/wp-content\/uploads\/2023\/05\/prikaz-\u2116478-ot-24.05.2023-pdf-106x150.jpg"
+                }
+            },
+            "filesize": 8436974
+        },
+        "post": 8308,
+        "source_url": "https:\/\/admin.dss-sport.ru\/wp-content\/uploads\/2023\/05\/prikaz-\u2116478-ot-24.05.2023.pdf",
+        "_links": {
+            "self": [
+                {
+                    "href": "https:\/\/admin.dss-sport.ru\/wp-json\/wp\/v2\/media\/8309"
+                }
+            ],
+            "collection": [
+                {
+                    "href": "https:\/\/admin.dss-sport.ru\/wp-json\/wp\/v2\/media"
+                }
+            ],
+            "about": [
+                {
+                    "href": "https:\/\/admin.dss-sport.ru\/wp-json\/wp\/v2\/types\/attachment"
+                }
+            ],
+            "author": [
+                {
+                    "embeddable": true,
+                    "href": "https:\/\/admin.dss-sport.ru\/wp-json\/wp\/v2\/users\/2"
+                }
+            ],
+            "replies": [
+                {
+                    "embeddable": true,
+                    "href": "https:\/\/admin.dss-sport.ru\/wp-json\/wp\/v2\/comments?post=8309"
+                }
+            ]
+        }
+    },
+    {
+        "id": 8290,
+        "date": "2023-05-16T15:26:39",
+        "date_gmt": "2023-05-16T07:26:39",
+        "guid": {
+            "rendered": "https:\/\/admin.dss-sport.ru\/wp-content\/uploads\/2023\/05\/kak-ehkonomit-vodu_oblogka_960.jpg"
+        },
+        "modified": "2023-05-16T15:26:39",
+        "modified_gmt": "2023-05-16T07:26:39",
+        "slug": "kak-ehkonomit-vodu_oblogka_960",
+        "status": "inherit",
+        "type": "attachment",
+        "link": "https:\/\/admin.dss-sport.ru\/kak-ehkonomit-vodu_oblogka_960\/",
+        "title": {
+            "rendered": "kak-ehkonomit-vodu_oblogka_960"
+        },
+        "author": 2,
+        "comment_status": "open",
+        "ping_status": "closed",
+        "template": "",
+        "meta": [],
+        "acf": [],
+        "description": {
+            "rendered": "<p class=\"attachment\"><a href='https:\/\/admin.dss-sport.ru\/wp-content\/uploads\/2023\/05\/kak-ehkonomit-vodu_oblogka_960.jpg'><img width=\"300\" height=\"169\" src=\"https:\/\/admin.dss-sport.ru\/wp-content\/uploads\/2023\/05\/kak-ehkonomit-vodu_oblogka_960-300x169.jpg\" class=\"attachment-medium size-medium\" alt=\"\" decoding=\"async\" loading=\"lazy\" srcset=\"https:\/\/admin.dss-sport.ru\/wp-content\/uploads\/2023\/05\/kak-ehkonomit-vodu_oblogka_960-300x169.jpg 300w, https:\/\/admin.dss-sport.ru\/wp-content\/uploads\/2023\/05\/kak-ehkonomit-vodu_oblogka_960-768x432.jpg 768w, https:\/\/admin.dss-sport.ru\/wp-content\/uploads\/2023\/05\/kak-ehkonomit-vodu_oblogka_960.jpg 960w\" sizes=\"(max-width: 300px) 100vw, 300px\" style=\"width:100%;height:56.25%;max-width:960px;\" \/><\/a><\/p>\n"
+        },
+        "caption": {
+            "rendered": ""
+        },
+        "alt_text": "",
+        "media_type": "image",
+        "mime_type": "image\/jpeg",
+        "media_details": {
+            "width": 960,
+            "height": 540,
+            "file": "2023\/05\/kak-ehkonomit-vodu_oblogka_960.jpg",
+            "filesize": 70841,
+            "sizes": {
+                "medium": {
+                    "file": "kak-ehkonomit-vodu_oblogka_960-300x169.jpg",
+                    "width": 300,
+                    "height": 169,
+                    "filesize": 11308,
+                    "mime_type": "image\/jpeg",
+                    "source_url": "https:\/\/admin.dss-sport.ru\/wp-content\/uploads\/2023\/05\/kak-ehkonomit-vodu_oblogka_960-300x169.jpg"
+                },
+                "thumbnail": {
+                    "file": "kak-ehkonomit-vodu_oblogka_960-150x150.jpg",
+                    "width": 150,
+                    "height": 150,
+                    "filesize": 5555,
+                    "mime_type": "image\/jpeg",
+                    "source_url": "https:\/\/admin.dss-sport.ru\/wp-content\/uploads\/2023\/05\/kak-ehkonomit-vodu_oblogka_960-150x150.jpg"
+                },
+                "medium_large": {
+                    "file": "kak-ehkonomit-vodu_oblogka_960-768x432.jpg",
+                    "width": 768,
+                    "height": 432,
+                    "filesize": 45314,
+                    "mime_type": "image\/jpeg",
+                    "source_url": "https:\/\/admin.dss-sport.ru\/wp-content\/uploads\/2023\/05\/kak-ehkonomit-vodu_oblogka_960-768x432.jpg"
+                },
+                "full": {
+                    "file": "kak-ehkonomit-vodu_oblogka_960.jpg",
+                    "width": 960,
+                    "height": 540,
+                    "mime_type": "image\/jpeg",
+                    "source_url": "https:\/\/admin.dss-sport.ru\/wp-content\/uploads\/2023\/05\/kak-ehkonomit-vodu_oblogka_960.jpg"
+                }
+            },
+            "image_meta": {
+                "aperture": "0",
+                "credit": "",
+                "camera": "",
+                "caption": "",
+                "created_timestamp": "0",
+                "copyright": "",
+                "focal_length": "0",
+                "iso": "0",
+                "shutter_speed": "0",
+                "title": "",
+                "orientation": "0",
+                "keywords": []
+            }
+        },
+        "post": null,
+        "source_url": "https:\/\/admin.dss-sport.ru\/wp-content\/uploads\/2023\/05\/kak-ehkonomit-vodu_oblogka_960.jpg",
+        "_links": {
+            "self": [
+                {
+                    "href": "https:\/\/admin.dss-sport.ru\/wp-json\/wp\/v2\/media\/8290"
+                }
+            ],
+            "collection": [
+                {
+                    "href": "https:\/\/admin.dss-sport.ru\/wp-json\/wp\/v2\/media"
+                }
+            ],
+            "about": [
+                {
+                    "href": "https:\/\/admin.dss-sport.ru\/wp-json\/wp\/v2\/types\/attachment"
+                }
+            ],
+            "author": [
+                {
+                    "embeddable": true,
+                    "href": "https:\/\/admin.dss-sport.ru\/wp-json\/wp\/v2\/users\/2"
+                }
+            ],
+            "replies": [
+                {
+                    "embeddable": true,
+                    "href": "https:\/\/admin.dss-sport.ru\/wp-json\/wp\/v2\/comments?post=8290"
+                }
+            ]
+        }
+    },
+    {
+        "id": 8284,
+        "date": "2023-05-11T16:41:14",
+        "date_gmt": "2023-05-11T08:41:14",
+        "guid": {
+            "rendered": "https:\/\/admin.dss-sport.ru\/wp-content\/uploads\/2023\/05\/pgcsyg4xxgk.jpg"
+        },
+        "modified": "2023-05-11T16:41:14",
+        "modified_gmt": "2023-05-11T08:41:14",
+        "slug": "pgcsyg4xxgk",
+        "status": "inherit",
+        "type": "attachment",
+        "link": "https:\/\/admin.dss-sport.ru\/page\/uncategorized\/8283\/attachment\/pgcsyg4xxgk\/",
+        "title": {
+            "rendered": "pgcsyg4xxgk"
+        },
+        "author": 2,
+        "comment_status": "open",
+        "ping_status": "closed",
+        "template": "",
+        "meta": [],
+        "acf": [],
+        "description": {
+            "rendered": "<p class=\"attachment\"><a href='https:\/\/admin.dss-sport.ru\/wp-content\/uploads\/2023\/05\/pgcsyg4xxgk.jpg'><img width=\"300\" height=\"300\" src=\"https:\/\/admin.dss-sport.ru\/wp-content\/uploads\/2023\/05\/pgcsyg4xxgk-300x300.jpg\" class=\"attachment-medium size-medium\" alt=\"\" decoding=\"async\" loading=\"lazy\" srcset=\"https:\/\/admin.dss-sport.ru\/wp-content\/uploads\/2023\/05\/pgcsyg4xxgk-300x300.jpg 300w, https:\/\/admin.dss-sport.ru\/wp-content\/uploads\/2023\/05\/pgcsyg4xxgk-150x150.jpg 150w, https:\/\/admin.dss-sport.ru\/wp-content\/uploads\/2023\/05\/pgcsyg4xxgk.jpg 604w\" sizes=\"(max-width: 300px) 100vw, 300px\" style=\"width:100%;height:100%;max-width:604px;\" \/><\/a><\/p>\n"
+        },
+        "caption": {
+            "rendered": ""
+        },
+        "alt_text": "",
+        "media_type": "image",
+        "mime_type": "image\/jpeg",
+        "media_details": {
+            "width": 604,
+            "height": 604,
+            "file": "2023\/05\/pgcsyg4xxgk.jpg",
+            "filesize": 88138,
+            "sizes": {
+                "medium": {
+                    "file": "pgcsyg4xxgk-300x300.jpg",
+                    "width": 300,
+                    "height": 300,
+                    "filesize": 16627,
+                    "mime_type": "image\/jpeg",
+                    "source_url": "https:\/\/admin.dss-sport.ru\/wp-content\/uploads\/2023\/05\/pgcsyg4xxgk-300x300.jpg"
+                },
+                "thumbnail": {
+                    "file": "pgcsyg4xxgk-150x150.jpg",
+                    "width": 150,
+                    "height": 150,
+                    "filesize": 6296,
+                    "mime_type": "image\/jpeg",
+                    "source_url": "https:\/\/admin.dss-sport.ru\/wp-content\/uploads\/2023\/05\/pgcsyg4xxgk-150x150.jpg"
+                },
+                "full": {
+                    "file": "pgcsyg4xxgk.jpg",
+                    "width": 604,
+                    "height": 604,
+                    "mime_type": "image\/jpeg",
+                    "source_url": "https:\/\/admin.dss-sport.ru\/wp-content\/uploads\/2023\/05\/pgcsyg4xxgk.jpg"
+                }
+            },
+            "image_meta": {
+                "aperture": "0",
+                "credit": "",
+                "camera": "",
+                "caption": "",
+                "created_timestamp": "0",
+                "copyright": "",
+                "focal_length": "0",
+                "iso": "0",
+                "shutter_speed": "0",
+                "title": "",
+                "orientation": "0",
+                "keywords": []
+            }
+        },
+        "post": 8283,
+        "source_url": "https:\/\/admin.dss-sport.ru\/wp-content\/uploads\/2023\/05\/pgcsyg4xxgk.jpg",
+        "_links": {
+            "self": [
+                {
+                    "href": "https:\/\/admin.dss-sport.ru\/wp-json\/wp\/v2\/media\/8284"
+                }
+            ],
+            "collection": [
+                {
+                    "href": "https:\/\/admin.dss-sport.ru\/wp-json\/wp\/v2\/media"
+                }
+            ],
+            "about": [
+                {
+                    "href": "https:\/\/admin.dss-sport.ru\/wp-json\/wp\/v2\/types\/attachment"
+                }
+            ],
+            "author": [
+                {
+                    "embeddable": true,
+                    "href": "https:\/\/admin.dss-sport.ru\/wp-json\/wp\/v2\/users\/2"
+                }
+            ],
+            "replies": [
+                {
+                    "embeddable": true,
+                    "href": "https:\/\/admin.dss-sport.ru\/wp-json\/wp\/v2\/comments?post=8284"
+                }
+            ]
+        }
+    },
+    {
+        "id": 8275,
+        "date": "2023-05-09T13:47:05",
+        "date_gmt": "2023-05-09T05:47:05",
+        "guid": {
+            "rendered": "https:\/\/admin.dss-sport.ru\/wp-content\/uploads\/2023\/05\/2c458a5f-a07b-487a-9df8-4370e6e7e4e8.png"
+        },
+        "modified": "2023-05-09T13:47:05",
+        "modified_gmt": "2023-05-09T05:47:05",
+        "slug": "2c458a5f-a07b-487a-9df8-4370e6e7e4e8",
+        "status": "inherit",
+        "type": "attachment",
+        "link": "https:\/\/admin.dss-sport.ru\/page\/uncategorized\/8274\/attachment\/2c458a5f-a07b-487a-9df8-4370e6e7e4e8\/",
+        "title": {
+            "rendered": "2C458A5F-A07B-487A-9DF8-4370E6E7E4E8"
+        },
+        "author": 2,
+        "comment_status": "open",
+        "ping_status": "closed",
+        "template": "",
+        "meta": [],
+        "acf": [],
+        "description": {
+            "rendered": "<p class=\"attachment\"><a href='https:\/\/admin.dss-sport.ru\/wp-content\/uploads\/2023\/05\/2c458a5f-a07b-487a-9df8-4370e6e7e4e8.png'><img width=\"268\" height=\"300\" src=\"https:\/\/admin.dss-sport.ru\/wp-content\/uploads\/2023\/05\/2c458a5f-a07b-487a-9df8-4370e6e7e4e8-268x300.png\" class=\"attachment-medium size-medium\" alt=\"\" decoding=\"async\" loading=\"lazy\" srcset=\"https:\/\/admin.dss-sport.ru\/wp-content\/uploads\/2023\/05\/2c458a5f-a07b-487a-9df8-4370e6e7e4e8-268x300.png 268w, https:\/\/admin.dss-sport.ru\/wp-content\/uploads\/2023\/05\/2c458a5f-a07b-487a-9df8-4370e6e7e4e8-913x1024.png 913w, https:\/\/admin.dss-sport.ru\/wp-content\/uploads\/2023\/05\/2c458a5f-a07b-487a-9df8-4370e6e7e4e8-768x861.png 768w, https:\/\/admin.dss-sport.ru\/wp-content\/uploads\/2023\/05\/2c458a5f-a07b-487a-9df8-4370e6e7e4e8-1370x1536.png 1370w, https:\/\/admin.dss-sport.ru\/wp-content\/uploads\/2023\/05\/2c458a5f-a07b-487a-9df8-4370e6e7e4e8-1826x2048.png 1826w, https:\/\/admin.dss-sport.ru\/wp-content\/uploads\/2023\/05\/2c458a5f-a07b-487a-9df8-4370e6e7e4e8-1568x1758.png 1568w\" sizes=\"(max-width: 268px) 100vw, 268px\" style=\"width:100%;height:112.13%;max-width:4626px;\" \/><\/a><\/p>\n"
+        },
+        "caption": {
+            "rendered": ""
+        },
+        "alt_text": "",
+        "media_type": "image",
+        "mime_type": "image\/png",
+        "media_details": {
+            "width": 4626,
+            "height": 5187,
+            "file": "2023\/05\/2c458a5f-a07b-487a-9df8-4370e6e7e4e8.png",
+            "filesize": 17609115,
+            "sizes": {
+                "medium": {
+                    "file": "2c458a5f-a07b-487a-9df8-4370e6e7e4e8-268x300.png",
+                    "width": 268,
+                    "height": 300,
+                    "filesize": 123361,
+                    "mime_type": "image\/png",
+                    "source_url": "https:\/\/admin.dss-sport.ru\/wp-content\/uploads\/2023\/05\/2c458a5f-a07b-487a-9df8-4370e6e7e4e8-268x300.png"
+                },
+                "large": {
+                    "file": "2c458a5f-a07b-487a-9df8-4370e6e7e4e8-913x1024.png",
+                    "width": 913,
+                    "height": 1024,
+                    "filesize": 1009104,
+                    "mime_type": "image\/png",
+                    "source_url": "https:\/\/admin.dss-sport.ru\/wp-content\/uploads\/2023\/05\/2c458a5f-a07b-487a-9df8-4370e6e7e4e8-913x1024.png"
+                },
+                "thumbnail": {
+                    "file": "2c458a5f-a07b-487a-9df8-4370e6e7e4e8-150x150.png",
+                    "width": 150,
+                    "height": 150,
+                    "filesize": 44140,
+                    "mime_type": "image\/png",
+                    "source_url": "https:\/\/admin.dss-sport.ru\/wp-content\/uploads\/2023\/05\/2c458a5f-a07b-487a-9df8-4370e6e7e4e8-150x150.png"
+                },
+                "medium_large": {
+                    "file": "2c458a5f-a07b-487a-9df8-4370e6e7e4e8-768x861.png",
+                    "width": 768,
+                    "height": 861,
+                    "filesize": 750396,
+                    "mime_type": "image\/png",
+                    "source_url": "https:\/\/admin.dss-sport.ru\/wp-content\/uploads\/2023\/05\/2c458a5f-a07b-487a-9df8-4370e6e7e4e8-768x861.png"
+                },
+                "1536x1536": {
+                    "file": "2c458a5f-a07b-487a-9df8-4370e6e7e4e8-1370x1536.png",
+                    "width": 1370,
+                    "height": 1536,
+                    "filesize": 2010925,
+                    "mime_type": "image\/png",
+                    "source_url": "https:\/\/admin.dss-sport.ru\/wp-content\/uploads\/2023\/05\/2c458a5f-a07b-487a-9df8-4370e6e7e4e8-1370x1536.png"
+                },
+                "2048x2048": {
+                    "file": "2c458a5f-a07b-487a-9df8-4370e6e7e4e8-1826x2048.png",
+                    "width": 1826,
+                    "height": 2048,
+                    "filesize": 3250229,
+                    "mime_type": "image\/png",
+                    "source_url": "https:\/\/admin.dss-sport.ru\/wp-content\/uploads\/2023\/05\/2c458a5f-a07b-487a-9df8-4370e6e7e4e8-1826x2048.png"
+                },
+                "post-thumbnail": {
+                    "file": "2c458a5f-a07b-487a-9df8-4370e6e7e4e8-1568x1758.png",
+                    "width": 1568,
+                    "height": 1758,
+                    "filesize": 2521764,
+                    "mime_type": "image\/png",
+                    "source_url": "https:\/\/admin.dss-sport.ru\/wp-content\/uploads\/2023\/05\/2c458a5f-a07b-487a-9df8-4370e6e7e4e8-1568x1758.png"
+                },
+                "full": {
+                    "file": "2c458a5f-a07b-487a-9df8-4370e6e7e4e8.png",
+                    "width": 4626,
+                    "height": 5187,
+                    "mime_type": "image\/png",
+                    "source_url": "https:\/\/admin.dss-sport.ru\/wp-content\/uploads\/2023\/05\/2c458a5f-a07b-487a-9df8-4370e6e7e4e8.png"
+                }
+            },
+            "image_meta": {
+                "aperture": "0",
+                "credit": "",
+                "camera": "",
+                "caption": "",
+                "created_timestamp": "0",
+                "copyright": "",
+                "focal_length": "0",
+                "iso": "0",
+                "shutter_speed": "0",
+                "title": "",
+                "orientation": "0",
+                "keywords": []
+            }
+        },
+        "post": 8274,
+        "source_url": "https:\/\/admin.dss-sport.ru\/wp-content\/uploads\/2023\/05\/2c458a5f-a07b-487a-9df8-4370e6e7e4e8.png",
+        "_links": {
+            "self": [
+                {
+                    "href": "https:\/\/admin.dss-sport.ru\/wp-json\/wp\/v2\/media\/8275"
+                }
+            ],
+            "collection": [
+                {
+                    "href": "https:\/\/admin.dss-sport.ru\/wp-json\/wp\/v2\/media"
+                }
+            ],
+            "about": [
+                {
+                    "href": "https:\/\/admin.dss-sport.ru\/wp-json\/wp\/v2\/types\/attachment"
+                }
+            ],
+            "author": [
+                {
+                    "embeddable": true,
+                    "href": "https:\/\/admin.dss-sport.ru\/wp-json\/wp\/v2\/users\/2"
+                }
+            ],
+            "replies": [
+                {
+                    "embeddable": true,
+                    "href": "https:\/\/admin.dss-sport.ru\/wp-json\/wp\/v2\/comments?post=8275"
+                }
+            ]
+        }
+    },
+    {
+        "id": 8252,
+        "date": "2023-05-01T16:30:33",
+        "date_gmt": "2023-05-01T08:30:33",
+        "guid": {
+            "rendered": "https:\/\/admin.dss-sport.ru\/wp-content\/uploads\/2023\/05\/014e0730-3c86-41ca-af80-bd49f2be4be5.jpeg"
+        },
+        "modified": "2023-05-01T16:30:33",
+        "modified_gmt": "2023-05-01T08:30:33",
+        "slug": "014e0730-3c86-41ca-af80-bd49f2be4be5",
+        "status": "inherit",
+        "type": "attachment",
+        "link": "https:\/\/admin.dss-sport.ru\/page\/uncategorized\/8251\/attachment\/014e0730-3c86-41ca-af80-bd49f2be4be5\/",
+        "title": {
+            "rendered": "014E0730-3C86-41CA-AF80-BD49F2BE4BE5"
+        },
+        "author": 2,
+        "comment_status": "open",
+        "ping_status": "closed",
+        "template": "",
+        "meta": [],
+        "acf": [],
+        "description": {
+            "rendered": "<p class=\"attachment\"><a href='https:\/\/admin.dss-sport.ru\/wp-content\/uploads\/2023\/05\/014e0730-3c86-41ca-af80-bd49f2be4be5.jpeg'><img width=\"213\" height=\"300\" src=\"https:\/\/admin.dss-sport.ru\/wp-content\/uploads\/2023\/05\/014e0730-3c86-41ca-af80-bd49f2be4be5-213x300.jpeg\" class=\"attachment-medium size-medium\" alt=\"\" decoding=\"async\" loading=\"lazy\" srcset=\"https:\/\/admin.dss-sport.ru\/wp-content\/uploads\/2023\/05\/014e0730-3c86-41ca-af80-bd49f2be4be5-213x300.jpeg 213w, https:\/\/admin.dss-sport.ru\/wp-content\/uploads\/2023\/05\/014e0730-3c86-41ca-af80-bd49f2be4be5.jpeg 601w\" sizes=\"(max-width: 213px) 100vw, 213px\" style=\"width:100%;height:140.93%;max-width:601px;\" \/><\/a><\/p>\n"
+        },
+        "caption": {
+            "rendered": ""
+        },
+        "alt_text": "",
+        "media_type": "image",
+        "mime_type": "image\/jpeg",
+        "media_details": {
+            "width": 601,
+            "height": 847,
+            "file": "2023\/05\/014e0730-3c86-41ca-af80-bd49f2be4be5.jpeg",
+            "filesize": 243080,
+            "sizes": {
+                "medium": {
+                    "file": "014e0730-3c86-41ca-af80-bd49f2be4be5-213x300.jpeg",
+                    "width": 213,
+                    "height": 300,
+                    "filesize": 34436,
+                    "mime_type": "image\/jpeg",
+                    "source_url": "https:\/\/admin.dss-sport.ru\/wp-content\/uploads\/2023\/05\/014e0730-3c86-41ca-af80-bd49f2be4be5-213x300.jpeg"
+                },
+                "thumbnail": {
+                    "file": "014e0730-3c86-41ca-af80-bd49f2be4be5-150x150.jpeg",
+                    "width": 150,
+                    "height": 150,
+                    "filesize": 23339,
+                    "mime_type": "image\/jpeg",
+                    "source_url": "https:\/\/admin.dss-sport.ru\/wp-content\/uploads\/2023\/05\/014e0730-3c86-41ca-af80-bd49f2be4be5-150x150.jpeg"
+                },
+                "full": {
+                    "file": "014e0730-3c86-41ca-af80-bd49f2be4be5.jpeg",
+                    "width": 601,
+                    "height": 847,
+                    "mime_type": "image\/jpeg",
+                    "source_url": "https:\/\/admin.dss-sport.ru\/wp-content\/uploads\/2023\/05\/014e0730-3c86-41ca-af80-bd49f2be4be5.jpeg"
+                }
+            },
+            "image_meta": {
+                "aperture": "0",
+                "credit": "",
+                "camera": "",
+                "caption": "",
+                "created_timestamp": "0",
+                "copyright": "",
+                "focal_length": "0",
+                "iso": "0",
+                "shutter_speed": "0",
+                "title": "",
+                "orientation": "1",
+                "keywords": []
+            }
+        },
+        "post": 8251,
+        "source_url": "https:\/\/admin.dss-sport.ru\/wp-content\/uploads\/2023\/05\/014e0730-3c86-41ca-af80-bd49f2be4be5.jpeg",
+        "_links": {
+            "self": [
+                {
+                    "href": "https:\/\/admin.dss-sport.ru\/wp-json\/wp\/v2\/media\/8252"
+                }
+            ],
+            "collection": [
+                {
+                    "href": "https:\/\/admin.dss-sport.ru\/wp-json\/wp\/v2\/media"
+                }
+            ],
+            "about": [
+                {
+                    "href": "https:\/\/admin.dss-sport.ru\/wp-json\/wp\/v2\/types\/attachment"
+                }
+            ],
+            "author": [
+                {
+                    "embeddable": true,
+                    "href": "https:\/\/admin.dss-sport.ru\/wp-json\/wp\/v2\/users\/2"
+                }
+            ],
+            "replies": [
+                {
+                    "embeddable": true,
+                    "href": "https:\/\/admin.dss-sport.ru\/wp-json\/wp\/v2\/comments?post=8252"
+                }
+            ]
+        }
+    },
+    {
+        "id": 8165,
+        "date": "2023-04-16T16:37:22",
+        "date_gmt": "2023-04-16T08:37:22",
+        "guid": {
+            "rendered": "https:\/\/admin.dss-sport.ru\/wp-content\/uploads\/2023\/04\/6436e96d-3e0e-4500-9d8d-7a02af2adbf0.jpeg"
+        },
+        "modified": "2023-04-16T16:37:22",
+        "modified_gmt": "2023-04-16T08:37:22",
+        "slug": "6436e96d-3e0e-4500-9d8d-7a02af2adbf0",
+        "status": "inherit",
+        "type": "attachment",
+        "link": "https:\/\/admin.dss-sport.ru\/page\/uncategorized\/8164\/attachment\/6436e96d-3e0e-4500-9d8d-7a02af2adbf0\/",
+        "title": {
+            "rendered": "6436E96D-3E0E-4500-9D8D-7A02AF2ADBF0"
+        },
+        "author": 2,
+        "comment_status": "open",
+        "ping_status": "closed",
+        "template": "",
+        "meta": [],
+        "acf": [],
+        "description": {
+            "rendered": "<p class=\"attachment\"><a href='https:\/\/admin.dss-sport.ru\/wp-content\/uploads\/2023\/04\/6436e96d-3e0e-4500-9d8d-7a02af2adbf0.jpeg'><img width=\"300\" height=\"300\" src=\"https:\/\/admin.dss-sport.ru\/wp-content\/uploads\/2023\/04\/6436e96d-3e0e-4500-9d8d-7a02af2adbf0-300x300.jpeg\" class=\"attachment-medium size-medium\" alt=\"\" decoding=\"async\" loading=\"lazy\" srcset=\"https:\/\/admin.dss-sport.ru\/wp-content\/uploads\/2023\/04\/6436e96d-3e0e-4500-9d8d-7a02af2adbf0-300x300.jpeg 300w, https:\/\/admin.dss-sport.ru\/wp-content\/uploads\/2023\/04\/6436e96d-3e0e-4500-9d8d-7a02af2adbf0-150x150.jpeg 150w, https:\/\/admin.dss-sport.ru\/wp-content\/uploads\/2023\/04\/6436e96d-3e0e-4500-9d8d-7a02af2adbf0.jpeg 750w\" sizes=\"(max-width: 300px) 100vw, 300px\" style=\"width:100%;height:100%;max-width:750px;\" \/><\/a><\/p>\n"
+        },
+        "caption": {
+            "rendered": ""
+        },
+        "alt_text": "",
+        "media_type": "image",
+        "mime_type": "image\/jpeg",
+        "media_details": {
+            "width": 750,
+            "height": 750,
+            "file": "2023\/04\/6436e96d-3e0e-4500-9d8d-7a02af2adbf0.jpeg",
+            "filesize": 113497,
+            "sizes": {
+                "medium": {
+                    "file": "6436e96d-3e0e-4500-9d8d-7a02af2adbf0-300x300.jpeg",
+                    "width": 300,
+                    "height": 300,
+                    "filesize": 27531,
+                    "mime_type": "image\/jpeg",
+                    "source_url": "https:\/\/admin.dss-sport.ru\/wp-content\/uploads\/2023\/04\/6436e96d-3e0e-4500-9d8d-7a02af2adbf0-300x300.jpeg"
+                },
+                "thumbnail": {
+                    "file": "6436e96d-3e0e-4500-9d8d-7a02af2adbf0-150x150.jpeg",
+                    "width": 150,
+                    "height": 150,
+                    "filesize": 16438,
+                    "mime_type": "image\/jpeg",
+                    "source_url": "https:\/\/admin.dss-sport.ru\/wp-content\/uploads\/2023\/04\/6436e96d-3e0e-4500-9d8d-7a02af2adbf0-150x150.jpeg"
+                },
+                "full": {
+                    "file": "6436e96d-3e0e-4500-9d8d-7a02af2adbf0.jpeg",
+                    "width": 750,
+                    "height": 750,
+                    "mime_type": "image\/jpeg",
+                    "source_url": "https:\/\/admin.dss-sport.ru\/wp-content\/uploads\/2023\/04\/6436e96d-3e0e-4500-9d8d-7a02af2adbf0.jpeg"
+                }
+            },
+            "image_meta": {
+                "aperture": "0",
+                "credit": "",
+                "camera": "",
+                "caption": "",
+                "created_timestamp": "0",
+                "copyright": "",
+                "focal_length": "0",
+                "iso": "0",
+                "shutter_speed": "0",
+                "title": "",
+                "orientation": "1",
+                "keywords": []
+            }
+        },
+        "post": 8164,
+        "source_url": "https:\/\/admin.dss-sport.ru\/wp-content\/uploads\/2023\/04\/6436e96d-3e0e-4500-9d8d-7a02af2adbf0.jpeg",
+        "_links": {
+            "self": [
+                {
+                    "href": "https:\/\/admin.dss-sport.ru\/wp-json\/wp\/v2\/media\/8165"
+                }
+            ],
+            "collection": [
+                {
+                    "href": "https:\/\/admin.dss-sport.ru\/wp-json\/wp\/v2\/media"
+                }
+            ],
+            "about": [
+                {
+                    "href": "https:\/\/admin.dss-sport.ru\/wp-json\/wp\/v2\/types\/attachment"
+                }
+            ],
+            "author": [
+                {
+                    "embeddable": true,
+                    "href": "https:\/\/admin.dss-sport.ru\/wp-json\/wp\/v2\/users\/2"
+                }
+            ],
+            "replies": [
+                {
+                    "embeddable": true,
+                    "href": "https:\/\/admin.dss-sport.ru\/wp-json\/wp\/v2\/comments?post=8165"
+                }
+            ]
+        }
+    },
+    {
+        "id": 8152,
+        "date": "2023-04-12T10:33:04",
+        "date_gmt": "2023-04-12T02:33:04",
+        "guid": {
+            "rendered": "https:\/\/admin.dss-sport.ru\/wp-content\/uploads\/2023\/04\/czs.png"
+        },
+        "modified": "2023-04-12T10:33:04",
+        "modified_gmt": "2023-04-12T02:33:04",
+        "slug": "czs",
+        "status": "inherit",
+        "type": "attachment",
+        "link": "https:\/\/admin.dss-sport.ru\/page\/uncategorized\/8151\/attachment\/czs\/",
+        "title": {
+            "rendered": "\u0426\u0421"
+        },
+        "author": 2,
+        "comment_status": "open",
+        "ping_status": "closed",
+        "template": "",
+        "meta": [],
+        "acf": [],
+        "description": {
+            "rendered": "<p class=\"attachment\"><a href='https:\/\/admin.dss-sport.ru\/wp-content\/uploads\/2023\/04\/czs.png'><img width=\"300\" height=\"225\" src=\"https:\/\/admin.dss-sport.ru\/wp-content\/uploads\/2023\/04\/czs-300x225.png\" class=\"attachment-medium size-medium\" alt=\"\" decoding=\"async\" loading=\"lazy\" srcset=\"https:\/\/admin.dss-sport.ru\/wp-content\/uploads\/2023\/04\/czs-300x225.png 300w, https:\/\/admin.dss-sport.ru\/wp-content\/uploads\/2023\/04\/czs-768x576.png 768w, https:\/\/admin.dss-sport.ru\/wp-content\/uploads\/2023\/04\/czs.png 1000w\" sizes=\"(max-width: 300px) 100vw, 300px\" style=\"width:100%;height:75%;max-width:1000px;\" \/><\/a><\/p>\n"
+        },
+        "caption": {
+            "rendered": ""
+        },
+        "alt_text": "",
+        "media_type": "image",
+        "mime_type": "image\/png",
+        "media_details": {
+            "width": 1000,
+            "height": 750,
+            "file": "2023\/04\/czs.png",
+            "filesize": 849801,
+            "sizes": {
+                "medium": {
+                    "file": "czs-300x225.png",
+                    "width": 300,
+                    "height": 225,
+                    "filesize": 102920,
+                    "mime_type": "image\/png",
+                    "source_url": "https:\/\/admin.dss-sport.ru\/wp-content\/uploads\/2023\/04\/czs-300x225.png"
+                },
+                "thumbnail": {
+                    "file": "czs-150x150.png",
+                    "width": 150,
+                    "height": 150,
+                    "filesize": 37288,
+                    "mime_type": "image\/png",
+                    "source_url": "https:\/\/admin.dss-sport.ru\/wp-content\/uploads\/2023\/04\/czs-150x150.png"
+                },
+                "medium_large": {
+                    "file": "czs-768x576.png",
+                    "width": 768,
+                    "height": 576,
+                    "filesize": 565212,
+                    "mime_type": "image\/png",
+                    "source_url": "https:\/\/admin.dss-sport.ru\/wp-content\/uploads\/2023\/04\/czs-768x576.png"
+                },
+                "full": {
+                    "file": "czs.png",
+                    "width": 1000,
+                    "height": 750,
+                    "mime_type": "image\/png",
+                    "source_url": "https:\/\/admin.dss-sport.ru\/wp-content\/uploads\/2023\/04\/czs.png"
+                }
+            },
+            "image_meta": {
+                "aperture": "0",
+                "credit": "",
+                "camera": "",
+                "caption": "",
+                "created_timestamp": "0",
+                "copyright": "",
+                "focal_length": "0",
+                "iso": "0",
+                "shutter_speed": "0",
+                "title": "",
+                "orientation": "0",
+                "keywords": []
+            }
+        },
+        "post": 8151,
+        "source_url": "https:\/\/admin.dss-sport.ru\/wp-content\/uploads\/2023\/04\/czs.png",
+        "_links": {
+            "self": [
+                {
+                    "href": "https:\/\/admin.dss-sport.ru\/wp-json\/wp\/v2\/media\/8152"
+                }
+            ],
+            "collection": [
+                {
+                    "href": "https:\/\/admin.dss-sport.ru\/wp-json\/wp\/v2\/media"
+                }
+            ],
+            "about": [
+                {
+                    "href": "https:\/\/admin.dss-sport.ru\/wp-json\/wp\/v2\/types\/attachment"
+                }
+            ],
+            "author": [
+                {
+                    "embeddable": true,
+                    "href": "https:\/\/admin.dss-sport.ru\/wp-json\/wp\/v2\/users\/2"
+                }
+            ],
+            "replies": [
+                {
+                    "embeddable": true,
+                    "href": "https:\/\/admin.dss-sport.ru\/wp-json\/wp\/v2\/comments?post=8152"
+                }
+            ]
+        }
+    }
+]
