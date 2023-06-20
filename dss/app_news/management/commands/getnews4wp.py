@@ -1,11 +1,13 @@
 
 import requests
-from app_news.models import News, ImageMedia
+from app_news.models import News
+from app_mediafiles.models import Image as ImageMedia
 from django.utils.dateparse import parse_datetime
 from django.utils.timezone import make_aware, localtime
 from django.core.management.base import BaseCommand
 import time
 
+from app_news.models import MAX_TITLE, MAX_CONTENT, MAX_EXCERPT
 
 class Command(BaseCommand):
     help = 'Загружает новости из WordPress'
@@ -41,12 +43,11 @@ class Command(BaseCommand):
                 exist_flag = False
                 news = News.objects.all()
                 for item in news:
-                    if item.id == id:
+                    if item.pk == id:
                         exist_flag = True
                         break
                 if exist_flag:
                     continue
-                id = data.get('id')
                 print(id, ':', end=' ')
                 slug = data.get('slug')
                 title = data.get('title').get('rendered')
@@ -56,7 +57,7 @@ class Command(BaseCommand):
                     print(id, title, slug, content, 'not import!')
                     print()
                     continue
-                excerpt =  data.get('excerpt').get('rendered')
+                excerpt = data.get('excerpt').get('rendered')
                 media_id = data.get('featured_media')
                 if media_id and type(media_id) == int:
                     featured_media = int(media_id) + ID_PREFIX
@@ -68,14 +69,13 @@ class Command(BaseCommand):
                     img = None
                 news = News.objects.create(
                     id=id, 
-                    title=title,
-                    slug=slug,
-                    content=content,
+                    title=title[:MAX_TITLE],
+                    slug=slug[:MAX_TITLE],
+                    content=content[:MAX_CONTENT],
                     date_public=date_public,
-                    excerpt=excerpt,
+                    excerpt=excerpt[:MAX_EXCERPT],
                     featured_media=img,
                 )
                 print('success!')
-            
             page += 1
                 

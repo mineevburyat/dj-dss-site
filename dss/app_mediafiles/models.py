@@ -277,9 +277,8 @@ class Image(models.Model):
     slug = models.SlugField(
         'часть url',
         max_length=MAX_TITLE,
-        default='fill necessarily! '
-        # db_index=True,
-        # unique=True
+        db_index=True,
+        unique=True
         )
     alt_txt = models.CharField(
         'альтернативная подпись',

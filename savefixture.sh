@@ -7,4 +7,5 @@ python manage.py dumpdata app_services > fixtures/servicess.json
 python manage.py dumpdata app_contacts > fixtures/contacts.json
 python manage.py dumpdata app_shedule > fixtures/shedule.json
 python manage.py dumpdata app_piplscard > fixtures/piples.json
-
+python manage.py dumpdata app_user > fixtures/user.json
+python manage.py dumpdata app_news > fixtures/news.json
