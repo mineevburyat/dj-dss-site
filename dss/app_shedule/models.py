@@ -20,3 +20,17 @@ class Shedule(models.Model):
     
     def __str__(self):
         return f"график работы {self.name}"
+    
+# # Список дней недели.
+# 	DAY_CHOICES = (
+# 		('MO', 'Понедельник'),
+# 		('TU', 'Вторник'),
+# 		('WE', 'Среда'),
+# 		('TH', 'Четверг'),
+# 		('FR', 'Пятница'),
+# 		('SA', 'Суббота'),
+# 		('SU', 'Воскресенье'),
+# 	)
+
+# 	day = models.CharField(max_length=2, choices=DAY_CHOICES, verbose_name='День недели')
+# 	time = models.TimeField(verbose_name='Время занятия')

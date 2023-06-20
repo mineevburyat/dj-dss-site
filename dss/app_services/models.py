@@ -180,5 +180,5 @@ class TypeServiceGallery(models.Model):
     get_name.short_description = 'имя'
 
     def get_img_size(self):
-        return self.photos.img_size()
+        return self.photos.get_img_size()
     get_img_size.short_description = 'размер'
