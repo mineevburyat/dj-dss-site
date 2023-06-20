@@ -27,6 +27,7 @@ class News(models.Model):
     slug = models.SlugField(
         max_length=MAX_TITLE,
         db_index=True,
+        unique=True
     )
     date_public = models.DateTimeField(
         'дата публикации',
