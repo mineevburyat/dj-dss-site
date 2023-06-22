@@ -58,7 +58,9 @@ class News(models.Model):
     )
     tags = models.ManyToManyField(
         Tag,
-        blank=True
+        blank=True,
+        null=True,
+        # related_name='tags'
         )
     important = models.BooleanField(
         'на первую полосу',
