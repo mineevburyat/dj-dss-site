@@ -331,9 +331,9 @@ class Image(models.Model):
     #     if self.thumbnail:
     #         return self.thumbnail.name
         
-    # def get_url_middle_img(self):
-    #     if self.thumbnail:
-    #         return self.image.url
+    def get_url_middle_img(self):
+        if self.thumbnail:
+            return self.image.url
     
     def photo_img(self, max_width=400):
         if not self.image:
@@ -374,7 +374,7 @@ class Image(models.Model):
     is_caption.short_description = 'есть подпись'
     
     def get_absolute_url(self):
-        return reverse("app_news:detailimg", kwargs={"slug": self.slug})
+        return reverse("app_mediafiles:detailimg", kwargs={"slug": self.slug})
     
     def get_next_slug(self):
         next = Image.objects.filter(pk__gt = self.pk).order_by('pk').first()

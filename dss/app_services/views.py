@@ -1,5 +1,3 @@
-from typing import Any, Dict, Optional
-
 from django.shortcuts import get_object_or_404
 from django.db import models
 from .models import Service, TypeService, CHOICE_CATEGORY

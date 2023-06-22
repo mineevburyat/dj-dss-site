@@ -89,7 +89,7 @@ class Object(models.Model):
         for gallery in ObjectGallery.objects.filter(obj=self):
             photos.append(
                 {'url': gallery.photos.get_url_middle_img(),
-                 'alt': gallery.photos.name}
+                 'alt': gallery.photos.title}
             )
         if photos:
             return random.choice(photos)
