@@ -13,6 +13,8 @@ from django.urls import reverse
 from .templatetags.fsize_tag import filesize
 from django.utils.safestring import mark_safe
 import os
+from app_tags.models import Tag
+
 
 # папки для иконок и фотографий
 IMAGE_FOLDER_ICON = 'imagelibrary/icon'
@@ -99,173 +101,15 @@ class Icon(models.Model):
     img_size.short_description = 'размер'
     
     
-class Tag(models.Model):
-    class Meta:
-        verbose_name = 'Метка'
-        verbose_name_plural = 'Метки'
-    tag = models.CharField(max_length=50)
-    def __str__(self):
-        return self.tag
-    
-    
-# class ImageMedia(models.Model):
+# class Tag(models.Model):
 #     class Meta:
-#         verbose_name = 'Изобажение'
-#         verbose_name_plural = 'Галерея изображений'
-        
-#     slug = models.SlugField(
-#         'часть url',
-#         max_length=120,
-#         db_index=True,
-#         unique=True)
-#     title = models.CharField(
-#         'название',
-#         db_index=True,
-#         max_length=120)
-#     caption = models.TextField(
-#         'подпись к картинке',
-#         db_index=True,
-#         max_length=500)
-#     alt_txt = models.CharField(
-#         'альтернативная подпись',
-#         max_length=160)
-#     date_public = models.DateTimeField(
-#         'время добавления',
-#         auto_now_add=True)
-#     img_file_size = models.IntegerField(
-#         'объем файла',
-#         blank=True,
-#         null=True)
-#     img_mode = models.CharField(
-#         max_length=10,
-#         help_text='color, grey, and other',
-#         blank=True,
-#         null=True)
-#     width = models.IntegerField(
-#         'ширина в пикселях',
-#         blank=True,
-#         null=True)
-#     height = models.IntegerField(
-#         'высота в пикселях',
-#         blank=True,
-#         null=True)
-#     media_type = models.CharField(
-#         'расширение',
-#         max_length=5,
-#         help_text='расширение файла',
-#         blank=True,
-#         null=True)
-#     image = models.ImageField(
-#         'оригинал',
-#         upload_to=filename_photo_file)
-#     thumbnail = models.ImageField(
-#         'миниатюра самая маленькая',
-#         blank=True,
-#         null=True,
-#         upload_to=Path(IMAGE_FOLDER_PHOTO, SMALL),)
-#     medium = models.ImageField(
-#         'миниатюра средняя',
-#         blank=True,
-#         null=True,
-#         upload_to=Path(IMAGE_FOLDER_PHOTO, MIDDLE))
-#     large = models.ImageField(
-#         'миниатюра большая',
-#         blank=True,
-#         null=True,
-#         upload_to=Path(IMAGE_FOLDER_PHOTO, LARGE))
-#     tags = models.ManyToManyField(Tag, blank=True)
-        
+#         verbose_name = 'Метка'
+#         verbose_name_plural = 'Метки'
+#     tag = models.CharField(max_length=50)
 #     def __str__(self):
-#         return f"{self.title} ({self.pk})"
+#         return self.tag
     
-#     def is_caption(self):
-#         return bool(self.caption)
-#     is_caption.boolean = True
-#     is_caption.short_description = 'Имеется подпись картинки'
     
-#     def get_img_size(self):
-#         return f"{self.width}x{self.height}"
-#     get_img_size.short_description = 'размер картинки'
-    
-#     def get_absolute_url(self):
-#         return reverse("app_news:detailimg", kwargs={"slug": self.slug})
-    
-#     def get_next_slug(self):
-#         next = ImageMedia.objects.filter(pk__gt = self.pk).order_by('pk').first()
-#         if next:
-#             return next.slug
-    
-#     def get_prev_slug(self):
-#         prev = ImageMedia.objects.filter(pk__lt = self.pk).order_by('-pk').first()
-#         if prev:
-#             return prev.slug
-        
-#     def get_fsize(self):
-#         return filesize(self.img_file_size)
-#     get_fsize.short_description = 'размер файла'
-    
-#     def get_large_html(self):
-#         img = PImage.open(self.large)
-#         width, height = img.size
-#         name = self.large.name
-#         fimg = BytesIO()
-#         img.save(fimg, img.format)
-#         fsize = filesize(len(fimg.getvalue()))
-#         return mark_safe(f"<a href={self.large.url}>{name} ({width}x{height}) {fsize}</a>")
-        
-#     def get_medium_html(self):
-#         img = PImage.open(self.medium)
-#         width, height = img.size
-#         name = self.medium.name
-#         fimg = BytesIO()
-#         img.save(fimg, img.format)
-#         fsize = filesize(len(fimg.getvalue()))
-#         return mark_safe(f"<a href={self.medium.url}>{name} ({width}x{height}) {fsize}</a>")
-    
-#     def get_small_html(self):
-#         img = PImage.open(self.thumbnail)
-#         width, height = img.size
-#         name = self.thumbnail.name
-#         fimg = BytesIO()
-#         img.save(fimg, img.format)
-#         fsize = filesize(len(fimg.getvalue()))
-#         return mark_safe(f"<a href={self.thumbnail.url}>{name} ({width}x{height})  {fsize}</a>")
-    
-    # def get_path_forigin(self):
-    #     return self.image.name
-    
-    # def get_path_fmedium(self):
-    #     if self.medium:
-    #         return self.medium.name
-    
-    # def get_path_fsmall(self):
-    #     if self.thumbnail:
-    #         return self.thumbnail.name
-        
-    # def get_url_middle_img(self):
-    #     if self.thumbnail_small:
-    #         return self.image.url
-    
-    # def get_img_url(self):
-    #     if not self.image:
-    #         return '/media/emptyhumbnail.png'
-    #     return self.image.url
-    
-    # def photo_img(self):
-    #     return mark_safe(
-    #         f'<img src="{self.get_img_url()}" alt="{self.alt_txt}" style="width:50%;">')
-    # photo_img.short_description = 'Картинка'
-    
-    # def thumbnail_html(self):
-    #     if self.thumbnail:
-    #         return mark_safe(f'<a href="{self.image.url}"><img border="0" alt="" src="{self.thumbnail_small.url}" height="50" /></a>')
-    #     elif self.thumbnail_middle:
-    #         return mark_safe(f'<a href="{self.image.url}"><img border="0" alt="" src="{self.thumbnail_middle.url}" height="50" /></a>')
-    #     else:
-    #         return mark_safe(f'<a href="{self.image.url}"><img border="0" alt="" src="{self.image.url}" height="50" /></a>')
-    # thumbnail_html.allow_tags = True
-    # thumbnail_html.short_description = 'изображение'
-
 class Image(models.Model):
     '''\
         Медиабиблиотека изображений, где каждый элемент имеет описание, имя, размер оригинала и миниатюры'''

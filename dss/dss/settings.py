@@ -57,6 +57,7 @@ INSTALLED_APPS = [
     'app_shedule',
     'app_booking',
     'app_news',
+    'app_tags',
 ]
 
 MIDDLEWARE = [

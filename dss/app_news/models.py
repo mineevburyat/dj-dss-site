@@ -11,6 +11,8 @@ from django.core.files.base import ContentFile
 from io import BytesIO
 import os
 from app_mediafiles.models import Image
+from app_tags.models import Tag
+from datetime import datetime
 # Create your models here.
 
 
@@ -54,8 +56,29 @@ class News(models.Model):
         null=True,
         on_delete=models.SET_NULL
     )
+    tags = models.ManyToManyField(
+        Tag,
+        blank=True
+        )
+    important = models.BooleanField(
+        'на первую полосу',
+        default=False
+    )
+    valid_until_date = models.DateTimeField(
+        'действует до',
+        blank=True,
+        null=True
+    )
+    date_activation = models.DateTimeField(
+        'дата активации',
+        default=datetime.now,
+    )
     
     def get_thumbnail(self):
         if self.featured_media:
             return mark_safe(f'<a href="{self.featured_media.large.url}"><img src="{self.featured_media.thumbnail.url}" alt="{self.featured_media.alt_txt}"></a>')
     
+    def tags_list(self):
+        lst = [x[1] for x in self.tags.values_list()]
+        return mark_safe('<br>'.join(lst))
+    tags.short_description = 'тэги'
