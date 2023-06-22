@@ -3,17 +3,14 @@
 {% load static %}
 
 {% block sidebar %}
-<div>
-  <ul>
-    {% for item in typeservices %}
-      <li>{{item.name}} </li>
-    {% endfor %}
-    </ul>
-</div>
+<hr>
+блок сайдбара
 {% endblock %}
+
 
 {% block content %}
 <main class="container-fluid">
+  <hr>
   <h2>{{categoryname}}</h2>
   <div class="row">
     <div class="col-md">
@@ -42,4 +39,45 @@
     </div>
   </div>
 </main>
+{% endblock %}
+
+{% block bradcrumbs %}
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb" itemscope itemtype="https://schema.org/BreadcrumbList">
+    <li class="breadcrumb-item" itemprop='itemListElement' itemscope itemtype='https://schema.org/ListItem'>
+      <a href="{% url 'home:index' %}" itemprop="item">
+        <span itemprop="name">Главная</span>
+      </a>
+    </li>
+    <li class="breadcrumb-item" itemprop='itemListElement' itemscope itemtype='https://schema.org/ListItem'>
+      <a href="{% url 'services:all' %}" itemprop="item">
+        <span itemprop="name">Услуги</span>
+      </a>
+    </li>
+  </ol>
+</nav>
+<ul class="nav flex-column">
+  {% for item in typeservices %}
+    <li class="nav-item">
+      <a class="nav-link active" href="{% url 'services:listservice' category item.slug %}">{{item.name|upper}}</a>
+    </li>
+  {% endfor %}
+  
+</ul>
+
+{% endblock %}
+
+{% block promo_slider %}
+<div id="carouselPromo" class="carousel slide" data-ride="carousel">
+  <div class="carousel-inner">
+    {% for news in objects_news %}
+    <div class="carousel-item {% if forloop.counter == 1 %} active {% endif %}">
+      <img class="d-block w-100" src="{{news.featured_media.large.url}}" alt="{{news.title}}">
+      <a class="carousel-caption d-none d-md-block" href="{% url 'news:detail' news.slug %}">
+        <h5>{{news.title}}</h5>
+        <p>{{news.exerpt}}</p>
+      </a>
+    </div>
+    {% endfor %}
+  </div>
 {% endblock %}

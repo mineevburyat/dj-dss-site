@@ -3,6 +3,7 @@ from common.mixins import TitleMixin, ObjectsMixin
 from .models import Object, ObjectGallery
 from django.views.generic.detail import DetailView
 from django.views.generic import ListView
+from app_news.models import News
 
 
 class IndexView(TitleMixin, TemplateView):
@@ -26,6 +27,9 @@ class DetailObjectView(TitleMixin, ObjectsMixin, DetailView):
             photos.append(photo.photos)
         context['object_id'] = id
         context['photos'] = photos
+        # вытащить новости и важные события связанные с конкретным объектом
+        objects_news = News.objects.filter(tags__in=[2])
+        context['objects_news'] = objects_news
         return context
 
 class ListObjectsView(TitleMixin, ListView):
@@ -43,7 +47,9 @@ class ListObjectsView(TitleMixin, ListView):
     #         services = Service.objects.all()
     #     return services
 
-    # def get_context_data(self, **kwargs):
-    #     context = super().get_context_data(**kwargs)
-    #     context['category'] = self.kwargs.get('category')
-    #     return context
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        objects_news = News.objects.filter(tags__in=[2])
+        # context['category'] = self.kwargs.get('category')
+        context['objects_news'] = objects_news
+        return context

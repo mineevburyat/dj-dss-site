@@ -13,10 +13,6 @@ class ObjectAdmin(admin.ModelAdmin):
         ('name', 'img_size')
     )
  
-@admin.register(Tag)   
-class TagAdmin(admin.ModelAdmin):
-    list_display = ["tag"]
-
 # @admin.register(Image)
 # class ImageAdmin(admin.ModelAdmin):
 #     search_fields = ["title", "caption"]

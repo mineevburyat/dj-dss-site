@@ -8,6 +8,7 @@ from common.mixins import TitleMixin
 from django.http import Http404
 from django.db.models import Q
 # from common.mixins import TitleMixin
+from app_news.models import News
 
 
 class DetailServiceView(TitleMixin, DetailView):
@@ -71,7 +72,8 @@ class ListTypeServiceView(TitleMixin, TemplateView):
             # typeservices += TypeService.objects.filter(category=category).order_by('-order')
         else:
             typeservices = TypeService.objects.filter(category=category).order_by('-order')
-        
+        objects_news = News.objects.filter(tags__in=[3])
+        context['objects_news'] = objects_news
         context['title'] = f"ДСС: {txt_category}"
         context['typeservices'] = typeservices
         context['categoryname'] = txt_category

@@ -1,15 +1,10 @@
-{% extends 'home/base2lv.html' %}
+{% extends 'home/base3lv.html' %}
 
 {% load static %}
 
 {% block sidebar %}
-<ul class="nav flex-column">
-  {% for object in objects %}
-  <li class="nav-item">
-    <a class="nav-link {% if object.id == object_id %} active text-warning{% endif %}" href="{% url 'objects:detail' object.slug %}">{{object.short_name}}</a>
-  </li>
-  {% endfor %}
-</ul>
+<hr>
+блок сайдбара
 {% endblock %}
 
 {% block bradcrumbs %}
@@ -32,26 +27,28 @@
     </li>
   </ol>
 </nav>
+<ul class="nav flex-column">
+  {% for object in objects %}
+  <li class="nav-item">
+    <a class="nav-link active" href="{% url 'objects:detail' object.slug %}">{{object.short_name|upper}}</a>
+  </li>
+  {% endfor %}
+</ul>
 {% endblock %}
 
 {% block promo_slider %}
 <div id="carouselPromo" class="carousel slide" data-ride="carousel">
   <div class="carousel-inner">
-    <div class="carousel-item active">
-      <div class="carousel-caption">
-        <h5>Важно!</h5>
-        <p>сегодня в бассейне сандень. Подробнее</p>
-      </div>
+    {% for news in objects_news %}
+    <div class="carousel-item {% if forloop.counter == 1 %} active {% endif %}">
+      <img class="d-block w-100" src="{{news.featured_media.large.url}}" alt="{{news.title}}">
+      <a class="carousel-caption d-none d-md-block" href="{% url 'news:detail' news.slug %}">
+        <h5>{{news.title}}</h5>
+        <p>{{news.exerpt}}</p>
+      </a>
     </div>
-    <div class="carousel-item">
-      <div class="carousel-caption">
-        <h5>22.05.23 концерт ЧиЖ</h5>
-        <p>сегодня в бассейне сандень. Подробнее</p>
-      </div>
-    </div>
-    
+    {% endfor %}
   </div>
-</div>
 {% endblock %}
 
 

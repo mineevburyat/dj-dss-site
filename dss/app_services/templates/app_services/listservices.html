@@ -18,3 +18,27 @@
     {{services}}
 </main>
 {% endblock %}
+
+{% block bradcrumbs %}
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb" itemscope itemtype="https://schema.org/BreadcrumbList">
+    <li class="breadcrumb-item" itemprop='itemListElement' itemscope itemtype='https://schema.org/ListItem'>
+      <a href="{% url 'home:index' %}" itemprop="item">
+        <span itemprop="name">Главная</span>
+      </a>
+    </li>
+    <li class="breadcrumb-item" itemprop='itemListElement' itemscope itemtype='https://schema.org/ListItem'>
+      <a href="{% url 'objects:index' %}" itemprop="item">
+        <span itemprop="name">Объекты</span>
+      </a>
+    </li>
+  </ol>
+</nav>
+<ul class="nav flex-column">
+  {% for object in objects %}
+  <li class="nav-item">
+    <a class="nav-link active" href="{% url 'objects:detail' object.slug %}">{{object.short_name|upper}}</a>
+  </li>
+  {% endfor %}
+</ul>
+{% endblock %}
