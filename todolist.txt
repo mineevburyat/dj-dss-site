@@ -12,10 +12,10 @@ sitemap.xml
 настройка postgree
 1) sudo apt install libpq-dev postgresql postgresql-contrib
 2) sudo -u postgres psql
-3) CREATE DATABASE myproject;
-4)CREATE USER myprojectuser WITH PASSWORD 'password';
-5) ALTER ROLE myprojectuser SET client_encoding TO 'utf8';
-ALTER ROLE myprojectuser SET default_transaction_isolation TO 'read committed';
-ALTER ROLE myprojectuser SET timezone TO 'UTC';
-6) GRANT ALL PRIVILEGES ON DATABASE myproject TO myprojectuser;
+3) CREATE DATABASE dss_bd;
+4)CREATE USER dss_db_user WITH PASSWORD '34652817';
+5) ALTER ROLE dss_db_user SET client_encoding TO 'utf8';
+ALTER ROLE dss_db_user SET default_transaction_isolation TO 'read committed';
+ALTER ROLE dss_db_user SET timezone TO 'Asia/Irkutsk';
+6) GRANT ALL PRIVILEGES ON DATABASE dss_bd TO dss_db_user;
 7) \Quick
