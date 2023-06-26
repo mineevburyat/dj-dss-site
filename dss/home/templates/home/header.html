@@ -1,52 +1,63 @@
 {% load static %}
 <header>
-    <div class="container-fluid">
-      <nav class="navbar navbar-expand-lg navbar-light bg-light row">
-          <a class="navbar-brand w-25 d-flex ml-auto" href={% url 'home:index' %}>
-              <img src={% static "home/img/logo-icon.png" %} height="50" class="mh-100 d-inline-block align-text-top mr-1">
-              <span class="text-primary text-wrap w-50 mybrand">ДИРЕКЦИЯ СПОРТИВНЫХ СООРУЖЕНИЙ</span>
-          </a>
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav mr-auto">
-              {% load menubuilder %}{% menu mainmenu %}
-              {% for item in menuitems %}
-              <li class="nav-item w-25" >
-                <a class="nav-link text-wrap text-center {% if item.current %} active {% endif %}" href="{{ item.url }}" title="{{ item.title|escape }}">
-                  {{ item.title }}
-                  {% if item.current %}
-                  <span class="sr-only">
-                      (текущий)
-                  </span>
-                  {% endif %}
-                </a>
-              </li>
-              {% endfor %}
-            </ul>
-          </div>
-          {% if user.is_authenticated %}
-          <div class="dropdown">
-            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              {{ user }}
-            </button>
-            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-              <a class="dropdown-item" href="{% url 'user:profile' user.id %}">Профиль</a>
-              {% if user.is_staff %}
-              <a class="dropdown-item" href={% url 'admin:index' %}>Админ-панель</a>
-              {% endif %}
-              <hr class="dropdown-divider">
-              <a class="dropdown-item" href="#">Another action</a>
-              <a class="dropdown-item" href={% url "user:logout" %}>
-                Выйти
+  <div class="container-fluid">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light row">
+        <a class="navbar-brand w-25 d-flex ml-auto" href={% url 'home:index' %}>
+            <img src={% static "home/img/logo-icon.png" %} height="50" class="mh-100 d-inline-block align-text-top mr-1">
+            <span class="text-primary text-wrap w-50 mybrand">ДИРЕКЦИЯ СПОРТИВНЫХ СООРУЖЕНИЙ</span>
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            {% load menubuilder %}{% menu mainmenu %}
+            {% for item in menuitems %}
+            <li class="nav-item w-25" >
+              <a class="nav-link text-wrap text-center {% if item.current %} active {% endif %}" href="{{ item.url }}" title="{{ item.title|escape }}">
+                {{ item.title }}
+                {% if item.current %}
+                <span class="sr-only">
+                    (текущий)
+                </span>
+                {% endif %}
               </a>
-            </div>
+            </li>
+            {% endfor %}
+          </ul>
+        </div>
+        
+        
+    </nav>
+  </div>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col">
+        {% block bradcrumbs %}
+        {% endblock%}
+      </div>
+      <div class="col">
+        {% if user.is_authenticated %}
+        <div class="dropdown">
+          <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            {{ user }}
+          </button>
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <a class="dropdown-item" href="{% url 'user:profile' user.id %}">Профиль</a>
+            {% if user.is_staff %}
+            <a class="dropdown-item" href={% url 'admin:index' %}>Админ-панель</a>
+            {% endif %}
+            <hr class="dropdown-divider">
+            <a class="dropdown-item" href="#">Another action</a>
+            <a class="dropdown-item" href={% url "user:logout" %}>
+              Выйти
+            </a>
           </div>
-          {% else %}
-          <a class="nav-link" href={% url "user:login" %}>Войти <i class="fas fa-sign-in-alt"></i></a>
-          {% endif %}
-          
-      </nav>
+        </div>
+        {% else %}
+        <a class="nav-link" href={% url "user:login" %}>Войти <i class="fas fa-sign-in-alt"></i></a>
+        {% endif %}
+      </div>
     </div>
-  </header>
+  </div>
+</header>

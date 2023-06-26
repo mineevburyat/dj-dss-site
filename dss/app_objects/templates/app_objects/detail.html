@@ -3,8 +3,30 @@
 {% load static %}
 
 {% block sidebar %}
-<hr>
-блок сайдбара
+<assert>
+  <div class="calendar">
+    <div class="calendar__header">
+      <h5>{{ today.0.day }} {{ today.1 }}</h5>
+      <p>{{ today.2 }}</p>
+    </div>
+    <div class="calendar__date">
+      <div class="calendar__day">Пн</div>
+      <div class="calendar__day">Вт</div>
+      <div class="calendar__day">Ср</div>
+      <div class="calendar__day">Чт</div>
+      <div class="calendar__day">Пт</div>
+      <div class="calendar__day">Сб</div>
+      <div class="calendar__day">Вс</div>
+      {% for day in days %}
+      <a class="calendar__number {% if day == today.0.day %}calendar__number--current {% endif %} {% if day in events %}calendar__number--event {%endif%}" {% if day in events %} {% for key, title in events.items %} {% if key == day %}data-toggle="tooltip" data-placement="top" title="{{title}}"{% endif%}
+      {% endfor %}
+      {% endif %}>
+        {% if day != 0 %} {{day}} {% endif %}
+      </a>
+      {% endfor %}
+    </div>
+  </div>
+</assert>
 {% endblock %}
 
 {% block bradcrumbs %}
@@ -25,18 +47,27 @@
         <span itemprop="name">{{object.short_name}}</span>
       </a>
     </li>
+    <li class="breadcrumb-item dropdown">
+      <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      </a>
+      <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+        {% for object in objects %}
+        <a class="dropdown-item" href="{% url 'objects:detail' object.slug %}">{{object.short_name|upper}}</a>
+        {% endfor %}
+      </div>
+    </li>
   </ol>
 </nav>
-<ul class="nav flex-column">
+{% comment %} <ul class="nav flex-column">
   {% for object in objects %}
   <li class="nav-item">
     <a class="nav-link active" href="{% url 'objects:detail' object.slug %}">{{object.short_name|upper}}</a>
   </li>
   {% endfor %}
-</ul>
+</ul> {% endcomment %}
 {% endblock %}
 
-{% block promo_slider %}
+{% comment %} {% block promo_slider %}
 <div id="carouselPromo" class="carousel slide" data-ride="carousel">
   <div class="carousel-inner">
     {% for news in objects_news %}
@@ -49,11 +80,14 @@
     </div>
     {% endfor %}
   </div>
-{% endblock %}
+{% endblock %} {% endcomment %}
 
 
 {% block content %}
 <main class="container-fluid">
+  <h2 class="text-center">{{ object.name }}</h2>
+  <h3 class="text-center h6 text-secondary">{{ object.short_name }}</h3>
+    
   <div id="carouselPhotos" class="carousel slide carousel-fade" data-ride="carousel">
     <div class="carousel-inner">
       {% for photo in photos %}
@@ -65,7 +99,6 @@
         </div>
       </div>
       {% endfor %}
-
     </div>
     <a class="carousel-control-prev" href="#carouselPhotos" role="button" data-slide="prev">
       <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -78,54 +111,85 @@
     <div class="carusel-btn-group">
       <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
         <div class="btn-group-vertical mr-2" role="group" aria-label="First group">
-          <button type="button" class="btn btn-secondary">Адрес</button>
-          <button type="button" class="btn btn-secondary">Контакты</button>
-          <button type="button" class="btn btn-secondary">Спортивные услуги</button>
-          <button type="button" class="btn btn-secondary">Спортивные секции</button>
-          <button type="button" class="btn btn-secondary">Важное</button>
-          <button type="button" class="btn btn-secondary">Наши тренеры</button>
-          <button type="button" class="btn btn-secondary">Парнерам</button>
+          <button type="button" class="btn btn-outline-warning">Новости и события</button>
+          <button type="button" class="btn btn-outline-warning">Парнерам</button>
+          <button type="button" class="btn btn-outline-warning">Вакансии</button>
         </div>
       </div>
+      {% comment %} <ul class="nav nav-pills flex-column" id="pills-tab" role="tablist">
+        <li class="nav-item" role="presentation">
+          <a class="nav-link" id="pills-address-tab" data-toggle="pill" href="#nav-address" role="tab" aria-controls="pills-home" aria-selected="false">Адрес и контакты</a>
+        </li>
+        <li class="nav-item" role="presentation">
+          <a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false">Профиль</a>
+        </li>
+        <li class="nav-item" role="presentation">
+          <a class="nav-link" id="pills-contact-tab" data-toggle="pill" href="#pills-contact" role="tab" aria-controls="pills-contact" aria-selected="false">Контакт</a>
+        </li>
+      </ul> {% endcomment %}
     </div>
   </div>
-  
-  <div class="row">
-    <div class="col-md">
-      <h2 class="text-center">{{ object.name }}</h2>
-      <h3 class="text-center h6 text-secondary">{{ object.short_name }}</h3>
-      <div>
-        {{ object.description | safe}}
+  <div class="row mt-1">
+    <div class="col">
+      <nav>
+        <div class="nav nav-tabs nav-justified" id="nav-tab" role="tablist">
+          <a class="nav-link active" id="nav-character-tab" data-toggle="tab" href="#nav-character" role="tab" aria-controls="nav-character" aria-selected="true">Характеристики</a>
+          <a class="nav-link" id="nav-address-tab" data-toggle="tab" href="#nav-address" role="tab" aria-controls="nav-address" aria-selected="false">Адрес и контакты</a>
+          <a class="nav-link" id="nav-sportservice-tab" data-toggle="tab" href="#nav-sportservice" role="tab" aria-controls="nav-sportservice" aria-selected="false">Спортивные услуги</a>
+          <a class="nav-link" id="nav-sportsections-tab" data-toggle="tab" href="#nav-sportsections" role="tab" aria-controls="nav-sportsections" aria-selected="false">Спортивные секции</a>
+          <a class="nav-link" id="nav-otherservice-tab" data-toggle="tab" href="#nav-otherservice" role="tab" aria-controls="nav-otherservice" aria-selected="false">Прочие услуги</a>
+        </div>
+      </nav>
+      <div class="tab-content" id="nav-tabContent">
+        <div class="tab-pane fade show active" id="nav-character" role="tabpanel" aria-labelledby="nav-character-tab">
+          <p>{{ object.description | safe}}</p>
+        </div>
+        <div class="tab-pane fade" id="nav-address" role="tabpanel" aria-labelledby="nav-address-tab">
+          карта и контакты
+        </div>
+        <div class="tab-pane fade" id="nav-sportservice" role="tabpanel" aria-labelledby="nav-sportservice-tab">
+          спортивные услуги
+        </div>
+        <div class="tab-pane fade" id="nav-sportsections" role="tabpanel" aria-labelledby="nav-sportsections-tab">
+          спортивные секции
+        </div>
+        <div class="tab-pane fade" id="nav-otherservice" role="tabpanel" aria-labelledby="nav-otherservice-tab">
+          прочие услуги
+        </div>
       </div>
       <h4>{{object.name}} включает в себя:</h4>
       <div class="row">
           {% for stock in object.get_types_stocks %}
-          <div class="col-md-4 mb-4">
+          <div class="col-sm-6 col-12 mb-4">
             <div class="card h-100">
               <!-- <img src="" class="card-img-top" alt="..."> -->
               <div class="card-body">
                 <h5 class="card-title">{{ stock.name }}</h5>
                 <p class="card-text">{{ stock.description|safe|truncatechars:260}}</p>
-                <div class="dropdown">
-                  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownService" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    список услуг
-                  </button>
-                  <div class="dropdown-menu" aria-labelledby="dropdownService">
-                    <a class="dropdown-item" href="#">Action</a>
-                    <a class="dropdown-item" href="#">Another action</a>
-                    <a class="dropdown-item" href="#">Something else here</a>
+              </div>
+              <div class="card-footer">
+                <div class="row align-content-end justify-content-end">
+                  <div class="col-12 col-sm-6">
+                    <div class="dropup">
+                      <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownService" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        список услуг
+                      </button>
+                      <div class="dropdown-menu" aria-labelledby="dropdownService">
+                        <a class="dropdown-item" href="#">Action</a>
+                        <a class="dropdown-item" href="#">Another action</a>
+                        <a class="dropdown-item" href="#">Something else here</a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-12 col-sm-6">
+                    <a href="{% url 'objects:detail' object.slug %}" class="btn btn-primary">Подробнее...</a>
                   </div>
                 </div>
-              </div>
-              <div class="d-flex align-content-end justify-content-end pb-2 pr-2">
-                  <a href="#" class="btn btn-warning">Связаться с администратором</a>
-                  <a href="{% url 'objects:detail' object.slug %}" class="btn btn-primary">Подробнее</a>
               </div>
             </div>
           </div>
         {% endfor %}
       </div>
-
     </div>
   </div>
 </main>

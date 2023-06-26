@@ -2,10 +2,10 @@
 
 {% load static %}
 
-{% block sidebar %}
+{% comment %} {% block sidebar %}
 <hr>
 блок сайдбара
-{% endblock %}
+{% endblock %} {% endcomment %}
 
 {% block bradcrumbs %}
 <nav aria-label="breadcrumb">
@@ -20,48 +20,109 @@
         <span itemprop="name">Объекты</span>
       </a>
     </li>
+    <li class="breadcrumb-item dropdown">
+      <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      </a>
+      <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+        {% for object in objects %}
+        <a class="dropdown-item" href="{% url 'objects:detail' object.slug %}">{{object.short_name|upper}}</a>
+        {% endfor %}
+      </div>
+    </li>
   </ol>
 </nav>
-<ul class="nav flex-column">
+{% comment %} <ul class="nav flex-column">
   {% for object in objects %}
   <li class="nav-item">
     <a class="nav-link active" href="{% url 'objects:detail' object.slug %}">{{object.short_name|upper}}</a>
   </li>
   {% endfor %}
-</ul>
+</ul> {% endcomment %}
 {% endblock %}
+
+{% comment %} {% block promo_slider %}
+<div class="col">
+  <div id="carouselPromo" class="carousel slide" data-ride="carousel">
+    <div class="carousel-inner">
+      {% for news in objects_news %}
+      <div class="carousel-item {% if forloop.counter == 1 %} active {% endif %}">
+        <img class="d-block w-100" src="{{news.featured_media.large.url}}" alt="{{news.title}}">
+        <a class="carousel-caption d-none d-md-block" href="{% url 'news:detail' news.slug %}">
+          <h5>{{news.title}}</h5>
+          <p>{{news.exerpt}}</p>
+        </a>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+{% endblock %} {% endcomment %}
 
 {% block promo_slider %}
-<div id="carouselPromo" class="carousel slide" data-ride="carousel">
-  <div class="carousel-inner">
-    {% for news in objects_news %}
-    <div class="carousel-item {% if forloop.counter == 1 %} active {% endif %}">
-      <img class="d-block w-100" src="{{news.featured_media.large.url}}" alt="{{news.title}}">
-      <a class="carousel-caption d-none d-md-block" href="{% url 'news:detail' news.slug %}">
-        <h5>{{news.title}}</h5>
-        <p>{{news.exerpt}}</p>
-      </a>
+  <div class="col">
+    <div id="carouselPromo1" class="carousel slide" data-ride="carousel">
+      <div class="carousel-inner">
+        {% for news in objects_news %}
+        <div class="carousel-item {% if forloop.counter == 1 %} active {% endif %}">
+          <img class="d-block w-100" src="{{news.featured_media.large.url}}" alt="{{news.title}}">
+          <a class="carousel-caption d-none d-md-block" href="{% url 'news:detail' news.slug %}">
+            <h5>{{news.title}}</h5>
+            <p>{{news.exerpt}}</p>
+          </a>
+        </div>
+        {% endfor %}
+      </div>
     </div>
-    {% endfor %}
   </div>
-{% endblock %}
+  <div class="col">
+    <div id="carouselPromo2" class="carousel slide" data-ride="carousel">
+      <div class="carousel-inner">
+        {% for news in objects_news %}
+        <div class="carousel-item {% if forloop.counter == 2 %} active {% endif %}">
+          <img class="d-block w-100" src="{{news.featured_media.large.url}}" alt="{{news.title}}">
+          <a class="carousel-caption d-none d-md-block" href="{% url 'news:detail' news.slug %}">
+            <h5>{{news.title}}</h5>
+            <p>{{news.exerpt}}</p>
+          </a>
+        </div>
+        {% endfor %}
+       </div>
+    </div>
+  </div>
+  <div class="col d-none d-sm-block">
+    <div id="carouselPromo3" class="carousel slide" data-ride="carousel">
+      <div class="carousel-inner">
+        {% for news in objects_news %}
+        <div class="carousel-item {% if forloop.counter == 3 %} active {% endif %}">
+          <img class="d-block w-100" src="{{news.featured_media.large.url}}" alt="{{news.title}}">
+          <a class="carousel-caption d-none d-md-block" href="{% url 'news:detail' news.slug %}">
+            <h5>{{news.title}}</h5>
+            <p>{{news.exerpt}}</p>
+          </a>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
 
+
+{% endblock %}
 
 {% block content %}
 <main class="container-fluid">
   <div class="row">
     {% for object in objects %}
-    <div class="col-md-4 mb-4">
+    <div class="col-lg-6 col-xl-4 col-sm-6 col-12 mb-4">
       <div class="card h-100">
         <img src="{{object.get_random_photo.url}}" class="card-img-top" alt="{{object.get_random_photo.alt}}">
-        <div class="card-body">
+        <div class="card-body p-1">
           <h5 class="card-title">{{ object.name }}</h5>
           <p class="card-text">{{ object.description|safe|truncatechars:260}}</p>
         </div>
-        
-        <div class="d-flex align-content-end justify-content-end">
-            <a href="#" class="btn btn-warning">Связаться с администратором</a>
-          <a href="{% url 'objects:detail' object.slug %}" class="btn btn-primary">Подробнее...</a>
+        <div class="card-footer">
+          <div class="d-flex align-content-end justify-content-end">
+            <a href="{% url 'objects:detail' object.slug %}" class="btn btn-primary">Подробнее...</a>
+          </div>
         </div>
       </div>
     </div>

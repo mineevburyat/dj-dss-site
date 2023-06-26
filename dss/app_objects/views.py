@@ -4,7 +4,15 @@ from .models import Object, ObjectGallery
 from django.views.generic.detail import DetailView
 from django.views.generic import ListView
 from app_news.models import News
+from calendar import Calendar
+from datetime import datetime
 
+def name_of_week(day):
+    return ['Понедельник', 'Вторник', 'Среда', 'Четверг', 'Пятница', 'Суббота', 'Воскресенье'][day]
+
+def name_of_month(month):
+    return ['Январь', 'Февраль', 'Март', 'Апрель', 'Май', 'Июнь', 
+            'Июль', 'Август', 'Сентябрь', 'Октябрь', 'Ноябрь', 'Декабрь'][month-1]
 
 class IndexView(TitleMixin, TemplateView):
     template_name = 'app_objects/index.html'
@@ -29,7 +37,15 @@ class DetailObjectView(TitleMixin, ObjectsMixin, DetailView):
         context['photos'] = photos
         # вытащить новости и важные события связанные с конкретным объектом
         objects_news = News.objects.filter(tags__in=[2])
+        calendar = Calendar()
+        days = []
+        now = datetime.now()
+        for day in calendar.itermonthdays2(now.year, now.month):
+            days.append(day[0])
+        context['days'] = days
+        context['today'] = (now, name_of_month(now.month), name_of_week(now.weekday()))
         context['objects_news'] = objects_news
+        context['events'] = {25:"особое событие 1", 30:"особое событие 2"}
         return context
 
 class ListObjectsView(TitleMixin, ListView):
@@ -42,14 +58,13 @@ class ListObjectsView(TitleMixin, ListView):
     # def get_queryset(self):
     #     category = self.kwargs.get('category')
     #     if category:
-    #         services = Service.objects.filter(category=category)
+    #         services = Object.objects.filter(category=category)
     #     else:
-    #         services = Service.objects.all()
+    #         services = Object.objects.all()
     #     return services
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         objects_news = News.objects.filter(tags__in=[2])
-        # context['category'] = self.kwargs.get('category')
         context['objects_news'] = objects_news
         return context
