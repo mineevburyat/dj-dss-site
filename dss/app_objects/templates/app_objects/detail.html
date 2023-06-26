@@ -94,8 +94,8 @@
       <div class="carousel-item {% if forloop.first %} active {% endif %} ">
         <img class="d-block img-fluid" src="{{photo.image.url}}" alt="{{photo.name}}">
         <div class="carousel-caption">
-          <h5>{{photo.name}}</h5>
-          <p>{{photo.description}}</p>
+          <h5>{{photo.title}}</h5>
+          <p>{{photo.caption}}</p>
         </div>
       </div>
       {% endfor %}
