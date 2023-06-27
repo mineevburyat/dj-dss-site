@@ -1,3 +1,7 @@
+/* body {
+    padding-top: 120px;
+} */
+
 .promo {
     padding-top: 80px;
 }
@@ -44,8 +48,15 @@ margin: auto;
     z-index: 20;
     top: 10%;
     right: 10%;
+    background-color: rgba(128,128,128,0.7);
 }
 
+.carusel-calendar {
+    position: absolute;
+    z-index: 30;
+    top: 1%;
+    left: 1%;
+}
 .card-img-top {
     height: 200px;
     object-fit: cover;
@@ -169,7 +180,7 @@ margin: auto;
 }
 
 #nav-tabContent {
-    height: 300px;
+    max-height: 355px;
     overflow-y: scroll
 }
 

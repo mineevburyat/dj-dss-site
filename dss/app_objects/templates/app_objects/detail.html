@@ -87,7 +87,6 @@
 <main class="container-fluid">
   <h2 class="text-center">{{ object.name }}</h2>
   <h3 class="text-center h6 text-secondary">{{ object.short_name }}</h3>
-    
   <div id="carouselPhotos" class="carousel slide carousel-fade" data-ride="carousel">
     <div class="carousel-inner">
       {% for photo in photos %}
@@ -128,6 +127,30 @@
         </li>
       </ul> {% endcomment %}
     </div>
+    <assert class="carusel-calendar">
+      <div class="calendar">
+        <div class="calendar__header">
+          <h5>{{ today.0.day }} {{ today.1 }}</h5>
+          <p>{{ today.2 }}</p>
+        </div>
+        <div class="calendar__date">
+          <div class="calendar__day">Пн</div>
+          <div class="calendar__day">Вт</div>
+          <div class="calendar__day">Ср</div>
+          <div class="calendar__day">Чт</div>
+          <div class="calendar__day">Пт</div>
+          <div class="calendar__day">Сб</div>
+          <div class="calendar__day">Вс</div>
+          {% for day in days %}
+          <a class="calendar__number {% if day == today.0.day %}calendar__number--current {% endif %} {% if day in events %}calendar__number--event {%endif%}" {% if day in events %} {% for key, title in events.items %} {% if key == day %}data-toggle="tooltip" data-placement="top" title="{{title}}"{% endif%}
+          {% endfor %}
+          {% endif %}>
+            {% if day != 0 %} {{day}} {% endif %}
+          </a>
+          {% endfor %}
+        </div>
+      </div>
+    </assert>
   </div>
   <div class="row mt-1">
     <div class="col">
@@ -145,7 +168,21 @@
           <p>{{ object.description | safe}}</p>
         </div>
         <div class="tab-pane fade" id="nav-address" role="tabpanel" aria-labelledby="nav-address-tab">
-          карта и контакты
+          <div class="row">
+            <div class="col">
+              <dl>
+                <dt>Адрес:</dt>
+                <dd>{{rt}} адрес объекта</dd>
+                <dt>Проезд:</dt>
+                <dd>{{rt}} Перечисляем Описание проездов </dd>
+                <dt>Контакты:</dt>
+                <dd>{{rt}} Перечисляем контакты</dd>
+              </dl>
+            </div>
+            <div class="col">
+              <div style="position:relative;overflow:hidden;"><a href="https://yandex.ru/maps/198/ulan-ude/?utm_medium=mapframe&utm_source=maps" style="color:#eee;font-size:12px;position:absolute;top:0px;">Улан‑Удэ</a><a href="https://yandex.ru/maps/198/ulan-ude/house/ulitsa_ryleyeva_2/ZUkBaAFgTEcDWEJvYmJ5dXpqZAk=/?ll=107.605245%2C51.846901&utm_medium=mapframe&utm_source=maps&z=17" style="color:#eee;font-size:12px;position:absolute;top:14px;">Улица Рылеева, 2 — Яндекс Карты</a><iframe src="https://yandex.ru/map-widget/v1/?ll=107.605245%2C51.846901&mode=search&ol=geo&ouri=ymapsbm1%3A%2F%2Fgeo%3Fdata%3DCgoxNDg2OTUwNzk3EmDQoNC-0YHRgdC40Y8sINCg0LXRgdC_0YPQsdC70LjQutCwINCR0YPRgNGP0YLQuNGPLCDQo9C70LDQvS3Qo9C00Y0sINGD0LvQuNGG0LAg0KDRi9C70LXQtdCy0LAsIDIiCg3jNddCFTpjT0I%2C&z=17" width="560" height="350" frameborder="1" allowfullscreen="true" style="position:relative;"></iframe></div>
+            </div>
+          </div>
         </div>
         <div class="tab-pane fade" id="nav-sportservice" role="tabpanel" aria-labelledby="nav-sportservice-tab">
           спортивные услуги
