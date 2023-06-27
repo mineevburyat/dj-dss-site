@@ -1,35 +1,37 @@
 {% load static %}
 
-<footer class="container-fluid">
-    <div class="row">
-      <div class="copyright">
+<footer class="container-fluid p-2">
+    <div class="row p-2 fixed-bottom bg-dark justify-content-around">
+      <div class="col copyright">
         <span>© ГАУ РБ "ДИРЕКЦИЯ СПОРТИВНЫХ СООРУЖЕНИЙ 2019 - 2023</span>
       </div>
       
-      <div class="socials">
-        <a href="https://vk.com/dss03" class="social-item" target="_blank">
-          <img src={% static "home/img/vk.svg" %} alt="vk icon" />
-        </a>
-        <a href="https://ok.ru/dss03" class="social-item" target="_blank">
-          <img src={% static "home/img/ok.svg"%} alt="od icon" />
-        </a>
-        <!-- <a
-          href="https://www.instagram.com/dss_uu/"
-          class="social-item"
-          target="_blank"
-        >
-          <img src="../assets/instagram1.png" alt="instagram icon" />
-        </a> -->
-        <a href="https://t.me/dssburuu" class="social-item" target="_blank">
-          <img src={% static "home/img/tg.png"%} alt="telegram icon" />
-        </a>
-        <a
-          href="https://www.youtube.com/channel/UCfOQoOCogLtL6fh0fwnZ5vw"
-          class="social-item"
-          target="_blank"
-        >
-          <img src={% static "home/img/youtube.svg"%} alt="youtube icon" />
-        </a>
+      <div class="col">
+        <div class="socials mr-auto align-items-end w-25">
+          <a href="https://vk.com/dss03" class="social-item" target="_blank">
+            <img src={% static "home/img/vk.svg" %} alt="vk icon" />
+          </a>
+          <a href="https://ok.ru/dss03" class="social-item" target="_blank">
+            <img src={% static "home/img/ok.svg"%} alt="od icon" />
+          </a>
+          <!-- <a
+            href="https://www.instagram.com/dss_uu/"
+            class="social-item"
+            target="_blank"
+          >
+            <img src="../assets/instagram1.png" alt="instagram icon" />
+          </a> -->
+          <a href="https://t.me/dssburuu" class="social-item" target="_blank">
+            <img src={% static "home/img/tg.png"%} alt="telegram icon" />
+          </a>
+          <a
+            href="https://www.youtube.com/channel/UCfOQoOCogLtL6fh0fwnZ5vw"
+            class="social-item"
+            target="_blank"
+          >
+            <img src={% static "home/img/youtube.svg"%} alt="youtube icon" />
+          </a>
+        </div>
       </div>
     </div>
 </footer>

@@ -172,3 +172,7 @@ margin: auto;
     height: 300px;
     overflow-y: scroll
 }
+
+.social-item img {
+    border-radius: 50%;
+}
