@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Добавление метки с собственным изображением</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <!--
+        Укажите свой API-ключ. Тестовый ключ НЕ БУДЕТ работать на других сайтах.
+        Получить ключ можно в Кабинете разработчика: https://developer.tech.yandex.ru/keys/
+    -->
+    <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU&amp;apikey=5932660d-1538-4f9f-9ff0-479507bf6643" type="text/javascript"></script>
+    <script type="text/javascript">
+        ymaps.ready(init);
+
+        function init() {
+            myMap = new ymaps.Map(
+                'map', 
+                {
+                    center: [51.84607826, 107.60502575],
+                    zoom: 17,
+                    type: 'yandex#map'
+                }
+            );
+            var MainGate = new ymaps.Placemark([51.84452495, 107.60468645], {}, {
+                draggable: false,
+                preset: 'islands#yellowPersonIcon'});
+            var ExitForAuto = new ymaps.Placemark([51.84512303, 107.60642452], {
+                iconCaption: 'выезд'}, {
+                draggable: false,
+                preset: 'islands#redAutoIcon',
+                iconContent: 'cd'});
+            var MainInputAuto = new ymaps.Placemark([51.84611980, 107.60745449], {
+                iconCaption: 'въезд'}, {
+                draggable: false,
+                preset: 'islands#greenAutoIcon',
+                iconContent: 'cd'});
+            var Parking = new ymaps.Polygon(
+                [[
+                [51.84635736, 107.60669811],
+                [51.84604670, 107.60575665], 
+                [51.84586728, 107.60561449], 
+                [51.84573937, 107.60532750],
+                [51.84550845, 107.60541333], 
+                [51.84559151, 107.60573519],
+                [51.84515625, 107.60630650], 
+                [51.84606497, 107.60681880],
+                [51.84627596, 107.60678930]
+                ],[]
+                ]);
+            var ParkMark = new ymaps.Placemark([51.84582077, 107.60612680], {}, {
+                    draggable: false,
+                    preset: 'islands#blueParkingCircleIcon'
+                });
+            myMap.geoObjects.add(MainGate);
+            myMap.geoObjects.add(ExitForAuto);
+            myMap.geoObjects.add(MainInputAuto);
+            myMap.geoObjects.add(Parking);
+            myMap.geoObjects.add(ParkMark);
+        }
+    </script>
+	<style>
+        html, body, #map {
+            width: 100%; height: 100%; padding: 0; margin: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="map"></div>
+</body>
+</html>
