@@ -189,3 +189,61 @@ AUTH_USER_MODEL = 'app_user.User'
 LOGIN_URL = '/user/login'
 LOGIN_REDIRECT_URL = '/'
 LOGOUT_REDIRECT_URL = '/'
+
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'formatters': {
+        'console': {
+            'format': '%(name)-12s %(levelname)-8s %(message)s'
+        },
+        'file': {
+            'format': '%(asctime)s %(name)-12s %(levelname)-8s %(message)s'
+        },
+        "formatters": {"rich": {"datefmt": "[%X]"}}
+    },
+    'handlers': {
+        'console': {
+            # 'class': 'logging.StreamHandler',
+            'class': 'rich.logging.RichHandler',
+            'formatter': 'console'
+        },
+        'file': {
+            'level': 'DEBUG',
+            'class': 'logging.FileHandler',
+            'formatter': 'file',
+            'filename': 'debug.log'
+        },
+        'mail_admins': {
+            'level': 'ERROR',
+            'class': 'django.utils.log.AdminEmailHandler',
+            'include_html': True,
+            'email_backend': 'django.core.mail.backends.filebased.EmailBackend',
+        },
+    },
+    'loggers': {
+        '': {
+            'level': 'DEBUG',
+            'handlers': ['console', 'file']
+        }
+    },
+    'filters': {
+        'require_debug_false': {
+            '()': 'django.utils.log.RequireDebugFalse'
+        }
+    },
+}
+
+ADMINS = (
+    ('admin', 'alex@mineev03.ru'),
+)
+...
+EMAIL_SUBJECT_PREFIX = '[DSS site] '
+EMAIL_HOST = 'smtp.yandex.ru'
+EMAIL_HOST_USER = 'alex@mineev03.ru'
+EMAIL_HOST_PASSWORD = 'XXXXXX'
+EMAIL_PORT = 465
+EMAIL_USE_TLS = False
+EMAIL_USE_SSL = True
+SERVER_EMAIL = 'alex@mineev03.ru'
+DEFAULT_FROM_EMAIL = 'alex@mineev03.ru'

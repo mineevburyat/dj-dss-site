@@ -52,8 +52,13 @@ class ListObjectsView(TitleMixin, ListView):
     model = Object
     context_object_name = 'objects'
     template_name = 'app_objects/index.html'
+    ordering = ['-order']
     title = "ДСС: список объектов"
-    ordering = ('-order', 'pk')
+    
+    def get_queryset(self):
+        objects = Object.objects.all().order_by('-order')
+        return objects
+    
     
     # def get_queryset(self):
     #     category = self.kwargs.get('category')
