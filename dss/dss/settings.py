@@ -9,24 +9,40 @@ https://docs.djangoproject.com/en/4.2/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.2/ref/settings/
 """
-
+import environ
 from pathlib import Path
+# importing the function from utils
+from django.core.management.utils import get_random_secret_key
+
+
+
+root = Path(__file__).resolve().parent.parent  # get root of the project
+env = environ.Env(
+    DEBUG=(bool, True),
+    SECRET_KEY=(str, 'get_random_secret_key()'),
+    ALLOWED_HOSTS=(list, ['localhost', '*']),
+    PG_DB=(str,'project_bd'),
+    PG_USER=(str,'pgdb_user'),
+    PG_PASS=(str,'pgdb_user_pass'),
+    PG_HOST=(str,'localhost'),
+    PG_PORT=(str,''),
+)
+env.read_env(root / '.env')  # reading .env file
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
-BASE_DIR = Path(__file__).resolve().parent.parent
+BASE_DIR = root
 
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-8g18t5#6y&a_ux%pvzz0ue_^2&cf5ed$vllo@+u#!o-ed%igvk'
+SECRET_KEY = env('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = env('DEBUG')
 
-ALLOWED_HOSTS = ['127.0.0.1', 'localhost', '192.168.88.24', '*']
-
+ALLOWED_HOSTS = env.list("ALLOWED_HOSTS")
 
 # Application definition
 
@@ -97,11 +113,11 @@ WSGI_APPLICATION = 'dss.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'dss_bd',
-        'USER': 'dss_db_user',
-        'PASSWORD': '34652817',
-        'HOST': 'localhost',
-        'PORT': '',
+        'NAME': env('PG_DB'),
+        'USER': env('PG_USER'),
+        'PASSWORD': env('PG_PASS'),
+        'HOST': env('PG_HOST'),
+        'PORT': env('PG_PORT'),
     }
 }
 
@@ -190,60 +206,60 @@ LOGIN_URL = '/user/login'
 LOGIN_REDIRECT_URL = '/'
 LOGOUT_REDIRECT_URL = '/'
 
-LOGGING = {
-    'version': 1,
-    'disable_existing_loggers': False,
-    'formatters': {
-        'console': {
-            'format': '%(name)-12s %(levelname)-8s %(message)s'
-        },
-        'file': {
-            'format': '%(asctime)s %(name)-12s %(levelname)-8s %(message)s'
-        },
-        "formatters": {"rich": {"datefmt": "[%X]"}}
-    },
-    'handlers': {
-        'console': {
-            # 'class': 'logging.StreamHandler',
-            'class': 'rich.logging.RichHandler',
-            'formatter': 'console'
-        },
-        'file': {
-            'level': 'DEBUG',
-            'class': 'logging.FileHandler',
-            'formatter': 'file',
-            'filename': 'debug.log'
-        },
-        'mail_admins': {
-            'level': 'ERROR',
-            'class': 'django.utils.log.AdminEmailHandler',
-            'include_html': True,
-            'email_backend': 'django.core.mail.backends.filebased.EmailBackend',
-        },
-    },
-    'loggers': {
-        '': {
-            'level': 'DEBUG',
-            'handlers': ['console', 'file']
-        }
-    },
-    'filters': {
-        'require_debug_false': {
-            '()': 'django.utils.log.RequireDebugFalse'
-        }
-    },
-}
+# LOGGING = {
+#     'version': 1,
+#     'disable_existing_loggers': False,
+#     'formatters': {
+#         'console': {
+#             'format': '%(name)-12s %(levelname)-8s %(message)s'
+#         },
+#         'file': {
+#             'format': '%(asctime)s %(name)-12s %(levelname)-8s %(message)s'
+#         },
+#         "formatters": {"rich": {"datefmt": "[%X]"}}
+#     },
+#     'handlers': {
+#         'console': {
+#             # 'class': 'logging.StreamHandler',
+#             'class': 'rich.logging.RichHandler',
+#             'formatter': 'console'
+#         },
+#         'file': {
+#             'level': 'DEBUG',
+#             'class': 'logging.FileHandler',
+#             'formatter': 'file',
+#             'filename': 'debug.log'
+#         },
+#         # 'mail_admins': {
+#         #     'level': 'ERROR',
+#         #     'class': 'django.utils.log.AdminEmailHandler',
+#         #     'include_html': True,
+#         #     'email_backend': 'django.core.mail.backends.filebased.EmailBackend',
+#         # },
+#     },
+#     'loggers': {
+#         '': {
+#             'level': 'DEBUG',
+#             'handlers': ['console', 'file']
+#         }
+#     },
+#     'filters': {
+#         'require_debug_false': {
+#             '()': 'django.utils.log.RequireDebugFalse'
+#         }
+#     },
+# }
 
-ADMINS = (
-    ('admin', 'alex@mineev03.ru'),
-)
-...
-EMAIL_SUBJECT_PREFIX = '[DSS site] '
-EMAIL_HOST = 'smtp.yandex.ru'
-EMAIL_HOST_USER = 'alex@mineev03.ru'
-EMAIL_HOST_PASSWORD = 'XXXXXX'
-EMAIL_PORT = 465
-EMAIL_USE_TLS = False
-EMAIL_USE_SSL = True
-SERVER_EMAIL = 'alex@mineev03.ru'
-DEFAULT_FROM_EMAIL = 'alex@mineev03.ru'
+# ADMINS = (
+#     ('admin', 'alex@mineev03.ru'),
+# )
+# ...
+# EMAIL_SUBJECT_PREFIX = '[DSS site] '
+# EMAIL_HOST = 'smtp.yandex.ru'
+# EMAIL_HOST_USER = 'alex@mineev03.ru'
+# EMAIL_HOST_PASSWORD = 'XXXXXX'
+# EMAIL_PORT = 465
+# EMAIL_USE_TLS = False
+# EMAIL_USE_SSL = True
+# SERVER_EMAIL = 'alex@mineev03.ru'
+# DEFAULT_FROM_EMAIL = 'alex@mineev03.ru'
