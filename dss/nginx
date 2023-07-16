@@ -1,0 +1,15 @@
+server {
+    listen 80;
+    server_name 185.177.216.9;
+    location = /favicon.ico { access_log off; log_not_found off; }
+    location /static/ {
+        root /home/mineev/dss-project/dss;
+    }   
+    location /media/ {
+        root /home/mineev/dss-project/dss;
+    }
+    location / {
+        include proxy_params;
+        proxy_pass http://unix:/run/gunicorn.sock;
+    }
+}

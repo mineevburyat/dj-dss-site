@@ -13,7 +13,7 @@ sitemap.xml
 1) sudo apt install libpq-dev postgresql postgresql-contrib
 2) sudo -u postgres psql
 3) CREATE DATABASE dss_bd;
-4)CREATE USER dss_db_user WITH PASSWORD '34652817';
+4)CREATE USER dss_db_user WITH PASSWORD '12345678';
 5) ALTER ROLE dss_db_user SET client_encoding TO 'utf8';
 ALTER ROLE dss_db_user SET default_transaction_isolation TO 'read committed';
 ALTER ROLE dss_db_user SET timezone TO 'Asia/Irkutsk';
