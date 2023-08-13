@@ -17,7 +17,7 @@ class DetailServiceView(TitleMixin, DetailView):
     template_name = 'app_services/detail.html'
     title = "ДСС: подробнее"
     
-
+#/services/category/servtype (/sport/swimm, /relax/hostel)
 class ListServiceView(ListView):
     model = Service
     context_object_name = 'services'
@@ -42,14 +42,18 @@ class ListServiceView(ListView):
         if not txt_category:
             raise Http404
         in_typeservice = get_object_or_404(TypeService, slug=typesrvc)
-        context['typeservices'] = TypeService.objects.filter(category=category)
+        typeservices = [item for item in TypeService.objects.filter(category=category).order_by('-order') if item != in_typeservice]
+        context['typeservices'] = typeservices
+        
         title = f"ДСС: {txt_category}: {in_typeservice.name}"
         context['title'] = title
-        context['currenttype'] = in_typeservice.name
+        context['currenttype'] = in_typeservice
+        context['categoryname'] = txt_category
         services = Service.objects.filter(typeservice=in_typeservice.id)
         context['services'] = services
         return context
         
+# services/category (sport. section, relax, other)
 class ListTypeServiceView(TitleMixin, TemplateView):
     '''Показать список услуг сгруппированных по типам в одной из категорий спот, секции, прочие или отдых'''
     template_name = 'app_services/index_category.html'
@@ -65,13 +69,13 @@ class ListTypeServiceView(TitleMixin, TemplateView):
                 break
         if not txt_category:
             raise Http404
-        if category == "other":
-            typeservices = TypeService.objects.filter(
-                Q(category='relax') | Q(category=category))\
-                    .order_by('-order')
-            # typeservices += TypeService.objects.filter(category=category).order_by('-order')
-        else:
-            typeservices = TypeService.objects.filter(category=category).order_by('-order')
+        # if category == "other":
+        #     typeservices = TypeService.objects.filter(
+        #         Q(category='relax') | Q(category=category))\
+        #             .order_by('-order')
+        #     # typeservices += TypeService.objects.filter(category=category).order_by('-order')
+        # else:
+        typeservices = TypeService.objects.filter(category=category).filter(active=True).order_by('-order')
         objects_news = News.objects.filter(tags__in=[3])
         context['objects_news'] = objects_news
         context['title'] = f"ДСС: {txt_category}"
