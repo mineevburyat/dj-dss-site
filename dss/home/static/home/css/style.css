@@ -1507,3 +1507,9 @@ figure {
           .home__category-card.object .menu-section .menu-list .menu-link--item {
             font-size: 11.2px;
             line-height: 24px; } }
+
+a[href^="tel:"] {
+  color: #000;
+  font-size: 16px;
+  font-weight: 900;
+}

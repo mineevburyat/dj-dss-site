@@ -1,21 +1,28 @@
-{% extends 'home/base2lv.html' %}
+{% extends 'home/base3lv.html' %}
 
 {% load static %}
 
-{% block sidebar %}
-<div>
-  <ul>
-  {% for item in typeservices %}
-    <li>{{item.name}} </li>
-  {% endfor %}
-  </ul>
-</div>
-{% endblock %}
-
 {% block content %}
 <main class="container-fluid">
-    <h2>Услуги {{currenttype}}</h2>
-    {{services}}
+  <h2>Услуги {{currenttype.name}}</h2>
+  <table>
+    <tr>
+      <th>№</th>
+      <th>Название</th>
+      <th>Цены</th>
+      <th></th>
+    </tr>
+    {%for service in services %}
+    <tr>
+      <td>{{forloop.counter}}</td>
+      <td>{{service.name}}</td>
+      <td>{{service.description|safe}}</td>
+      <td><button>подробнее</button>
+        <button>забронировать</button>
+      </td>
+    </tr>    
+    {%endfor%}
+  </table>
 </main>
 {% endblock %}
 
@@ -28,17 +35,24 @@
       </a>
     </li>
     <li class="breadcrumb-item" itemprop='itemListElement' itemscope itemtype='https://schema.org/ListItem'>
-      <a href="{% url 'objects:index' %}" itemprop="item">
-        <span itemprop="name">Объекты</span>
+      <a href="{% url 'services:categoryservice' category %}" itemprop="item">
+        <span itemprop="name">{{categoryname}}</span>
       </a>
+    </li>
+    <li class="breadcrumb-item" itemprop='itemListElement' itemscope itemtype='https://schema.org/ListItem'>
+      <a href="{% url 'services:listservice' category currenttype.slug %}" itemprop="item">
+        <span itemprop="name">{{currenttype.name}}</span>
+      </a>
+    </li>
+    <li class="breadcrumb-item dropdown">
+      <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      </a>
+      <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+        {% for item in typeservices %}
+        <a class="dropdown-item" href="{% url 'services:listservice' category item.slug %}">{{item.name|upper}}</a>
+        {% endfor %}
+      </div>
     </li>
   </ol>
 </nav>
-<ul class="nav flex-column">
-  {% for object in objects %}
-  <li class="nav-item">
-    <a class="nav-link active" href="{% url 'objects:detail' object.slug %}">{{object.short_name|upper}}</a>
-  </li>
-  {% endfor %}
-</ul>
 {% endblock %}

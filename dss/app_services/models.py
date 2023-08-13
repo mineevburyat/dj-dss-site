@@ -4,6 +4,7 @@ from common.utils import translite
 from django.utils.safestring import mark_safe
 from ckeditor_uploader.fields import RichTextUploadingField
 from app_mediafiles.models import Icon, Image
+import random
 
 # искуственные категории услуг
 MAX_PREF_LENGTH = 10
@@ -95,6 +96,16 @@ class TypeService(models.Model):
     # def display_objects(self):
     #     lst = [item.short_name for item in Object.objects.filter(service = self.id) ]
     #     return ' '.join(lst)
+    
+    def get_random_photo(self):
+        photos = []
+        for gallery in TypeServiceGallery.objects.filter(typeservice=self):
+            photos.append(
+                {'url': gallery.photos.get_url_middle_img(),
+                 'alt': gallery.photos.title}
+            )
+        if photos:
+            return random.choice(photos)
 
 class Service(models.Model):
     '''\

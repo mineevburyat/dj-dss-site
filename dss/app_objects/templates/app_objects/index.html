@@ -1,11 +1,7 @@
-{% extends 'home/base2lv.html' %}
+{% extends 'home/base2lv_ext.html' %}
 
 {% load static %}
 
-{% comment %} {% block sidebar %}
-<hr>
-блок сайдбара
-{% endblock %} {% endcomment %}
 
 {% block bradcrumbs %}
 <nav aria-label="breadcrumb">
@@ -31,32 +27,8 @@
     </li>
   </ol>
 </nav>
-{% comment %} <ul class="nav flex-column">
-  {% for object in objects %}
-  <li class="nav-item">
-    <a class="nav-link active" href="{% url 'objects:detail' object.slug %}">{{object.short_name|upper}}</a>
-  </li>
-  {% endfor %}
-</ul> {% endcomment %}
 {% endblock %}
 
-{% comment %} {% block promo_slider %}
-<div class="col">
-  <div id="carouselPromo" class="carousel slide" data-ride="carousel">
-    <div class="carousel-inner">
-      {% for news in objects_news %}
-      <div class="carousel-item {% if forloop.counter == 1 %} active {% endif %}">
-        <img class="d-block w-100" src="{{news.featured_media.large.url}}" alt="{{news.title}}">
-        <a class="carousel-caption d-none d-md-block" href="{% url 'news:detail' news.slug %}">
-          <h5>{{news.title}}</h5>
-          <p>{{news.exerpt}}</p>
-        </a>
-      </div>
-      {% endfor %}
-    </div>
-  </div>
-</div>
-{% endblock %} {% endcomment %}
 
 {% block promo_slider %}
   <div class="col">

@@ -1,44 +1,30 @@
-{% extends 'home/base2lv.html' %}
+{% extends 'home/base2lv_ext.html' %}
 
 {% load static %}
 
-{% block sidebar %}
-<hr>
-блок сайдбара
-{% endblock %}
-
-
 {% block content %}
 <main class="container-fluid">
-  <hr>
   <h2>{{categoryname}}</h2>
   <div class="row">
-    <div class="col-md">
-      <div class="row">
-        <div class="accordion" id="accordionTypeServices">
-          {% for typeservice in typeservices %}
-          <div class="card">
-            <div class="card-header" id="heading{{forloop.counter}}">
-              <h3 class="mb-0">
-                <button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#collapse{{forloop.counter}}" aria-expanded="true" aria-controls="collapse{{forloop.counter}}">
-                  {{ typeservice.name|upper }}
-                </button>
-              </h3>
-              <p>{{ typeservice.description }}</p>
-            </div>
-        
-            <div id="collapse{{forloop.counter}}" class="collapse" aria-labelledby="heading{{forloop.counter}}" data-parent="#accordionTypeServices">
-              <div class="card-body">
-                Некоторый заполнитель для первой панели аккордеона. Эта панель отображается по умолчанию благодаря классу <code>.show</code>.
-              </div>
-            </div>
+    {% for typeservice in typeservices %}
+    <div class="col-lg-6 col-xl-4 col-sm-6 col-12 mb-4">
+      <div class="card h-100">
+        <img src="{{typeservice.get_random_photo.url}}" class="card-img-top" alt="{{typeservice.get_random_photo.alt}}">
+        <div class="card-body p-1">
+          <h5 class="card-title">{{ typeservice.name }}</h5>
+          <p class="card-text">{{ typeservice.description|safe|truncatechars:260}}</p>
+        </div>
+        <div class="card-footer">
+          <div class="d-flex align-content-end justify-content-end">
+            <a href="{% url 'services:listservice' category typeservice.slug %}" class="btn btn-primary">Подробнее...</a>
           </div>
-          {% endfor %}
         </div>
       </div>
     </div>
+    {% endfor %}
+    
   </div>
-</main>
+
 {% endblock %}
 
 {% block bradcrumbs %}
@@ -50,34 +36,67 @@
       </a>
     </li>
     <li class="breadcrumb-item" itemprop='itemListElement' itemscope itemtype='https://schema.org/ListItem'>
-      <a href="{% url 'services:all' %}" itemprop="item">
-        <span itemprop="name">Услуги</span>
+      <a href="{% url 'services:categoryservice' category %}" itemprop="item">
+        <span itemprop="name">{{categoryname}}</span>
       </a>
+    </li>
+    <li class="breadcrumb-item dropdown">
+      <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      </a>
+      <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+        {% for item in typeservices %}
+        <a class="dropdown-item" href="{% url 'services:listservice' category item.slug %}">{{item.name|upper}}</a>
+        {% endfor %}
+      </div>
     </li>
   </ol>
 </nav>
-<ul class="nav flex-column">
-  {% for item in typeservices %}
-    <li class="nav-item">
-      <a class="nav-link active" href="{% url 'services:listservice' category item.slug %}">{{item.name|upper}}</a>
-    </li>
-  {% endfor %}
-  
-</ul>
-
 {% endblock %}
 
 {% block promo_slider %}
-<div id="carouselPromo" class="carousel slide" data-ride="carousel">
-  <div class="carousel-inner">
-    {% for news in objects_news %}
-    <div class="carousel-item {% if forloop.counter == 1 %} active {% endif %}">
-      <img class="d-block w-100" src="{{news.featured_media.large.url}}" alt="{{news.title}}">
-      <a class="carousel-caption d-none d-md-block" href="{% url 'news:detail' news.slug %}">
-        <h5>{{news.title}}</h5>
-        <p>{{news.exerpt}}</p>
-      </a>
+<div class="col">
+  <div id="carouselPromo1" class="carousel slide" data-ride="carousel">
+    <div class="carousel-inner">
+      {% for news in objects_news %}
+      <div class="carousel-item {% if forloop.counter == 1 %} active {% endif %}">
+        <img class="d-block w-100" src="{{news.featured_media.large.url}}" alt="{{news.title}}">
+        <a class="carousel-caption d-none d-md-block" href="{% url 'news:detail' news.slug %}">
+          <h5>{{news.title}}</h5>
+          <p>{{news.exerpt}}</p>
+        </a>
+      </div>
+      {% endfor %}
     </div>
-    {% endfor %}
   </div>
+</div>
+<div class="col">
+  <div id="carouselPromo2" class="carousel slide" data-ride="carousel">
+    <div class="carousel-inner">
+      {% for news in objects_news %}
+      <div class="carousel-item {% if forloop.counter == 2 %} active {% endif %}">
+        <img class="d-block w-100" src="{{news.featured_media.large.url}}" alt="{{news.title}}">
+        <a class="carousel-caption d-none d-md-block" href="{% url 'news:detail' news.slug %}">
+          <h5>{{news.title}}</h5>
+          <p>{{news.exerpt}}</p>
+        </a>
+      </div>
+      {% endfor %}
+     </div>
+  </div>
+</div>
+<div class="col d-none d-sm-block">
+  <div id="carouselPromo3" class="carousel slide" data-ride="carousel">
+    <div class="carousel-inner">
+      {% for news in objects_news %}
+      <div class="carousel-item {% if forloop.counter == 3 %} active {% endif %}">
+        <img class="d-block w-100" src="{{news.featured_media.large.url}}" alt="{{news.title}}">
+        <a class="carousel-caption d-none d-md-block" href="{% url 'news:detail' news.slug %}">
+          <h5>{{news.title}}</h5>
+          <p>{{news.exerpt}}</p>
+        </a>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
 {% endblock %}

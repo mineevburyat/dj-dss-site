@@ -33,7 +33,7 @@ class VariousSportAdmin(admin.ModelAdmin):
 @admin.register(TypeService)
 class TypeServiceAdmin(admin.ModelAdmin):
     list_display = ('name', 'slug', 'category', 'order', 'active', 'icon_html_img')
-    ordering = ('category', 'order')
+    ordering = ('-category', '-order')
     list_editable = ('order', 'active')
     fields = (
         ('name', 'slug', 'category'),

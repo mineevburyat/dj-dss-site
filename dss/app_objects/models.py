@@ -63,6 +63,10 @@ class Object(models.Model):
         verbose_name='группа ресурсов',
         help_text='имеющиеся на объекте типы ресурсов',
     )
+    call_center = models.CharField(
+        'номер телефона',
+        max_length=20,
+        default='+7(3012) 5-30-36')
 
     def __str__(self):
         return f'{self.short_name} ({self.name})'
