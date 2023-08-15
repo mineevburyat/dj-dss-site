@@ -1513,3 +1513,7 @@ a[href^="tel:"] {
   font-size: 16px;
   font-weight: 900;
 }
+
+.table_row_hr {
+  border-bottom: 1px black solid;
+}

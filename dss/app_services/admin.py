@@ -6,17 +6,19 @@ from django.forms import TextInput
 # Register your models here.
 @admin.register(Service)
 class ServiceAdmin(admin.ModelAdmin):
-    list_display = ('icon_html_img', 'name', 'slug', 'category', 'typeservice')
+    list_display = ('name', 'slug', 'category', 'typeservice')
+    ordering = ('object', 'category', 'typeservice', '-order')
     list_display_links = ('name', 'slug')
     formfield_overrides = {
         models.CharField: {'widget': TextInput(attrs={'size': '20'})},
     }
     prepopulated_fields = {"slug": ("name",)}
-    fields = [('category', 'typeservice'),
-              ('name', 'slug'), 
+    fields = [('category', 'typeservice', 'object'),
+              ('name', 'slug', 'order'), 
               'description', 
             ]
-    list_filter = ('category', 'typeservice')
+    list_filter = ('category', 'typeservice', 'object')
+    
     
     def get_form(self, request, obj=None, **kwargs):
         form = super(ServiceAdmin, self).get_form(request, obj, **kwargs)

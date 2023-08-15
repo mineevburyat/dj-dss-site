@@ -1,0 +1,63 @@
+{% extends 'home/base3lv_ext.html' %}
+
+{% load static %}
+
+{% block content %}
+<h2 class=text-center>Отель Байкал Парк</h2>
+<script type="text/javascript">
+    (function(k,o,t,e,l){
+        l = document.createElement("script");
+        l.type = "text/javascript";
+        l.src = "https://bookonline24.ru/widget.js";
+        l.async = !0;
+        l.onload = l.onreadystatechange = function() {
+            e = this.readyState;
+            !o && (!e || e === "complete") && (o = 1) && k();
+        };
+        t = document.getElementsByTagName("script")[0];
+        t.parentNode.insertBefore(l, t);
+    })(function(){
+        HotelWidget.init({
+            // ID организации; ID html элемента нужно проставить ниже в поле container
+            id: "3e056845-45cc-4b6d-b6c6-9f3ccc226fe8",
+            type: "verticalBlock",
+            form: {
+                // Замените на ID html элемента, в который нужно вставить виджет
+                container: "WidgetId",
+            }
+        }, "https://bookonline24.ru/");
+    });
+</script>
+<div id="WidgetId"></div>
+{% endblock %}
+
+{% block bradcrumbs %}
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb" itemscope itemtype="https://schema.org/BreadcrumbList">
+    <li class="breadcrumb-item" itemprop='itemListElement' itemscope itemtype='https://schema.org/ListItem'>
+      <a href="{% url 'home:index' %}" itemprop="item">
+        <span itemprop="name">Главная</span>
+      </a>
+    </li>
+    <li class="breadcrumb-item" itemprop='itemListElement' itemscope itemtype='https://schema.org/ListItem'>
+      <a href="{% url 'services:categoryservice' category %}" itemprop="item">
+        <span itemprop="name">{{categoryname}}</span>
+      </a>
+    </li>
+    <li class="breadcrumb-item" itemprop='itemListElement' itemscope itemtype='https://schema.org/ListItem'>
+      <a href="{% url 'services:listservice' category currenttype.slug %}" itemprop="item">
+        <span itemprop="name">{{currenttype.name}}</span>
+      </a>
+    </li>
+    <li class="breadcrumb-item dropdown">
+      <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      </a>
+      <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+        {% for item in typeservices %}
+        <a class="dropdown-item" href="{% url 'services:listservice' category item.slug %}">{{item.name|upper}}</a>
+        {% endfor %}
+      </div>
+    </li>
+  </ol>
+</nav>
+{% endblock %}

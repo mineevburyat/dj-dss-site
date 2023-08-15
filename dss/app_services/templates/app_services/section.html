@@ -1,11 +1,11 @@
-{% extends 'home/base3lv.html' %}
+{% extends 'home/base3lv_ext.html' %}
 
 {% load static %}
 
 {% block content %}
 <main class="container-fluid">
   <div class='d-flex justify-content-between'>
-    <h2>Услуги {{currenttype.name}}</h2>
+    <h2 class="text-center">Детские Секции {{currenttype.name}}</h2>
     <div>
       {% if obj_filter|length == 1 %}
         {% for item in obj_filter %}

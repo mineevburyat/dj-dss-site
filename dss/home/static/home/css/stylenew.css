@@ -187,3 +187,21 @@ margin: auto;
 .social-item img {
     border-radius: 50%;
 }
+
+a[href^="tel:"] {
+    color: #000;
+    font-size: 16px;
+    font-weight: 900;
+  }
+  
+.table_row_hr {
+    border-bottom: 1px black solid;
+  }
+
+.table_name {
+    width: 160px;
+  }
+
+.table_description {
+    width: 560px;
+}

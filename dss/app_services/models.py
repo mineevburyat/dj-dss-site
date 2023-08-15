@@ -4,6 +4,7 @@ from common.utils import translite
 from django.utils.safestring import mark_safe
 from ckeditor_uploader.fields import RichTextUploadingField
 from app_mediafiles.models import Icon, Image
+from app_objects.models import Object
 import random
 
 # искуственные категории услуг
@@ -115,7 +116,7 @@ class Service(models.Model):
         verbose_name = 'Услуга'
         verbose_name_plural = 'Услуги'
 
-    MAX_NAME_LENGTH = 60
+    MAX_NAME_LENGTH = 120
     
     name = models.CharField(
         'название услуги',
@@ -123,7 +124,7 @@ class Service(models.Model):
     )
     description = RichTextUploadingField(
         'краткое описание',
-        max_length=1000
+        max_length=2500
     )
     category = models.CharField(
         'категория услуги',
@@ -144,6 +145,18 @@ class Service(models.Model):
         verbose_name='группа услуг',
         on_delete=models.PROTECT,
         default=1
+    )
+    order = models.IntegerField(
+        'важность',
+        default=100
+    )
+    object = models.ForeignKey(
+        Object,
+        verbose_name='объект',
+        on_delete=models.CASCADE,
+        default=None,
+        null=True,
+        blank=True
     )
     
     def __str__(self):

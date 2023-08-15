@@ -1,4 +1,4 @@
-from django.shortcuts import get_object_or_404
+from django.shortcuts import get_object_or_404, redirect, render
 from django.db import models
 from .models import Service, TypeService, CHOICE_CATEGORY
 from django.views.generic.base import TemplateView
@@ -9,6 +9,9 @@ from django.http import Http404
 from django.db.models import Q
 # from common.mixins import TitleMixin
 from app_news.models import News
+from app_objects.models import Object
+from django.http import HttpResponse
+from django.urls import reverse
 
 
 class DetailServiceView(TitleMixin, DetailView):
@@ -23,17 +26,37 @@ class ListServiceView(ListView):
     context_object_name = 'services'
     template_name = 'app_services/listservices.html'
         
+    def get(self, request, *args, **kwargs):
+        lastslugurl = request.path.split('/')[-1]
+        secondslugurl = request.path.split('/')[-2]
+        if lastslugurl == 'kemping':
+            return redirect('/services/camping')
+        if secondslugurl == 'section':
+            return redirect(reverse('services:hardsection', kwargs={'section': lastslugurl}))
+        return super().get(request, *args, **kwargs)
+        
     def get_queryset(self):
         category = self.kwargs.get('category')
         typesrvc = self.kwargs.get('typesrvc')
+        param_objcts = self.request.GET.get('objects')
         typeservice = get_object_or_404(TypeService, slug=typesrvc)
-        services = Service.objects.filter(category=category, typeservice=typeservice.id)
+        if param_objcts is None:
+            services = Service.objects.filter(category=category, typeservice=typeservice.id).order_by('object', '-order')
+        else:
+            param_objcts = param_objcts.split(',')
+            objs = [i.pk for i in Object.objects.filter(slug__in=param_objcts)]
+            services = Service.objects.filter(category=category, typeservice=typeservice.id, object__in=objs).order_by('object', '-order')
         return services
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         category = self.kwargs.get('category')
         typesrvc = self.kwargs.get('typesrvc')
+        param_objcts = self.request.GET.get('objects')
+        if param_objcts:
+            param_objcts = param_objcts.split(',')
+        else:
+            param_objcts = [i.slug for i in Object.objects.all()]
         context['category'] = category
         for item in CHOICE_CATEGORY:
             if item[0] == category:
@@ -50,7 +73,12 @@ class ListServiceView(ListView):
         context['currenttype'] = in_typeservice
         context['categoryname'] = txt_category
         services = Service.objects.filter(typeservice=in_typeservice.id)
-        context['services'] = services
+        # context['services'] = services
+        objs = set()
+        for service in services:
+            objs.add(service.object)
+        context['obj_filter'] = objs
+        context['param_objs'] = param_objcts
         return context
         
 # services/category (sport. section, relax, other)
@@ -84,3 +112,64 @@ class ListTypeServiceView(TitleMixin, TemplateView):
         return context
         
     
+def campingview(request):
+    template_name = 'app_services/camping.html'
+    context = {}
+    category = 'relax'
+    context['category'] = category
+    for item in CHOICE_CATEGORY:
+        if item[0] == category:
+            txt_category = item[1]
+            break
+    in_typeservice = get_object_or_404(TypeService, slug='kemping')
+    typeservices = [item for item in TypeService.objects.filter(category=category).order_by('-order') if item != in_typeservice]
+    param_objcts = request.GET.get('objects')
+    if param_objcts:
+        param_objcts = param_objcts.split(',')
+    else:
+        param_objcts = [i.slug for i in Object.objects.all()]
+    context['typeservices'] = typeservices
+    title = f"ДСС: {txt_category}: Байкал Парк"
+    context['title'] = title
+    context['currenttype'] = in_typeservice
+    context['categoryname'] = txt_category
+    services = Service.objects.filter(typeservice=in_typeservice.id)
+        # context['services'] = services
+    objs = set()
+    for service in services:
+        objs.add(service.object)
+    context['obj_filter'] = objs
+    context['param_objs'] = param_objcts
+    return render(request, template_name, context)
+        
+def sectionview(request, **kwargs):
+    template_name = 'app_services/section.html'
+    section = kwargs.get('section')
+    print(request)
+    context = {}
+    category = 'section'
+    context['category'] = category
+    for item in CHOICE_CATEGORY:
+        if item[0] == category:
+            txt_category = item[1]
+            break
+    in_typeservice = get_object_or_404(TypeService, slug=section)
+    typeservices = [item for item in TypeService.objects.filter(category=category).order_by('-order') if item != in_typeservice]
+    param_objcts = request.GET.get('objects')
+    if param_objcts:
+        param_objcts = param_objcts.split(',')
+    else:
+        param_objcts = [i.slug for i in Object.objects.all()]
+    context['typeservices'] = typeservices
+    title = f"ДСС: {txt_category}: Байкал Парк"
+    context['title'] = title
+    context['currenttype'] = in_typeservice
+    context['categoryname'] = txt_category
+    services = Service.objects.filter(typeservice=in_typeservice.id)
+        # context['services'] = services
+    objs = set()
+    for service in services:
+        objs.add(service.object)
+    context['obj_filter'] = objs
+    context['param_objs'] = param_objcts
+    return render(request, template_name, context)
