@@ -6,13 +6,14 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ title }}</title>
+    <title>ДСС: {{ title }}</title>
     {% block seo %}
     {% endblock %}
     <link rel="shortcut icon" type="image/png" href="{% static 'home/favicon.ico' %}"/>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
     <link rel="stylesheet" href="{% static 'home/css/stylenew.css'%}"/>
+    <link rel="stylesheet" href="{% static 'home/css/header.css'%}"/>
     {% block css %}
     {% endblock %}
     <script>
@@ -20,54 +21,27 @@
         $('[data-toggle="tooltip"]').tooltip()
       })
     </script>
-    <script type="text/javascript">
-      (function(k,o,t,e,l){
-          l = document.createElement("script");
-          l.type = "text/javascript";
-          l.src = "https://bookonline24.ru/widget.js";
-          l.async = !0;
-          l.onload = l.onreadystatechange = function() {
-              e = this.readyState;
-              !o && (!e || e === "complete") && (o = 1) && k();
-          };
-          t = document.getElementsByTagName("script")[0];
-          t.parentNode.insertBefore(l, t);
-      })(function(){
-          HotelWidget.init({
-              // ID организации; ID html элемента нужно проставить ниже в поле container
-              id: "3e056845-45cc-4b6d-b6c6-9f3ccc226fe8",
-              type: "horizontalBlock",
-              form: {
-                  // Замените на ID html элемента, в который нужно вставить виджет
-                  container: "WidgetId",
-              }
-          }, "https://bookonline24.ru/");
-      });
-  </script>
+</head>
+
 </head>
 <body>
-  {% include 'home/header.html' %}
-    <div class="container-fluid">
-      <div class="row">
-        <div class="col">
-          {% block bradcrumbs %}
-          {% endblock%}
-        </div>
-        <div class="d-flex flex-column justify-content-center align-items-center">
-          <h5>Админстратор</h5>
-          <a href="tel:+73012453036">+7(3012) 45-30-36</a>
-        </div>
-        <div class="nav col">
-          <div class="nav-item">
-            <form class="form-inline my-2 my-lg-0">
-              <input class="form-control mr-sm-2" type="search" placeholder="_" aria-label="Search">
-              <button class="btn btn-outline-primary my-2 my-sm-0" type="submit">Найти</button>
-            </form>
-          </div>
+  {% include 'home/header_dep.html' %}
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col">
+        {% block bradcrumbs %}
+        {% endblock%}
+      </div>
+      <div class="nav col">
+        <div class="nav-item">
+          <form class="form-inline my-2 my-lg-0">
+            <input class="form-control mr-sm-2" type="search" placeholder="_" aria-label="Search">
+            <button class="btn btn-outline-primary my-2 my-sm-0" type="submit">Найти</button>
+          </form>
         </div>
       </div>
     </div>
-  
+  </div>
   <div class="container-fluid">
     <div class="row">
       <div class="col">
@@ -85,15 +59,10 @@
         </div>
       </div>
   </div>
-  
-   
-
-    
-
-    {% include 'home/footer.html' %}
+  {% include 'home/footer_dep.html' %}
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js" integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+" crossorigin="anonymous"></script>
-    
+    <script src="{% static 'home/js/deploymain.js' %}"></script>
 </body>
 </html>

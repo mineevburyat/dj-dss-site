@@ -206,50 +206,39 @@ LOGIN_URL = '/user/login'
 LOGIN_REDIRECT_URL = '/'
 LOGOUT_REDIRECT_URL = '/'
 
-# LOGGING = {
-#     'version': 1,
-#     'disable_existing_loggers': False,
-#     'formatters': {
-#         'console': {
-#             'format': '%(name)-12s %(levelname)-8s %(message)s'
-#         },
-#         'file': {
-#             'format': '%(asctime)s %(name)-12s %(levelname)-8s %(message)s'
-#         },
-#         "formatters": {"rich": {"datefmt": "[%X]"}}
-#     },
-#     'handlers': {
-#         'console': {
-#             # 'class': 'logging.StreamHandler',
-#             'class': 'rich.logging.RichHandler',
-#             'formatter': 'console'
-#         },
-#         'file': {
-#             'level': 'DEBUG',
-#             'class': 'logging.FileHandler',
-#             'formatter': 'file',
-#             'filename': 'debug.log'
-#         },
-#         # 'mail_admins': {
-#         #     'level': 'ERROR',
-#         #     'class': 'django.utils.log.AdminEmailHandler',
-#         #     'include_html': True,
-#         #     'email_backend': 'django.core.mail.backends.filebased.EmailBackend',
-#         # },
-#     },
-#     'loggers': {
-#         '': {
-#             'level': 'DEBUG',
-#             'handlers': ['console', 'file']
-#         }
-#     },
-#     'filters': {
-#         'require_debug_false': {
-#             '()': 'django.utils.log.RequireDebugFalse'
-#         }
-#     },
-# }
-
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'handlers': {
+        'debug_file': {
+            'level': 'DEBUG',
+            'class': 'logging.FileHandler',
+            'filename': 'debug.log'
+        },
+        'error_file': {
+            'level': 'ERROR',
+            'class': 'logging.FileHandler',
+            'filename': 'error.log'
+        },
+        'console': {
+            'level': 'DEBUG',
+            'class': 'logging.StreamHandler',
+            
+        }
+    },
+    'loggers': {
+            # 'django': {
+            #     'handlers': ['debug_file'],
+            #     'level': 'DEBUG',
+            #     'propagate': True,
+            # },
+            '': {
+                'handlers': ['error_file', ],
+                'level': 'ERROR',
+                'propagate': True,
+            },
+        },
+}
 # ADMINS = (
 #     ('admin', 'alex@mineev03.ru'),
 # )

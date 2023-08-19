@@ -1,0 +1,88 @@
+{% extends 'home/base_dep.html' %}
+
+{% load static %}
+
+{% block content %}
+<main class="main">
+    <section class="cards">
+        <div class="wrapper wrapper-card">
+            <img src="{% static 'home/image/back.png' %}" alt="back" class="background-block">
+            <div class="swiper mySwiper">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide">
+                    <div class="card">
+                        <div class="content">
+                          <div class="front front-one">
+                            <h2 class="front-title">Наши объекты</h2>
+                          </div>
+                          <div class="back back-one">
+                            <h2 class="front-title">Наши объекты</h2>
+                            <ul>
+                            {% for object in objects %}
+                                <li>
+                                    <a href="{% url 'objects:detail' object.slug %}">
+                                        {{ object.short_name|upper }}
+                                    </a>
+                                </li>
+                            {% endfor %}
+                            </ul>
+                          </div>
+                        </div>
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="card">
+                        <div class="content">
+                          <div class="front front-two">
+                            <h2 class="front-title">Спорт</h2>
+                          </div>
+                          <div class="back back-one">
+                            <h2 class="back-title">Спорт</h2>
+                            <ul>
+                                {% for sportservice in sportservices %}
+                                <li>
+                                    <a href="{% url 'services:listservice' 'sport' sportservice.slug %}">
+                                        {{sportservice.name|upper}}
+                                    </a>
+                                </li>
+                                {% endfor %}
+                            </ul>
+                          </div>
+                        </div>
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="card">
+                        <div class="content">
+                          <div class="front front-three">
+                            <h2 class="front-title">Отдых</h2>
+                          </div>
+                          <div class="back back-one">
+                            <h2 class="front-title">Отдых</h2>
+                            <ul>
+                            {% for relaxservice in relaxservices %}
+                                <li>
+                                    <a href="{% url 'services:listservice' 'relax' relaxservice.slug %}">
+                                        {{relaxservice.name|upper}}
+                                    </a>
+                                </li>
+                            {% endfor %}
+                            </ul>
+                          </div>
+                        </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            <!-- <div class="container-card">
+                <div class="cards-wrap">
+                    
+                    
+                    
+                </div>
+            </div> -->
+            
+        </div>
+    </section>
+</main>
+{% endblock %}

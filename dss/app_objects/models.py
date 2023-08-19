@@ -58,11 +58,11 @@ class Object(models.Model):
         'Сортировка',
         default=100,
     )
-    type_stock = models.ManyToManyField(
-        'TypeStock',
-        verbose_name='группа ресурсов',
-        help_text='имеющиеся на объекте типы ресурсов',
-    )
+    # type_stock = models.ManyToManyField(
+    #     'TypeStock',
+    #     verbose_name='группа ресурсов',
+    #     help_text='имеющиеся на объекте типы ресурсов',
+    # )
     call_center = models.CharField(
         'номер телефона',
         max_length=20,
@@ -97,6 +97,11 @@ class Object(models.Model):
             )
         if photos:
             return random.choice(photos)
+        
+    def get_contacts_list(self):
+        contacts = self.contacts.all()
+        return contacts
+    
             
     
 class TypeStock(models.Model):
@@ -108,7 +113,7 @@ class TypeStock(models.Model):
         
     name = models.CharField(
         'название',
-        max_length=25,
+        max_length=35,
         help_text='стадион, универсальный зал и пр. без конкретики'
     )
     slug = models.SlugField(
@@ -131,6 +136,14 @@ class TypeStock(models.Model):
         'краткое описание',
         max_length=1500,
         default=''
+    )
+    obj = models.ForeignKey(
+        Object,
+        verbose_name='Объект',
+        on_delete=models.PROTECT,
+        related_name='typestocks',
+        blank=True,
+        null=True
     )
     
     def __str__(self):

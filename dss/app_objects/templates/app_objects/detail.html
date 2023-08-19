@@ -86,48 +86,13 @@
 {% block content %}
 <main class="container-fluid">
   <h2 class="text-center">{{ object.name }}</h2>
-  <h3 class="text-center h6 text-secondary">{{ object.short_name }}</h3>
-  <div id="carouselPhotos" class="carousel slide carousel-fade" data-ride="carousel">
-    <div class="carousel-inner">
-      {% for photo in photos %}
-      <div class="carousel-item {% if forloop.first %} active {% endif %} ">
-        <img class="d-block img-fluid" src="{{photo.image.url}}" alt="{{photo.name}}">
-        <div class="carousel-caption">
-          <h5>{{photo.title}}</h5>
-          <p>{{photo.caption}}</p>
-        </div>
-      </div>
-      {% endfor %}
-    </div>
-    <a class="carousel-control-prev" href="#carouselPhotos" role="button" data-slide="prev">
-      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-      <span class="sr-only">предыдущий</span>
-    </a>
-    <a class="carousel-control-next" href="#carouselPhotos" role="button" data-slide="next">
-      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-      <span class="sr-only">следующий</span>
-    </a>
-    <div class="carusel-btn-group">
-      <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
-        <div class="btn-group-vertical mr-2" role="group" aria-label="First group">
-          <button type="button" class="btn btn-outline-warning">Новости и события</button>
-          <button type="button" class="btn btn-outline-warning">Парнерам</button>
-          <button type="button" class="btn btn-outline-warning">Вакансии</button>
-        </div>
-      </div>
-      {% comment %} <ul class="nav nav-pills flex-column" id="pills-tab" role="tablist">
-        <li class="nav-item" role="presentation">
-          <a class="nav-link" id="pills-address-tab" data-toggle="pill" href="#nav-address" role="tab" aria-controls="pills-home" aria-selected="false">Адрес и контакты</a>
-        </li>
-        <li class="nav-item" role="presentation">
-          <a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false">Профиль</a>
-        </li>
-        <li class="nav-item" role="presentation">
-          <a class="nav-link" id="pills-contact-tab" data-toggle="pill" href="#pills-contact" role="tab" aria-controls="pills-contact" aria-selected="false">Контакт</a>
-        </li>
-      </ul> {% endcomment %}
-    </div>
-    <assert class="carusel-calendar">
+  <div>
+    <h3 class="text-center h6 text-secondary">{{ object.short_name }}</h3>
+    <p>{{object.address}}</p>
+    <p>{{object.call_center}}</p>
+  </div>
+  <div class="row">
+    <assert class="col">
       <div class="calendar">
         <div class="calendar__header">
           <h5>{{ today.0.day }} {{ today.1 }}</h5>
@@ -151,6 +116,49 @@
         </div>
       </div>
     </assert>
+    <div class="col">
+      <div id="carouselPhotos" class="carousel slide carousel-fade" data-ride="carousel">
+        <div class="carousel-inner">
+          {% for photo in photos %}
+          <div class="carousel-item {% if forloop.first %} active {% endif %} ">
+            <img class="d-block img-fluid" src="{{photo.image.url}}" alt="{{photo.name}}">
+            {% comment %} <div class="carousel-caption">
+              <h5>{{photo.title}}</h5>
+              <p>{{photo.caption}}</p>
+            </div> {% endcomment %}
+          </div>
+          {% endfor %}
+        </div>
+        <a class="carousel-control-prev" href="#carouselPhotos" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">предыдущий</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselPhotos" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">следующий</span>
+        </a>
+        <div class="carusel-btn-group">
+          <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
+            <div class="btn-group-vertical mr-2" role="group" aria-label="First group">
+              <button type="button" class="btn btn-outline-warning">Новости и события</button>
+              <button type="button" class="btn btn-outline-warning">Парнерам</button>
+              <button type="button" class="btn btn-outline-warning">Вакансии</button>
+            </div>
+          </div>
+          {% comment %} <ul class="nav nav-pills flex-column" id="pills-tab" role="tablist">
+            <li class="nav-item" role="presentation">
+              <a class="nav-link" id="pills-address-tab" data-toggle="pill" href="#nav-address" role="tab" aria-controls="pills-home" aria-selected="false">Адрес и контакты</a>
+            </li>
+            <li class="nav-item" role="presentation">
+              <a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false">Профиль</a>
+            </li>
+            <li class="nav-item" role="presentation">
+              <a class="nav-link" id="pills-contact-tab" data-toggle="pill" href="#pills-contact" role="tab" aria-controls="pills-contact" aria-selected="false">Контакт</a>
+            </li>
+          </ul> {% endcomment %}
+        </div>
+      </div>
+    </div>
   </div>
   <div class="row mt-1">
     <div class="col">
@@ -172,11 +180,19 @@
             <div class="col">
               <dl>
                 <dt>Адрес:</dt>
-                <dd>{{rt}} адрес объекта</dd>
-                <dt>Проезд:</dt>
-                <dd>{{rt}} Перечисляем Описание проездов </dd>
+                <dd>{{object.address}}</dd>
                 <dt>Контакты:</dt>
-                <dd>{{rt}} Перечисляем контакты</dd>
+                <dd>
+                  <ul>
+                  {%for contact in object.get_contacts_list%}
+                  <li>
+                    <b>{{contact.name}}</b><br>
+                    email: {{contact.email}}<br>
+                    тел: {{contact.get_phones_str}}
+                  </li>
+                  {%endfor%}
+                  </ul>
+                </dd>
               </dl>
             </div>
             <div class="col">
@@ -189,7 +205,15 @@
           </div>
         </div>
         <div class="tab-pane fade" id="nav-sportservice" role="tabpanel" aria-labelledby="nav-sportservice-tab">
-          спортивные услуги
+          <div class="row">
+            <div class="col">
+              <h3>спортивные услуги</h3>
+              {% for service in services %}
+              <p>{{service.name}}</p>
+              <p>{{service.description|safe}}</p>
+              {% endfor %}
+            </div>
+          </div>
         </div>
         <div class="tab-pane fade" id="nav-sportsections" role="tabpanel" aria-labelledby="nav-sportsections-tab">
           спортивные секции
@@ -200,7 +224,7 @@
       </div>
       <h4>{{object.name}} включает в себя:</h4>
       <div class="row">
-          {% for stock in object.get_types_stocks %}
+          {% for stock in object.typestocks.all %}
           <div class="col-sm-6 col-12 mb-4">
             <div class="card h-100">
               <!-- <img src="" class="card-img-top" alt="..."> -->

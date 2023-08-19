@@ -14,9 +14,9 @@ class ObjectAdmin(admin.ModelAdmin):
               ('name', 'icon_lib'),
               ('address', 'icon_html_img'),
               'description',
-              'type_stock'
+            #   'type_stock'
               ]
-    filter_horizontal = ('type_stock',)
+    # filter_horizontal = ('type_stock',)
     formfield_overrides = {
         models.CharField: {'widget': TextInput(attrs={'size': '20'})},
     }
@@ -31,12 +31,13 @@ class ObjectAdmin(admin.ModelAdmin):
 @admin.register(TypeStock)
 class ResourceAdmin(admin.ModelAdmin):
     list_display = ('name', 'slug', 'icon_html_img', 'order')
-    ordering = ('order','pk')
+    ordering = ('obj', 'order')
     readonly_fields = ('icon_html_img',)
     prepopulated_fields = {"slug": ("name",)}
-    fields = [('name', 'slug', 'order'),
+    fields = [('name', 'slug', 'order', 'obj'),
               ('icon_html_img','icon'),
               'description']
+    list_filter = ('obj',)
 
 @admin.register(Subunit)
 class SubunitAdmin(admin.ModelAdmin):

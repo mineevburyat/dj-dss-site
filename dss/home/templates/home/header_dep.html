@@ -1,0 +1,41 @@
+{% load static %}
+<header class="header">
+    <div class="wrapper">
+        <ul class="menu-none">
+            <img src="{% static 'home/image/burger_menu-close.svg' %}" alt="close" class="close-btn">
+            <h6 class="menu-title">Меню</h6>
+            {% load menubuilder %}{% menu mainmenu %}
+            {% for item in menuitems %}
+            <li class="menu__list-item">
+                <a href="{{ item.url }}" title="{{ item.title|escape }}">
+                    {{ item.title }}
+                </a>
+            </li>
+            {% endfor %}
+        </ul>
+        <div class="header__top">
+            <a href="#" class="header__top-registr">
+                <img src="{% static 'home/image/man.svg' %}" alt="icon">
+                <span>Личный кабинет</span>
+            </a>
+        </div>
+        <div class="header__content">
+            <a href="{% url 'home:index' %}" class="logo"><img src="{% static 'home/image/logo.png' %}" alt="logo"></a>
+            <menu class="header__menu">
+                <ul class="header__menu-list">
+                    {% load menubuilder %}{% menu mainmenu %}
+                    {% for item in menuitems %}
+                    <li class="menu__list-item">
+                        <a href="{{ item.url }}" title="{{ item.title|escape }}">
+                            {{ item.title }}
+                        </a>
+                    </li>
+                    {% endfor %}
+                </ul>
+                <div class="burger">
+                    <div></div>
+                </div>
+            </menu>
+        </div>
+    </div>
+</header>

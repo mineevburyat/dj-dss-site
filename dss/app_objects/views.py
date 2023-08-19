@@ -1,6 +1,7 @@
 from django.views.generic.base import TemplateView
 from common.mixins import TitleMixin, ObjectsMixin
 from .models import Object, ObjectGallery
+from app_services.models import Service
 from django.views.generic.detail import DetailView
 from django.views.generic import ListView
 from app_news.models import News
@@ -46,6 +47,7 @@ class DetailObjectView(TitleMixin, ObjectsMixin, DetailView):
         context['today'] = (now, name_of_month(now.month), name_of_week(now.weekday()))
         context['objects_news'] = objects_news
         context['events'] = {25:"особое событие 1", 30:"особое событие 2"}
+        context['services'] = self.object.services.all().order_by('order')
         return context
 
 class ListObjectsView(TitleMixin, ListView):
@@ -53,7 +55,7 @@ class ListObjectsView(TitleMixin, ListView):
     context_object_name = 'objects'
     template_name = 'app_objects/index.html'
     ordering = ['-order']
-    title = "ДСС: список объектов"
+    title = "список объектов"
     
     def get_queryset(self):
         objects = Object.objects.all().order_by('-order')

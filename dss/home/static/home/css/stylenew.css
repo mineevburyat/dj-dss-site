@@ -52,10 +52,10 @@ margin: auto;
 }
 
 .carusel-calendar {
-    position: absolute;
+    /* position: absolute;
     z-index: 30;
     top: 1%;
-    left: 1%;
+    left: 1%; */
 }
 .card-img-top {
     height: 200px;
