@@ -1,0 +1,29 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'home/css/indexstyle.css'%}">
+    <link rel="stylesheet" href="{% static 'home/css/stylenew.css'%}"/>
+    <title>ДСС: личный кабинет</title>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.0/dist/jquery.min.js"></script>
+    <!-- Start 1C Fitness JS Code Insert after jQuery. DO NOT CHANGE! -->
+    <script src="https://reservi.ru/widget-fit1c.v2/js/config.js" data-fit-salon-id="472b94d9-2266-457c-a867-fc2739150423"></script>
+    
+</head>
+<body>
+    {% include 'home/header_dep.html' %}
+
+    {% block content %}
+    {% endblock %}
+
+    {% include 'home/footer_dep.html' %}
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    <script src="{% static 'home/js/deploymain.js' %}"></script>   
+</body>
+</html>

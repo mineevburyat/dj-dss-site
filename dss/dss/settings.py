@@ -62,6 +62,7 @@ INSTALLED_APPS = [
     # 'sliderapp',
     'common',
     'home',
+    'app_lk',
     'app_mediafiles',
     'menu',
     'app_objects',
