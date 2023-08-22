@@ -1,0 +1,70 @@
+{% extends 'home/base2lv_ext.html' %}
+{% block content %}
+    <h2>Новости</h2>
+
+    <div class="container">
+        {% for news in page_obj.object_list %}
+        <div class="mb-2">
+            <h3 class="border_buttom">{{forloop.counter}}) <a href="{% url 'news:detail' news.slug %}">{{news.title}}</a></h3>
+            <p class="fw-light d-flex">
+                <img src="{{news.featured_media.thumbnail.url}}" alt="{{news.featured_media.alt_txt}}">
+                {{news.content|safe|truncatechars:160}}
+            </p>
+        </div>
+        {% endfor %}
+    </div>      
+
+        <ul class="pagination">
+            {% if page_obj.has_previous %}
+            <li class="page-item">
+                <a class="page-link" href="?page={{ page_obj.previous_page_number }}">Предыдущий</a>
+            </li>
+            {% else %}
+            <li class="page-item disabled">
+                <a class="page-link" href="#">Предыдущий</a>
+            </li>
+            {%endif%}
+
+            {% for page_number in paginator_range %}
+            {% if page_number == page_obj.paginator.ELLIPSIS %}
+            <li class="page-item">
+                {{page_number}}
+            </li>
+            {% else %}
+            <li class="page-item {% if page_number == page_obj.number %}active{% endif %}">
+                <a class="page-link" href="?page={{ page_number }}">{{page_number}}
+                </a>
+            </li>
+            {% endif %}
+            {% endfor %}
+
+            {% if page_obj.has_next %}
+            <li class="page-item">
+                <a class="page-link" href="?page={{ page_obj.next_page_number }}">Следующий</a>
+            </li>
+            {% else %}
+            <li class="page-item">
+                <a class="page-link disabled" href="#">Следующий</a>
+            </li>
+            {% endif %}
+          </ul>
+        {% comment %} {% include  'app_news/paginator_block.html' %} {% endcomment %}
+    </div>
+{% endblock %}
+
+{% block bradcrumbs %}
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb" itemscope itemtype="https://schema.org/BreadcrumbList">
+    <li class="breadcrumb-item" itemprop='itemListElement' itemscope itemtype='https://schema.org/ListItem'>
+      <a href="{% url 'home:index' %}" itemprop="item">
+        <span itemprop="name">Главная</span>
+      </a>
+    </li>
+    <li class="breadcrumb-item" itemprop='itemListElement' itemscope itemtype='https://schema.org/ListItem'>
+      <a href="{% url 'news:list'%}" itemprop="item">
+        <span itemprop="name">Новости</span>
+      </a>
+    </li>
+  </ol>
+</nav>
+{% endblock %}
