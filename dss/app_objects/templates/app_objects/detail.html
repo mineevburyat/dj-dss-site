@@ -235,14 +235,17 @@
               <div class="card-footer">
                 <div class="row align-content-end justify-content-end">
                   <div class="col-12 col-sm-6">
+                    {{ stock.stock_services.all.0.typeservice.slug }}
                     <div class="dropup">
                       <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownService" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         список услуг
                       </button>
                       <div class="dropdown-menu" aria-labelledby="dropdownService">
-                        <a class="dropdown-item" href="#">Action</a>
-                        <a class="dropdown-item" href="#">Another action</a>
-                        <a class="dropdown-item" href="#">Something else here</a>
+                        <a class="dropdown-item" href="{%url 'services:listservice' 'sport' 'gum' %}">
+                          все</a>
+                        {% for service in stock.stock_services.all%}
+                        <a class="dropdown-item" href="{% url 'services:listservice' 'sport' service.slug%}">{{service.name}}</a>
+                        {%endfor%}
                       </div>
                     </div>
                   </div>

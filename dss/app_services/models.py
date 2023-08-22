@@ -4,7 +4,7 @@ from common.utils import translite
 from django.utils.safestring import mark_safe
 from ckeditor_uploader.fields import RichTextUploadingField
 from app_mediafiles.models import Icon, Image
-from app_objects.models import Object
+from app_objects.models import Object, TypeStock
 import random
 
 # искуственные категории услуг
@@ -82,6 +82,14 @@ class TypeService(models.Model):
         'активно',
         default=True
     )
+    typestock = models.ForeignKey(
+        TypeStock,
+        verbose_name='ресурс объекта',
+        on_delete=models.PROTECT,
+        blank=True,
+        null=True,
+        related_name='services'
+    )
     
     def __str__(self):
         return f"{self.name} ({self.slug})"
@@ -107,6 +115,11 @@ class TypeService(models.Model):
             )
         if photos:
             return random.choice(photos)
+        
+    def get_typestock_name(self):
+        if self.typestock:
+            return self.typestock.name
+        return None
 
 class Service(models.Model):
     '''\
@@ -159,7 +172,14 @@ class Service(models.Model):
         blank=True,
         related_name='services'
     )
-    
+    typestock = models.ForeignKey(
+        TypeStock,
+        verbose_name='ресурс',
+        on_delete=models.PROTECT,
+        related_name='stock_services',
+        null=True,
+        blank=True
+    )
     def __str__(self):
         return f"{self.name}"
 
@@ -172,6 +192,11 @@ class Service(models.Model):
     def icon_html_img(self):
         return mark_safe(f'<img src="{self.get_icon_url()}" width="65"/>')
     icon_html_img.short_description = 'Иконка'
+    
+    def get_typestock(self):
+        if self.typestock:
+            return self.typestock.name
+        return None
     
     # def display_objects(self):
     #     lst = [item.short_name for item in Object.objects.filter(service = self.id) ]

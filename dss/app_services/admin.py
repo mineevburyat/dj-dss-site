@@ -6,14 +6,14 @@ from django.forms import TextInput
 # Register your models here.
 @admin.register(Service)
 class ServiceAdmin(admin.ModelAdmin):
-    list_display = ('name', 'slug', 'category', 'typeservice')
+    list_display = ('name', 'get_typestock', 'typeservice')
     ordering = ('object', 'category', 'typeservice', '-order')
-    list_display_links = ('name', 'slug')
+    list_display_links = ('name',)
     formfield_overrides = {
         models.CharField: {'widget': TextInput(attrs={'size': '20'})},
     }
     prepopulated_fields = {"slug": ("name",)}
-    fields = [('category', 'typeservice', 'object'),
+    fields = [('category', 'typeservice', 'object', 'typestock'),
               ('name', 'slug', 'order'), 
               'description', 
             ]
@@ -34,13 +34,13 @@ class VariousSportAdmin(admin.ModelAdmin):
 
 @admin.register(TypeService)
 class TypeServiceAdmin(admin.ModelAdmin):
-    list_display = ('name', 'slug', 'category', 'order', 'active', 'icon_html_img')
+    list_display = ('name', 'slug', 'category', 'order', 'get_typestock_name', 'active', 'icon_html_img')
     ordering = ('-category', '-order')
     list_editable = ('order', 'active')
     fields = (
         ('name', 'slug', 'category'),
         ('order', 'icon'),
-        'description',
+        ('description', 'typestock'),
         ('icon_html_img', 'active')
     )
     readonly_fields = ('icon_html_img',)

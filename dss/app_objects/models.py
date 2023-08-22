@@ -5,6 +5,7 @@ from django.utils.safestring import mark_safe
 from ckeditor_uploader.fields import RichTextUploadingField
 from app_mediafiles.models import Icon, Image
 import random
+# from app_services.models import TypeService
 # Create your models here.
 
 class Object(models.Model):
@@ -145,6 +146,14 @@ class TypeStock(models.Model):
         blank=True,
         null=True
     )
+    # typestock = models.ForeignKey(
+    #     TypeService,
+    #     verbose_name='группа услуг',
+    #     on_delete=models.PROTECT,
+    #     related_name='typestock',
+    #     blank=True,
+    #     null=True
+    # )
     
     def __str__(self):
         return f'{self.name} ({self.slug})'
