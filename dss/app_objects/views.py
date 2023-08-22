@@ -48,7 +48,7 @@ class DetailObjectView(TitleMixin, ObjectsMixin, DetailView):
         context['objects_news'] = objects_news
         context['events'] = {25:"особое событие 1", 30:"особое событие 2"}
         context['services'] = self.object.services.filter(object=self.object.pk).order_by('order')
-        self.object.typestock
+        # self.object.typestock
         return context
 
 class ListObjectsView(TitleMixin, ListView):
