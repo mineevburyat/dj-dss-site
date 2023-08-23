@@ -75,6 +75,7 @@ INSTALLED_APPS = [
     'app_booking',
     'app_news',
     'app_tags',
+    'app_search',
 ]
 
 MIDDLEWARE = [

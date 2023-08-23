@@ -83,3 +83,6 @@ class News(models.Model):
         lst = [x[1] for x in self.tags.values_list()]
         return mark_safe('<br>'.join(lst))
     tags.short_description = 'тэги'
+    
+    def __str__(self):
+        return self.title

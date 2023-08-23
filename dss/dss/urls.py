@@ -31,6 +31,7 @@ urlpatterns = [
     path('user/', include('app_user.urls', namespace='user')),
     path('mediafiles/', include('app_mediafiles.urls', namespace='app_mediafiles')),
     path('news/', include('app_news.urls', namespace='news')),
+    path('search', include('app_search.urls', namespace='search')),
 ]
 
 # urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

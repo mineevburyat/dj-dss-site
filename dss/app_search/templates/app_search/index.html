@@ -1,0 +1,27 @@
+{% extends 'home/base2lv_ext.html' %}
+    
+
+
+{% block content %}
+    <h4>Найдено в новостях</h4>
+    {{news_results}}
+    <h4>Найдено в услугах</h4>
+    {{service_results}}
+ {% endblock %}
+
+ {% block bradcrumbs %}
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb" itemscope itemtype="https://schema.org/BreadcrumbList">
+    <li class="breadcrumb-item" itemprop='itemListElement' itemscope itemtype='https://schema.org/ListItem'>
+      <a href="{% url 'home:index' %}" itemprop="item">
+        <span itemprop="name">Главная</span>
+      </a>
+    </li>
+    <li class="breadcrumb-item" itemprop='itemListElement' itemscope itemtype='https://schema.org/ListItem'>
+      <a href="{% url 'search:result_list'%}" itemprop="item">
+        <span itemprop="name">результат поиска</span>
+      </a>
+    </li>
+  </ol>
+</nav>
+{% endblock %}
