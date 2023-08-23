@@ -39,7 +39,34 @@
     </style>
 {% endblock %}
 {% block content %}
+    <div class="d-flex justify-content-between">
     <h2>Медиабиблиотека</h2>
+    {% comment %} {% if obj_filter|length == 1 %}
+        {% for item in obj_filter %}
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" disabled checked type="checkbox" id="check{{loop.counter}}" value="{{item.slug}}" name="object">
+          <label class="form-check-label" for="check{{loop.counter}}">{{item.short_name}}</label>
+        </div>
+        {%endfor%}
+      {%else%}
+        {% for item in obj_filter %}
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" 
+          {% if item.slug in param_objs %}
+            checked
+            {% else%}
+            unchecked
+          {%endif%}
+           type="checkbox" id="check{{loop.counter}}" value="{{item.slug}}" name="object">
+          <label class="form-check-label" for="check{{loop.counter}}">{{item.short_name}}</label>
+        </div>
+        {%endfor%}
+      {%endif%} {% endcomment %}
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" disabled checked type="checkbox" id="check{{loop.counter}}" value="{{item.slug}}" name="object">
+        <label class="form-check-label" for="check{{loop.counter}}">acr</label>
+      </div>
+    </div>
     <div class="container">
         <div class="row mb-2">
             {% for image in page_obj.object_list %}
