@@ -1,0 +1,9 @@
+<div class="list-group">
+    {% load menubuilder %}{% menu sidebar %}
+    {% for item in menuitems %}
+    <a href="{{item.url}}" class="list-group-item list-group-item-action
+    {%if item.current %} active {%endif%}" aria-current="true">
+        {{item.title}}
+      </a>
+    {% endfor %}
+</div>
