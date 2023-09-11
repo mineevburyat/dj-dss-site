@@ -12,8 +12,7 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 import environ
 from pathlib import Path
 # importing the function from utils
-from django.core.management.utils import get_random_secret_key
-
+# from django.core.management.utils import get_random_secret_key
 
 
 root = Path(__file__).resolve().parent.parent  # get root of the project
@@ -21,11 +20,11 @@ env = environ.Env(
     DEBUG=(bool, True),
     SECRET_KEY=(str, 'get_random_secret_key()'),
     ALLOWED_HOSTS=(list, ['localhost', '*']),
-    PG_DB=(str,'project_bd'),
-    PG_USER=(str,'pgdb_user'),
-    PG_PASS=(str,'pgdb_user_pass'),
-    PG_HOST=(str,'localhost'),
-    PG_PORT=(str,''),
+    PG_DB=(str, 'project_bd'),
+    PG_USER=(str, 'pgdb_user'),
+    PG_PASS=(str, 'pgdb_user_pass'),
+    PG_HOST=(str, 'localhost'),
+    PG_PORT=(str, ''),
 )
 env.read_env(root / '.env')  # reading .env file
 
@@ -160,9 +159,7 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATIC_ROOT = BASE_DIR / 'static/'
-STATICFILES_DIRS = [
-    
-    ]
+STATICFILES_DIRS = []
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
@@ -225,7 +222,6 @@ LOGGING = {
         'console': {
             'level': 'DEBUG',
             'class': 'logging.StreamHandler',
-            
         }
     },
     'loggers': {
