@@ -1,0 +1,12 @@
+body {
+    height: 100vh;
+  overflow: hidden;
+}
+
+
+@media (max-width: 1279px) {
+    body {
+      height: 100vh;
+      overflow: visible;
+    }
+  }
