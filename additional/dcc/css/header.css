@@ -199,15 +199,21 @@
   }
 }
 
+@media (max-width: 799px) {
+    .header__search {
+        display: block;
+    }
+}
+
 @media (max-width: 620px) {
-    .card {
+    /* .card {
         position: relative;
         z-index: 1;
         width: 384px;
         height: 518px;
         perspective: 800px;
         border-radius: 12px;
-      }
+      } */
     .content {
         position: absolute;
         width: 100%;
@@ -298,6 +304,13 @@
     
 }
 
+.header__search {
+    display: none;
+    position: absolute;
+    top: 16%;
+    left: 30%;
+}
+
 @media (max-width: 429px) {
     .logo img {
         max-width: 146px;
@@ -315,6 +328,8 @@
       z-index: 10;
     }
 }
+
+
 
 @media (max-width: 474px) {
     .call-center {
