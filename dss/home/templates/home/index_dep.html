@@ -2,6 +2,11 @@
 
 {% load static %}
 
+{% block style %}
+<link rel="stylesheet" href="{% static 'home/css/body-screen.css' %}">
+<link rel="stylesheet" href="{% static 'home/css/main-index.css' %}">
+{% endblock %}
+
 {% block content %}
 <main class="main">
     <section class="cards">
@@ -76,12 +81,9 @@
               </div>
             <!-- <div class="container-card">
                 <div class="cards-wrap">
-                    
-                    
-                    
+
                 </div>
             </div> -->
-            
         </div>
     </section>
 </main>

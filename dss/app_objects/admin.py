@@ -30,13 +30,14 @@ class ObjectAdmin(admin.ModelAdmin):
     
 @admin.register(TypeStock)
 class ResourceAdmin(admin.ModelAdmin):
-    list_display = ('name', 'slug', 'icon_html_img', 'order')
+    list_display = ('name', 'slug', 'obj', 'order')
     ordering = ('obj', 'order')
     readonly_fields = ('icon_html_img',)
     prepopulated_fields = {"slug": ("name",)}
     fields = [('name', 'slug', 'order', 'obj'),
-              ('icon_html_img','icon'),
-              'description']
+              ('icon_html_img', 'icon'),
+              ('description', 'inviting_mes'),
+              'characteristics']
     list_filter = ('obj',)
 
 @admin.register(Subunit)

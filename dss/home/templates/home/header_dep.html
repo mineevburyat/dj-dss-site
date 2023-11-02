@@ -2,9 +2,10 @@
 <header class="header">
     <div class="wrapper">
         <ul class="menu-none">
-            <img src="{% static 'home/image/burger_menu-close.svg' %}" alt="close" class="close-btn">
+            <img src="{% static 'home/image/burger_menu-close.svg' %}" alt="кнопка закрыть" class="close-btn">
             <h6 class="menu-title">Меню</h6>
-            {% load menubuilder %}{% menu mainmenu %}
+            {% load menubuilder %}
+            {% menu mainmenu %}
             {% for item in menuitems %}
             <li class="menu__list-item">
                 <a href="{{ item.url }}" title="{{ item.title|escape }}">
@@ -12,30 +13,32 @@
                 </a>
             </li>
             {% endfor %}
+            
         </ul>
-        <div class="header__top">
-            <a href="/mediafiles" class="header__top-registr">
-                <img src="{% static 'home/image/man.svg' %}" alt="icon">
-                <span>фотоальбом</span>
-            </a>
-            <a href="/news" class="header__top-registr">
-                <img src="{% static 'home/image/man.svg' %}" alt="icon">
-                <span>Новости</span>
-            </a>
-            <a href="/lk/shedule" class="header__top-registr">
-                <img src="{% static 'home/image/man.svg' %}" alt="icon">
-                <span>Расписание</span>
-            </a>
-            <a href="/lk" class="header__top-registr">
-                <img src="{% static 'home/image/man.svg' %}" alt="icon">
-                <span>Личный кабинет</span>
-            </a>
+        <div class="header-top">
+            <div class="call-center">
+                <p class="call-center__title">Call-центр</p>
+                <div class="call-center__phone">+7 (3012) 45-30-36</div>
+            </div>
+            <div class="header-top__left">
+                <a href="news-list.html" class="header-top__left-registr">
+                    <img src="{% static 'home/image/news.svg'%}" alt="иконка новости">
+                    <span>Новости</span>
+                </a>
+                <a href="#" class="header-top__left-registr">
+                    <img src="{% static 'home/image/man.svg' %}" alt="иконка человек">
+                    <span>Личный кабинет</span>
+                </a>
+            </div>
         </div>
         <div class="header__content">
-            <a href="{% url 'home:index' %}" class="logo"><img src="{% static 'home/image/logo.png' %}" alt="logo"></a>
+            <a href="{% url 'home:index' %}" class="logo">
+                <img src="{% static 'home/image/logo.png' %}" alt="логотип ДСС">
+            </a>
             <menu class="header__menu">
                 <ul class="header__menu-list">
-                    {% load menubuilder %}{% menu mainmenu %}
+                    {% load menubuilder %}
+                    {% menu mainmenu %}
                     {% for item in menuitems %}
                     <li class="menu__list-item">
                         <a href="{{ item.url }}" title="{{ item.title|escape }}">

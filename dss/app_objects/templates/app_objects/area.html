@@ -5,6 +5,7 @@
 {% block style %}
 <link rel="stylesheet" href="{% static 'home/css/2lv.css' %}">
 <link rel="stylesheet" href="{% static 'home/css/3lv.css' %}">
+<link rel="stylesheet" href="{% static 'home/css/4lv.css' %}">
 {% endblock %}
 
 {% block content %}
@@ -12,15 +13,16 @@
   <div class="wrapper">
       <div class="head">
           <div class="head__column">
-              <h1 class="head__title">{{object.name}}</h1>
+              <h1 class="head__title">{{area.name}} в {{object.short_name}}</h1>
               <ul class="bradcrumbs">
                   <li class="bradcrumbs__item">
                       <a href="{% url 'home:index' %}" class="bradcrumbs__link">Главная</a>
                   </li>
                   <li class="bradcrumbs__item">
-                    <a href="{% url 'objects:index' %}" class="bradcrumbs__link">Спортивные объекты</a>
-                  </li>
-                  <li class="bradcrumbs__item">{{object.short_name}}</li>
+                    <a href="{% url 'app_objects:index' %}" class="bradcrumbs__link">Спортивные объекты</a></li>
+                  <li class="bradcrumbs__item">
+                    <a href="{% url 'app_objects:detail' object.slug%}" class="bradcrumbs__link">{{object.short_name}}</a></li>
+                  <li class="bradcrumbs__item">{{area.name}}</li>
               </ul>
           </div>
           <div class="head__search">
@@ -35,81 +37,100 @@
           </div>
       </div>
   </div>
-  <section class="wrapper">
-    <div class="important-news">
-        {% for news in objects_news %}
-        <div class="important-news__card important-news__card-danger">
-            <h3 class="important-news__title">
-                <a href="{% url 'news:detail' news.slug %}">{{news.title}}</a>
-            </h3>
-            <p class="important-news__text">{{news.exerpt}}</p>
-        </div>
-        {% endfor %}
+  <div class="important-news">
+    {% for news in objects_news %}
+    <div class="important-news__card important-news__card-danger">
+        <h3 class="important-news__title">
+            <a href="{% url 'news:detail' news.slug %}">{{news.title}}</a>
+        </h3>
+        <p class="important-news__text">{{news.exerpt}}</p>
     </div>
-  </section>
+    {% endfor %}
+  </div>
   <section class="wrapper">
       <div class="card-horizontal">
           <div class="card-horizontal__left">
-              <div class="card-horizontal__image">
-                  <img src="{{object.get_random_photo.url}}" class="card-horizontal__img">
-                  <ul class="card__label">
-                    <li class="card__label-bg">
-                      <span class="card__label-phone">3D тур</span>
-                    </li>
-                    <li class="card__label-bg">
-                      <span class="card__label-phone">фотогалерея</span>
-                    </li>
-                    <li class="card__label-bg">
-                      <span class="card__label-phone">как проехать</span>
-                    </li>
-                  </ul>
-              </div>
-              <ul class="card-horizontal__left-buttom">
-                  <li class="card-info">
-                      <span class="card-info__label">дата ввода в эксплуатацию</span>
-                      <span class="card-info__data">{{object.start_date}}</span>
-                  </li>
-                  <li class="card-info">
-                      <span class="card-info__label">Площадь</span>
-                      <span class="card-info__data">{{object.square}}</span>
-                  </li>
-                  <li class="card-info">
-                      <span class="card-info__label">Спортплощадок</span>
-                      <span class="card-info__data">{{object.get_num_areas}}</span>
-                  </li>
-                  <li class="card-info">
-                      <span class="card-info__label">Вакансиик</span>
-                      <span class="card-info__data">{{object.get_num_vacancy}}</span>
-                  </li>
+            <div class="card-horizontal__image">
+              <img src="{{object.get_random_photo.url}}" class="card-horizontal__img">
+              <ul class="card__label">
+                <li class="card__label-bg">
+                  <span class="card__label-phone">3D тур</span>
+                </li>
+                <li class="card__label-bg">
+                  <span class="card__label-phone">фотогалерея</span>
+                </li>
+                <li class="card__label-bg">
+                  <span class="card__label-phone">как проехать</span>
+                </li>
               </ul>
           </div>
-          <div class="card-horizontal__right">
-              <div class="card-horizontal__image-address">{{object.address}}</div>
-              <div class="card-horizontal__right-text">{{object.description|safe}}</div>
-              <p class="card-horizontal__right-text">
-                  Основные спортивные площадки и сооружения: 
-                  <ul class="card-horizontal__right-list">
-                    {% for area in object.get_areas%}
-                    <li><a href="{% url 'app_objects:area' object.slug area.slug%}">{{area.name}}</a></li>
-                    {%endfor %}
-                  </ul>
-              </p>
-              
-              <p class="card-horizontal__right-text">
-                  {{object.short_name}} имеет следующие телефонные контакты: 
-                  <ul class="card-horizontal__right-list">
-                    {% for contact in object.get_contacts_list %}
-                    <li><a href="#">{{contact.name}} <span class="card__label-phone">{{contact.get_phones_str}}</span></a></li>
-                    {% endfor %}
-                  </ul>
-              </p>
           </div>
-          
+          <div class="card-horizontal__right">
+              <ul class="card-horizontal__right-listlinks">
+                  <li><a href="#">Расценки и скидки</a></li>
+                  <li><a href="#">Режим работы и расписание</a></li>
+                  <li><a href="#">Требования и правила посещения</a></li>
+              </ul>
+              <div class="card-horizontal__right-text">{{area.description|safe}}</div>
+              <div class="card-horizontal__right-text">
+                  {{area.name}} предоставляет следующие услуги: 
+                  <ul class="card-horizontal__right-list">
+                      <li><a href="#">разовое посещение бассейна</a></li>
+                      <li><a href="#">абонемент на посещение бассейна</a></li>
+                      <li><a href="#">сауна</a></li>
+                  </ul>
+              </div>
+          </div>
       </div>
+      <p class="card-horizontal__promo">
+          {{area.inviting_mes}}
+      </p>
+      <ul class="card-horizontal__left-buttom">
+        {% for character in area.characteristics%}
+          <li class="card-info">
+              <span class="card-info__label">{{character.name}}</span>
+              <span class="card-info__data">{{character.value}}</span>
+          </li>
+        {% endfor %}
+      </ul>
   </section>
-  <section class="wrapper">
-      <div class="lalst-news">
-          <div>yjdjcnm 1</div>
+  <section class="wrapper event">
+      <h4 class="event__header">Ближайшие события</h4>
+      <div class="event__list">
+          <div class="event-card">
+              <div class="event-card__left">
+                  <img src="image/news1.png" alt="">
+              </div>
+              <div class="event-card__right">
+                  <div class="event-card__date">12 августа 2023</div>
+                  <div class="event-card__title">Всероссийские соревнования по боксу «Байкал–2023»</div>
+                  <div class="event-card__text">В 53–й раз Бурятия встречает Всероссийские соревнования по боксу «Байкал–2023» памяти чемпиона Олимпийских игр В. Сафронова и серебряного призёра Олимпийских игр В.Баранникова</div>
+                  <div class="event-card__link"><a href="#">Читать дальше</a></div>
+              </div>
+          </div>
+          <div class="event-card">
+              <div class="event-card__left">
+                  <img src="image/news2.png" alt="">
+              </div>
+              <div class="event-card__right">
+                  <div class="event-card__date">12 августа 2023</div>
+                  <div class="event-card__title">Всероссийские соревнования по боксу «Байкал–2023»</div>
+                  <div class="event-card__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus voluptatibus, aliquam quisquam optio vero a! Pariatur, atque. Amet, omnis voluptatem commodi beatae sunt minima, consequatur delectus ratione, corrupti facilis placeat.</div>
+                  <div class="event-card__link"><a href="#">Читать дальше</a></div>
+              </div>
+              
+          </div>
+          <div class="event-card">
+              <div class="event-card__left">
+                  <img src="image/news1.png" alt="">
+              </div>
+              <div class="event-card__right">
+                  <div class="event-card__date">12 августа 2023</div>
+                  <div class="event-card__title">Всероссийские соревнования по боксу «Байкал–2023»</div>
+                  <div class="event-card__text">В 53–й раз Бурятия встречает Всероссийские соревнования по боксу «Байкал–2023» памяти чемпиона Олимпийских игр В. Сафронова и серебряного призёра Олимпийских игр В.Баранникова</div>
+                  <div class="event-card__link"><a href="#">Читать дальше</a></div>
+              </div>
+          </div>
       </div>
   </section>
 </main>

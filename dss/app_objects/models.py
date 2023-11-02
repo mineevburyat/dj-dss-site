@@ -59,16 +59,24 @@ class Object(models.Model):
         'Сортировка',
         default=100,
     )
-    # type_stock = models.ManyToManyField(
-    #     'TypeStock',
-    #     verbose_name='группа ресурсов',
-    #     help_text='имеющиеся на объекте типы ресурсов',
-    # )
+    start_date = models.DateField(
+        'дата ввода в эксплуатацию',
+        null=True,
+        blank=True
+    )
+    square = models.CharField(
+        'площадь',
+        max_length=11,
+        default='-'
+    )
+        
     call_center = models.CharField(
         'номер телефона',
         max_length=20,
         default='+7(3012) 5-30-36')
 
+
+    
     def __str__(self):
         return f'{self.short_name} ({self.name})'
     
@@ -81,11 +89,9 @@ class Object(models.Model):
             f'<img src="{self.get_icon_url()}" width="50" height="50" />')
     icon_html_img.short_description = 'Иконка'
     
-    def get_types_stocks(self):
-        res = []
-        for item in self.type_stock.all():
-            res.append(item)
-        return res
+    def get_areas(self):
+        return self.sportarea.all()
+        
     # def get_absolute_url(self):
         # return reverse('objects:detail_obj', kwargs={"slug": self.slug})
     
@@ -103,19 +109,23 @@ class Object(models.Model):
         contacts = self.contacts.all()
         return contacts
     
-            
+    def get_num_areas(self):
+        return self.sportarea.all().count()
+    
+    def get_num_vacancy(self):
+        return '0'
     
 class TypeStock(models.Model):
     '''\
-        Типы материального фонда для меню: категорирование имеющихся материальных ресурсов. То что можно сдать в аренду, забронировать. Выводиться в меню в виде названия и иконки, можно ранжировать по важности'''
+        Спортивная площадка на объекте'''
     class Meta:
-        verbose_name = 'Тип ресурса'
-        verbose_name_plural = 'Типы ресурсов'
+        verbose_name = 'спортплощадка'
+        verbose_name_plural = 'спортплощадки'
         
     name = models.CharField(
         'название',
         max_length=35,
-        help_text='стадион, универсальный зал и пр. без конкретики'
+        help_text='бассейн, стадион, тренажерный зал, универсальный зал и пр.'
     )
     slug = models.SlugField(
         'slug имя в url',
@@ -136,24 +146,27 @@ class TypeStock(models.Model):
     description = RichTextUploadingField(
         'краткое описание',
         max_length=1500,
-        default=''
+        default='',
+        help_text='описание спортплощадки без характеристик и расписания'
     )
     obj = models.ForeignKey(
         Object,
         verbose_name='Объект',
         on_delete=models.PROTECT,
-        related_name='typestocks',
+        related_name='sportarea',
         blank=True,
         null=True
     )
-    # typestock = models.ForeignKey(
-    #     TypeService,
-    #     verbose_name='группа услуг',
-    #     on_delete=models.PROTECT,
-    #     related_name='typestock',
-    #     blank=True,
-    #     null=True
-    # )
+    inviting_mes = models.TextField(
+        'слоган или призыв к посещению',
+        max_length=90,
+        default='призывной призыв или слоган'
+    )
+    characteristics = models.JSONField(
+        'характеристики спортплощадки',
+        blank=True,
+        null=True
+    )
     
     def __str__(self):
         return f'{self.name} ({self.slug})'
