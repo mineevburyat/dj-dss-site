@@ -1,5 +1,5 @@
 from django.db import models
-from app_objects.models import Object, TypeStock
+from app_objects.models import Object, SportArea
 from django.utils.safestring import mark_safe
 
 # Create your models here.
@@ -28,7 +28,7 @@ class Contact(models.Model):
         related_name='contacts'
     )
     stock = models.ForeignKey(
-        TypeStock,
+        SportArea,
         verbose_name='ресурс',
         on_delete=models.PROTECT,
         null=True,

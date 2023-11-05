@@ -1,11 +1,12 @@
 .card-horizontal__promo {
-  margin-top: 24px;
+  margin-top: 12px;
   color: #000;
   font-family: Montserrat;
   font-size: 24px;
   font-style: normal;
   font-weight: 900;
   line-height: normal;
+  padding: 6px;
 }
 
 .card-horizontal__addition {

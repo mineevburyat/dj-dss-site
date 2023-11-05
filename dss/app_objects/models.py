@@ -1,12 +1,13 @@
 from django.db import models
-from django.urls import reverse
-from common.utils import translite
+# from django.urls import reverse
+# from common.utils import translite
 from django.utils.safestring import mark_safe
 from ckeditor_uploader.fields import RichTextUploadingField
 from app_mediafiles.models import Icon, Image
 import random
 # from app_services.models import TypeService
 # Create your models here.
+
 
 class Object(models.Model):
     '''\
@@ -44,7 +45,7 @@ class Object(models.Model):
         help_text='Адрес по форме город, улица, дом'
     )
     description = RichTextUploadingField(
-        'краткое описание', 
+        'краткое описание',
         max_length=3000,
         blank=True,
         null=True
@@ -69,32 +70,30 @@ class Object(models.Model):
         max_length=11,
         default='-'
     )
-        
+
     call_center = models.CharField(
         'номер телефона',
         max_length=20,
         default='+7(3012) 5-30-36')
 
-
-    
     def __str__(self):
         return f'{self.short_name} ({self.name})'
-    
+
     def get_icon_url(self):
         if self.icon_lib:
             return self.icon_lib.get_icon_url()
-    
+
     def icon_html_img(self):
         return mark_safe(
             f'<img src="{self.get_icon_url()}" width="50" height="50" />')
     icon_html_img.short_description = 'Иконка'
-    
+
     def get_areas(self):
         return self.sportarea.all()
-        
+
     # def get_absolute_url(self):
         # return reverse('objects:detail_obj', kwargs={"slug": self.slug})
-    
+
     def get_random_photo(self):
         photos = []
         for gallery in ObjectGallery.objects.filter(obj=self):
@@ -104,24 +103,25 @@ class Object(models.Model):
             )
         if photos:
             return random.choice(photos)
-        
+
     def get_contacts_list(self):
         contacts = self.contacts.all()
         return contacts
-    
+
     def get_num_areas(self):
         return self.sportarea.all().count()
-    
+
     def get_num_vacancy(self):
         return '0'
-    
-class TypeStock(models.Model):
+
+
+class SportArea(models.Model):
     '''\
         Спортивная площадка на объекте'''
     class Meta:
         verbose_name = 'спортплощадка'
         verbose_name_plural = 'спортплощадки'
-        
+
     name = models.CharField(
         'название',
         max_length=35,
@@ -167,90 +167,101 @@ class TypeStock(models.Model):
         blank=True,
         null=True
     )
-    
+
     def __str__(self):
-        return f'{self.name} ({self.slug})'
-    
+        short_name_obj = self.obj.short_name if self.obj else '-'
+        return f'{self.name} ({short_name_obj})'
+
     def get_icon_url(self):
         if not self.icon:
             return '/media/emptyicon.png'
         return self.icon.get_icon_url()
-    
+
     def icon_html_img(self):
         return mark_safe(
             f'<img src="{self.get_icon_url()}" width="50" height="50" />')
     icon_html_img.short_description = 'Иконка'
     
-    
-class Subunit(models.Model):
-    '''\
-        Конкретный ресурс со своими характеристиками и расписанием бронирования: дорожка бассейна, тренажерка, зал, поле, площадь для аренды.
-        С конкретными характеристиками, расписанием и контактами'''
-    class Meta:
-        verbose_name = 'Ресурс'
-        verbose_name_plural = 'Ресурсы'
-    MAX_LENGTH_NAME = 45
-    name = models.CharField(
-        'название конкретного ресурса',
-        max_length=MAX_LENGTH_NAME,
-        help_text='дрожка бассейна №1, мини-поле №2'
-    )
-    slug = models.SlugField(
-        'slug имя в url',
-        unique=True,
-        db_index=True,
-        max_length=MAX_LENGTH_NAME,
-        help_text='только латинские буквы и цифры'
-    )
-    description = RichTextUploadingField(
-        'Описание ресурса, характеристики',
-        max_length=1000,
-        blank=True,
-        null=True
-    )
-    resource = models.ForeignKey(
-        TypeStock,
-        on_delete=models.PROTECT,
-        default=None,
-        null=True,
-        blank=True,
-        verbose_name='тип ресурса'
-    )
-    obj = models.ForeignKey(
-        Object,
-        verbose_name='Объект',
-        on_delete=models.PROTECT,
-        default=None,
-        null=True,
-        blank=True
-    )
-    contact = models.CharField(
-        'Телефон',
-        help_text='ссылки на контакт TODO',
-        max_length=25,
-        blank=True,
-        null=True
-    )
-    shedule = models.CharField(
-        'график работы',
-        help_text='режим работы, график, сан. день (как календарь)',
-        max_length=25,
-        blank=True,
-        null=True
-    )
-    
-    def __str__(self):
-        return f'{self.name} ({self.slug}) на {self.obj}'
+    def get_random_photo(self):
+        photos = []
+        for gallery in ObjectGallery.objects.filter(area=self):
+            photos.append(
+                {'url': gallery.photos.get_url_middle_img(),
+                 'alt': gallery.photos.title}
+            )
+        if photos:
+            return random.choice(photos)
+
+
+# class Subunit(models.Model):
+#     '''\
+#         Конкретный ресурс со своими характеристиками и расписанием бронирования: дорожка бассейна, тренажерка, зал, поле, площадь для аренды.
+#         С конкретными характеристиками, расписанием и контактами'''
+#     class Meta:
+#         verbose_name = 'Ресурс'
+#         verbose_name_plural = 'Ресурсы'
+#     MAX_LENGTH_NAME = 45
+#     name = models.CharField(
+#         'название конкретного ресурса',
+#         max_length=MAX_LENGTH_NAME,
+#         help_text='дрожка бассейна №1, мини-поле №2'
+#     )
+#     slug = models.SlugField(
+#         'slug имя в url',
+#         unique=True,
+#         db_index=True,
+#         max_length=MAX_LENGTH_NAME,
+#         help_text='только латинские буквы и цифры'
+#     )
+#     description = RichTextUploadingField(
+#         'Описание ресурса, характеристики',
+#         max_length=1000,
+#         blank=True,
+#         null=True
+#     )
+#     resource = models.ForeignKey(
+#         SportArea,
+#         on_delete=models.PROTECT,
+#         default=None,
+#         null=True,
+#         blank=True,
+#         verbose_name='тип ресурса'
+#     )
+#     obj = models.ForeignKey(
+#         Object,
+#         verbose_name='Объект',
+#         on_delete=models.PROTECT,
+#         default=None,
+#         null=True,
+#         blank=True
+#     )
+#     contact = models.CharField(
+#         'Телефон',
+#         help_text='ссылки на контакт TODO',
+#         max_length=25,
+#         blank=True,
+#         null=True
+#     )
+#     shedule = models.CharField(
+#         'график работы',
+#         help_text='режим работы, график, сан. день (как календарь)',
+#         max_length=25,
+#         blank=True,
+#         null=True
+#     )
+
+#     def __str__(self):
+#         return f'{self.name} ({self.slug}) на {self.obj}'
     # def get_absolute_url(self):
     #     return reverse('objects:detail_sub', kwargs={"slug": self.slug})
-    
+#
 # class ObjectPhoto(models.Model):
 #     '''\
 #         Связь объекта с его фотографиями'''
 #     class Meta:
 #         verbose_name = 'Фотография объекта'
 #         verbose_name_plural = 'Фотографии объектов'
-    
+#
 #     obj = models.ForeignKey(
 #         Object,
 #         verbose_name='Объект',
@@ -261,19 +272,27 @@ class Subunit(models.Model):
 #         verbose_name='фотографии',
 #         blank=True
 #     )
-    
+
+
 class ObjectGallery(models.Model):
     '''\
         Галерея фотографий с объектами'''
     class Meta:
         verbose_name = 'Галерея фотографий объекта'
         verbose_name_plural = 'Галереи фотографий объектов'
-    
+
     obj = models.ForeignKey(
         Object,
         verbose_name='Объект',
         on_delete=models.PROTECT,
         related_name='gallery'
+    )
+    area = models.ForeignKey(
+        SportArea,
+        verbose_name='спортплощадка',
+        blank=True,
+        null=True,
+        on_delete=models.PROTECT
     )
     photos = models.ForeignKey(
         Image,
@@ -281,10 +300,14 @@ class ObjectGallery(models.Model):
         on_delete=models.PROTECT
     )
 
+    def __str__(self):
+        area_name = self.area.name if self.area else '-'
+        return f'фото {self.obj.short_name} ({area_name})'
+    
     def get_html_photo(self):
         return self.photos.thumbnail_html()
     get_html_photo.short_description = 'фото'
-    
+
     def get_short_name(self):
         return self.obj.short_name
     get_short_name.short_description = 'имя'
@@ -292,3 +315,5 @@ class ObjectGallery(models.Model):
     def get_img_size(self):
         return self.photos.get_img_size()
     get_img_size.short_description = 'размер'
+
+

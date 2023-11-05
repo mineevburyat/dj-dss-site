@@ -1,8 +1,12 @@
 from django.contrib import admin
 from django.db import models
 from django.forms import TextInput
-from .models import Object, Subunit, TypeStock,  ObjectGallery
+from .models import Object, SportArea,  ObjectGallery
 # Register your models here.
+
+class SportAreaInline(admin.StackedInline):
+    model = SportArea
+    extra = 0
 
 @admin.register(Object)
 class ObjectAdmin(admin.ModelAdmin):
@@ -10,16 +14,26 @@ class ObjectAdmin(admin.ModelAdmin):
     ordering = ('-order',)
     readonly_fields = ('icon_html_img', 'get_icon_url')
     prepopulated_fields = {"slug": ("short_name",)}
-    fields = [('short_name', 'slug', 'order'),
-              ('name', 'icon_lib'),
-              ('address', 'icon_html_img'),
-              'description',
-            #   'type_stock'
-              ]
+    # fields = [('short_name', 'slug', 'order'),
+    #           ('name', 'icon_lib'),
+    #           ('address', 'icon_html_img'),
+    #           'description',
+    #           ]
+    fieldsets = (
+        (None, {'fields': [
+            ('short_name', 'slug', 'order'),
+            ('name', 'icon_lib'),
+            ('address', 'icon_html_img'),
+            'description',
+              ]}),
+        ('характеристики', {'fields': ('start_date', 'square')}),
+        ('контакты', {'fields': ('call_center',)})
+    )
     # filter_horizontal = ('type_stock',)
     formfield_overrides = {
         models.CharField: {'widget': TextInput(attrs={'size': '20'})},
     }
+    inlines = [SportAreaInline]
     
     def get_form(self, request, obj=None, **kwargs):
         form = super(ObjectAdmin, self).get_form(request, obj, **kwargs)
@@ -28,7 +42,7 @@ class ObjectAdmin(admin.ModelAdmin):
         return form
 
     
-@admin.register(TypeStock)
+@admin.register(SportArea)
 class ResourceAdmin(admin.ModelAdmin):
     list_display = ('name', 'slug', 'obj', 'order')
     ordering = ('obj', 'order')
@@ -40,10 +54,10 @@ class ResourceAdmin(admin.ModelAdmin):
               'characteristics']
     list_filter = ('obj',)
 
-@admin.register(Subunit)
-class SubunitAdmin(admin.ModelAdmin):
-    list_display = ('name', 'slug', 'obj')
-    prepopulated_fields = {"slug": ("name",)}
+# @admin.register(Subunit)
+# class SubunitAdmin(admin.ModelAdmin):
+#     list_display = ('name', 'slug', 'obj')
+#     prepopulated_fields = {"slug": ("name",)}
     # fields = [('short_name', 'slug'), 'name', 'address', 'description', ('icon', 'photo')]
     # formfield_overrides = {
     #     models.CharField: {'widget': TextInput(attrs={'size': '20'})},
@@ -64,3 +78,6 @@ class SubunitAdmin(admin.ModelAdmin):
 class OblectGalleryAdmin(admin.ModelAdmin):
     list_display = ('get_short_name', 'get_html_photo', 'get_img_size')
     list_filter = ('obj',)
+    fields = ['obj', 'area', 'photos', 'get_html_photo']
+    readonly_fields = ('get_html_photo',)
+    

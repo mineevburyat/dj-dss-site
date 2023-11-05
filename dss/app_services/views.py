@@ -1,3 +1,5 @@
+from typing import Any
+from django.db.models.query import QuerySet
 from django.shortcuts import get_object_or_404, redirect, render
 from django.db import models
 from .models import Service, TypeService, CHOICE_CATEGORY
@@ -82,9 +84,26 @@ class ListServiceView(ListView):
         return context
         
 # services/category (sport. section, relax, other)
-class ListTypeServiceView(TitleMixin, TemplateView):
+class ListTypeServiceView(TitleMixin, ListView):
     '''Показать список услуг сгруппированных по типам в одной из категорий спот, секции, прочие или отдых'''
-    template_name = 'app_services/index_category.html'
+    template_name = 'app_services/index_new.html'
+    model = TypeService
+    context_object_name = 'typeservices'
+    title = 'ДСС: услуги'
+    
+    def get_queryset(self):
+        query = super().get_queryset()
+        print(query)
+        category = self.kwargs.get('category')
+        if category == "other":
+            query = query.filter(
+                Q(category='relax') | Q(category=category))\
+                    .order_by('-order')
+            query += TypeService.objects.filter(category=category).order_by('-order')
+        else:
+            query = TypeService.objects.filter(category=category).filter(active=True).order_by('-order')
+        print(query)
+        return query
     
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
@@ -103,11 +122,11 @@ class ListTypeServiceView(TitleMixin, TemplateView):
         #             .order_by('-order')
         #     # typeservices += TypeService.objects.filter(category=category).order_by('-order')
         # else:
-        typeservices = TypeService.objects.filter(category=category).filter(active=True).order_by('-order')
+        # typeservices = TypeService.objects.filter(category=category).filter(active=True).order_by('-order')
         objects_news = News.objects.filter(tags__in=[3])
         context['objects_news'] = objects_news
         context['title'] = f"ДСС: {txt_category}"
-        context['typeservices'] = typeservices
+        # context['typeservices'] = typeservices
         context['categoryname'] = txt_category
         return context
         

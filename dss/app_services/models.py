@@ -4,7 +4,7 @@ from common.utils import translite
 from django.utils.safestring import mark_safe
 from ckeditor_uploader.fields import RichTextUploadingField
 from app_mediafiles.models import Icon, Image
-from app_objects.models import Object, TypeStock
+from app_objects.models import Object, SportArea
 import random
 
 # искуственные категории услуг
@@ -16,26 +16,26 @@ CHOICE_CATEGORY = (
         ('other', 'Прочие услуги'),
     )
 
-class VariousSport(models.Model):
-    '''\
-        вид спорта: по общероссийской классификации'''
-    class Meta:
-        verbose_name = 'Вид спорта'
-        verbose_name_plural = 'Виды спорта'
-    name = models.CharField(
-        'Название спорта',
-        max_length=60,
-        unique=True
-    )
-    slug = models.CharField(
-        'название на английском',
-        max_length=60,
-        unique=True,
-        db_index=True
-    )
+# class VariousSport(models.Model):
+#     '''\
+#         вид спорта: по общероссийской классификации'''
+#     class Meta:
+#         verbose_name = 'Вид спорта'
+#         verbose_name_plural = 'Виды спорта'
+#     name = models.CharField(
+#         'Название спорта',
+#         max_length=60,
+#         unique=True
+#     )
+#     slug = models.CharField(
+#         'название на английском',
+#         max_length=60,
+#         unique=True,
+#         db_index=True
+#     )
     
-    def __str__(self):
-        return f"{self.name} ({self.slug})"
+#     def __str__(self):
+#         return f"{self.name} ({self.slug})"
     
 class TypeService(models.Model):
     '''\
@@ -82,15 +82,7 @@ class TypeService(models.Model):
         'активно',
         default=True
     )
-    typestock = models.ForeignKey(
-        TypeStock,
-        verbose_name='ресурс объекта',
-        on_delete=models.PROTECT,
-        blank=True,
-        null=True,
-        related_name='services'
-    )
-    
+        
     def __str__(self):
         return f"{self.name} ({self.slug})"
     
@@ -116,15 +108,14 @@ class TypeService(models.Model):
         if photos:
             return random.choice(photos)
         
-    def get_typestock_name(self):
-        if self.typestock:
-            return self.typestock.name
-        return None
+    # def get_typestock_name(self):
+    #     if self.area:
+    #         return self.area.name
+    #     return None
 
 class Service(models.Model):
     '''\
-        Услуги согласно категории:
-        спортивная, секция, прочая '''
+        Услуга привязанная к спортивной площадке и типу услуги  '''
     class Meta:
         verbose_name = 'Услуга'
         verbose_name_plural = 'Услуги'
@@ -172,11 +163,11 @@ class Service(models.Model):
         blank=True,
         related_name='services'
     )
-    typestock = models.ForeignKey(
-        TypeStock,
-        verbose_name='ресурс',
+    sportarea = models.ForeignKey(
+        SportArea,
+        verbose_name='спортплощадка',
         on_delete=models.PROTECT,
-        related_name='stock_services',
+        related_name='area_services',
         null=True,
         blank=True
     )
@@ -193,9 +184,9 @@ class Service(models.Model):
         return mark_safe(f'<img src="{self.get_icon_url()}" width="65"/>')
     icon_html_img.short_description = 'Иконка'
     
-    def get_typestock(self):
-        if self.typestock:
-            return self.typestock.name
+    def get_sportarea(self):
+        if self.sportarea:
+            return self.sportarea.name
         return None
     
     # def display_objects(self):

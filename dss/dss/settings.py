@@ -71,7 +71,7 @@ INSTALLED_APPS = [
     'app_contacts',
     'app_piplscard',
     'app_shedule',
-    'app_booking',
+    # 'app_booking',
     'app_news',
     'app_tags',
     'app_search',

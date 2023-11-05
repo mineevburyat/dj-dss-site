@@ -1,19 +1,19 @@
 from django.contrib import admin
-from .models import Service, VariousSport, TypeService, TypeServiceGallery
+from .models import Service, TypeService, TypeServiceGallery
 from django.db import models
 from django.forms import TextInput
 
 # Register your models here.
 @admin.register(Service)
 class ServiceAdmin(admin.ModelAdmin):
-    list_display = ('name', 'get_typestock', 'typeservice')
+    list_display = ('name', 'get_sportarea', 'typeservice')
     ordering = ('object', 'category', 'typeservice', '-order')
     list_display_links = ('name',)
     formfield_overrides = {
         models.CharField: {'widget': TextInput(attrs={'size': '20'})},
     }
     prepopulated_fields = {"slug": ("name",)}
-    fields = [('category', 'typeservice', 'object', 'typestock'),
+    fields = [('category', 'typeservice', 'object', 'sportarea'),
               ('name', 'slug', 'order'), 
               'description', 
             ]
@@ -25,22 +25,22 @@ class ServiceAdmin(admin.ModelAdmin):
         form.base_fields['name'].widget.attrs['style'] = 'width: 40em;'
         return form
     
-@admin.register(VariousSport)
-class VariousSportAdmin(admin.ModelAdmin):
-    list_display = ('pk', 'name', 'slug')
-    list_editable = ('name', 'slug')
-    ordering = ('pk',)
+# @admin.register(VariousSport)
+# class VariousSportAdmin(admin.ModelAdmin):
+#     list_display = ('pk', 'name', 'slug')
+#     list_editable = ('name', 'slug')
+#     ordering = ('pk',)
 
 
 @admin.register(TypeService)
 class TypeServiceAdmin(admin.ModelAdmin):
-    list_display = ('name', 'slug', 'category', 'order', 'get_typestock_name', 'active', 'icon_html_img')
+    list_display = ('name', 'slug', 'category', 'order', 'active', 'icon_html_img')
     ordering = ('-category', '-order')
     list_editable = ('order', 'active')
     fields = (
         ('name', 'slug', 'category'),
         ('order', 'icon'),
-        ('description', 'typestock'),
+        ('description', ),
         ('icon_html_img', 'active')
     )
     readonly_fields = ('icon_html_img',)
