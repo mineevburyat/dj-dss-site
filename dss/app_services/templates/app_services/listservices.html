@@ -1,9 +1,14 @@
-{% extends 'home/base3lv_ext.html' %}
+{% extends 'home/base_dep.html' %}
 
 {% load static %}
 
+{% block style %}
+<link rel="stylesheet" href="{% static 'home/css/2lv.css' %}">
+{% endblock %}
+
+
 {% block content %}
-<main class="container-fluid">
+<main class="wrapper">
   <div class='d-flex justify-content-between'>
     <h2>Услуги {{currenttype.name}}</h2>
     <div>
