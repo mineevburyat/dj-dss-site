@@ -1,0 +1,340 @@
+{% extends 'home/base_dep.html' %}
+
+{% load static %}
+
+{% block style %}
+<link rel="stylesheet" href="{% static 'home/css/2lv.css' %}">
+{% endblock %}
+
+{% block content %}
+<main class="main">
+  <div class="wrapper">
+      <div class="head">
+          <div class="head__column">
+              <h1 class="head__title">{{currenttype.name}}</h1>
+              <ul class="bradcrumbs">
+                  <li class="bradcrumbs__item">
+                      <a href="/" class="bradcrumbs__link">Главная</a>
+                  </li>
+                  <li class="bradcrumbs__item"><a href="/" class="bradcrumbs__link">Спортивные услуги</a></li>
+                  <li class="bradcrumbs__item">{{currenttype.name}}</li>
+              </ul>
+          </div>
+          <div class="head__search">
+              <form class="search" action="search.html" method="get">
+                  <input type="search" value=""  class="search__input">
+                  <button type="submit" class="search__button">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                          <path d="M15.875 13.4423L12.3417 9.8641C12.9167 8.86019 13.2167 7.74382 13.2167 6.61911C13.2167 2.97006 10.25 0 6.60833 0C2.96667 0 0 2.97006 0 6.61911C0 10.2682 2.96667 13.2382 6.60833 13.2382C7.77083 13.2382 8.92083 12.9175 9.94583 12.3051L13.4625 15.8709C13.5417 15.95 13.6542 16 13.7667 16C13.8792 16 13.9917 15.9542 14.0708 15.8709L15.875 14.0463C16.0417 13.8756 16.0417 13.609 15.875 13.4423ZM6.60833 2.5785C8.83333 2.5785 10.6417 4.39052 10.6417 6.61911C10.6417 8.8477 8.83333 10.6597 6.60833 10.6597C4.38333 10.6597 2.575 8.8477 2.575 6.61911C2.575 4.39052 4.38333 2.5785 6.60833 2.5785Z" fill="#A8A8A8" fill-opacity="0.3"/>
+                        </svg>
+                  </button>
+              </form>
+          </div>
+      </div>
+  </div>
+  <section class="wrapper">
+      <div class="important-news">
+          <div class="important-news__card important-news__card-danger">
+              <h3 class="important-news__title">
+                  <a href="news-detail.html">Бассейн закрыт с 14 по 17
+                  июня на профилкактику</a>
+              </h3>
+              <p class="important-news__text">Аренда дорожек и занятия с треноером производится не будут. Пожалуйста, сохраняйте купленные билеты, чтобы воспользоваться услугой позже Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae earum esse dolorum reprehenderit, excepturi soluta eligendi consequuntur! Obcaecati, sapiente, nisi, nobis eligendi asperiores aperiam nulla magni est sequi et ratione!</p>
+          </div>
+          <div class="important-news__card important-news__card-warning">
+              <h3 class="important-news__title">
+                  <a href="news-detail.html">Предупреждающая новость</a>
+              </h3>
+              <p class="important-news__text">Внимание! Действуют акции бери два по цене трех!! Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam voluptatum nesciunt aliquam impedit, laudantium recusandae, ipsa culpa neque repellat aliquid, quod nobis voluptatem quasi provident praesentium iusto dicta quas sequi.</p>
+          </div>
+          <div class="important-news__card important-news__card-primary">
+              <h3 class="important-news__title">
+                  <a href="news-detail.html">Обычная важная новсть</a>
+              </h3>
+              <p class="important-news__text">Пользуйтесь стиральным пороком и надевайте маски Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni fugiat laborum ea eveniet tempore culpa, nam unde iusto nisi facilis placeat nesciunt! Laudantium enim illum voluptas quisquam laboriosam pariatur porro?</p>
+          </div>
+      </div>
+  </section>
+  <section class="wrapper">
+      <div class="card-horizontal">
+          <div class="card-horizontal__left">
+              <div class="card-horizontal__image">
+                  <img src="{{currenttype.photo.service}}" class="card-horizontal__img">
+                  <!-- <ul class="card__label">
+                      <li class="card__label-bg">колл-центр <span class="card__label-phone">(3012) 45-30-36</span></li>
+                      <li class="card__label-bg">администратор <span class="card__label-phone">(3012) 46-04-27</span></li>
+                      
+                  
+                  </ul> -->
+              </div>
+          </div>
+          <div class="card-horizontal__right">
+              <p class="card-horizontal__right-text">{{currenttype.description}}</p>
+              <p class="card-horizontal__right-text">
+                  Услуги предоставляются на слудующих объектах: 
+                  <ul class="card-horizontal__right-list">
+                      <li><a href="4lv-obj.html">ФСК</a></li>
+                      <li><a href="4lv-obj.html">РЦЕ</a></li>
+                      <li><a href="4lv-obj.html">Стадион</a></li>
+                  </ul>
+              </p>
+          </div>
+      </div>
+  </section>
+  <section class="wrapper">
+      <div class="tarifs">
+          <h3>Расценки на услуги</h3>
+          <div class="tab">
+              <input checked id="tab-btn-1" name="tab-btn" type="radio" value="">
+              <label for="tab-btn-1">ФСК</label>
+              <input id="tab-btn-2" name="tab-btn" type="radio" value="">
+              <label for="tab-btn-2">РЦЕ</label>
+              <input id="tab-btn-3" name="tab-btn" type="radio" value="">
+              <label for="tab-btn-3">Стадион</label>
+              <div class="tab-content" id="content-1">
+                  <div class="tab__heads">
+                      <div class="head">
+                          <div class="head__left">
+                              <h3 class="tab__title">Физкультурно-спортивный комплекс</h3>
+                              <p>Описание и примечания специфичные для объекта</p>
+                          </div>
+                          <ul class="head__right">
+                              <li><a href="#">Правила посещения</a></li>
+                              <li><a href="#">Режим работы</a></li>
+                              <li><a href="#">Что-то еще</a></li>
+                          </ul>
+                      </div>
+                    </div>
+                    <div class="tab__body">
+                      <table width="100%" border="1" align="center" 
+                      cellpadding="6" cellspacing="6">
+                          <tr>
+                              <th rowspan="2">Наименование услуги</th>
+                              <th colspan="2">Стоимость / руб.</th>
+                          </tr>
+                          <tr>
+                              <th>Детский</th>
+                              <th>Взрослый</th>
+                          </tr>
+                          <tr>
+                              <td>1 занятие (в группе с тренером) /час</td>
+                              <td align="center">700</td>
+                              <td align="center">300</td>
+                          </tr>
+                          <tr>
+                              <td>бонемент на 12 занятий (в группе с тренером)
+                                  на календарный месяц*</td>
+                              <td align="center">3500</td>
+                              <td align="center">3 000 (со своим снаряжением)<br>
+                                  5 000 (со снаряжением исполнителя)</td>
+                          </tr>
+                      </table>
+                    </div>
+              </div>
+              <div class="tab-content" id="content-2">
+                  <div class="tab__heads">
+                      <div class="head">
+                          <div class="head__left">
+                              <h3 class="tab__title">Региональный центр единоборств</h3>
+                              <p>Абонемент приобретенный на другом объекте сдесь не действует</p>
+                          </div>
+                          <ul class="head__right">
+                              <li><a href="#">Правила посещения</a></li>
+                              <li><a href="#">Режим работы</a></li>
+                              <li><a href="#">Что-то еще</a></li>
+                          </ul>
+                      </div>
+                    </div>
+                    <div class="tab__body">
+                      <table width="100%" border="1" align="center" 
+                      cellpadding="4" cellspacing="0">
+                          <tr>
+                              <th rowspan="2">Наименование услуги</th>
+                              <th colspan="2">Стоимость / руб.</th>
+                          </tr>
+                          <tr>
+                              <th>Детский</th>
+                              <th>Взрослый</th>
+                          </tr>
+                          <tr>
+                              <td>1 занятие (в группе с тренером) /час</td>
+                              <td align="center">700</td>
+                              <td align="center">300</td>
+                          </tr>
+                          <tr>
+                              <td>бонемент на 12 занятий (в группе с тренером)
+                                  на календарный месяц &#169;</td>
+                              <td align="center">3500</td>
+                              <td align="center">3 000 (со своим снаряжением)<br>
+                                  5 000 (со снаряжением исполнителя)</td>
+                          </tr>
+                      </table>
+                    </div>
+              </div>
+              <div class="tab-content" id="content-3">
+                  <div class="tab__heads">
+                      <div class="head">
+                          <div class="head__left">
+                              <h3 class="tab__title">Центральный стадион</h3>
+                              <p>Описание и примечания специфичные для объекта</p>
+                          </div>
+                          <ul class="head__right">
+                              <li><a href="#">Правила посещения</a></li>
+                              <li><a href="#">Режим работы</a></li>
+                              <li><a href="#">Что-то еще</a></li>
+                          </ul>
+                      </div>
+                    </div>
+                    <div class="tab__body">
+                      <table width="100%" border="1" align="center" 
+                      cellpadding="4" cellspacing="0">
+                          <tr>
+                              <th rowspan="2">Наименование услуги</th>
+                              <th colspan="2">Стоимость / руб.</th>
+                          </tr>
+                          <tr>
+                              <th>Детский</th>
+                              <th>Взрослый</th>
+                          </tr>
+                          <tr>
+                              <td>1 занятие (в группе с тренером) /час</td>
+                              <td align="center">700</td>
+                              <td align="center">300</td>
+                          </tr>
+                          <tr>
+                              <td>бонемент на 12 занятий (в группе с тренером)
+                                  на календарный месяц*</td>
+                              <td align="center">3500</td>
+                              <td align="center">3 000 (со своим снаряжением)<br>
+                                  5 000 (со снаряжением исполнителя)</td>
+                          </tr>
+                      </table>
+                    </div>
+              </div>
+            </div>
+      </div>
+  </section>
+  <section class="wrapper event">
+      <h4 class="event__header">Ближайшие события</h4>
+      <div class="event__list">
+          <div class="event-card">
+              <div class="event-card__left">
+                  <img src="image/news1.png" alt="">
+              </div>
+              <div class="event-card__right">
+                  <div class="event-card__date">12 августа 2023</div>
+                  <div class="event-card__title">Всероссийские соревнования по боксу «Байкал–2023»</div>
+                  <div class="event-card__text">В 53–й раз Бурятия встречает Всероссийские соревнования по боксу «Байкал–2023» памяти чемпиона Олимпийских игр В. Сафронова и серебряного призёра Олимпийских игр В.Баранникова</div>
+                  <div class="event-card__link"><a href="#">Читать дальше</a></div>
+              </div>
+          </div>
+          <div class="event-card">
+              <div class="event-card__left">
+                  <img src="image/news2.png" alt="">
+              </div>
+              <div class="event-card__right">
+                  <div class="event-card__date">12 августа 2023</div>
+                  <div class="event-card__title">Всероссийские соревнования по боксу «Байкал–2023»</div>
+                  <div class="event-card__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus voluptatibus, aliquam quisquam optio vero a! Pariatur, atque. Amet, omnis voluptatem commodi beatae sunt minima, consequatur delectus ratione, corrupti facilis placeat.</div>
+                  <div class="event-card__link"><a href="#">Читать дальше</a></div>
+              </div>
+              
+          </div>
+          <div class="event-card">
+              <div class="event-card__left">
+                  <img src="image/news1.png" alt="">
+              </div>
+              <div class="event-card__right">
+                  <div class="event-card__date">12 августа 2023</div>
+                  <div class="event-card__title">Всероссийские соревнования по боксу «Байкал–2023»</div>
+                  <div class="event-card__text">В 53–й раз Бурятия встречает Всероссийские соревнования по боксу «Байкал–2023» памяти чемпиона Олимпийских игр В. Сафронова и серебряного призёра Олимпийских игр В.Баранникова</div>
+                  <div class="event-card__link"><a href="#">Читать дальше</a></div>
+              </div>
+          </div>
+      </div>
+  </section>
+</main>
+
+{% endblock %}
+
+{% comment %} {% block content %}
+<main class="wrapper">
+  <div class='d-flex justify-content-between'>
+    <h2>Услуги {{currenttype.name}}</h2>
+    <div>
+      {% if obj_filter|length == 1 %}
+        {% for item in obj_filter %}
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" disabled checked type="checkbox" id="check{{loop.counter}}" value="{{item.slug}}" name="object">
+          <label class="form-check-label" for="check{{loop.counter}}">{{item.short_name}}</label>
+        </div>
+        {%endfor%}
+      {%else%}
+        {% for item in obj_filter %}
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" 
+          {% if item.slug in param_objs %}
+            checked
+            {% else%}
+            unchecked
+          {%endif%}
+           type="checkbox" id="check{{loop.counter}}" value="{{item.slug}}" name="object">
+          <label class="form-check-label" for="check{{loop.counter}}">{{item.short_name}}</label>
+        </div>
+        {%endfor%}
+      {%endif%}
+    </div>
+  </div>
+  <table>
+    <tr class="table_row_hr">
+      <th>№</th>
+      <th class="text-center table_name">Название</th>
+      <th class="text-center table_description">Описание</th>
+      <th></th>
+    </tr>
+    {%for service in services %}
+    <tr class="table_row_hr">
+      <td class="text-center">{{forloop.counter}}</td>
+      <td class="text-center">{{service.name}}</td>
+      <td class="d-flex flex-column align-item-center justify-content-center">{{service.description|safe}}</td>
+      <td><button>подробнее</button>
+        <button>забронировать</button>
+        <button>льготы</button>
+        <button>акции</button>
+      </td>
+    </tr>    
+    {%endfor%}
+  </table>
+</main>
+{% endblock %}
+
+{% block bradcrumbs %}
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb" itemscope itemtype="https://schema.org/BreadcrumbList">
+    <li class="breadcrumb-item" itemprop='itemListElement' itemscope itemtype='https://schema.org/ListItem'>
+      <a href="{% url 'home:index' %}" itemprop="item">
+        <span itemprop="name">Главная</span>
+      </a>
+    </li>
+    <li class="breadcrumb-item" itemprop='itemListElement' itemscope itemtype='https://schema.org/ListItem'>
+      <a href="{% url 'services:categoryservice' category %}" itemprop="item">
+        <span itemprop="name">{{categoryname}}</span>
+      </a>
+    </li>
+    <li class="breadcrumb-item" itemprop='itemListElement' itemscope itemtype='https://schema.org/ListItem'>
+      <a href="{% url 'services:listservice' category currenttype.slug %}" itemprop="item">
+        <span itemprop="name">{{currenttype.name}}</span>
+      </a>
+    </li>
+    <li class="breadcrumb-item dropdown">
+      <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      </a>
+      <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+        {% for item in typeservices %}
+        <a class="dropdown-item" href="{% url 'services:listservice' category item.slug %}">{{item.name|upper}}</a>
+        {% endfor %}
+      </div>
+    </li>
+  </ol>
+</nav>
+{% endblock %} {% endcomment %}

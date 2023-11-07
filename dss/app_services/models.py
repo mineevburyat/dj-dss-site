@@ -204,13 +204,18 @@ class TypeServiceGallery(models.Model):
     typeservice = models.ForeignKey(
         TypeService,
         verbose_name='Услуга',
-        on_delete=models.PROTECT
+        on_delete=models.PROTECT,
+        related_name='photo'
     )
     photos = models.ForeignKey(
         Image,
         verbose_name='фотографии',
-        on_delete=models.PROTECT
+        on_delete=models.PROTECT,
+        related_name='service'
     )
+    
+    def __str__(self):
+        return self.typeservice
     
     def get_html_photo(self):
         return self.photos.thumbnail_html()
