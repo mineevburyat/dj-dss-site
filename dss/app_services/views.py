@@ -28,6 +28,19 @@ class ListServiceView(ListView):
     context_object_name = 'services'
     template_name = 'app_services/listservices_new.html'
         
+    def get_queryset(self):
+        category = self.kwargs.get('category')
+        typesrvc = self.kwargs.get('typesrvc')
+        # param_objcts = self.request.GET.get('objects')
+        typeservice = get_object_or_404(TypeService, slug=typesrvc)
+        services = Service.objects.filter(category=category, typeservice=typeservice.id).order_by('object', '-order')
+        # else:
+        #     param_objcts = param_objcts.split(',')
+        #     objs = [i.pk for i in Object.objects.filter(slug__in=param_objcts)]
+        #     services = Service.objects.filter(category=category, typeservice=typeservice.id, object__in=objs).order_by('object', '-order')
+        print(services)
+        return services
+    
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         category = self.kwargs.get('category')
@@ -37,7 +50,7 @@ class ListServiceView(ListView):
         #     param_objcts = param_objcts.split(',')
         # else:
         #     param_objcts = [i.slug for i in Object.objects.all()]
-        # context['category'] = category
+        context['categoryslug'] = category
         for item in CHOICE_CATEGORY:
             if item[0] == category:
                 txt_category = item[1]
@@ -45,20 +58,19 @@ class ListServiceView(ListView):
         if not txt_category:
             raise Http404
         in_typeservice = get_object_or_404(TypeService, slug=typesrvc)
-        typeservices = [item for item in TypeService.objects.filter(category=category).order_by('-order') if item != in_typeservice]
-        context['typeservices'] = typeservices
+        # typeservices = [item for item in TypeService.objects.filter(category=category).order_by('-order') if item != in_typeservice]
+        # context['typeservices'] = typeservices
         
         title = f"ДСС: {txt_category}: {in_typeservice.name}"
         context['title'] = title
         context['currenttype'] = in_typeservice
-        print(in_typeservice)
         context['categoryname'] = txt_category
-        services = Service.objects.filter(typeservice=in_typeservice.id)
-        # context['services'] = services
+        services = self.get_queryset()
         objs = set()
         for service in services:
             objs.add(service.object)
         context['obj_filter'] = objs
+        print(objs)
         # context['param_objs'] = param_objcts
         return context
     

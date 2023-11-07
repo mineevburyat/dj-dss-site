@@ -215,7 +215,7 @@ class TypeServiceGallery(models.Model):
     )
     
     def __str__(self):
-        return self.typeservice
+        return str(self.typeservice)
     
     def get_html_photo(self):
         return self.photos.thumbnail_html()

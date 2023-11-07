@@ -4,6 +4,8 @@
 
 {% block style %}
 <link rel="stylesheet" href="{% static 'home/css/2lv.css' %}">
+<link rel="stylesheet" href="{% static 'home/css/3lv.css' %}">
+<link rel="stylesheet" href="{% static 'home/css/4lv.css' %}">
 {% endblock %}
 
 {% block content %}
@@ -16,7 +18,7 @@
                   <li class="bradcrumbs__item">
                       <a href="/" class="bradcrumbs__link">Главная</a>
                   </li>
-                  <li class="bradcrumbs__item"><a href="/" class="bradcrumbs__link">Спортивные услуги</a></li>
+                  <li class="bradcrumbs__item"><a href="{% url 'app_services:categoryservice' categoryslug %}" class="bradcrumbs__link">{{categoryname}}</a></li>
                   <li class="bradcrumbs__item">{{currenttype.name}}</li>
               </ul>
           </div>
@@ -59,7 +61,7 @@
       <div class="card-horizontal">
           <div class="card-horizontal__left">
               <div class="card-horizontal__image">
-                  <img src="{{currenttype.photo.service}}" class="card-horizontal__img">
+                  <img src="{{currenttype.photo.first.photos.medium.url}}" class="card-horizontal__img">
                   <!-- <ul class="card__label">
                       <li class="card__label-bg">колл-центр <span class="card__label-phone">(3012) 45-30-36</span></li>
                       <li class="card__label-bg">администратор <span class="card__label-phone">(3012) 46-04-27</span></li>
@@ -71,11 +73,11 @@
           <div class="card-horizontal__right">
               <p class="card-horizontal__right-text">{{currenttype.description}}</p>
               <p class="card-horizontal__right-text">
-                  Услуги предоставляются на слудующих объектах: 
+                  Услуги предоставляются на следующих объектах: 
                   <ul class="card-horizontal__right-list">
-                      <li><a href="4lv-obj.html">ФСК</a></li>
-                      <li><a href="4lv-obj.html">РЦЕ</a></li>
-                      <li><a href="4lv-obj.html">Стадион</a></li>
+                    {% for obj in obj_filter %}
+                      <li><a href="{% url 'objects:detail' obj.slug %}">{{obj.short_name}}</a></li>
+                    {% endfor %}
                   </ul>
               </p>
           </div>
@@ -85,17 +87,16 @@
       <div class="tarifs">
           <h3>Расценки на услуги</h3>
           <div class="tab">
-              <input checked id="tab-btn-1" name="tab-btn" type="radio" value="">
-              <label for="tab-btn-1">ФСК</label>
-              <input id="tab-btn-2" name="tab-btn" type="radio" value="">
-              <label for="tab-btn-2">РЦЕ</label>
-              <input id="tab-btn-3" name="tab-btn" type="radio" value="">
-              <label for="tab-btn-3">Стадион</label>
-              <div class="tab-content" id="content-1">
+              {% for obj in obj_filter %}
+              <input checked id="tab-btn-{{forloop.counter}}" name="tab-btn" type="radio" value="">
+              <label for="tab-btn-{{forloop.counter}}">{{obj.short_name}}</label>
+              {% endfor %}
+              {% for obj in obj_filter %}
+              <div class="tab-content" id="content-{{forloop.counter}}">
                   <div class="tab__heads">
                       <div class="head">
                           <div class="head__left">
-                              <h3 class="tab__title">Физкультурно-спортивный комплекс</h3>
+                              <h3 class="tab__title">название спортплощадки в {{obj.name}}</h3>
                               <p>Описание и примечания специфичные для объекта</p>
                           </div>
                           <ul class="head__right">
@@ -116,102 +117,18 @@
                               <th>Детский</th>
                               <th>Взрослый</th>
                           </tr>
+                          {% for service in services%}
                           <tr>
-                              <td>1 занятие (в группе с тренером) /час</td>
-                              <td align="center">700</td>
-                              <td align="center">300</td>
+                              <td>{{service.name}}</td>
+                              <td align="center">от 700</td>
+                              <td align="center">от 300</td>
                           </tr>
-                          <tr>
-                              <td>бонемент на 12 занятий (в группе с тренером)
-                                  на календарный месяц*</td>
-                              <td align="center">3500</td>
-                              <td align="center">3 000 (со своим снаряжением)<br>
-                                  5 000 (со снаряжением исполнителя)</td>
-                          </tr>
-                      </table>
+                          {% endfor %}
+                        </table>
                     </div>
               </div>
-              <div class="tab-content" id="content-2">
-                  <div class="tab__heads">
-                      <div class="head">
-                          <div class="head__left">
-                              <h3 class="tab__title">Региональный центр единоборств</h3>
-                              <p>Абонемент приобретенный на другом объекте сдесь не действует</p>
-                          </div>
-                          <ul class="head__right">
-                              <li><a href="#">Правила посещения</a></li>
-                              <li><a href="#">Режим работы</a></li>
-                              <li><a href="#">Что-то еще</a></li>
-                          </ul>
-                      </div>
-                    </div>
-                    <div class="tab__body">
-                      <table width="100%" border="1" align="center" 
-                      cellpadding="4" cellspacing="0">
-                          <tr>
-                              <th rowspan="2">Наименование услуги</th>
-                              <th colspan="2">Стоимость / руб.</th>
-                          </tr>
-                          <tr>
-                              <th>Детский</th>
-                              <th>Взрослый</th>
-                          </tr>
-                          <tr>
-                              <td>1 занятие (в группе с тренером) /час</td>
-                              <td align="center">700</td>
-                              <td align="center">300</td>
-                          </tr>
-                          <tr>
-                              <td>бонемент на 12 занятий (в группе с тренером)
-                                  на календарный месяц &#169;</td>
-                              <td align="center">3500</td>
-                              <td align="center">3 000 (со своим снаряжением)<br>
-                                  5 000 (со снаряжением исполнителя)</td>
-                          </tr>
-                      </table>
-                    </div>
-              </div>
-              <div class="tab-content" id="content-3">
-                  <div class="tab__heads">
-                      <div class="head">
-                          <div class="head__left">
-                              <h3 class="tab__title">Центральный стадион</h3>
-                              <p>Описание и примечания специфичные для объекта</p>
-                          </div>
-                          <ul class="head__right">
-                              <li><a href="#">Правила посещения</a></li>
-                              <li><a href="#">Режим работы</a></li>
-                              <li><a href="#">Что-то еще</a></li>
-                          </ul>
-                      </div>
-                    </div>
-                    <div class="tab__body">
-                      <table width="100%" border="1" align="center" 
-                      cellpadding="4" cellspacing="0">
-                          <tr>
-                              <th rowspan="2">Наименование услуги</th>
-                              <th colspan="2">Стоимость / руб.</th>
-                          </tr>
-                          <tr>
-                              <th>Детский</th>
-                              <th>Взрослый</th>
-                          </tr>
-                          <tr>
-                              <td>1 занятие (в группе с тренером) /час</td>
-                              <td align="center">700</td>
-                              <td align="center">300</td>
-                          </tr>
-                          <tr>
-                              <td>бонемент на 12 занятий (в группе с тренером)
-                                  на календарный месяц*</td>
-                              <td align="center">3500</td>
-                              <td align="center">3 000 (со своим снаряжением)<br>
-                                  5 000 (со снаряжением исполнителя)</td>
-                          </tr>
-                      </table>
-                    </div>
-              </div>
-            </div>
+              {% endfor %}
+          </div>
       </div>
   </section>
   <section class="wrapper event">
