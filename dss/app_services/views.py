@@ -38,7 +38,7 @@ class ListServiceView(ListView):
         #     param_objcts = param_objcts.split(',')
         #     objs = [i.pk for i in Object.objects.filter(slug__in=param_objcts)]
         #     services = Service.objects.filter(category=category, typeservice=typeservice.id, object__in=objs).order_by('object', '-order')
-        print(services)
+        # print(services)
         return services
     
     def get_context_data(self, **kwargs):
@@ -66,12 +66,22 @@ class ListServiceView(ListView):
         context['currenttype'] = in_typeservice
         context['categoryname'] = txt_category
         services = self.get_queryset()
-        objs = set()
+        areas = set()
         for service in services:
-            objs.add(service.object)
-        context['obj_filter'] = objs
-        print(objs)
-        # context['param_objs'] = param_objcts
+            areas.add(service.sportarea)
+        # context['obj_filter'] = objs
+        # print(objs)
+        area_servs = {}
+        for area in areas:
+            for service in services:
+                if service.sportarea == area:
+                    if area_servs.get(area):
+                        area_servs[area].append(service)
+                    else:
+                        area_servs[area] = [service]
+        print(area_servs)
+                    
+        context['dic_area_srvs'] = area_servs
         return context
     
     # def get(self, request, *args, **kwargs):

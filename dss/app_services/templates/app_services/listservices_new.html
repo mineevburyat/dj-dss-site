@@ -87,17 +87,17 @@
     <div class="tarifs">
         <h3 class="tarifs__title">Расценки на {{categoryname}}</h3>
         <div class="tab">
-          {% for obj in obj_filter %}
+          {% for area in dic_area_srvs %}
             <input checked id="tab-btn-{{forloop.counter}}" name="tab-btn" type="radio" value="">
-            <label for="tab-btn-{{forloop.counter}}">{{obj.short_name}}</label>
+            <label for="tab-btn-{{forloop.counter}}">{{area.obj.short_name}}</label>
           {% endfor %}
-          {% for obj in obj_filter %}  
+          {% for area, services in dic_area_srvs.items %}  
             <div class="tab-content" id="content-{{forloop.counter}}">
                 <div class="tab__heads">
                     <div class="tab-head">
                         <div class="tab-head__left">
-                            <h3 class="tab-head__title"><a href="#">Тренажерный зал "Атлет"</a> в <a href="#">{{obj.name}}</a></h3>
-                            <p>Адрес: г Улан-Удэ ул. Жердева, 93</p>
+                            <h3 class="tab-head__title"><a href="#">{{area.name}}</a> в <a href="#">{{area.obj.name}}</a></h3>
+                            <p>{{area.obj.address}}</p>
                             <ul class="tab-head__contact">
                                 <li>
                                     <span>Администратор: </span>
@@ -130,8 +130,9 @@
                             </div>
                         </div>
                     </div>
+                    {% for service in services %}
                     <div class="price__row">
-                        <div class="price__col">1 занятие (в группе с тренером) /час</div>
+                        <div class="price__col">{{service.name}}</div>
                         <div class="price__col">
                             <div class="price__row">
                                 <div class="price__col">от 300</div>
@@ -141,18 +142,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="price__row price__row-grey">
-                        <div class="price__col">бонемент на 12 занятий (в группе с тренером)
-                            на календарный месяц*</div>
-                        <div class="price__col">
-                            <div class="price__row">
-                                <div class="price__col">от 300</div>
-                                <div class="price__col">от 700</div>
-                                <div class="price__col">скидки от 10%</div>
-                                <div class="price__col">акции</div>
-                            </div>
-                        </div>
-                    </div>
+                    {% endfor %}
                   </div>
             </div>
             {% endfor %}
