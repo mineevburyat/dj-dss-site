@@ -26,7 +26,7 @@ class DetailServiceView(TitleMixin, DetailView):
 class ListServiceView(ListView):
     model = Service
     context_object_name = 'services'
-    template_name = 'app_services/listservices_new.html'
+    template_name = 'app_services/listservices_new1.html'
         
     def get_queryset(self):
         category = self.kwargs.get('category')
