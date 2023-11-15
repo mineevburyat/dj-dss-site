@@ -1,0 +1,120 @@
+.about {
+    display: flex;
+    margin-left: 12px;
+    gap: 12px;
+    margin-top: 12px;
+}
+
+.about__body {
+    border-radius: 12px;
+    background: #FFF;
+    box-shadow: 0px 1px 3px 0px rgba(29, 30, 38, 0.10), 0px 3px 6px 0px rgba(29, 30, 38, 0.10), 0px 4px 44px 0px rgba(0, 0, 0, 0.15);
+    padding: 12px;
+}
+
+.about__menu {
+    width: 384px;
+    height: 516px;
+    flex-shrink: 0;
+}
+
+.menu {
+    margin-top: 24px;
+
+}
+
+.menu__item {
+    color: #104295;
+    font-family: Montserrat;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 46px;
+    text-decoration-line: underline;
+}
+
+.menu__item:hover {
+    color: #000;
+    font-weight: 700;
+}
+
+.menu__item_active {
+    color: #000;
+    font-weight: 700;
+}
+
+.about__body {
+    flex: 2;
+    /* display: flex;
+    flex-direction: column; */
+}
+
+.about__title {
+    color: #000;
+    font-family: Montserrat;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+}
+
+.pipl-cards {
+    padding: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.pipl-card {
+    display: flex;
+    gap: 24px;
+    margin-top: 32px;
+    /* height: 285px; */
+}
+
+.pipl-card__img {
+    border-radius: 12px;
+    width: 237px;
+    height: 283px;
+    object-fit: contain;
+}
+
+.pipl-card__img img {
+    width: 100%;
+    border-radius: 12px;
+}
+
+.pipl-card__text {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 193px;
+}
+
+.job-title {
+    color: #000;
+
+    font-family: Montserrat;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 25px;
+}
+
+.name {
+    color: #000;
+    font-family: Montserrat;
+    font-size: 23px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 25px;
+}
+
+.address, .email, .phone {
+    color: #818181;
+font-family: Montserrat;
+font-size: 15px;
+font-style: normal;
+font-weight: 400;
+line-height: 25px;
+}
