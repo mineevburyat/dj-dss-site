@@ -1,37 +1,58 @@
 from django.contrib import admin
-from .models import Service, TypeService, TypeServiceGallery
+from .models import (Service,
+                     TypeService,
+                     TypeServiceGallery,
+                     Rate,
+                     Discount,
+                     Promotion)
 from django.db import models
 from django.forms import TextInput
+from django.template.loader import get_template
 
-# Register your models here.
+
+class RateInline(admin.TabularInline):
+    model = Rate
+    extra = 0
+    
+
+class DiscontInline(admin.TabularInline):
+    model = Discount
+    extra = 0
+    list_display_links = ('__str__',)
+    
+    
+
 @admin.register(Service)
 class ServiceAdmin(admin.ModelAdmin):
-    list_display = ('name', 'get_sportarea', 'typeservice')
-    ordering = ('object', 'category', 'typeservice', '-order')
-    list_display_links = ('name',)
+    list_display = ('__str__', )
+    ordering = ('category', 'typeservice', '-order')
+    list_display_links = ('__str__',)
     formfield_overrides = {
         models.CharField: {'widget': TextInput(attrs={'size': '20'})},
     }
     prepopulated_fields = {"slug": ("name",)}
-    fields = [('category', 'typeservice', 'object', 'sportarea'),
+    fields = [('category', 'typeservice', ),
               ('name', 'slug', 'order'), 
               'description', 
             ]
-    list_filter = ('category', 'typeservice', 'object')
+    list_filter = ('category', 'typeservice')
+    inlines = [RateInline]
     
     
     def get_form(self, request, obj=None, **kwargs):
         form = super(ServiceAdmin, self).get_form(request, obj, **kwargs)
         form.base_fields['name'].widget.attrs['style'] = 'width: 40em;'
         return form
+
+
+@admin.register(Rate)
+class RateAdmin(admin.ModelAdmin):
+    inlines = [DiscontInline]
+    list_filter = ('service',)
+class PromotionInline(admin.StackedInline):
+    model = Promotion
+    extra = 0
     
-# @admin.register(VariousSport)
-# class VariousSportAdmin(admin.ModelAdmin):
-#     list_display = ('pk', 'name', 'slug')
-#     list_editable = ('name', 'slug')
-#     ordering = ('pk',)
-
-
 @admin.register(TypeService)
 class TypeServiceAdmin(admin.ModelAdmin):
     list_display = ('name', 'slug', 'category', 'order', 'active', 'icon_html_img')

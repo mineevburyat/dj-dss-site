@@ -57,7 +57,7 @@
           </div>
       </div>
   </section>
-  <section class="wrapper">
+  {% comment %} <section class="wrapper">
       <div class="card-horizontal">
           <div class="card-horizontal__left">
               <div class="card-horizontal__image">
@@ -82,10 +82,10 @@
               </p>
           </div>
       </div>
-  </section>
+  </section> {% endcomment %}
   <section class="wrapper">
     <div class="tarifs">
-        <h3 class="tarifs__title">Расценки на {{categoryname}}</h3>
+        <h3 class="tarifs__title">Расценки на {{categoryname}} {{currenttype.name}}</h3>
         <div class="tab">
           {% for area in dic_area_srvs %}
             <input checked id="tab-btn-{{forloop.counter}}" name="tab-btn" type="radio" value="">
