@@ -1,7 +1,9 @@
-{% extends 'home/base2lv_ext.html' %}
-    
+{% extends 'home/base_dep.html' %}
 
-{% block css%}
+{% load static %}
+
+{% block style %}
+    <link rel="stylesheet" href="{% static 'home/css/2lv.css' %}">
     <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css"/>
     <style>
@@ -37,7 +39,9 @@
         }
 
     </style>
+    <link rel="stylesheet" href="{% static 'home/css/media.css' %}">
 {% endblock %}
+
 {% block content %}
     <div class="d-flex justify-content-between">
     <h2>Медиабиблиотека</h2>
