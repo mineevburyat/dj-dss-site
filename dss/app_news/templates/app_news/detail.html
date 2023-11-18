@@ -1,68 +1,106 @@
-{% extends 'home/base2lv_ext.html' %}
+{% extends 'home/base_dep.html' %}
+
+{% load static %}
+
+{% block style %}
+<link rel="stylesheet" href="{% static 'home/css/2lv.css' %}">
+<link rel="stylesheet" href="{% static 'home/css/3lv.css' %}">
+<link rel="stylesheet" href="{% static 'home/css/news.css' %}">
+{% endblock %}
 
 {% block content %}
-    <h2>{{news.title}}</h2>
+<main class="main">
+  <div class="wrapper">
+      <div class="head">
+          <div class="head__column">
+              <h1 class="head__title">Новости</h1>
+              <ul class="bradcrumbs">
+                  <li class="bradcrumbs__item">
+                      <a href="/" class="bradcrumbs__link">Главная</a>
+                  </li>
+                  <li class="bradcrumbs__item">Новости</li>
+              </ul>
+          </div>
+          <div class="head__search">
+              <form class="search" action="search.html" method="get">
+                  <input type="search" value=""  class="search__input">
+                  <button type="submit" class="search__button">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                          <path d="M15.875 13.4423L12.3417 9.8641C12.9167 8.86019 13.2167 7.74382 13.2167 6.61911C13.2167 2.97006 10.25 0 6.60833 0C2.96667 0 0 2.97006 0 6.61911C0 10.2682 2.96667 13.2382 6.60833 13.2382C7.77083 13.2382 8.92083 12.9175 9.94583 12.3051L13.4625 15.8709C13.5417 15.95 13.6542 16 13.7667 16C13.8792 16 13.9917 15.9542 14.0708 15.8709L15.875 14.0463C16.0417 13.8756 16.0417 13.609 15.875 13.4423ZM6.60833 2.5785C8.83333 2.5785 10.6417 4.39052 10.6417 6.61911C10.6417 8.8477 8.83333 10.6597 6.60833 10.6597C4.38333 10.6597 2.575 8.8477 2.575 6.61911C2.575 4.39052 4.38333 2.5785 6.60833 2.5785Z" fill="#A8A8A8" fill-opacity="0.3"/>
+                        </svg>
+                  </button>
+              </form>
+          </div>
+      </div>
+  </div>
+  <section class="wrapper">
+      <div class="news">
+          <div class="news__left">
+              <img src="{{news.featured_media.image.url}}" alt="{{news.featured_media.image.alt}}">
+          </div>
+          <div class="news__right">
+              <div class="news__date">12 августа 2023</div>
+              <div class="news__title">{{news.title}}</div>
+              <div class="news__text">{{ news.content|safe}}</div>
+          </div>
+      </div>
+      
+  </section>
+  <section class="wrapper event">
+      <h4 class="event__header">Ближайшие события</h4>
+      <div class="event__list">
+        {% for news in page_obj.object_list %}
+        <div class="event-card">
+            <div class="event-card__left">
+                <img src="{{news.featured_media.thumbnail.url}}" alt="{{news.featured_media.alt_txt}}">
+            </div>
+            <div class="event-card__right">
+                <div class="event-card__date">12 августа 2023</div>
+                <div class="event-card__title">{{news.title}}</div>
+                <div class="event-card__text">{{news.content|safe|truncatechars:160}}</div>
+                <div class="event-card__link"><a href="{% url 'news:detail' news.slug %}">Читать дальше</a></div>
+            </div>
+        </div>
+        {% endfor %}
+      </div>
+      <ul class="pagination">
+        {% if page_obj.has_previous %}
+        <li class="page-item">
+            <a class="page-link" href="?page={{ page_obj.previous_page_number }}">Предыдущий</a>
+        </li>
+        {% else %}
+        <li class="page-item disabled">
+            <a class="page-link" href="#">Предыдущий</a>
+        </li>
+        {%endif%}
 
-    <div class="container mt-5 mb-5">
-        <img src="{{news.featured_media.image.url}}"
-        {{ news.content|safe}}
-    </div>      
+        {% for page_number in paginator_range %}
+        {% if page_number == page_obj.paginator.ELLIPSIS %}
+        <li class="page-item">
+            {{page_number}}
+        </li>
+        {% else %}
+        <li class="page-item {% if page_number == page_obj.number %}active{% endif %}">
+            <a class="page-link" href="?page={{ page_number }}">{{page_number}}
+            </a>
+        </li>
+        {% endif %}
+        {% endfor %}
 
-        <ul class="pagination">
-            {% if page_obj.has_previous %}
-            <li class="page-item">
-                <a class="page-link" href="?page={{ page_obj.previous_page_number }}">Предыдущий</a>
-            </li>
-            {% else %}
-            <li class="page-item disabled">
-                <a class="page-link" href="#">Предыдущий</a>
-            </li>
-            {%endif%}
+        {% if page_obj.has_next %}
+        <li class="page-item">
+            <a class="page-link" href="?page={{ page_obj.next_page_number }}">Следующий</a>
+        </li>
+        {% else %}
+        <li class="page-item">
+            <a class="page-link disabled" href="#">Следующий</a>
+        </li>
+        {% endif %}
+      </ul>
+    {% comment %} {% include  'app_news/paginator_block.html' %} {% endcomment %}
+</div>
+  </section>
 
-            {% for page_number in paginator_range %}
-            {% if page_number == page_obj.paginator.ELLIPSIS %}
-            <li class="page-item">
-                {{page_number}}
-            </li>
-            {% else %}
-            <li class="page-item {% if page_number == page_obj.number %}active{% endif %}">
-                <a class="page-link" href="?page={{ page_number }}">{{page_number}}
-                </a>
-            </li>
-            {% endif %}
-            {% endfor %}
-
-            {% if page_obj.has_next %}
-            <li class="page-item">
-                <a class="page-link" href="?page={{ page_obj.next_page_number }}">Следующий</a>
-            </li>
-            {% else %}
-            <li class="page-item">
-                <a class="page-link disabled" href="#">Следующий</a>
-            </li>
-            {% endif %}
-          </ul>
-        {% comment %} {% include  'app_news/paginator_block.html' %} {% endcomment %}
-    </div>
+</main>
 {% endblock %}
 
-{% block bradcrumbs %}
-<nav aria-label="breadcrumb">
-  <ol class="breadcrumb" itemscope itemtype="https://schema.org/BreadcrumbList">
-    <li class="breadcrumb-item" itemprop='itemListElement' itemscope itemtype='https://schema.org/ListItem'>
-      <a href="{% url 'home:index' %}" itemprop="item">
-        <span itemprop="name">Главная</span>
-      </a>
-    </li>
-    <li class="breadcrumb-item" itemprop='itemListElement' itemscope itemtype='https://schema.org/ListItem'>
-      <a href="{% url 'news:list'%}" itemprop="item">
-        <span itemprop="name">Новости</span>
-      </a>
-    </li>
-    <li class="breadcrumb-item" itemprop='itemListElement' itemscope itemtype='https://schema.org/ListItem'>
-        <span itemprop="name">{{object.title|truncatechars:36}}</span>
-        
-    </li>
-  </ol>
-</nav>
-{% endblock %}

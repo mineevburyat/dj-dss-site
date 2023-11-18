@@ -3,7 +3,7 @@ from django.views.generic import ListView, DetailView, DeleteView
 from .models import News
 
 class NewsListView(ListView):
-    template_name = 'app_news/index.html'
+    template_name = 'app_news/index_new.html'
     paginate_by = 10
     model = News
     context_object_name = 'news_list'

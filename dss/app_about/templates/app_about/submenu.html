@@ -1,0 +1,10 @@
+<div class="about__menu">
+    <ul class="menu">
+    {% load menubuilder %}{% menu sidebar %}
+    {% for item in menuitems %}
+        <li class="menu__item {%if item.current %}menu__item_active{%endif%}">
+            <a href="{{item.url}}" disabled>{{item.title}}</a>
+        </li>
+    {%endfor%}
+    </ul>
+</div>
