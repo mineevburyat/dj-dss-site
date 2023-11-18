@@ -1,12 +1,12 @@
 
 import requests
-from app_news.models import News
+from app_news.models import News, MAX_EXCERPT
 from app_mediafiles.models import Image as ImageMedia
 from django.utils.dateparse import parse_datetime
 from django.utils.timezone import make_aware, localtime
 from django.core.management.base import BaseCommand
 import time
-
+import re
 from app_news.models import MAX_TITLE, MAX_CONTENT, MAX_EXCERPT
 
 class Command(BaseCommand):
@@ -53,11 +53,18 @@ class Command(BaseCommand):
                 title = data.get('title').get('rendered')
                 content = data.get('content').get('rendered')
                 date_public = make_aware(parse_datetime(data.get('date_gmt')))
+                date_acivation = date_public
                 if not (slug or title or content or date_public):
                     print(id, title, slug, content, 'not import!')
                     print()
                     continue
                 excerpt = data.get('excerpt').get('rendered')
+                regexp = re.compile(r'\<[^>]*\>')
+                if excerpt is None or excerpt == '':
+                    excerpt = re.sub(regexp, '', content[:MAX_EXCERPT])
+                else:
+                    excerpt = re.sub(regexp, '', excerpt)
+                    
                 media_id = data.get('featured_media')
                 if media_id and type(media_id) == int:
                     featured_media = int(media_id) + ID_PREFIX
@@ -73,6 +80,7 @@ class Command(BaseCommand):
                     slug=slug[:MAX_TITLE],
                     content=content[:MAX_CONTENT],
                     date_public=date_public,
+                    date_acivation=date_acivation,
                     excerpt=excerpt[:MAX_EXCERPT],
                     featured_media=img,
                 )
