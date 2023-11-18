@@ -13,12 +13,13 @@ import os
 from app_mediafiles.models import Image
 from app_tags.models import Tag
 from datetime import datetime
+from django.utils import timezone
 # Create your models here.
 
 
-MAX_TITLE = 110
+MAX_TITLE = 210
 MAX_EXCERPT = 550
-MAX_CONTENT = 2500
+MAX_CONTENT = 3500
 
 
 class News(models.Model):
@@ -31,9 +32,22 @@ class News(models.Model):
         db_index=True,
         unique=True
     )
+    compose_date = models.DateTimeField(
+        'дата добавления',
+        auto_now_add=timezone.now)
     date_public = models.DateTimeField(
         'дата публикации',
-        auto_now_add=True
+        default=datetime.now,
+        null=True
+    )
+    date_activation = models.DateTimeField(
+        'дата активации',
+        default=datetime.now,
+    )
+    valid_until_date = models.DateTimeField(
+        'действует до',
+        blank=True,
+        null=True
     )
     title = models.CharField(
         'заголовок',
@@ -65,15 +79,14 @@ class News(models.Model):
         'на первую полосу',
         default=False
     )
-    valid_until_date = models.DateTimeField(
-        'действует до',
-        blank=True,
-        null=True
-    )
-    date_activation = models.DateTimeField(
-        'дата активации',
-        default=datetime.now,
-    )
+    level_importance = models.CharField(
+        max_length=8,
+        choices=[
+            ('danger', 'важный'),
+            ('warning', 'предупреждение'),
+            ('info', 'информация'),],
+        default='info')
+    
     
     def get_thumbnail(self):
         if self.featured_media:
