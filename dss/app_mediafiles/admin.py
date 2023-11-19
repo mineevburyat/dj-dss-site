@@ -4,7 +4,7 @@ from .models import Icon, Tag, Image
 # Register your models here.
     
 @admin.register(Icon)
-class ObjectAdmin(admin.ModelAdmin):
+class IconAdmin(admin.ModelAdmin):
     list_display = ('name', 'icon_html_img', 'img_size')
     readonly_fields = ('img_size', 'icon_html_img')
     save_on_top = True
@@ -35,17 +35,28 @@ class ObjectAdmin(admin.ModelAdmin):
 @admin.register(Image)
 class AdminImageMedia(admin.ModelAdmin):
     list_display = ('id', 'title', 'slug', 'get_img_size', 
-                    'get_fsize', 'is_caption', 'thumbnail_html', 'tags_list')
-    fields = (
-        'photo_img',
-        ('title', 'slug'),
-        ('caption', 'alt_txt'),
-        'image',
-        'tags',
-        ('date_public', 'img_file_size', 
-         'get_img_size', 'img_mode', 'media_type'),
-        ('get_large_html', 'get_medium_html', 'get_small_html')
-        
+                    'get_fsize', 'thumbnail_html', 'tags_list')
+    fieldsets = (
+        ('Изображение', {
+            'fields': (
+                'photo_img',
+                ('date_public', 'img_file_size',
+                 'get_img_size', 'img_mode', 'media_type'),
+                'image',
+                ('get_large_html', 'get_medium_html', 'get_small_html')
+            )
+        }),
+        ('Описание', {
+            'fields': (
+                ('title', 'slug', 'alt_txt'),
+                'caption'
+            )
+        }),
+        ('метки', {
+            'fields': (
+                'tags',
+            )
+        })
     )
     readonly_fields = ('get_img_size', 'is_caption',
                        'date_public', 'img_file_size', 'img_mode',

@@ -33,10 +33,10 @@ MAX_LEN_FILENAME = 70
 MAX_TITLE = 90
 MAX_CAPTION = 260
 miniature = {
-        'large': WIDTH_LARGE,
-        'medium': WIDTH_MEDIUM,
-        'thumbnail': WIDTH_THUMBNAIL
-    }
+    'large': WIDTH_LARGE,
+    'medium': WIDTH_MEDIUM,
+    'thumbnail': WIDTH_THUMBNAIL
+}
 
 
 def path_icon_file(instance, filename):
@@ -45,11 +45,13 @@ def path_icon_file(instance, filename):
     path = Path(IMAGE_FOLDER_ICON, filename)
     return path
 
+
 def path_photo_file(instance, filename):
     extentions = Path(filename).suffix[1:]
     filename = f"{uuid.uuid4()}.{extentions}"
     path = Path(IMAGE_FOLDER_PHOTO, filename)
     return path
+
 
 def filename_photo_file(instance, filename):
     extentions = Path(filename).suffix[1:]
@@ -58,6 +60,7 @@ def filename_photo_file(instance, filename):
         filename = filename[:MAX_LEN_FILENAME]
     path = Path(IMAGE_FOLDER_PHOTO, f"{filename}.{extentions}")
     return path
+
 
 class Icon(models.Model):
     """
@@ -73,7 +76,7 @@ class Icon(models.Model):
     created = models.DateTimeField('дата создания', auto_now_add=True)
     width = models.IntegerField('ширина', blank=True, null=True)
     height = models.IntegerField('высота', blank=True, null=True)
-    
+
     def save(self, *args, **kwargs):
         """После сохранения получить размеры иконки. Так не надо делать.
         Альтернатива - сигналы pre_save и post_save"""
@@ -81,26 +84,26 @@ class Icon(models.Model):
         # image = PImage.open(car.photo)
         im = PImage.open(Path(settings.MEDIA_ROOT, self.image.name))
         self.width, self.height = im.size
-        super(Icon,self).save(*args, **kwargs)
-    
+        super(Icon, self).save(*args, **kwargs)
+
     def get_icon_url(self):
         if not self.image:
             return '/media/emptyicon.png'
         return self.image.url
-    
+
     def icon_html_img(self):
         return mark_safe(f'<img src="{self.get_icon_url()}" alt="{self.name}" style="width:80px">')
     icon_html_img.short_description = 'Иконка'
-    
+
     def __str__(self):
         return f'{self.name} (иконка)'
-    
+
     def img_size(self):
         """Image size."""
         return "%s x %s" % (self.width, self.height)
     img_size.short_description = 'размер'
-    
-    
+
+
 # class Tag(models.Model):
 #     class Meta:
 #         verbose_name = 'Метка'
@@ -108,8 +111,8 @@ class Icon(models.Model):
 #     tag = models.CharField(max_length=50)
 #     def __str__(self):
 #         return self.tag
-    
-    
+
+
 class Image(models.Model):
     '''\
         Медиабиблиотека изображений, где каждый элемент имеет описание, имя, размер оригинала и миниатюры'''
@@ -123,12 +126,12 @@ class Image(models.Model):
         max_length=MAX_TITLE,
         db_index=True,
         unique=True
-        )
+    )
     alt_txt = models.CharField(
         'альтернативная подпись',
         max_length=MAX_TITLE,
         default='fill necessarily! ')
-    date_public = models.DateTimeField('дата создания', auto_now_add=True)
+    date_public = models.DateTimeField('дата загрузки', auto_now_add=True)
     img_file_size = models.IntegerField(
         'объем файла',
         blank=True,
@@ -162,23 +165,22 @@ class Image(models.Model):
         null=True,
         upload_to=Path(IMAGE_FOLDER_PHOTO, LARGE))
     tags = models.ManyToManyField(Tag, blank=True)
-    
-    
+
     # def get_path_forigin(self):
     #     return self.image.name
-    
+
     # def get_path_fmedium(self):
     #     if self.medium:
     #         return self.medium.name
-    
+
     # def get_path_fsmall(self):
     #     if self.thumbnail:
     #         return self.thumbnail.name
-        
+
     def get_url_middle_img(self):
         if self.thumbnail:
             return self.image.url
-    
+
     def photo_img(self, max_width=400):
         if not self.image:
             return '/media/emptyhumbnail.png'
@@ -188,8 +190,8 @@ class Image(models.Model):
             return mark_safe(f'<a href="{self.image.url}"><img border="0" alt="" src="{self.medium.url}" width="{max_width}" /></a>')
         else:
             return mark_safe(f'<a href="{self.image.url}"><img border="0" alt="" src="{self.large.url}" width="{max_width}" /></a>')
-    photo_img.short_description = ''
-        
+    photo_img.short_description = 'картинка под размер'
+
     def thumbnail_html(self):
         if self.thumbnail:
             return mark_safe(f'<a href="{self.image.url}"><img border="0" alt="" src="{self.thumbnail.url}" height="50" /></a>')
@@ -199,10 +201,10 @@ class Image(models.Model):
             return mark_safe(f'<a href="{self.image.url}"><img border="0" alt="" src="{self.image.url}" height="50" /></a>')
     thumbnail_html.allow_tags = True
     thumbnail_html.short_description = 'миниатюра'
-    
+
     def __str__(self):
         return f"{self.title} ({self.pk})"
-    
+
     def get_img_size(self):
         return f"{self.width}x{self.height} px"
     get_img_size.short_description = 'размер картинки'
@@ -210,30 +212,30 @@ class Image(models.Model):
     def tags_list(self):
         lst = [x[1] for x in self.tags.values_list()]
         return mark_safe('<br>'.join(lst))
-    tags.short_description = 'тэги'
-    
+    tags_list.short_description = 'список тэгов'
+
     def is_caption(self):
         return bool(self.caption)
     is_caption.boolean = True
     is_caption.short_description = 'есть подпись'
-    
+
     def get_absolute_url(self):
         return reverse("app_mediafiles:detailimg", kwargs={"slug": self.slug})
-    
+
     def get_next_slug(self):
-        next = Image.objects.filter(pk__gt = self.pk).order_by('pk').first()
+        next = Image.objects.filter(pk__gt=self.pk).order_by('pk').first()
         if next:
             return next.slug
-    
+
     def get_prev_slug(self):
-        prev = Image.objects.filter(pk__lt = self.pk).order_by('-pk').first()
+        prev = Image.objects.filter(pk__lt=self.pk).order_by('-pk').first()
         if prev:
             return prev.slug
-        
+
     def get_fsize(self):
         return filesize(self.img_file_size)
     get_fsize.short_description = 'размер файла'
-    
+
     def get_large_html(self):
         if os.path.exists(self.large.path):
             img = PImage.open(self.large)
@@ -243,7 +245,7 @@ class Image(models.Model):
             img.save(fimg, img.format)
             fsize = filesize(len(fimg.getvalue()))
             return mark_safe(f"<a href={self.large.url}>{name} ({width}x{height}) {fsize}</a>")
-        
+
     def get_medium_html(self):
         if os.path.exists(self.medium.path):
             img = PImage.open(self.medium)
@@ -253,7 +255,7 @@ class Image(models.Model):
             img.save(fimg, img.format)
             fsize = filesize(len(fimg.getvalue()))
             return mark_safe(f"<a href={self.medium.url}>{name} ({width}x{height}) {fsize}</a>")
-    
+
     def get_small_html(self):
         if os.path.exists(self.thumbnail.path):
             img = PImage.open(self.thumbnail)
@@ -265,8 +267,6 @@ class Image(models.Model):
             return mark_safe(f"<a href={self.thumbnail.url}>{name} ({width}x{height})  {fsize}</a>")
 
 
-
-        
 @receiver(post_save, sender=Image)
 def fill_field_image(sender, instance, created, **kwargs):
     '''после сохранения экземпляра с оригинальной фотографией, узнать его размеры и сгенерировать миниатюры с различными размерами'''
@@ -299,15 +299,16 @@ def fill_field_image(sender, instance, created, **kwargs):
                 img_resize.save(file_bufer, img_format)
                 file_bufer.seek(0)
                 inst_attr.save(
-                        newfilename,
-                        ContentFile(file_bufer.read()),
-                        save=True)
+                    newfilename,
+                    ContentFile(file_bufer.read()),
+                    save=True)
                 file_bufer.close()
                 inst_attr.close()
                 print(field, 'success')
         instance.save()
         img.close()
-        
+
+
 @receiver(post_delete, sender=Image)
 def del_field_image(sender, instance,  **kwargs):
     '''после удаления экземпляра с оригинальной фотографией, удалить связанный файл и его миниатюры'''
@@ -319,4 +320,3 @@ def del_field_image(sender, instance,  **kwargs):
         os.remove(instance.medium.path)
     if instance.thumbnail.name != '' and os.path.exists(instance.thumbnail.path):
         os.remove(instance.thumbnail.path)
-    
