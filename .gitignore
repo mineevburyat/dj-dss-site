@@ -6,3 +6,4 @@ db.sqlite3
 .env
 debug.log
 error.log
+media
