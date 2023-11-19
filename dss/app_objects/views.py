@@ -48,7 +48,7 @@ class DetailObjectView(TitleMixin, ObjectsMixin, DetailView):
         # context['today'] = (now, name_of_month(now.month), name_of_week(now.weekday()))
         # context['events'] = {25:"особое событие 1", 30:"особое событие 2"}
         context['objects_news'] = objects_news
-        context['services'] = self.object.services.filter(object=self.object.pk).order_by('order')
+        # context['services'] = self.object.services.filter(object=self.object.pk).order_by('order')
         return context
 
 class ListObjectsView(TitleMixin, ListView):

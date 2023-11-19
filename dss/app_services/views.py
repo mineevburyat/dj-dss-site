@@ -33,7 +33,7 @@ class ListServiceView(ListView):
         typesrvc = self.kwargs.get('typesrvc')
         # param_objcts = self.request.GET.get('objects')
         typeservice = get_object_or_404(TypeService, slug=typesrvc)
-        services = Service.objects.filter(category=category, typeservice=typeservice.id).order_by('object', '-order')
+        services = Service.objects.filter(category=category, typeservice=typeservice.id).order_by('-order')
         # else:
         #     param_objcts = param_objcts.split(',')
         #     objs = [i.pk for i in Object.objects.filter(slug__in=param_objcts)]
@@ -67,8 +67,8 @@ class ListServiceView(ListView):
         context['categoryname'] = txt_category
         services = self.get_queryset()
         areas = set()
-        for service in services:
-            areas.add(service.sportarea)
+        # for service in services:
+        #     areas.add(service.sportarea)
         # context['obj_filter'] = objs
         # print(objs)
         area_servs = {}
