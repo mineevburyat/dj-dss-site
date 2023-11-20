@@ -62,6 +62,7 @@ class AdminImageMedia(admin.ModelAdmin):
                        'date_public', 'img_file_size', 'img_mode',
                        'media_type', 'get_fsize', 'get_large_html', 'get_medium_html',
                        'get_small_html', 'tags_list', 'photo_img')
+    date_hierarchy = "date_public"
     ordering = ('-img_file_size',)
     list_filter = ('tags',)
     filter_horizontal = ('tags',)
