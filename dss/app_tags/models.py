@@ -6,6 +6,9 @@ class Tag(models.Model):
         verbose_name = 'Метка'
         verbose_name_plural = 'Метки'
         
-    tag = models.CharField(max_length=50)
+    tag = models.CharField(
+        'метка',
+        max_length=50)
+    
     def __str__(self):
         return self.tag

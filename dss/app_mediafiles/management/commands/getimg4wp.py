@@ -12,6 +12,10 @@ from django.core.files.images import ImageFile
 import json
 import time
 from app_mediafiles.models import MAX_TITLE, MAX_CAPTION, MAX_LEN_FILENAME
+from app_tags.models import Tag
+
+Tag.objects.get_or_create(tag='прочее')
+tags = Tag.objects.filter(tag='прочее')
 
 class Command(BaseCommand):
     help = 'Загружает картинки из WordPress'
@@ -42,7 +46,7 @@ class Command(BaseCommand):
                 break
             
             for data in datas:
-                id = data.get('id') + 10000
+                id = data.get('id')
                 exist_flag = False
                 images = ImageMedia.objects.all()
                 for item in images:
@@ -107,7 +111,7 @@ class Command(BaseCommand):
                 #     f"",
                 #     ContentFile(resp.content, f"{uuid.uuid4().hex}.{exten}")
                 # )
-                image.save()
+                image.tags.add(*tags)
                 print('success!')
                 
             page += 1

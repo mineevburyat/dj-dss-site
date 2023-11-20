@@ -8,6 +8,8 @@ from django.core.management.base import BaseCommand
 import time
 import re
 from app_news.models import MAX_TITLE, MAX_CONTENT, MAX_EXCERPT
+from django.core.exceptions import ObjectDoesNotExist
+from app_tags.models import Tag
 
 class Command(BaseCommand):
     help = 'Загружает новости из WordPress'
@@ -31,46 +33,53 @@ class Command(BaseCommand):
                 datas = media.json()
             else:
                 raise TimeoutError
-            print(page, media.headers.get('X-WP-TotalPages'))
+            self.stdout.write(f"{page} из {media.headers.get('X-WP-TotalPages')}")
             if page >= int(media.headers.get('X-WP-TotalPages')):
                 the_end = True
             if type(datas) == dict and datas.get("code"):
-                print(datas.get("code"), datas.get("message"))
+                self.stdout.write(f"{datas.get('code')} {datas.get('message')}")
                 break
             
             for data in datas:
-                id = data.get('id') + ID_PREFIX
-                exist_flag = False
-                news = News.objects.all()
-                for item in news:
-                    if item.pk == id:
-                        exist_flag = True
-                        break
-                if exist_flag:
+                id = data.get('id')
+                # exist_flag = False
+                try:
+                    news = News.objects.get(id=id)
                     continue
-                print(id, ':', end=' ')
+                except ObjectDoesNotExist:
+                    pass
+                # news = News.objects.all()
+                # for item in news:
+                #     if item.pk == id:
+                #         exist_flag = True
+                #         break
+                # if exist_flag:
+                #     continue
                 slug = data.get('slug')
                 title = data.get('title').get('rendered')
                 content = data.get('content').get('rendered')
                 date_public = make_aware(parse_datetime(data.get('date_gmt')))
                 date_acivation = date_public
+                # проверить наличие полей если их нет пропустить добавление в базу
                 if not (slug or title or content or date_public):
-                    print(id, title, slug, content, 'not import!')
-                    print()
+                    self.stderr.write(f"{id}, {title}, {slug}, {content} - not import!")
                     continue
+                # отрывок выудить либо из short_desc либо из exerpt либо первые символы контента без тэо
                 excerpt = data.get('excerpt').get('rendered')
+                short_desc = data.get('short_desc')
+                excerpt = short_desc or excerpt
                 regexp = re.compile(r'\<[^>]*\>')
                 if excerpt is None or excerpt == '':
                     excerpt = re.sub(regexp, '', content[:MAX_EXCERPT])
                 else:
                     excerpt = re.sub(regexp, '', excerpt)
-                    
+                # получаем привязанную к новости картинку
                 media_id = data.get('featured_media')
                 if media_id and type(media_id) == int:
-                    featured_media = int(media_id) + ID_PREFIX
+                    featured_media = int(media_id)
                 else:
                     featured_media = None
-                if featured_media:
+                if featured_media != 0:
                     img = ImageMedia.objects.get(id=featured_media)
                 else:
                     img = None
@@ -84,6 +93,9 @@ class Command(BaseCommand):
                     excerpt=excerpt[:MAX_EXCERPT],
                     featured_media=img,
                 )
-                print('success!')
+                tag_new, created = Tag.objects.get_or_create(tag='новость')
+                news.tags.add(tag_new)
+                news.save()
+                self.stdout.write(f"{id} : import success!")
             page += 1
                 
