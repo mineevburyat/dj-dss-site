@@ -14,6 +14,7 @@ from app_mediafiles.models import Image
 from app_tags.models import Tag
 from datetime import datetime
 from django.utils import timezone
+from ckeditor_uploader.fields import RichTextUploadingField
 # Create your models here.
 
 
@@ -58,7 +59,7 @@ class News(models.Model):
         blank=True,
         null=True
     )
-    content = models.TextField(
+    content = RichTextUploadingField(
         'содержание',
         max_length=MAX_CONTENT,
     )
@@ -76,7 +77,7 @@ class News(models.Model):
         # related_name='tags'
         )
     important = models.BooleanField(
-        'на первую полосу',
+        'важная',
         default=False
     )
     level_importance = models.CharField(
@@ -98,4 +99,6 @@ class News(models.Model):
     tags.short_description = 'тэги'
     
     def __str__(self):
-        return self.title
+        start_date = self.date_activation.strftime('%d.%m.%Y %H:%M')
+        end_date = self.valid_until_date.strftime('%d.%m.%Y %H:%M')
+        return f"{self.title} ({start_date} - {end_date})"

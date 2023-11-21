@@ -1,540 +1,277 @@
 [
-    {
-        "model": "app_mediafiles.icon",
-        "pk": 1,
-        "fields": {
-            "name": "иконка бассейн",
-            "image": "imagelibrary/icon/ee1d9b0e-9cd4-42d9-95fd-80fc01ab1c95.png",
-            "created": "2023-05-19T15:30:48.694Z",
-            "width": 60,
-            "height": 60
-        }
-    },
-    {
-        "model": "app_mediafiles.icon",
-        "pk": 2,
-        "fields": {
-            "name": "иконка штанга (фитнес)",
-            "image": "imagelibrary/icon/21b0dfde-6417-46e6-b66f-ab722f089ddc.png",
-            "created": "2023-05-19T15:32:31.146Z",
-            "width": 60,
-            "height": 60
-        }
-    },
-    {
-        "model": "app_mediafiles.icon",
-        "pk": 3,
-        "fields": {
-            "name": "иконка баскетбол",
-            "image": "imagelibrary/icon/f3ee9692-b85e-4cae-b0a4-600035e363e3.png",
-            "created": "2023-05-19T15:33:09.084Z",
-            "width": 60,
-            "height": 60
-        }
-    },
-    {
-        "model": "app_mediafiles.icon",
-        "pk": 4,
-        "fields": {
-            "name": "иконка кубок",
-            "image": "imagelibrary/icon/0a06af6c-bae5-47f7-92e8-0a9bcdfa41e2.png",
-            "created": "2023-05-19T16:14:57.340Z",
-            "width": 61,
-            "height": 60
-        }
-    },
-    {
-        "model": "app_mediafiles.icon",
-        "pk": 5,
-        "fields": {
-            "name": "иконка футбол",
-            "image": "imagelibrary/icon/6646e8c4-2696-4999-afbc-094fc7640cec.png",
-            "created": "2023-05-19T16:15:27.661Z",
-            "width": 60,
-            "height": 60
-        }
-    },
-    {
-        "model": "app_mediafiles.icon",
-        "pk": 6,
-        "fields": {
-            "name": "иконка лукодром",
-            "image": "imagelibrary/icon/da32c290-edd0-4a51-8497-f61b1095b893.png",
-            "created": "2023-05-19T16:15:56.252Z",
-            "width": 61,
-            "height": 60
-        }
-    },
-    {
-        "model": "app_mediafiles.icon",
-        "pk": 7,
-        "fields": {
-            "name": "иконка тир",
-            "image": "imagelibrary/icon/92e92341-ca67-43a1-bf86-0a8eee3ebb73.png",
-            "created": "2023-05-19T16:16:22.705Z",
-            "width": 61,
-            "height": 60
-        }
-    },
-    {
-        "model": "app_mediafiles.icon",
-        "pk": 8,
-        "fields": {
-            "name": "иконка настольный тенис",
-            "image": "imagelibrary/icon/a08c002e-e7e3-43a3-bad8-bf27b85f7864.png",
-            "created": "2023-05-19T16:16:41.543Z",
-            "width": 61,
-            "height": 60
-        }
-    },
-    {
-        "model": "app_mediafiles.icon",
-        "pk": 9,
-        "fields": {
-            "name": "иконка коньки",
-            "image": "imagelibrary/icon/22b14046-cb92-4bce-a333-48f270f9add8.png",
-            "created": "2023-05-19T16:17:03.027Z",
-            "width": 61,
-            "height": 60
-        }
-    },
-    {
-        "model": "app_mediafiles.icon",
-        "pk": 11,
-        "fields": {
-            "name": "иконка бокс",
-            "image": "imagelibrary/icon/2278af00-92a4-4c03-9ca4-f2fb43523c97.png",
-            "created": "2023-05-19T16:18:05.522Z",
-            "width": 61,
-            "height": 60
-        }
-    },
-    {
-        "model": "app_mediafiles.icon",
-        "pk": 12,
-        "fields": {
-            "name": "иконка легкая атлетика",
-            "image": "imagelibrary/icon/12627ac1-0f5a-490f-90d0-21203e7e4769.png",
-            "created": "2023-05-19T16:18:20.066Z",
-            "width": 61,
-            "height": 60
-        }
-    },
-    {
-        "model": "app_mediafiles.icon",
-        "pk": 13,
-        "fields": {
-            "name": "иконка конный спорт",
-            "image": "imagelibrary/icon/b03fe64e-2a83-4816-9210-f74adcf9c966.png",
-            "created": "2023-05-19T16:18:42.642Z",
-            "width": 61,
-            "height": 60
-        }
-    },
-    {
-        "model": "app_mediafiles.icon",
-        "pk": 14,
-        "fields": {
-            "name": "иконка пустая",
-            "image": "imagelibrary/icon/d7b81556-19ed-4500-a702-1a78127a4949.jpg",
-            "created": "2023-05-20T09:45:18.453Z",
-            "width": 60,
-            "height": 41
-        }
-    },
-    {
-        "model": "app_mediafiles.icon",
-        "pk": 15,
-        "fields": {
-            "name": "иконка сауна",
-            "image": "imagelibrary/icon/c390aba9-3e5a-4c78-bc3a-6f914ea347cb.png",
-            "created": "2023-05-22T06:26:36.398Z",
-            "width": 60,
-            "height": 60
-        }
-    },
-    {
-        "model": "app_mediafiles.icon",
-        "pk": 16,
-        "fields": {
-            "name": "иконка SPA",
-            "image": "imagelibrary/icon/3a8748da-997c-4149-b124-c8756c272d15.png",
-            "created": "2023-05-22T06:36:52.341Z",
-            "width": 60,
-            "height": 60
-        }
-    },
-    {
-        "model": "app_mediafiles.icon",
-        "pk": 17,
-        "fields": {
-            "name": "иконка гостиница",
-            "image": "imagelibrary/icon/7b3f2889-89c7-4fcc-b4f7-932a773f76da.png",
-            "created": "2023-05-22T06:37:14.496Z",
-            "width": 60,
-            "height": 60
-        }
-    },
-    {
-        "model": "app_mediafiles.icon",
-        "pk": 18,
-        "fields": {
-            "name": "иконка календарь",
-            "image": "imagelibrary/icon/abfe0b5f-1492-4b9c-989b-7134e6a19839.png",
-            "created": "2023-05-22T06:48:32.434Z",
-            "width": 60,
-            "height": 60
-        }
-    },
-    {
-        "model": "app_mediafiles.icon",
-        "pk": 19,
-        "fields": {
-            "name": "иконка медиабиблиотека",
-            "image": "imagelibrary/icon/375bde65-60a3-4c08-a2ff-e83e3f4aace5.png",
-            "created": "2023-05-22T06:55:29.138Z",
-            "width": 60,
-            "height": 60
-        }
-    },
-    {
-        "model": "app_mediafiles.icon",
-        "pk": 20,
-        "fields": {
-            "name": "иконка документы",
-            "image": "imagelibrary/icon/ab1982a1-e62c-45e4-a914-df07dae9edd2.png",
-            "created": "2023-05-22T06:55:58.898Z",
-            "width": 60,
-            "height": 60
-        }
-    },
-    {
-        "model": "app_mediafiles.icon",
-        "pk": 21,
-        "fields": {
-            "name": "иконка торги",
-            "image": "imagelibrary/icon/200989f2-f3c6-4412-913c-9d69e8da5299.png",
-            "created": "2023-05-22T06:56:28.608Z",
-            "width": 61,
-            "height": 60
-        }
-    },
-    {
-        "model": "app_mediafiles.icon",
-        "pk": 22,
-        "fields": {
-            "name": "иконка адресная книга",
-            "image": "imagelibrary/icon/f1bda879-b9bd-4bf7-a876-a55ad851212f.png",
-            "created": "2023-05-22T06:56:41.586Z",
-            "width": 61,
-            "height": 60
-        }
-    },
-    {
-        "model": "app_mediafiles.icon",
-        "pk": 23,
-        "fields": {
-            "name": "иконка парнерам",
-            "image": "imagelibrary/icon/3b181376-be3e-4d0e-8b27-b779ea3bdcd8.png",
-            "created": "2023-05-22T06:57:07.559Z",
-            "width": 61,
-            "height": 60
-        }
-    },
-    {
-        "model": "app_mediafiles.icon",
-        "pk": 24,
-        "fields": {
-            "name": "иконка ресурсы интернет",
-            "image": "imagelibrary/icon/993093d0-01f3-4ee3-a818-69d059059fd5.png",
-            "created": "2023-05-22T06:57:17.553Z",
-            "width": 61,
-            "height": 60
-        }
-    },
-    {
-        "model": "app_mediafiles.icon",
-        "pk": 25,
-        "fields": {
-            "name": "иконка диалог",
-            "image": "imagelibrary/icon/6f0dc6ac-66cb-4ffa-91a1-eeb526f84716.png",
-            "created": "2023-05-22T06:57:56.642Z",
-            "width": 61,
-            "height": 60
-        }
-    },
-    {
-        "model": "app_mediafiles.icon",
-        "pk": 26,
-        "fields": {
-            "name": "иконка адрес",
-            "image": "imagelibrary/icon/a664e761-437c-4ba7-8dff-d72133fcb900.png",
-            "created": "2023-05-22T06:58:17.324Z",
-            "width": 61,
-            "height": 60
-        }
-    },
-    {
-        "model": "app_mediafiles.image",
-        "pk": 1,
-        "fields": {
-            "title": "центральный стадион общий вид",
-            "caption": "центральный стадион вмещает в себя 10000 зрителей",
-            "slug": "stadion_common_views",
-            "alt_txt": "fill necessarily!",
-            "date_public": "2023-05-21T03:02:19.600Z",
-            "img_file_size": 498800,
-            "img_mode": "RGB",
-            "width": 1890,
-            "height": 1255,
-            "media_type": "JPEG",
-            "image": "imagelibrary/photo/e0bf6497-d231-4825-99c0-75a339dbd603.jpg",
-            "thumbnail": "imagelibrary/photo/thumbnail_small/s_e0bf6497-d231-4825-99c0-75a339dbd603_bvqznpr.jpg",
-            "medium": "imagelibrary/photo/thumbnail_middle/m_e0bf6497-d231-4825-99c0-75a339dbd603_GJiOaI6.jpg",
-            "large": "imagelibrary/photo/large/l_e0bf6497-d231-4825-99c0-75a339dbd603_YaLKprw.jpg",
-            "tags": []
-        }
-    },
-    {
-        "model": "app_mediafiles.image",
-        "pk": 2,
-        "fields": {
-            "title": "Мини-футбольное поле на ФСК",
-            "caption": "льадлвпвп",
-            "slug": "mini_futball_field",
-            "alt_txt": "fill necessarily!",
-            "date_public": "2023-05-21T03:34:31.008Z",
-            "img_file_size": 100876,
-            "img_mode": "RGB",
-            "width": 768,
-            "height": 512,
-            "media_type": "JPEG",
-            "image": "imagelibrary/photo/556208d4-4837-402a-b0cd-a21b65ce665a.jpg",
-            "thumbnail": "imagelibrary/photo/thumbnail_small/s_556208d4-4837-402a-b0cd-a21b65ce665a_2kHYI6D.jpg",
-            "medium": "imagelibrary/photo/thumbnail_middle/m_556208d4-4837-402a-b0cd-a21b65ce665a_QmyHHMz.jpg",
-            "large": "imagelibrary/photo/large/l_556208d4-4837-402a-b0cd-a21b65ce665a_N1GsBE0.jpg",
-            "tags": []
-        }
-    },
-    {
-        "model": "app_mediafiles.image",
-        "pk": 3,
-        "fields": {
-            "title": "бассейн справа",
-            "caption": "ываывап",
-            "slug": "swimming_rigth_view",
-            "alt_txt": "fill necessarily!",
-            "date_public": "2023-05-21T15:26:40.768Z",
-            "img_file_size": 147901,
-            "img_mode": "RGB",
-            "width": 768,
-            "height": 512,
-            "media_type": "JPEG",
-            "image": "imagelibrary/photo/053f0adf-0d52-457d-80ee-fc846c205277.jpg",
-            "thumbnail": "imagelibrary/photo/thumbnail_small/s_053f0adf-0d52-457d-80ee-fc846c205277_l9xLeAX.jpg",
-            "medium": "imagelibrary/photo/thumbnail_middle/m_053f0adf-0d52-457d-80ee-fc846c205277_Sdy7avI.jpg",
-            "large": "imagelibrary/photo/large/l_053f0adf-0d52-457d-80ee-fc846c205277_ggdZU0y.jpg",
-            "tags": []
-        }
-    },
-    {
-        "model": "app_mediafiles.image",
-        "pk": 4,
-        "fields": {
-            "title": "Специализированный зал ФСК",
-            "caption": "ывяы",
-            "slug": "fsk_spec_zal",
-            "alt_txt": "fill necessarily!",
-            "date_public": "2023-05-22T08:57:59.904Z",
-            "img_file_size": 384691,
-            "img_mode": "RGB",
-            "width": 1440,
-            "height": 1042,
-            "media_type": "JPEG",
-            "image": "imagelibrary/photo/5eb5b804-920b-4ffd-aaf7-866406faba16.jpg",
-            "thumbnail": "imagelibrary/photo/thumbnail_small/s_5eb5b804-920b-4ffd-aaf7-866406faba16.jpg",
-            "medium": "imagelibrary/photo/thumbnail_middle/m_5eb5b804-920b-4ffd-aaf7-866406faba16.jpg",
-            "large": "imagelibrary/photo/large/l_5eb5b804-920b-4ffd-aaf7-866406faba16_7DyNNRh.jpg",
-            "tags": []
-        }
-    },
-    {
-        "model": "app_mediafiles.image",
-        "pk": 5,
-        "fields": {
-            "title": "Универсальный зал ФСК",
-            "caption": "чсача",
-            "slug": "fsk_universal_zal",
-            "alt_txt": "fill necessarily!",
-            "date_public": "2023-05-22T08:58:25.741Z",
-            "img_file_size": 112082,
-            "img_mode": "RGB",
-            "width": 960,
-            "height": 720,
-            "media_type": "JPEG",
-            "image": "imagelibrary/photo/c02eafc2-12d8-496d-82a9-8e31808aee2c.jpg",
-            "thumbnail": "imagelibrary/photo/thumbnail_small/s_c02eafc2-12d8-496d-82a9-8e31808aee2c.jpg",
-            "medium": "imagelibrary/photo/thumbnail_middle/m_c02eafc2-12d8-496d-82a9-8e31808aee2c.jpg",
-            "large": "imagelibrary/photo/large/l_c02eafc2-12d8-496d-82a9-8e31808aee2c_EcS2DhN.jpg",
-            "tags": []
-        }
-    },
-    {
-        "model": "app_mediafiles.image",
-        "pk": 6,
-        "fields": {
-            "title": "ФСК общий вид",
-            "caption": "смчм",
-            "slug": "fsk_common_view",
-            "alt_txt": "fill necessarily!",
-            "date_public": "2023-05-22T08:59:08.247Z",
-            "img_file_size": 35488,
-            "img_mode": "RGB",
-            "width": 768,
-            "height": 255,
-            "media_type": "JPEG",
-            "image": "imagelibrary/photo/09009e21-2add-4e1c-92ae-dce91035a27a.jpg",
-            "thumbnail": "imagelibrary/photo/thumbnail_small/s_09009e21-2add-4e1c-92ae-dce91035a27a.jpg",
-            "medium": "imagelibrary/photo/thumbnail_middle/m_09009e21-2add-4e1c-92ae-dce91035a27a.jpg",
-            "large": "imagelibrary/photo/large/l_09009e21-2add-4e1c-92ae-dce91035a27a_2WzZ14f.jpg",
-            "tags": []
-        }
-    },
-    {
-        "model": "app_mediafiles.image",
-        "pk": 7,
-        "fields": {
-            "title": "Тренажерный зал \"Атлет\"",
-            "caption": "Фитнес и прочие ништяки",
-            "slug": "trenazherniy_zal_atlet_1",
-            "alt_txt": "fill necessarily!",
-            "date_public": "2023-05-22T09:00:47.054Z",
-            "img_file_size": 664697,
-            "img_mode": "RGB",
-            "width": 2560,
-            "height": 1280,
-            "media_type": "JPEG",
-            "image": "imagelibrary/photo/68bf5c32-7562-4489-94eb-ea247d44f893.jpg",
-            "thumbnail": "imagelibrary/photo/thumbnail_small/s_68bf5c32-7562-4489-94eb-ea247d44f893.jpg",
-            "medium": "imagelibrary/photo/thumbnail_middle/m_68bf5c32-7562-4489-94eb-ea247d44f893.jpg",
-            "large": "imagelibrary/photo/large/l_68bf5c32-7562-4489-94eb-ea247d44f893_UGj3tnS.jpg",
-            "tags": []
-        }
-    },
-    {
-        "model": "app_mediafiles.image",
-        "pk": 12,
-        "fields": {
-            "title": "тренер Зарубиню В.Ю.",
-            "caption": "Дипломированный специалист по физической культуре, спорту.\r\nКМС по пауэрлифтингу.\r\nПроводит групповые и индивидуальные занятия.",
-            "slug": "terner_zarubinyu",
-            "alt_txt": "fill necessarily!",
-            "date_public": "2023-05-23T07:56:45.301Z",
-            "img_file_size": 60767,
-            "img_mode": "RGB",
-            "width": 369,
-            "height": 521,
-            "media_type": "JPEG",
-            "image": "imagelibrary/photo/e9bea971-03ae-48d9-a268-b5b7fca243af.jpg",
-            "thumbnail": "imagelibrary/photo/thumbnail_small/s_e9bea971-03ae-48d9-a268-b5b7fca243af.jpg",
-            "medium": "imagelibrary/photo/thumbnail_middle/m_e9bea971-03ae-48d9-a268-b5b7fca243af.jpg",
-            "large": "imagelibrary/photo/large/l_e9bea971-03ae-48d9-a268-b5b7fca243af_2AsfZT3.jpg",
-            "tags": [
-                1
-            ]
-        }
-    },
-    {
-        "model": "app_mediafiles.image",
-        "pk": 13,
-        "fields": {
-            "title": "тренер Соболев И.Н.",
-            "caption": "Дипломированный специалист по физической культуре и спорту.\r\nПроводит групповые и индивидуальные занятия.",
-            "slug": "trener_sobolev",
-            "alt_txt": "fill necessarily!",
-            "date_public": "2023-05-23T08:03:28.107Z",
-            "img_file_size": 25696,
-            "img_mode": "RGB",
-            "width": 398,
-            "height": 521,
-            "media_type": "JPEG",
-            "image": "imagelibrary/photo/ec8cb5b7-b376-4a16-b504-b5e93b1a1a83.jpg",
-            "thumbnail": "imagelibrary/photo/thumbnail_small/s_ec8cb5b7-b376-4a16-b504-b5e93b1a1a83.jpg",
-            "medium": "imagelibrary/photo/thumbnail_middle/m_ec8cb5b7-b376-4a16-b504-b5e93b1a1a83.jpg",
-            "large": "imagelibrary/photo/large/l_ec8cb5b7-b376-4a16-b504-b5e93b1a1a83_y0KZwB7.jpg",
-            "tags": [
-                1
-            ]
-        }
-    },
-    {
-        "model": "app_mediafiles.image",
-        "pk": 14,
-        "fields": {
-            "title": "тренер Казаненко А.Ю.",
-            "caption": "Персональный тренер, общий стаж тренировок более 8 лет.",
-            "slug": "trener_kazachenko",
-            "alt_txt": "fill necessarily!",
-            "date_public": "2023-05-23T08:08:47.991Z",
-            "img_file_size": 32289,
-            "img_mode": "RGB",
-            "width": 459,
-            "height": 521,
-            "media_type": "JPEG",
-            "image": "imagelibrary/photo/ae5f5385-aae4-4a23-963a-96e0bac23a2c.jpg",
-            "thumbnail": "imagelibrary/photo/thumbnail_small/s_ae5f5385-aae4-4a23-963a-96e0bac23a2c.jpg",
-            "medium": "imagelibrary/photo/thumbnail_middle/m_ae5f5385-aae4-4a23-963a-96e0bac23a2c.jpg",
-            "large": "imagelibrary/photo/large/l_ae5f5385-aae4-4a23-963a-96e0bac23a2c_fkfxnSl.jpg",
-            "tags": [
-                1
-            ]
-        }
-    },
-    {
-        "model": "app_mediafiles.image",
-        "pk": 15,
-        "fields": {
-            "title": "тренер Тюкавкина А. А.",
-            "caption": "Инструктор тренажёрного зала (школа фитнеса Варвары Медведевой)\r\nВысшее физкультурно-педагогическое образование.\r\nМастер спорта России по пауэрлифтингу (ФПР).\r\nНеоднократный победитель и призёр соревнований по пауэрлифтингу.",
-            "slug": "trener_tukavkina",
-            "alt_txt": "fill necessarily!",
-            "date_public": "2023-05-23T08:31:12.571Z",
-            "img_file_size": 24214,
-            "img_mode": "RGB",
-            "width": 307,
-            "height": 492,
-            "media_type": "JPEG",
-            "image": "imagelibrary/photo/a0b0418f-96d5-4d8c-a2d5-4c5d46a8cd90.jpg",
-            "thumbnail": "imagelibrary/photo/thumbnail_small/s_a0b0418f-96d5-4d8c-a2d5-4c5d46a8cd90.jpg",
-            "medium": "imagelibrary/photo/thumbnail_middle/m_a0b0418f-96d5-4d8c-a2d5-4c5d46a8cd90.jpg",
-            "large": "imagelibrary/photo/large/l_a0b0418f-96d5-4d8c-a2d5-4c5d46a8cd90_JZLZ3ZF.jpg",
-            "tags": [
-                1
-            ]
-        }
-    },
-    {
-        "model": "app_mediafiles.image",
-        "pk": 16,
-        "fields": {
-            "title": "лукодром общий вид",
-            "caption": "вамчвапмчвапмв",
-            "slug": "lukodrom_common_view",
-            "alt_txt": "fill necessarily!",
-            "date_public": "2023-05-25T03:08:56.467Z",
-            "img_file_size": 67147,
-            "img_mode": "RGB",
-            "width": 768,
-            "height": 512,
-            "media_type": "JPEG",
-            "image": "imagelibrary/photo/b7b6971f-183a-4f11-8bb9-282241c20ec9.jpg",
-            "thumbnail": "imagelibrary/photo/thumbnail_small/s_b7b6971f-183a-4f11-8bb9-282241c20ec9.jpg",
-            "medium": "imagelibrary/photo/thumbnail_middle/m_b7b6971f-183a-4f11-8bb9-282241c20ec9.jpg",
-            "large": "imagelibrary/photo/large/l_b7b6971f-183a-4f11-8bb9-282241c20ec9_xovXs4N.jpg",
-            "tags": [
-                2,
-                7
-            ]
-        }
+  {
+    "model": "app_mediafiles.icon",
+    "pk": 1,
+    "fields": {
+      "name": "иконка бассейн",
+      "image": "imagelibrary/icon/ee1d9b0e-9cd4-42d9-95fd-80fc01ab1c95.png",
+      "created": "2023-05-19T15:30:48.694Z",
+      "width": 60,
+      "height": 60
     }
+  },
+  {
+    "model": "app_mediafiles.icon",
+    "pk": 2,
+    "fields": {
+      "name": "иконка штанга (фитнес)",
+      "image": "imagelibrary/icon/21b0dfde-6417-46e6-b66f-ab722f089ddc.png",
+      "created": "2023-05-19T15:32:31.146Z",
+      "width": 60,
+      "height": 60
+    }
+  },
+  {
+    "model": "app_mediafiles.icon",
+    "pk": 3,
+    "fields": {
+      "name": "иконка баскетбол",
+      "image": "imagelibrary/icon/f3ee9692-b85e-4cae-b0a4-600035e363e3.png",
+      "created": "2023-05-19T15:33:09.084Z",
+      "width": 60,
+      "height": 60
+    }
+  },
+  {
+    "model": "app_mediafiles.icon",
+    "pk": 4,
+    "fields": {
+      "name": "иконка кубок",
+      "image": "imagelibrary/icon/0a06af6c-bae5-47f7-92e8-0a9bcdfa41e2.png",
+      "created": "2023-05-19T16:14:57.340Z",
+      "width": 61,
+      "height": 60
+    }
+  },
+  {
+    "model": "app_mediafiles.icon",
+    "pk": 5,
+    "fields": {
+      "name": "иконка футбол",
+      "image": "imagelibrary/icon/6646e8c4-2696-4999-afbc-094fc7640cec.png",
+      "created": "2023-05-19T16:15:27.661Z",
+      "width": 60,
+      "height": 60
+    }
+  },
+  {
+    "model": "app_mediafiles.icon",
+    "pk": 6,
+    "fields": {
+      "name": "иконка лукодром",
+      "image": "imagelibrary/icon/da32c290-edd0-4a51-8497-f61b1095b893.png",
+      "created": "2023-05-19T16:15:56.252Z",
+      "width": 61,
+      "height": 60
+    }
+  },
+  {
+    "model": "app_mediafiles.icon",
+    "pk": 7,
+    "fields": {
+      "name": "иконка тир",
+      "image": "imagelibrary/icon/92e92341-ca67-43a1-bf86-0a8eee3ebb73.png",
+      "created": "2023-05-19T16:16:22.705Z",
+      "width": 61,
+      "height": 60
+    }
+  },
+  {
+    "model": "app_mediafiles.icon",
+    "pk": 8,
+    "fields": {
+      "name": "иконка настольный тенис",
+      "image": "imagelibrary/icon/a08c002e-e7e3-43a3-bad8-bf27b85f7864.png",
+      "created": "2023-05-19T16:16:41.543Z",
+      "width": 61,
+      "height": 60
+    }
+  },
+  {
+    "model": "app_mediafiles.icon",
+    "pk": 9,
+    "fields": {
+      "name": "иконка коньки",
+      "image": "imagelibrary/icon/22b14046-cb92-4bce-a333-48f270f9add8.png",
+      "created": "2023-05-19T16:17:03.027Z",
+      "width": 61,
+      "height": 60
+    }
+  },
+  {
+    "model": "app_mediafiles.icon",
+    "pk": 11,
+    "fields": {
+      "name": "иконка бокс",
+      "image": "imagelibrary/icon/2278af00-92a4-4c03-9ca4-f2fb43523c97.png",
+      "created": "2023-05-19T16:18:05.522Z",
+      "width": 61,
+      "height": 60
+    }
+  },
+  {
+    "model": "app_mediafiles.icon",
+    "pk": 12,
+    "fields": {
+      "name": "иконка легкая атлетика",
+      "image": "imagelibrary/icon/12627ac1-0f5a-490f-90d0-21203e7e4769.png",
+      "created": "2023-05-19T16:18:20.066Z",
+      "width": 61,
+      "height": 60
+    }
+  },
+  {
+    "model": "app_mediafiles.icon",
+    "pk": 13,
+    "fields": {
+      "name": "иконка конный спорт",
+      "image": "imagelibrary/icon/b03fe64e-2a83-4816-9210-f74adcf9c966.png",
+      "created": "2023-05-19T16:18:42.642Z",
+      "width": 61,
+      "height": 60
+    }
+  },
+  {
+    "model": "app_mediafiles.icon",
+    "pk": 14,
+    "fields": {
+      "name": "иконка пустая",
+      "image": "imagelibrary/icon/d7b81556-19ed-4500-a702-1a78127a4949.jpg",
+      "created": "2023-05-20T09:45:18.453Z",
+      "width": 60,
+      "height": 41
+    }
+  },
+  {
+    "model": "app_mediafiles.icon",
+    "pk": 15,
+    "fields": {
+      "name": "иконка сауна",
+      "image": "imagelibrary/icon/c390aba9-3e5a-4c78-bc3a-6f914ea347cb.png",
+      "created": "2023-05-22T06:26:36.398Z",
+      "width": 60,
+      "height": 60
+    }
+  },
+  {
+    "model": "app_mediafiles.icon",
+    "pk": 16,
+    "fields": {
+      "name": "иконка SPA",
+      "image": "imagelibrary/icon/3a8748da-997c-4149-b124-c8756c272d15.png",
+      "created": "2023-05-22T06:36:52.341Z",
+      "width": 60,
+      "height": 60
+    }
+  },
+  {
+    "model": "app_mediafiles.icon",
+    "pk": 17,
+    "fields": {
+      "name": "иконка гостиница",
+      "image": "imagelibrary/icon/7b3f2889-89c7-4fcc-b4f7-932a773f76da.png",
+      "created": "2023-05-22T06:37:14.496Z",
+      "width": 60,
+      "height": 60
+    }
+  },
+  {
+    "model": "app_mediafiles.icon",
+    "pk": 18,
+    "fields": {
+      "name": "иконка календарь",
+      "image": "imagelibrary/icon/abfe0b5f-1492-4b9c-989b-7134e6a19839.png",
+      "created": "2023-05-22T06:48:32.434Z",
+      "width": 60,
+      "height": 60
+    }
+  },
+  {
+    "model": "app_mediafiles.icon",
+    "pk": 19,
+    "fields": {
+      "name": "иконка медиабиблиотека",
+      "image": "imagelibrary/icon/375bde65-60a3-4c08-a2ff-e83e3f4aace5.png",
+      "created": "2023-05-22T06:55:29.138Z",
+      "width": 60,
+      "height": 60
+    }
+  },
+  {
+    "model": "app_mediafiles.icon",
+    "pk": 20,
+    "fields": {
+      "name": "иконка документы",
+      "image": "imagelibrary/icon/ab1982a1-e62c-45e4-a914-df07dae9edd2.png",
+      "created": "2023-05-22T06:55:58.898Z",
+      "width": 60,
+      "height": 60
+    }
+  },
+  {
+    "model": "app_mediafiles.icon",
+    "pk": 21,
+    "fields": {
+      "name": "иконка торги",
+      "image": "imagelibrary/icon/200989f2-f3c6-4412-913c-9d69e8da5299.png",
+      "created": "2023-05-22T06:56:28.608Z",
+      "width": 61,
+      "height": 60
+    }
+  },
+  {
+    "model": "app_mediafiles.icon",
+    "pk": 22,
+    "fields": {
+      "name": "иконка адресная книга",
+      "image": "imagelibrary/icon/f1bda879-b9bd-4bf7-a876-a55ad851212f.png",
+      "created": "2023-05-22T06:56:41.586Z",
+      "width": 61,
+      "height": 60
+    }
+  },
+  {
+    "model": "app_mediafiles.icon",
+    "pk": 23,
+    "fields": {
+      "name": "иконка парнерам",
+      "image": "imagelibrary/icon/3b181376-be3e-4d0e-8b27-b779ea3bdcd8.png",
+      "created": "2023-05-22T06:57:07.559Z",
+      "width": 61,
+      "height": 60
+    }
+  },
+  {
+    "model": "app_mediafiles.icon",
+    "pk": 24,
+    "fields": {
+      "name": "иконка ресурсы интернет",
+      "image": "imagelibrary/icon/993093d0-01f3-4ee3-a818-69d059059fd5.png",
+      "created": "2023-05-22T06:57:17.553Z",
+      "width": 61,
+      "height": 60
+    }
+  },
+  {
+    "model": "app_mediafiles.icon",
+    "pk": 25,
+    "fields": {
+      "name": "иконка диалог",
+      "image": "imagelibrary/icon/6f0dc6ac-66cb-4ffa-91a1-eeb526f84716.png",
+      "created": "2023-05-22T06:57:56.642Z",
+      "width": 61,
+      "height": 60
+    }
+  },
+  {
+    "model": "app_mediafiles.icon",
+    "pk": 26,
+    "fields": {
+      "name": "иконка адрес",
+      "image": "imagelibrary/icon/a664e761-437c-4ba7-8dff-d72133fcb900.png",
+      "created": "2023-05-22T06:58:17.324Z",
+      "width": 61,
+      "height": 60
+    }
+  }
 ]

@@ -68,3 +68,4 @@ class AdminImageMedia(admin.ModelAdmin):
     ordering = ('-img_file_size',)
     list_filter = ('tags',)
     filter_horizontal = ('tags',)
+    prepopulated_fields = {"slug": ("title",)}
