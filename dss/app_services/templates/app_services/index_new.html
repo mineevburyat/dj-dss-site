@@ -50,7 +50,7 @@
           {% for typeservice in typeservices %}
           <a class="card" href="{% url 'app_services:listservice' category typeservice.slug %}">
               <div class="card__top">
-                  <img src="{{typeservice.get_random_photo.url}}" alt="{{typeservice.get_random_photo.alt}}">
+                  <img class="card__img" src="{{typeservice.get_random_photo.url}}" alt="{{typeservice.get_random_photo.alt}}">
                   <!-- тут блоки с абсолютным позиционированием TODO -->
                   <ul class="card__label">
                       <li class="card__label-bg">колл-центр <span class="card__label-phone">(3012) 45-30-36</span></li>

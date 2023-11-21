@@ -1,0 +1,272 @@
+[
+    {
+        "model": "app_contacts.contact",
+        "pk": 1,
+        "fields": {
+            "name": "Приемная ДСС",
+            "phone": "(3012) 21-10-41",
+            "phone_add": null,
+            "email": "dss-sport@govrb.ru"
+        }
+    },
+    {
+        "model": "app_contacts.contact",
+        "pk": 2,
+        "fields": {
+            "name": "Отдел закупок",
+            "phone": "(3012) 21-10-41",
+            "phone_add": "109,",
+            "email": "zakupki@dss-sport.ru"
+        }
+    },
+    {
+        "model": "app_contacts.contact",
+        "pk": 3,
+        "fields": {
+            "name": "Пресс-служба",
+            "phone": "(3012) 21-08-74",
+            "phone_add": null,
+            "email": "info@dss-sport.ru"
+        }
+    },
+    {
+        "model": "app_contacts.contact",
+        "pk": 4,
+        "fields": {
+            "name": "Отдел развития",
+            "phone": "(3012) 21-08-74",
+            "phone_add": null,
+            "email": "or@dss-sport.ru"
+        }
+    },
+    {
+        "model": "app_contacts.contact",
+        "pk": 5,
+        "fields": {
+            "name": "Договорной отдел",
+            "phone": "(3012) 21-08-7",
+            "phone_add": null,
+            "email": "manager@dss-sport.ru"
+        }
+    },
+    {
+        "model": "app_contacts.contact",
+        "pk": 6,
+        "fields": {
+            "name": "Отдел кадров",
+            "phone": "(3012) 21-14-74",
+            "phone_add": null,
+            "email": "ok@dss-sport.ru"
+        }
+    },
+    {
+        "model": "app_contacts.contact",
+        "pk": 7,
+        "fields": {
+            "name": "Отдел проведения мероприятий",
+            "phone": "(3012) 21-10-41",
+            "phone_add": "136",
+            "email": "opm@dss-sport.ru"
+        }
+    },
+    {
+        "model": "app_contacts.contact",
+        "pk": 8,
+        "fields": {
+            "name": "Отдел ГТО",
+            "phone": "(3012) 21-13-97",
+            "phone_add": null,
+            "email": "gto03bur@yandex.ru"
+        }
+    },
+    {
+        "model": "app_contacts.contact",
+        "pk": 9,
+        "fields": {
+            "name": "Юридический отдел",
+            "phone": "(3012) 21-10-41",
+            "phone_add": "142",
+            "email": "jurist_new@dss-sport.ru"
+        }
+    },
+    {
+        "model": "app_contacts.contact",
+        "pk": 10,
+        "fields": {
+            "name": "Централизованная бухгалтерия МСМП",
+            "phone": "(3012) 37-40-04",
+            "phone_add": null,
+            "email": "tsb.minsport03@yandex.ru"
+        }
+    },
+    {
+        "model": "app_contacts.contact",
+        "pk": 11,
+        "fields": {
+            "name": "Администратор ЦСРБ",
+            "phone": "8 (3012) 21-15-",
+            "phone_add": null,
+            "email": "ok@dss-sport.ru"
+        }
+    },
+    {
+        "model": "app_contacts.contact",
+        "pk": 12,
+        "fields": {
+            "name": "Справки тир ЦСРБ",
+            "phone": "(3012) 21-49-28",
+            "phone_add": null,
+            "email": null
+        }
+    },
+    {
+        "model": "app_contacts.contact",
+        "pk": 13,
+        "fields": {
+            "name": "Приемная ФСК",
+            "phone": "(3012) 46-04-17",
+            "phone_add": null,
+            "email": null
+        }
+    },
+    {
+        "model": "app_contacts.contact",
+        "pk": 14,
+        "fields": {
+            "name": "call-центр ФСК",
+            "phone": "(3012) 45-30-36",
+            "phone_add": null,
+            "email": null
+        }
+    },
+    {
+        "model": "app_contacts.contact",
+        "pk": 15,
+        "fields": {
+            "name": "Центр спортивной подготовки",
+            "phone": "(3012) 500-888",
+            "phone_add": "45-30",
+            "email": null
+        }
+    },
+    {
+        "model": "app_contacts.contact",
+        "pk": 16,
+        "fields": {
+            "name": "SPA-центр",
+            "phone": "(3012) 45-40-26",
+            "phone_add": null,
+            "email": null
+        }
+    },
+    {
+        "model": "app_contacts.contact",
+        "pk": 17,
+        "fields": {
+            "name": "Администратор РЦСЛ Мэргэн",
+            "phone": "41-90-41",
+            "phone_add": null,
+            "email": null
+        }
+    },
+    {
+        "model": "app_contacts.contact",
+        "pk": 18,
+        "fields": {
+            "name": "Администратор РЦЕ Патриот",
+            "phone": "407-888",
+            "phone_add": null,
+            "email": null
+        }
+    },
+    {
+        "model": "app_contacts.contact",
+        "pk": 19,
+        "fields": {
+            "name": "Ресепшен РЦЕ Патриот",
+            "phone": "379 — 366",
+            "phone_add": null,
+            "email": null
+        }
+    },
+    {
+        "model": "app_contacts.contact",
+        "pk": 20,
+        "fields": {
+            "name": "Администратор Ипподром",
+            "phone": "(3012) 606-166",
+            "phone_add": null,
+            "email": null
+        }
+    },
+    {
+        "model": "app_contacts.contact",
+        "pk": 21,
+        "fields": {
+            "name": "Центр спортивной подготовки 2",
+            "phone": "(3012) 45-30-36",
+            "phone_add": null,
+            "email": null
+        }
+    },
+    {
+        "model": "app_contacts.contact",
+        "pk": 22,
+        "fields": {
+            "name": "Администратор Байкал Парк",
+            "phone": "(3012) 385-888",
+            "phone_add": null,
+            "email": "baikal.park@dss-sport.ru"
+        }
+    },
+    {
+        "model": "app_contacts.contact",
+        "pk": 23,
+        "fields": {
+            "name": "Администратор Байкал Парк (сот)",
+            "phone": "7 9834 385-888",
+            "phone_add": null,
+            "email": "baikal.park@dss-sport.ru"
+        }
+    },
+    {
+        "model": "app_contacts.contact",
+        "pk": 24,
+        "fields": {
+            "name": "Гостевой дом «Надежда»",
+            "phone": "8 (3012) 385-88",
+            "phone_add": null,
+            "email": null
+        }
+    },
+    {
+        "model": "app_contacts.contact",
+        "pk": 25,
+        "fields": {
+            "name": "Гостевой дом «Надежда» (сот)",
+            "phone": "+7 9834 385-88",
+            "phone_add": null,
+            "email": "manager@dss-sport.ru"
+        }
+    },
+    {
+        "model": "app_contacts.contact",
+        "pk": 26,
+        "fields": {
+            "name": "Хостел «Юниор» в ФСК",
+            "phone": "8 (3012) 645-88",
+            "phone_add": null,
+            "email": "hostel@dss-sport.ru"
+        }
+    },
+    {
+        "model": "app_contacts.contact",
+        "pk": 27,
+        "fields": {
+            "name": "Хостел «Юниор» в ФСК 2",
+            "phone": "3012) 44-17-33",
+            "phone_add": null,
+            "email": "hostel@dss-sport.ru"
+        }
+    }
+]

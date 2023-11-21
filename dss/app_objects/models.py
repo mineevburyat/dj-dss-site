@@ -1,12 +1,12 @@
 from django.db import models
-# from django.urls import reverse
+from django.urls import reverse
 # from common.utils import translite
 from django.utils.safestring import mark_safe
 from ckeditor_uploader.fields import RichTextUploadingField
 from app_mediafiles.models import Icon, Image
 import random
 # from app_services.models import TypeService
-# Create your models here.
+
 
 
 class Object(models.Model):
@@ -70,7 +70,6 @@ class Object(models.Model):
         max_length=11,
         default='-'
     )
-
     call_center = models.CharField(
         'номер телефона',
         max_length=20,
@@ -91,8 +90,8 @@ class Object(models.Model):
     def get_areas(self):
         return self.sportarea.all()
 
-    # def get_absolute_url(self):
-        # return reverse('objects:detail_obj', kwargs={"slug": self.slug})
+    def get_absolute_url(self):
+        return reverse('objects:detail_obj', kwargs={"slug": self.slug})
 
     def get_random_photo(self):
         photos = []
@@ -186,13 +185,15 @@ class SportArea(models.Model):
     
     def get_random_photo(self):
         photos = []
-        for gallery in ObjectGallery.objects.filter(area=self):
+        area_galery = SportAreaGallery.objects.get(sportarea=self)
+        for photo in area_galery.photos.all():
             photos.append(
-                {'url': gallery.photos.get_url_middle_img(),
-                 'alt': gallery.photos.title}
+                {'url': photo.get_url_middle_img(),
+                 'alt': photo.alt_txt}
             )
         if photos:
             return random.choice(photos)
+        
 
 class ObjectGallery(models.Model):
     '''\
@@ -223,9 +224,6 @@ class ObjectGallery(models.Model):
         return self.obj.short_name
     get_short_name.short_description = 'имя'
 
-    # def get_img_size(self):
-    #     return self.photos.get_img_size()
-    # get_img_size.short_description = 'размер'
 
 class SportAreaGallery(models.Model):
     '''\
@@ -241,26 +239,22 @@ class SportAreaGallery(models.Model):
         null=True,
         on_delete=models.PROTECT
     )
-    photos = models.ForeignKey(
+    photos = models.ManyToManyField(
         Image,
-        verbose_name='фотография',
-        on_delete=models.PROTECT
+        verbose_name='фотографии',
     )
 
     def __str__(self):
         area_name = self.sportarea.name
         obj_name = self.sportarea.obj.short_name
-        return f'фото {area_name} ({obj_name})'
+        return f'{area_name} ({obj_name})'
     
-    def get_html_photo(self):
-        return self.photos.thumbnail_html()
-    get_html_photo.short_description = 'фото'
+    def get_count_photos(self):
+        return self.photos.all().count()
+    get_count_photos.short_description = 'фотографий'
 
     def get_object(self):
         return self.sportarea.obj
     get_object.short_description = 'объект'
 
-    def get_img_size(self):
-        return self.photos.get_img_size()
-    get_img_size.short_description = 'размер'
-
+    

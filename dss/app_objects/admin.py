@@ -6,6 +6,7 @@ from .models import (Object,
                      ObjectGallery,
                      SportAreaGallery)
 from django import forms
+from django_ace import AceWidget
 
 # Register your models here.
 
@@ -60,22 +61,24 @@ class SportAreaForm(forms.ModelForm):
     class Meta:
         model = SportArea
         fields = "__all__"
-        readonly_fields = ('icon_html_img',)
-        prepopulated_fields = {"slug": ("name",)}
-        list_filter = ('obj',)
-        fieldsets = (
-            ('Название и описание', {'fields': [
-                ('name', 'slug', 'order'),
-                ('obj', 'icon', 'icon_html_img'),
-                'inviting_mes',
-                'description',
-            ]}),
-            ('характеристики', {'fields': (
-                'characteristics',)
-            }),
-        )
         widgets = {
-            'characteristics': forms.Textarea(attrs={'class': 'json-editor'})
+            'characteristics': AceWidget(
+                mode='json',
+                wordwrap=True,
+                # width="500px",
+                # height="300px",
+                # minlines=None,
+                # maxlines=None,
+                showprintmargin=True,
+                # showinvisibles=False,
+                usesofttabs=True,
+                tabsize=2,
+                fontsize='14px',
+                toolbar=True,
+                readonly=False,
+                showgutter=True,  # To hide/show line numbers
+                behaviours=True,
+            )
         }
 @admin.register(SportArea)
 class SportAreaAdmin(admin.ModelAdmin):
@@ -83,19 +86,19 @@ class SportAreaAdmin(admin.ModelAdmin):
     ordering = ('obj', '-order')
     readonly_fields = ('icon_html_img',)
     form = SportAreaForm
-    # prepopulated_fields = {"slug": ("name",)}
-    # list_filter = ('obj',)
-    # fieldsets = (
-    #     ('Название и описание', {'fields': [
-    #         ('name', 'slug', 'order'),
-    #         ('obj', 'icon', 'icon_html_img'),
-    #         'inviting_mes',
-    #         'description',
-    #         ]}),
-    #     ('характеристики', {'fields': (
-    #         'characteristics',)
-    #         }),
-    #     )
+    prepopulated_fields = {"slug": ("name",)}
+    list_filter = ('obj',)
+    fieldsets = (
+        ('Название и описание', {'fields': [
+            ('name', 'slug', 'order'),
+            ('obj', 'icon', 'icon_html_img'),
+            'inviting_mes',
+            'description',
+            ]}),
+        ('характеристики', {'fields': (
+            'characteristics',)
+            }),
+        )
 
 @admin.register(ObjectGallery)
 class OblectGalleryAdmin(admin.ModelAdmin):
@@ -109,8 +112,9 @@ class OblectGalleryAdmin(admin.ModelAdmin):
 
 @admin.register(SportAreaGallery)
 class SportAreaGalleryAdmin(admin.ModelAdmin):
-    list_display = ('__str__', 'get_html_photo', 'get_img_size')
+    list_display = ('__str__', 'get_count_photos')
     # list_filter = ('obj',)
-    fields = ['sportarea', 'photos', 'get_html_photo']
-    readonly_fields = ('get_html_photo',)
+    fields = ['sportarea', 'photos']
+    readonly_fields = ('get_count_photos',)
+    filter_horizontal = ('photos',)
     

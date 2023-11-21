@@ -55,6 +55,7 @@ INSTALLED_APPS = [
     'ckeditor',
     'django_json_widget',
     'django_extensions',
+    'django_ace',
     # 'schedule',
     # 'djangobower',
     # 'django_jsonform',

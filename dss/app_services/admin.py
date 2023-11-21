@@ -8,6 +8,7 @@ from .models import (Service,
 from django.db import models
 from django.forms import TextInput
 from django.template.loader import get_template
+from django_ace import AceWidget
 
 
 class RateInline(admin.TabularInline):

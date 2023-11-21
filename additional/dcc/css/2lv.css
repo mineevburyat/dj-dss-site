@@ -48,12 +48,19 @@
 .card__top {
   /* width: 320px; */
   /* height: 304px; */
-  flex: 0 0 304px; /* Задаем высоту, запрещаем расширение и сужение по высоте */
+  /* flex: 0 0; Задаем высоту, запрещаем расширение и сужение по высоте */
   position: relative;
   overflow: hidden; /* Скрываем, что выходит за пределы */
+  /* position: relative; */
+    /* overflow: hidden; */
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
+
 .card__img {
-  width: 100%;
+  width: auto;
   height: 100%;
   object-fit: fill; /*Встраиваем картинку в контейнер card__image */
   transition: 0.2s;
