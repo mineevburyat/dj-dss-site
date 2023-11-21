@@ -96,10 +96,11 @@ class Object(models.Model):
 
     def get_random_photo(self):
         photos = []
-        for gallery in ObjectGallery.objects.filter(obj=self):
+        obj_galery = ObjectGallery.objects.get(obj=self)
+        for photo in obj_galery.photos.all():
             photos.append(
-                {'url': gallery.photos.get_url_middle_img(),
-                 'alt': gallery.photos.title}
+                {'url': photo.get_url_middle_img(),
+                 'alt': photo.alt_txt}
             )
         if photos:
             return random.choice(photos)
@@ -110,6 +111,7 @@ class Object(models.Model):
 
     def get_num_areas(self):
         return self.sportarea.all().count()
+    get_num_areas.short_description = 'спортплощадок'
 
     def get_num_vacancy(self):
         return '0'
@@ -157,7 +159,7 @@ class SportArea(models.Model):
         blank=True,
         null=True
     )
-    inviting_mes = models.TextField(
+    inviting_mes = models.CharField(
         'слоган или призыв к посещению',
         max_length=90,
         default='призывной призыв или слоган'
@@ -192,94 +194,12 @@ class SportArea(models.Model):
         if photos:
             return random.choice(photos)
 
-
-# class Subunit(models.Model):
-#     '''\
-#         Конкретный ресурс со своими характеристиками и расписанием бронирования: дорожка бассейна, тренажерка, зал, поле, площадь для аренды.
-#         С конкретными характеристиками, расписанием и контактами'''
-#     class Meta:
-#         verbose_name = 'Ресурс'
-#         verbose_name_plural = 'Ресурсы'
-#     MAX_LENGTH_NAME = 45
-#     name = models.CharField(
-#         'название конкретного ресурса',
-#         max_length=MAX_LENGTH_NAME,
-#         help_text='дрожка бассейна №1, мини-поле №2'
-#     )
-#     slug = models.SlugField(
-#         'slug имя в url',
-#         unique=True,
-#         db_index=True,
-#         max_length=MAX_LENGTH_NAME,
-#         help_text='только латинские буквы и цифры'
-#     )
-#     description = RichTextUploadingField(
-#         'Описание ресурса, характеристики',
-#         max_length=1000,
-#         blank=True,
-#         null=True
-#     )
-#     resource = models.ForeignKey(
-#         SportArea,
-#         on_delete=models.PROTECT,
-#         default=None,
-#         null=True,
-#         blank=True,
-#         verbose_name='тип ресурса'
-#     )
-#     obj = models.ForeignKey(
-#         Object,
-#         verbose_name='Объект',
-#         on_delete=models.PROTECT,
-#         default=None,
-#         null=True,
-#         blank=True
-#     )
-#     contact = models.CharField(
-#         'Телефон',
-#         help_text='ссылки на контакт TODO',
-#         max_length=25,
-#         blank=True,
-#         null=True
-#     )
-#     shedule = models.CharField(
-#         'график работы',
-#         help_text='режим работы, график, сан. день (как календарь)',
-#         max_length=25,
-#         blank=True,
-#         null=True
-#     )
-
-#     def __str__(self):
-#         return f'{self.name} ({self.slug}) на {self.obj}'
-    # def get_absolute_url(self):
-    #     return reverse('objects:detail_sub', kwargs={"slug": self.slug})
-#
-# class ObjectPhoto(models.Model):
-#     '''\
-#         Связь объекта с его фотографиями'''
-#     class Meta:
-#         verbose_name = 'Фотография объекта'
-#         verbose_name_plural = 'Фотографии объектов'
-#
-#     obj = models.ForeignKey(
-#         Object,
-#         verbose_name='Объект',
-#         on_delete=models.PROTECT,
-#     )
-#     photos = models.ManyToManyField(
-#         Image,
-#         verbose_name='фотографии',
-#         blank=True
-#     )
-
-
 class ObjectGallery(models.Model):
     '''\
-        Галерея фотографий с объектами'''
+        Галерея фотографий объектов'''
     class Meta:
-        verbose_name = 'Галерея фотографий объекта'
-        verbose_name_plural = 'Галереи фотографий объектов'
+        verbose_name = 'фотография объекта'
+        verbose_name_plural = 'фотографии объектов'
 
     obj = models.ForeignKey(
         Object,
@@ -287,7 +207,34 @@ class ObjectGallery(models.Model):
         on_delete=models.PROTECT,
         related_name='gallery'
     )
-    area = models.ForeignKey(
+    photos = models.ManyToManyField(
+        Image,
+        verbose_name='фотографии',
+    )
+
+    def __str__(self):
+        return f'фото {self.obj.short_name}'
+    
+    def get_count_photos(self):
+        return self.photos.all().count()
+    get_count_photos.short_description = 'фотографий'
+
+    def get_short_name(self):
+        return self.obj.short_name
+    get_short_name.short_description = 'имя'
+
+    # def get_img_size(self):
+    #     return self.photos.get_img_size()
+    # get_img_size.short_description = 'размер'
+
+class SportAreaGallery(models.Model):
+    '''\
+        Галерея фотографий спортплощадок'''
+    class Meta:
+        verbose_name = 'фотография спортплощадки'
+        verbose_name_plural = 'фотографии спортплощадок'
+
+    sportarea = models.ForeignKey(
         SportArea,
         verbose_name='спортплощадка',
         blank=True,
@@ -296,24 +243,24 @@ class ObjectGallery(models.Model):
     )
     photos = models.ForeignKey(
         Image,
-        verbose_name='фотографии',
+        verbose_name='фотография',
         on_delete=models.PROTECT
     )
 
     def __str__(self):
-        area_name = self.area.name if self.area else '-'
-        return f'фото {self.obj.short_name} ({area_name})'
+        area_name = self.sportarea.name
+        obj_name = self.sportarea.obj.short_name
+        return f'фото {area_name} ({obj_name})'
     
     def get_html_photo(self):
         return self.photos.thumbnail_html()
     get_html_photo.short_description = 'фото'
 
-    def get_short_name(self):
-        return self.obj.short_name
-    get_short_name.short_description = 'имя'
+    def get_object(self):
+        return self.sportarea.obj
+    get_object.short_description = 'объект'
 
     def get_img_size(self):
         return self.photos.get_img_size()
     get_img_size.short_description = 'размер'
-
 
