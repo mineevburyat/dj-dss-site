@@ -14,6 +14,7 @@ from .templatetags.fsize_tag import filesize
 from django.utils.safestring import mark_safe
 import os
 from app_tags.models import Tag
+from django.utils import timezone
 
 
 # папки для иконок и фотографий
@@ -131,7 +132,9 @@ class Image(models.Model):
         'альтернативная подпись',
         max_length=MAX_TITLE,
         default='fill necessarily! ')
-    date_public = models.DateTimeField('дата загрузки', auto_now_add=True)
+    date_public = models.DateTimeField(
+        'дата загрузки',
+        default=timezone.now)
     img_file_size = models.IntegerField(
         'объем файла',
         blank=True,
@@ -176,6 +179,13 @@ class Image(models.Model):
     # def get_path_fsmall(self):
     #     if self.thumbnail:
     #         return self.thumbnail.name
+    def get_news(self):
+        news = self.news.all()
+        if news:
+            news = news.first()
+            return news.excerpt
+        else:
+            return 'с новостью не связан'
 
     def get_url_middle_img(self):
         if self.thumbnail:

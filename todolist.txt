@@ -26,3 +26,5 @@ find . -path "*/migrations/*.pyc" -delete
 
 drop database your_database_name;
 create database your_database_name with owner user_you_use_in_django;
+
+./manage.py dumpdata --exclude auth.permission --exclude contenttypes > db.json

@@ -34,7 +34,7 @@ class IconAdmin(admin.ModelAdmin):
 
 @admin.register(Image)
 class AdminImageMedia(admin.ModelAdmin):
-    list_display = ('id', 'title', 'slug', 'get_img_size', 
+    list_display = ('id', 'title', 
                     'get_fsize', 'thumbnail_html', 'tags_list')
     fieldsets = (
         ('Изображение', {
@@ -49,7 +49,8 @@ class AdminImageMedia(admin.ModelAdmin):
         ('Описание', {
             'fields': (
                 ('title', 'slug', 'alt_txt'),
-                'caption'
+                'caption',
+                'get_news'
             )
         }),
         ('метки', {
@@ -61,7 +62,8 @@ class AdminImageMedia(admin.ModelAdmin):
     readonly_fields = ('get_img_size', 'is_caption',
                        'date_public', 'img_file_size', 'img_mode',
                        'media_type', 'get_fsize', 'get_large_html', 'get_medium_html',
-                       'get_small_html', 'tags_list', 'photo_img')
+                       'get_small_html', 'tags_list', 'photo_img', 'get_news')
+    search_fields = ['id','title']
     date_hierarchy = "date_public"
     ordering = ('-img_file_size',)
     list_filter = ('tags',)

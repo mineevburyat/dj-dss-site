@@ -38,7 +38,6 @@ class News(models.Model):
     date_public = models.DateTimeField(
         'дата публикации',
         default=datetime.now,
-        null=True
     )
     date_activation = models.DateTimeField(
         'дата активации',
@@ -68,7 +67,8 @@ class News(models.Model):
         verbose_name='id media',
         blank=True,
         null=True,
-        on_delete=models.SET_NULL
+        on_delete=models.SET_NULL,
+        related_name='news'
     )
     tags = models.ManyToManyField(
         Tag,

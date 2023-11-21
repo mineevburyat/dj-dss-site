@@ -14,8 +14,8 @@ import time
 from app_mediafiles.models import MAX_TITLE, MAX_CAPTION, MAX_LEN_FILENAME
 from app_tags.models import Tag
 
-Tag.objects.get_or_create(tag='прочее')
-tags = Tag.objects.filter(tag='прочее')
+Tag.objects.get_or_create(tag='картинки')
+tags = Tag.objects.filter(tag='картинки')
 
 class Command(BaseCommand):
     help = 'Загружает картинки из WordPress'
