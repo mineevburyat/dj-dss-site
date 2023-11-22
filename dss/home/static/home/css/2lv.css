@@ -47,7 +47,7 @@
 
 .card__top {
   /* width: 320px; */
-  /* height: 304px; */
+  height: 304px;
   /* flex: 0 0 304px; Задаем высоту, запрещаем расширение и сужение по высоте */
   position: relative;
   overflow: hidden; /* Скрываем, что выходит за пределы */

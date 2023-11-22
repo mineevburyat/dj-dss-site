@@ -9,6 +9,7 @@ from calendar import Calendar
 from datetime import datetime, timedelta
 from django.shortcuts import get_object_or_404
 from app_tags.models import Tag
+from django.utils import timezone
 
 def name_of_week(day):
     return ['Понедельник', 'Вторник', 'Среда', 'Четверг', 'Пятница', 'Суббота', 'Воскресенье'][day]
@@ -35,16 +36,22 @@ class DetailObjectView(TitleMixin, ObjectsMixin, DetailView):
         id = obj.pk
         tags = Tag.objects.filter(tag__in=[obj.short_name, 'новость'])
         context['object_id'] = id
-        print(tags)
+        
         # вытащить новости и важные события связанные с конкретным объектом
-        startDate = datetime.now() - timedelta(days=60)
-        endDate = datetime.now() + timedelta(days=10)
-        all_news = News.objects.filter(date_activation__range=(startDate, endDate)).order_by("-date_activation")
-        objects_news = all_news.filter(tags__in=tags)
-        print(objects_news)
-        current_event = objects_news.filter(important=True)
-        context['objects_news'] = objects_news[:6]
-        context['events'] = current_event[:3]
+        startDate = timezone.now() - timedelta(days=30)
+        endDate = timezone.now() + timedelta(days=30)
+        object_news = []
+        events = []
+        for news in News.objects.filter(date_activation__range=(startDate, endDate)).order_by("-date_activation"):
+            print(news.valid_until_date)
+            if news.valid_until_date > timezone.now():
+                continue
+            if news.important:
+                events.append(news)
+            object_news.append(news)    
+        
+        context['objects_news'] = object_news[:6]
+        context['events'] = events[:3]
         # context['services'] = self.object.services.filter(object=self.object.pk).order_by('order')
         return context
 
@@ -59,15 +66,6 @@ class ListObjectsView(TitleMixin, ListView):
         objects = Object.objects.all().order_by('-order')
         return objects
     
-    
-    # def get_queryset(self):
-    #     category = self.kwargs.get('category')
-    #     if category:
-    #         services = Object.objects.filter(category=category)
-    #     else:
-    #         services = Object.objects.all()
-    #     return services
-
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         objects_news = News.objects.filter(tags__in=[2])
@@ -85,28 +83,18 @@ class DetailAreaView(TitleMixin, DetailView):
         obj_slug = self.kwargs.get('obj_slug')
         object = get_object_or_404(Object, slug=obj_slug)
         context['object'] = object
-        objects_news = News.objects.filter(tags__in=[self.object.obj.pk])
-        context['area_news'] = objects_news
-        # print(obj_slug, context['object'])
-        # context['object'] = Object.objects.get(slug=obj_slug)
-        # id = self.object.pk
-        # gallery = ObjectGallery.objects.filter(obj=id)
-        # photos = []
-        # for photo in gallery:
-        #     photos.append(photo.photos)
-        # context['object_id'] = id
-        # context['photos'] = photos
-        # # вытащить новости и важные события связанные с конкретным объектом
-        # 
-        # calendar = Calendar()
-        # days = []
-        # now = datetime.now()
-        # for day in calendar.itermonthdays2(now.year, now.month):
-        #     days.append(day[0])
-        # context['days'] = days
-        # context['today'] = (now, name_of_month(now.month), name_of_week(now.weekday()))
-        # context['objects_news'] = objects_news
-        # context['events'] = {25:"особое событие 1", 30:"особое событие 2"}
-        # context['services'] = self.object.services.filter(object=self.object.pk).order_by('order')
-        # self.object.typestock
+        tags = Tag.objects.filter(tag__in=[object.short_name, 'новость'])
+        startDate = timezone.now() - timedelta(days=30)
+        endDate = timezone.now() + timedelta(days=30)
+        object_news = []
+        events = []
+        for news in News.objects.filter(date_activation__range=(startDate, endDate)).order_by("-date_activation"):
+            print(news.valid_until_date)
+            if news.valid_until_date > timezone.now():
+                continue
+            if news.important:
+                events.append(news)
+            object_news.append(news)    
+        context['objects_news'] = object_news[:6]
+        context['events'] = events[:3]
         return context
