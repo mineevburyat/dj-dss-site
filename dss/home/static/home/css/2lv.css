@@ -316,6 +316,39 @@
   border-radius: 0 40% 40% 0;
 }
 
+.phone-btn {
+  background: rgba(236, 105, 8, 0.8);
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  align-items: center;
+  align-items: center;
+  padding: 6px;
+  border-radius: 6px;
+  margin-bottom: 3px;
+
+}
+
+.phone-btn__name {
+  /* align-self: flex-start; */
+  color: #535353;
+  font-family: Montserrat;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.phone-btn__phone {
+/* align-self: flex-end; */
+color: rgba(0, 130, 201, 0.9);
+  font-family: Montserrat;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
 @media (max-width: 1154px) {
   .important-news__card {
     max-width: 394px;

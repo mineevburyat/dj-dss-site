@@ -68,6 +68,11 @@ class Phone(models.Model):
         on_delete=models.CASCADE,
     )
     
+    def __str__(self):
+        obj = self.contact.sportarea.obj.short_name
+        sportarea = self.contact.sportarea.name
+        return f"{sportarea} {obj} {self.name} - {self.phone}"
+    
     def get_phone_str(self):
          phone_add = ''
          if self.phone_add:

@@ -48,20 +48,30 @@
   <section class="wrapper">
       <div class="cards">
           {% for object in objects %}
-          <a class="card" href="{% url 'objects:detail' object.slug %}">
+          <div class="card" >
               <div class="card__top">
                   <img class="card__img" src="{{object.get_random_photo.url}}" alt="{{object.get_random_photo.alt}}">
                   <!-- тут блоки с абсолютным позиционированием TODO -->
                   <ul class="card__label">
-                      <li class="card__label-bg">колл-центр <span class="card__label-phone">(3012) 45-30-36</span></li>
-                      <li class="card__label-bg">администратор <span class="card__label-phone">(3012) 46-04-27</span></li>
+                      <li class="phone-btn">
+                        <span class="phone-btn__name">колл-центр</span>
+                        <a class="phone-btn__phone" href="tel:{{object.call_center}}">{{object.call_center}}</a>
+                      </li>
+                      {%for phone in object.get_phones|slice:":2" %}
+                      <li class="phone-btn">
+                        <span class="phone-btn__name">{{phone.name}}</span>
+                        <a class="phone-btn__phone" href="tel:{{phone.url}}">{{phone.phone}}</a>
+                      </li>
+                      {% endfor %}
                   </ul>
               </div>
               <div class="card__text">
-                  <h2 class="card__title">{{ object.name }}</h2>
+                  <h2 class="card__title">
+                    <a href="{% url 'objects:detail' object.slug %}">{{ object.name }}</a>
+                  1</h2>
                   <div class="card__descript">{{ object.description|safe|truncatechars:260}}</div>
               </div>
-          </a>
+          </div>
           {% endfor %}
       </div>
   </section>

@@ -6,8 +6,9 @@ from ckeditor_uploader.fields import RichTextUploadingField
 from app_mediafiles.models import Icon, Image
 import random
 # from app_services.models import TypeService
-
-
+# from app_contacts.models import Contact
+import logging
+logger = logging.getLogger(__name__)
 
 class Object(models.Model):
     '''\
@@ -73,7 +74,7 @@ class Object(models.Model):
     call_center = models.CharField(
         'номер телефона',
         max_length=20,
-        default='+7(3012) 5-30-36')
+        default='+7(3012)')
 
     def __str__(self):
         return f'{self.short_name} ({self.name})'
@@ -112,9 +113,10 @@ class Object(models.Model):
         return '0'
     
     def get_phones(self):
-        phones = {}
+        phones = []
         for area in self.get_areas():
-            phones[area] = area.contact_area.phone_set.all()
+            for phone in area.get_phones():
+                phones.append(phone)
         return phones
 
 class SportArea(models.Model):
@@ -196,8 +198,11 @@ class SportArea(models.Model):
             return random.choice(photos)
     
     def get_phones(self):
-        return self.contact_area.phone_set.all()
-
+        if hasattr(self, 'contact_area'):
+            return self.contact_area.phone_set.all()
+        else:
+            logger.warning(f"{self} не имеет контактов")
+            return []
 class ObjectGallery(models.Model):
     '''\
         Галерея фотографий объектов'''

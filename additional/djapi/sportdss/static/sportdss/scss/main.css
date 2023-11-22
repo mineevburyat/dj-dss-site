@@ -1,0 +1,292 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,200;0,300;0,400;0,500;0,700;0,800;1,200;1,300;1,400;1,500;1,800&display=swap");
+:root {
+  --primary: #027fc7;
+  --secondary: #f84242;
+  --default: 16px;
+}
+
+body {
+  background: #ffffff;
+  font-size: 16px;
+  font-family: "Montserrat", sans-serif;
+  overflow-x: hidden;
+  color: #333333;
+  min-height: 100vh;
+}
+
+#app {
+  max-width: 1920px;
+  margin: auto;
+}
+
+[v-cloak] {
+  opacity: 0;
+  visibility: hidden;
+  transition: visibility 0s 5s, opacity 5s linear;
+}
+
+main {
+  position: relative;
+  padding: 0 9.6px;
+  overflow-x: hidden;
+}
+@media only screen and (max-width: 768px) {
+  main {
+    padding: 0 6.4px;
+  }
+}
+
+a {
+  text-decoration: none;
+  color: #333333;
+  transition: color 0.3s;
+}
+a:hover {
+  color: #027fc7;
+}
+
+textarea:focus,
+input:focus {
+  outline: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+}
+
+.btn, .elementor-container .elementor-widget-button.button a {
+  padding: 12px 20px;
+  border-radius: 10.4px;
+  border: none;
+  cursor: pointer;
+  text-transform: uppercase;
+  font-size: 12.8px;
+  transition: all 0.2s;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  line-height: 19.2px;
+}
+.btn:active, .elementor-container .elementor-widget-button.button a:active {
+  transform: translate(1.6px, 1.6px);
+}
+.btn:disabled, .elementor-container .elementor-widget-button.button a:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+.btn.btn-disabled, .elementor-container .elementor-widget-button.button a.btn-disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+.btn.btn-white, .elementor-container .elementor-widget-button.button a.btn-white {
+  background: #ffffff;
+  border: 1px solid #f3f3f3;
+  color: #333333 !important;
+}
+.btn.btn-white:hover, .elementor-container .elementor-widget-button.button a.btn-white:hover {
+  background: #ffffff !important;
+  color: #40a1da !important;
+}
+.btn.btn-primary, .elementor-container .elementor-widget-button.button a {
+  background: #027fc7;
+  color: #ffffff !important;
+}
+.btn.btn-primary:hover, .elementor-container .elementor-widget-button.button a:hover {
+  background: #40a1da !important;
+  color: #ffffff !important;
+}
+.btn.btn-secondary, .elementor-container .elementor-widget-button.button a.btn-secondary {
+  background: #f84242;
+  color: #ffffff !important;
+}
+.btn.btn-secondary:hover, .elementor-container .elementor-widget-button.button a.btn-secondary:hover {
+  background: #fd6767 !important;
+}
+
+.layout {
+  min-height: calc(100vh - 206px);
+}
+@media only screen and (max-width: 992px) {
+  .layout {
+    min-height: calc(100vh - 116px);
+  }
+}
+
+.table-res {
+  overflow-x: auto;
+}
+
+@media only screen and (max-width: 760px), (min-device-width: 768px) and (max-device-width: 990px) {
+  table {
+    border: 1px solid #f0f0f0 !important;
+    border-radius: 5px;
+  }
+  table tr {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+  table td, table tr {
+    width: auto;
+    max-width: 100%;
+  }
+}
+.mt-1 {
+  margin-top: 8px;
+}
+.mt-2 {
+  margin-top: 16px;
+}
+.mt-3 {
+  margin-top: 24px;
+}
+.mt-4 {
+  margin-top: 40px;
+}
+
+.mb-1 {
+  margin-bottom: 8px;
+}
+.mb-2 {
+  margin-bottom: 16px;
+}
+.mb-3 {
+  margin-bottom: 24px;
+}
+.mb-4 {
+  margin-bottom: 40px;
+}
+
+@media only screen and (max-width: 576px) {
+  .elementor-col-100 {
+    width: 100%;
+  }
+}
+
+.elementor-widget.elementor-widget-spacer {
+  margin-bottom: 40px;
+}
+
+table {
+  width: 100%;
+  border: none;
+  margin-bottom: 20px;
+}
+table thead th {
+  font-weight: bold;
+  text-align: left;
+  border: none;
+  padding: 9.6px 16px;
+  background: #d8d8d8;
+  font-size: 18.4px;
+}
+table thead tr th:first-child {
+  border-radius: 8px 0 0 8px;
+}
+table thead tr th:last-child {
+  border-radius: 0 8px 8px 0;
+}
+table tbody td {
+  text-align: left;
+  border: none;
+  padding: 9.6px 16px;
+  font-size: 14.4px;
+  vertical-align: top;
+}
+table tbody tr {
+  transition: background 0.2s ease-in-out;
+}
+table tbody tr:nth-child(even) {
+  background: #f1f1f1;
+}
+table tbody tr:hover {
+  background: #f3f3f3;
+}
+table tbody tr td:last-child {
+  border-radius: 0 8px 8px 0;
+}
+table tbody tr td:first-child {
+  border-radius: 8px 0 0 8px;
+}
+
+figure {
+  margin: 0 0 32px 0;
+}
+
+.elementor-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+@media only screen and (max-width: 576px) {
+  .elementor-container {
+    flex-direction: column;
+  }
+}
+.elementor-container .elementor-column {
+  flex: 1;
+}
+.elementor-container .elementor-col-50 {
+  flex: 1;
+}
+.elementor-container .elementor-col-33 {
+  flex: 1;
+}
+.elementor-container .elementor-col-66 {
+  flex: 3;
+}
+.elementor-container .elementor-align-center {
+  margin: auto;
+  text-align: center;
+}
+.elementor-container .elementor-align-left {
+  margin-right: auto;
+  text-align: left;
+}
+.elementor-container .elementor-align-right {
+  margin-left: auto;
+  text-align: right;
+}
+.elementor-container a {
+  position: relative;
+}
+.elementor-container a::before {
+  content: "";
+  height: 8px;
+  width: 100%;
+  background: #40a1da;
+  position: absolute;
+  bottom: -2px;
+  z-index: 0;
+  opacity: 0.5;
+  transition: height 0.2s;
+}
+.elementor-container a:hover:before {
+  height: 0;
+}
+.elementor-container .elementor-button-wrapper {
+  display: inline-flex;
+}
+.elementor-container .elementor-widget-image .elementor-widget-container {
+  display: flex;
+}
+.elementor-container .elementor-widget-image img {
+  width: 100%;
+  height: auto;
+  margin: auto;
+}
+.elementor-container .elementor-widget-button.button a {
+  font-size: 16px;
+  padding-top: 17.6px;
+  padding-bottom: 17.6px;
+  margin-bottom: 16px;
+}
+.elementor-container .elementor-widget-button.button a::before {
+  content: none;
+}/*# sourceMappingURL=main.css.map */
