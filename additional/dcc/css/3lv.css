@@ -254,3 +254,17 @@ text-align: center;
 .price__row:hover {
     background-color: #747474;
 }
+
+.contacts {
+    width: 50%;
+}
+
+.contacts>dd {
+    margin-bottom: 10px;
+}
+
+.phone-list {
+    display: flex;
+    flex-direction: column;
+    margin-left: 20px;
+}

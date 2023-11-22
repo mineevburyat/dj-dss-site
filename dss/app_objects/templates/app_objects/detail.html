@@ -89,21 +89,34 @@
               <div class="card-horizontal__right-text">{{object.description|safe}}</div>
               <p class="card-horizontal__right-text">
                   Основные спортивные площадки и сооружения: 
-                  <ul class="card-horizontal__right-list">
+                  <dl class="contacts">
                     {% for area in object.get_areas%}
-                    <li><a href="{% url 'app_objects:area' object.slug area.slug%}">{{area.name}}</a></li>
+                    <dt>
+                      <a href="{% url 'app_objects:area' object.slug area.slug%}">{{area.name}}
+                      </a>
+                    </dt>
+                    <dd>
+                      <ul class="phone-list">
+                        {% for phone in area.get_phones %}
+                        <li>
+                            <span>{{phone.name}}</span>  
+                            <a href="{{phone.url}}">{{phone.phone}}</a>
+                        </li>
+                        {% endfor %}
+                      </ul>
+                    </dd>
                     {%endfor %}
-                  </ul>
+                </dl>
               </p>
               
-              <p class="card-horizontal__right-text">
+              {% comment %} <p class="card-horizontal__right-text">
                   {{object.short_name}} имеет следующие телефонные контакты: 
                   <ul class="card-horizontal__right-list">
                     {% for contact in object.get_contacts_list %}
                     <li><a href="#">{{contact.name}} <span class="card__label-phone">{{contact.get_phones_str}}</span></a></li>
                     {% endfor %}
                   </ul>
-              </p>
+              </p> {% endcomment %}
           </div>
           
       </div>

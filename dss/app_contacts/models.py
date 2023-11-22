@@ -8,40 +8,22 @@ class Contact(models.Model):
     class Meta:
         verbose_name = 'Контакт'
         verbose_name_plural = 'Контакты'
-    name = models.CharField(
-        'название',
-        max_length=65,
-        unique=True
-    )
     email = models.EmailField(
         'email',
         max_length=50,
         blank=True,
         null=True
     )
-    obj = models.ForeignKey(
-        Object,
-        verbose_name='объект',
-        on_delete=models.PROTECT,
-        blank=True,
-        null=True,
-        related_name='contacts'
-    )
-    stock = models.ForeignKey(
+    sportarea = models.OneToOneField(
         SportArea,
-        verbose_name='ресурс',
+        verbose_name='спортплощадка',
         on_delete=models.PROTECT,
-        null=True,
-        blank=True
+        unique=True,
+        related_name='contact_area'
     )
         
     def __str__(self):
-        return f'{self.name}'
-    
-    def get_object_str(self):
-        if self.obj:
-            return self.obj.short_name
-        return None
+        return f'контакты {self.sportarea.name} ({self.sportarea.obj.short_name})'
     
     def get_phones_str(self):
         phones = []
@@ -57,15 +39,21 @@ class Phone(models.Model):
         verbose_name = 'Телефон'
         verbose_name_plural = 'Телефоны'
     
+    name = models.CharField(
+        'пояснение',
+        max_length=22,
+        help_text='кому попадем',
+        default='администратор'
+    )
     phone = models.CharField(
         'телефон',
         max_length=20,
         help_text='отображаемый'
     )
     phone_url = models.CharField(
-        'телефон',
+        'url',
         max_length=16,
-        help_text='согласно e164',
+        help_text='согласно e164 (ссылка)',
         default='+7'
     )
     phone_add = models.CharField(
@@ -77,7 +65,7 @@ class Phone(models.Model):
     contact = models.ForeignKey(
         Contact,
         verbose_name='контакт',
-        on_delete=models.CASCADE
+        on_delete=models.CASCADE,
     )
     
     def get_phone_str(self):

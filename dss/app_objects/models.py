@@ -104,17 +104,18 @@ class Object(models.Model):
         if photos:
             return random.choice(photos)
 
-    def get_contacts_list(self):
-        contacts = self.contacts.all()
-        return contacts
-
     def get_num_areas(self):
         return self.sportarea.all().count()
     get_num_areas.short_description = 'спортплощадок'
 
     def get_num_vacancy(self):
         return '0'
-
+    
+    def get_phones(self):
+        phones = {}
+        for area in self.get_areas():
+            phones[area] = area.contact_area.phone_set.all()
+        return phones
 
 class SportArea(models.Model):
     '''\
@@ -193,7 +194,9 @@ class SportArea(models.Model):
             )
         if photos:
             return random.choice(photos)
-        
+    
+    def get_phones(self):
+        return self.contact_area.phone_set.all()
 
 class ObjectGallery(models.Model):
     '''\

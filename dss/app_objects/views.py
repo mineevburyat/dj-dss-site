@@ -43,7 +43,6 @@ class DetailObjectView(TitleMixin, ObjectsMixin, DetailView):
         object_news = []
         events = []
         for news in News.objects.filter(date_activation__range=(startDate, endDate)).order_by("-date_activation"):
-            print(news.valid_until_date)
             if news.valid_until_date > timezone.now():
                 continue
             if news.important:
@@ -89,12 +88,11 @@ class DetailAreaView(TitleMixin, DetailView):
         object_news = []
         events = []
         for news in News.objects.filter(date_activation__range=(startDate, endDate)).order_by("-date_activation"):
-            print(news.valid_until_date)
             if news.valid_until_date > timezone.now():
                 continue
             if news.important:
                 events.append(news)
-            object_news.append(news)    
+            object_news.append(news)
         context['objects_news'] = object_news[:6]
         context['events'] = events[:3]
         return context
