@@ -214,7 +214,8 @@ class ObjectGallery(models.Model):
         Object,
         verbose_name='Объект',
         on_delete=models.PROTECT,
-        related_name='gallery'
+        related_name='gallery',
+        unique=True
     )
     photos = models.ManyToManyField(
         Image,
@@ -243,8 +244,7 @@ class SportAreaGallery(models.Model):
     sportarea = models.ForeignKey(
         SportArea,
         verbose_name='спортплощадка',
-        blank=True,
-        null=True,
+        unique=True,
         on_delete=models.PROTECT
     )
     photos = models.ManyToManyField(
