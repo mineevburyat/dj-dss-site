@@ -6,8 +6,9 @@ from django.views.generic.detail import DetailView
 from django.views.generic import ListView
 from app_news.models import News
 from calendar import Calendar
-from datetime import datetime
+from datetime import datetime, timedelta
 from django.shortcuts import get_object_or_404
+from app_tags.models import Tag
 
 def name_of_week(day):
     return ['Понедельник', 'Вторник', 'Среда', 'Четверг', 'Пятница', 'Суббота', 'Воскресенье'][day]
@@ -26,28 +27,24 @@ class DetailObjectView(TitleMixin, ObjectsMixin, DetailView):
     context_object_name = 'object'
     template_name = 'app_objects/detail.html'
     title = "ДСС: о спортобъекте"
-    objects = Object.objects.all()
+    # objects = Object.objects.all()
         
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        id = self.object.pk
-        gallery = ObjectGallery.objects.filter(obj=id)
-        photos = []
-        for photo in gallery:
-            photos.append(photo.photos)
+        obj = self.get_object()
+        id = obj.pk
+        tags = Tag.objects.filter(tag__in=[obj.short_name, 'новость'])
         context['object_id'] = id
-        context['photos'] = photos
+        print(tags)
         # вытащить новости и важные события связанные с конкретным объектом
-        objects_news = News.objects.filter(tags__in=[id])
-        # calendar = Calendar()
-        # days = []
-        # now = datetime.now()
-        # for day in calendar.itermonthdays2(now.year, now.month):
-        #     days.append(day[0])
-        # context['days'] = days
-        # context['today'] = (now, name_of_month(now.month), name_of_week(now.weekday()))
-        # context['events'] = {25:"особое событие 1", 30:"особое событие 2"}
-        context['objects_news'] = objects_news
+        startDate = datetime.now() - timedelta(days=60)
+        endDate = datetime.now() + timedelta(days=10)
+        all_news = News.objects.filter(date_activation__range=(startDate, endDate)).order_by("-date_activation")
+        objects_news = all_news.filter(tags__in=tags)
+        print(objects_news)
+        current_event = objects_news.filter(important=True)
+        context['objects_news'] = objects_news[:6]
+        context['events'] = current_event[:3]
         # context['services'] = self.object.services.filter(object=self.object.pk).order_by('order')
         return context
 
