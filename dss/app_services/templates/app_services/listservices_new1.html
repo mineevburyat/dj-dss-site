@@ -72,31 +72,20 @@
             <div class="tab-content" id="content-{{forloop.counter}}">
               <section class="wrapper">
                 <div class="important-news">
-                    <div class="important-news__card important-news__card-danger">
+                  {%for news in events %}
+                    <div class="important-news__card important-news__card-{{news.level_importance}}">
                         <h3 class="important-news__title">
-                            <a href="news-detail.html">Бассейн закрыт с 14 по 17
-                            июня на профилкактику</a>
+                            <a href="{% url 'news:detail' news.slug %}">{{news.title}}</a>
                         </h3>
-                        <p class="important-news__text">Аренда дорожек и занятия с треноером производится не будут. Пожалуйста, сохраняйте купленные билеты, чтобы воспользоваться услугой позже Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae earum esse dolorum reprehenderit, excepturi soluta eligendi consequuntur! Obcaecati, sapiente, nisi, nobis eligendi asperiores aperiam nulla magni est sequi et ratione!</p>
+                        {% comment %} <p class="important-news__text">{{news.excerpt}}</p> {% endcomment %}
                     </div>
-                    <div class="important-news__card important-news__card-warning">
-                        <h3 class="important-news__title">
-                            <a href="news-detail.html">Предупреждающая новость</a>
-                        </h3>
-                        <p class="important-news__text">Внимание! Действуют акции бери два по цене трех!! Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam voluptatum nesciunt aliquam impedit, laudantium recusandae, ipsa culpa neque repellat aliquid, quod nobis voluptatem quasi provident praesentium iusto dicta quas sequi.</p>
-                    </div>
-                    <div class="important-news__card important-news__card-primary">
-                        <h3 class="important-news__title">
-                            <a href="news-detail.html">Обычная важная новсть</a>
-                        </h3>
-                        <p class="important-news__text">Пользуйтесь стиральным пороком и надевайте маски Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni fugiat laborum ea eveniet tempore culpa, nam unde iusto nisi facilis placeat nesciunt! Laudantium enim illum voluptas quisquam laboriosam pariatur porro?</p>
-                    </div>
+                  {% endfor %}
                 </div>
             </section>
                 <div class="tab__heads">
                     <div class="tab-head">
                         <div class="tab-head__left">
-                            <h3 class="tab-head__title"><a href="#">{{area.name}}</a> в <a href="#">{{area.obj.name}}</a></h3>
+                            <h3 class="tab-head__title"><a href="#">{{area.obj.name}}</a> <a href="#">{{area.name}}</a></h3>
                             <p>{{area.obj.address}}</p>
                             <ul class="tab-head__contact">
                               <li>
@@ -169,29 +158,6 @@
             </div>
         </div>
         {% endfor %}
-          <div class="event-card">
-              <div class="event-card__left">
-                  <img src="image/news2.png" alt="">
-              </div>
-              <div class="event-card__right">
-                  <div class="event-card__date">12 августа 2023</div>
-                  <div class="event-card__title">Всероссийские соревнования по боксу «Байкал–2023»</div>
-                  <div class="event-card__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus voluptatibus, aliquam quisquam optio vero a! Pariatur, atque. Amet, omnis voluptatem commodi beatae sunt minima, consequatur delectus ratione, corrupti facilis placeat.</div>
-                  <div class="event-card__link"><a href="#">Читать дальше</a></div>
-              </div>
-              
-          </div>
-          <div class="event-card">
-              <div class="event-card__left">
-                  <img src="image/news1.png" alt="">
-              </div>
-              <div class="event-card__right">
-                  <div class="event-card__date">12 августа 2023</div>
-                  <div class="event-card__title">Всероссийские соревнования по боксу «Байкал–2023»</div>
-                  <div class="event-card__text">В 53–й раз Бурятия встречает Всероссийские соревнования по боксу «Байкал–2023» памяти чемпиона Олимпийских игр В. Сафронова и серебряного призёра Олимпийских игр В.Баранникова</div>
-                  <div class="event-card__link"><a href="#">Читать дальше</a></div>
-              </div>
-          </div>
       </div>
   </section>
 </main>

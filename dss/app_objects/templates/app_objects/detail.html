@@ -39,7 +39,7 @@
   <section class="wrapper">
     <div class="important-news">
         {% for news in events %}
-        <div class="important-news__card important-news__card-danger">
+        <div class="important-news__card important-news__card-{{news.level_importance}}">
             <h3 class="important-news__title">
                 <a href="{% url 'news:detail' news.slug %}">{{news.title}}</a>
             </h3>

@@ -96,6 +96,7 @@
 .tarifs {
   position: relative;
   z-index: 100;
+  margin-top: 12px;
 }
 
 .tarifs__title {
@@ -152,6 +153,10 @@
   cursor: default;
   color: #fff;
   background-color: #0d6efd;
+}
+
+.tab__heads {
+    margin-top: 12px;
 }
 
 .tab-head {

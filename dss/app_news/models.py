@@ -81,6 +81,7 @@ class News(models.Model):
         default=False
     )
     level_importance = models.CharField(
+        'уровень важности',
         max_length=8,
         choices=[
             ('danger', 'важный'),
@@ -102,3 +103,12 @@ class News(models.Model):
         start_date = self.date_activation.strftime('%d.%m.%Y %H:%M')
         end_date = self.valid_until_date.strftime('%d.%m.%Y %H:%M')
         return f"{self.title} ({start_date} - {end_date})"
+    
+    def is_actual(self):
+        if self.valid_until_date:
+            if self.valid_until_date >= timezone.now():
+                return True
+        return False
+    
+    
+            

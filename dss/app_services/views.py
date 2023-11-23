@@ -14,6 +14,8 @@ from app_news.models import News
 from app_objects.models import Object
 from django.http import HttpResponse
 from django.urls import reverse
+from django.utils import timezone
+from datetime import timedelta
 
 
 class DetailServiceView(TitleMixin, DetailView):
@@ -68,6 +70,20 @@ class ListServiceView(ListView):
                     else:
                         area_servs[area] = [service]
         context['dic_area_srvs'] = area_servs
+        
+        startDate = timezone.now() - timedelta(days=30)
+        endDate = timezone.now() + timedelta(days=30)
+        object_news = []
+        events = []
+        for news in News.objects.filter(date_activation__range=(startDate, endDate)).order_by("-date_activation"):
+            if news.is_actual():
+                object_news.append(news)
+                if news.is_actual():
+                    events.append(news)
+        if len(events) < 3:
+            events.extend(object_news[:3])
+        context['objects_news'] = object_news[:6]
+        context['events'] = events[:3]
         return context
     
         
@@ -82,13 +98,13 @@ class ListTypeServiceView(TitleMixin, ListView):
     def get_queryset(self):
         query = super().get_queryset()
         category = self.kwargs.get('category')
-        if category == "other":
-            query = query.filter(
-                Q(category='relax') | Q(category=category))\
-                    .order_by('-order')
-            query += TypeService.objects.filter(category=category).order_by('-order')
-        else:
-            query = TypeService.objects.filter(category=category).filter(active=True).order_by('-order')
+        # if category == "other":
+        #     query = query.filter(
+        #         Q(category='relax') | Q(category=category))\
+        #             .order_by('-order')
+        #     query += TypeService.objects.filter(category=category).order_by('-order')
+        # else:
+        query = TypeService.objects.filter(category=category).filter(active=True).order_by('-order')
         return query
     
     def get_context_data(self, **kwargs):
