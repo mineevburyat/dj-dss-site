@@ -29,27 +29,19 @@ class ListServiceView(ListView):
     template_name = 'app_services/listservices_new1.html'
         
     def get_queryset(self):
-        category = self.kwargs.get('category')
+        # category = self.kwargs.get('category')
         typesrvc = self.kwargs.get('typesrvc')
-        # param_objcts = self.request.GET.get('objects')
+        # получить услуги этой категории и типу услуг
         typeservice = get_object_or_404(TypeService, slug=typesrvc)
-        services = Service.objects.filter(category=category, typeservice=typeservice.id).order_by('-order')
-        # else:
-        #     param_objcts = param_objcts.split(',')
-        #     objs = [i.pk for i in Object.objects.filter(slug__in=param_objcts)]
-        #     services = Service.objects.filter(category=category, typeservice=typeservice.id, object__in=objs).order_by('object', '-order')
-        # print(services)
+        services = Service.objects.filter(
+            typeservice=typeservice.id).order_by('-order')
         return services
     
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         category = self.kwargs.get('category')
         typesrvc = self.kwargs.get('typesrvc')
-        # param_objcts = self.request.GET.get('objects')
-        # if param_objcts:
-        #     param_objcts = param_objcts.split(',')
-        # else:
-        #     param_objcts = [i.slug for i in Object.objects.all()]
+        txt_category = None
         context['categoryslug'] = category
         for item in CHOICE_CATEGORY:
             if item[0] == category:
@@ -58,19 +50,15 @@ class ListServiceView(ListView):
         if not txt_category:
             raise Http404
         in_typeservice = get_object_or_404(TypeService, slug=typesrvc)
-        # typeservices = [item for item in TypeService.objects.filter(category=category).order_by('-order') if item != in_typeservice]
-        # context['typeservices'] = typeservices
-        
         title = f"ДСС: {txt_category}: {in_typeservice.name}"
         context['title'] = title
         context['currenttype'] = in_typeservice
         context['categoryname'] = txt_category
         services = self.get_queryset()
+        # собрать словарь: ключь спортплощадка значение список услуг
         areas = set()
-        # for service in services:
-        #     areas.add(service.sportarea)
-        # context['obj_filter'] = objs
-        # print(objs)
+        for service in services:
+            areas.add(service.sportarea)
         area_servs = {}
         for area in areas:
             for service in services:
@@ -79,65 +67,9 @@ class ListServiceView(ListView):
                         area_servs[area].append(service)
                     else:
                         area_servs[area] = [service]
-        print(area_servs)
-                    
         context['dic_area_srvs'] = area_servs
         return context
     
-    # def get(self, request, *args, **kwargs):
-    #     lastslugurl = request.path.split('/')[-1]
-    #     secondslugurl = request.path.split('/')[-2]
-    #     # if lastslugurl == 'kemping':
-    #     #     return redirect('/services/camping')
-    #     # if secondslugurl == 'section':
-    #     #     return redirect(reverse('services:hardsection', kwargs={'section': lastslugurl}))
-    #     return super().get(request, *args, **kwargs)
-        
-    # def get_queryset(self):
-    #     category = self.kwargs.get('category')
-    #     typesrvc = self.kwargs.get('typesrvc')
-    #     param_objcts = self.request.GET.get('objects')
-    #     typeservice = get_object_or_404(TypeService, slug=typesrvc)
-    #     if param_objcts is None:
-    #         services = Service.objects.filter(category=category, typeservice=typeservice.id).order_by('object', '-order')
-    #     else:
-    #         param_objcts = param_objcts.split(',')
-    #         objs = [i.pk for i in Object.objects.filter(slug__in=param_objcts)]
-    #         services = Service.objects.filter(category=category, typeservice=typeservice.id, object__in=objs).order_by('object', '-order')
-    #     return services
-
-    # def get_context_data(self, **kwargs):
-    #     context = super().get_context_data(**kwargs)
-    #     category = self.kwargs.get('category')
-    #     typesrvc = self.kwargs.get('typesrvc')
-    #     param_objcts = self.request.GET.get('objects')
-    #     if param_objcts:
-    #         param_objcts = param_objcts.split(',')
-    #     else:
-    #         param_objcts = [i.slug for i in Object.objects.all()]
-    #     context['category'] = category
-    #     for item in CHOICE_CATEGORY:
-    #         if item[0] == category:
-    #             txt_category = item[1]
-    #             break
-    #     if not txt_category:
-    #         raise Http404
-    #     in_typeservice = get_object_or_404(TypeService, slug=typesrvc)
-    #     typeservices = [item for item in TypeService.objects.filter(category=category).order_by('-order') if item != in_typeservice]
-    #     context['typeservices'] = typeservices
-        
-    #     title = f"ДСС: {txt_category}: {in_typeservice.name}"
-    #     context['title'] = title
-    #     context['currenttype'] = in_typeservice
-    #     context['categoryname'] = txt_category
-    #     services = Service.objects.filter(typeservice=in_typeservice.id)
-    #     # context['services'] = services
-    #     objs = set()
-    #     for service in services:
-    #         objs.add(service.object)
-    #     context['obj_filter'] = objs
-    #     context['param_objs'] = param_objcts
-    #     return context
         
 # services/category (sport. section, relax, other)
 class ListTypeServiceView(TitleMixin, ListView):
@@ -149,7 +81,6 @@ class ListTypeServiceView(TitleMixin, ListView):
     
     def get_queryset(self):
         query = super().get_queryset()
-        print(query)
         category = self.kwargs.get('category')
         if category == "other":
             query = query.filter(
@@ -158,7 +89,6 @@ class ListTypeServiceView(TitleMixin, ListView):
             query += TypeService.objects.filter(category=category).order_by('-order')
         else:
             query = TypeService.objects.filter(category=category).filter(active=True).order_by('-order')
-        print(query)
         return query
     
     def get_context_data(self, **kwargs):
@@ -172,17 +102,9 @@ class ListTypeServiceView(TitleMixin, ListView):
                 break
         if not txt_category:
             raise Http404
-        # if category == "other":
-        #     typeservices = TypeService.objects.filter(
-        #         Q(category='relax') | Q(category=category))\
-        #             .order_by('-order')
-        #     # typeservices += TypeService.objects.filter(category=category).order_by('-order')
-        # else:
-        # typeservices = TypeService.objects.filter(category=category).filter(active=True).order_by('-order')
         objects_news = News.objects.filter(tags__in=[3])
         context['objects_news'] = objects_news
         context['title'] = f"ДСС: {txt_category}"
-        # context['typeservices'] = typeservices
         context['categoryname'] = txt_category
         return context
         
@@ -220,7 +142,7 @@ def campingview(request):
 def sectionview(request, **kwargs):
     template_name = 'app_services/section.html'
     section = kwargs.get('section')
-    print(request)
+    
     context = {}
     category = 'section'
     context['category'] = category

@@ -25,18 +25,18 @@ class DiscontInline(admin.TabularInline):
 
 @admin.register(Service)
 class ServiceAdmin(admin.ModelAdmin):
-    list_display = ('__str__', )
-    ordering = ('category', 'typeservice', '-order')
+    list_display = ('__str__', 'get_obj_name')
+    ordering = ('typeservice', '-order')
     list_display_links = ('__str__',)
     formfield_overrides = {
         models.CharField: {'widget': TextInput(attrs={'size': '20'})},
     }
     prepopulated_fields = {"slug": ("name",)}
-    fields = [('category', 'typeservice', ),
+    fields = [('typeservice', 'sportarea'),
               ('name', 'slug', 'order'), 
               'description', 
             ]
-    list_filter = ('category', 'typeservice')
+    list_filter = ('sportarea', 'typeservice')
     inlines = [RateInline]
     
     
@@ -56,7 +56,7 @@ class PromotionInline(admin.StackedInline):
     
 @admin.register(TypeService)
 class TypeServiceAdmin(admin.ModelAdmin):
-    list_display = ('name', 'slug', 'category', 'order', 'active', 'icon_html_img')
+    list_display = ('name', 'category', 'order', 'active', 'icon_html_img', 'get_count_services', 'get_count_photos')
     ordering = ('-category', '-order')
     list_editable = ('order', 'active')
     fields = (
@@ -70,5 +70,7 @@ class TypeServiceAdmin(admin.ModelAdmin):
     
 @admin.register(TypeServiceGallery)
 class TypeServiceGalleryAdmin(admin.ModelAdmin):
-    list_display = ('get_name', 'get_html_photo', 'get_img_size')
-    list_filter = ('typeservice',)
+    list_display = ('__str__', 'get_count_photo')
+    readonly_fields = ('get_count_photo', )
+    # list_filter = ('typeservice',)
+    filter_horizontal = ('photos',)

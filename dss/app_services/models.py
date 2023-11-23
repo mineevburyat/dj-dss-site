@@ -16,27 +16,6 @@ CHOICE_CATEGORY = (
         ('other', 'Прочие услуги'),
     )
 
-# class VariousSport(models.Model):
-#     '''\
-#         вид спорта: по общероссийской классификации'''
-#     class Meta:
-#         verbose_name = 'Вид спорта'
-#         verbose_name_plural = 'Виды спорта'
-#     name = models.CharField(
-#         'Название спорта',
-#         max_length=60,
-#         unique=True
-#     )
-#     slug = models.CharField(
-#         'название на английском',
-#         max_length=60,
-#         unique=True,
-#         db_index=True
-#     )
-    
-#     def __str__(self):
-#         return f"{self.name} ({self.slug})"
-    
 class TypeService(models.Model):
     '''\
         Группировка услуг на исскуственные типы для меню'''
@@ -85,7 +64,8 @@ class TypeService(models.Model):
     
         
     def __str__(self):
-        return f"{self.name} ({self.slug})"
+        category = self.get_category_display()
+        return f"{self.name} ({category})"
     
     def get_icon_url(self):
         return self.icon.get_icon_url()
@@ -94,25 +74,30 @@ class TypeService(models.Model):
         return mark_safe(
             f'<img src="{self.get_icon_url()}" width="65"/>')
     icon_html_img.short_description = 'Иконка'
-    
-    # def display_objects(self):
-    #     lst = [item.short_name for item in Object.objects.filter(service = self.id) ]
-    #     return ' '.join(lst)
-    
+        
     def get_random_photo(self):
-        photos = []
-        for gallery in TypeServiceGallery.objects.filter(typeservice=self):
-            photos.append(
-                {'url': gallery.photos.get_url_middle_img(),
-                 'alt': gallery.photos.title}
-            )
+        photos = self.get_photos()
         if photos:
             return random.choice(photos)
-        
-    # def get_typestock_name(self):
-    #     if self.area:
-    #         return self.area.name
-    #     return None
+        return None
+    
+    def get_services(self):
+        return self.service_set.all()
+    
+    def get_count_services(self):
+        return self.get_services().count()
+    get_count_services.short_description = 'услуг'
+    
+    def get_photos(self):
+        photos = []
+        if hasattr(self, 'typeservicegallery'):
+            photos = self.typeservicegallery.photos.all()
+        return photos
+    
+    def get_count_photos(self):
+        return len(self.get_photos())
+    get_count_photos.short_description = 'фотографий'
+    
 
 class Service(models.Model):
     '''\
@@ -130,11 +115,6 @@ class Service(models.Model):
     description = RichTextUploadingField(
         'краткое описание',
         max_length=2500
-    )
-    category = models.CharField(
-        'категория услуги',
-        choices=CHOICE_CATEGORY,
-        max_length=MAX_PREF_LENGTH,
     )
     slug = models.SlugField(
         'slug имя в url',
@@ -155,7 +135,12 @@ class Service(models.Model):
         'важность',
         default=100
     )
-    
+    sportarea = models.ForeignKey(
+        SportArea,
+        verbose_name='спортплощадка',
+        on_delete=models.PROTECT,
+        default=1
+    )
     
     def __str__(self):
         # Детские тарифы
@@ -184,6 +169,39 @@ class Service(models.Model):
             other_str = "тарифов нет"
         return f"{self.name} {other_str} {child_str}"
 
+    def min_child(self):
+        childs_rates = self.get_rates_count(True)
+        # childs_discount = self.get_discounts_count(True)
+        if childs_rates > 1:
+            min_discont = self.get_min_discount(True) if self.get_min_discount(True) else '-'
+            child_str = f"от {min_discont} руб."
+        elif childs_rates == 1:
+            rate_price = self.get_rates(True).first().price
+            child_str = f"{rate_price} руб."
+        else:
+            child_str = "нет"
+        return child_str
+    
+    def min_other(self):
+        other_rates = self.get_rates_count()
+        # other_discount = self.get_discounts_count()
+        if other_rates > 1:
+            min_discont = self.get_min_discount() if self.get_min_discount() else '-'
+            other_str = f"от {min_discont} руб."
+        elif other_rates == 1:
+            # rate_name = self.servicerate.first().name
+            rate_price = self.servicerate.first().price
+            other_str = f"{rate_price} руб."
+        else:
+            other_str = "нет"
+        return other_str
+    
+    def max_privilegies(self):
+        return 'нет'
+    
+    def get_promotion(self):
+        return 'нет'
+    
     def get_absolute_url(self):
         return reverse('services:detail', kwargs={"slug": self.slug})
     
@@ -209,19 +227,12 @@ class Service(models.Model):
             return min(list_price)
         else:
             return None
-    # def get_sportarea(self):
-    #     if self.sportarea:
-    #         return self.sportarea.name
-    #     return None
+    def get_object(self):
+        return self.sportarea.obj
     
-    # def get_object(self):
-    #     if self.object:
-    #         return self.object.name
-    #     return None
-    
-    # def display_objects(self):
-    #     lst = [item.short_name for item in Object.objects.filter(service = self.id) ]
-    #     return ' '.join(lst)
+    def get_obj_name(self):
+        return self.get_object().short_name
+    get_obj_name.short_description = 'объект'
     
 
 class Rate(models.Model):
@@ -280,6 +291,7 @@ class Rate(models.Model):
 
     def get_name(self):
         pass
+    
 class Discount(models.Model):
     class Meta:
         verbose_name = 'дисконт'
@@ -336,32 +348,26 @@ class TypeServiceGallery(models.Model):
         Галерея фотографий с типами услуг, используется в слайдере'''
     class Meta:
         verbose_name = 'Фотография вида услуг'
-        verbose_name_plural = 'Галерея фотографий услуг'
+        verbose_name_plural = 'Галерея фотографий'
     
-    typeservice = models.ForeignKey(
+    typeservice = models.OneToOneField(
         TypeService,
-        verbose_name='Услуга',
+        verbose_name='тип услуги',
         on_delete=models.PROTECT,
-        related_name='photo'
+        # related_name='photos'
     )
-    photos = models.ForeignKey(
+    photos = models.ManyToManyField(
         Image,
         verbose_name='фотографии',
-        on_delete=models.PROTECT,
-        related_name='service'
+        # on_delete=models.PROTECT,
+        # related_name='service'
     )
     
     def __str__(self):
-        return str(self.typeservice)
+        category = self.typeservice.get_category_display()
+        return f"{self.typeservice.name} ({category})"
     
-    def get_html_photo(self):
-        return self.photos.thumbnail_html()
-    get_html_photo.short_description = 'фото'
+    def get_count_photo(self):
+        return self.photos.all().count()
+    get_count_photo.short_description = 'фото'
     
-    def get_name(self):
-        return self.typeservice.name
-    get_name.short_description = 'имя'
-
-    def get_img_size(self):
-        return self.photos.get_img_size()
-    get_img_size.short_description = 'размер'

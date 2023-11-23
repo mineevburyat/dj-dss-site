@@ -50,12 +50,12 @@
           {% for typeservice in typeservices %}
           <a class="card" href="{% url 'app_services:listservice' category typeservice.slug %}">
               <div class="card__top">
-                  <img class="card__img" src="{{typeservice.get_random_photo.url}}" alt="{{typeservice.get_random_photo.alt}}">
+                  <img class="card__img" src="{{typeservice.get_random_photo.medium.url}}" alt="{{typeservice.get_random_photo.alt_txt}}">
                   <!-- тут блоки с абсолютным позиционированием TODO -->
-                  <ul class="card__label">
+                  {% comment %} <ul class="card__label">
                       <li class="card__label-bg">колл-центр <span class="card__label-phone">(3012) 45-30-36</span></li>
                       <li class="card__label-bg">администратор <span class="card__label-phone">(3012) 46-04-27</span></li>
-                  </ul>
+                  </ul> {% endcomment %}
               </div>
               <div class="card__text">
                   <h2 class="card__title">{{ typeservice.name }}</h2>

@@ -95,19 +95,20 @@
             </section>
                 <div class="tab__heads">
                     <div class="tab-head">
-                      
                         <div class="tab-head__left">
                             <h3 class="tab-head__title"><a href="#">{{area.name}}</a> в <a href="#">{{area.obj.name}}</a></h3>
                             <p>{{area.obj.address}}</p>
                             <ul class="tab-head__contact">
+                              <li>
+                                <span>Call-центр</span>
+                                  <a href="tel:+73012331212">{{area.obj.call_center}}</a>
+                              </li>
+                                {% for phone in area.get_phones %}
                                 <li>
-                                    <span>Администратор: </span>
-                                    <a href="tel:+73012331212">+7(3012)331212</a>
+                                    <span>{{phone.name}}</span>
+                                    <a href="{{phone.url}}">{{phone.phone}}</a>
                                 </li>
-                                <li>
-                                    <span>Тренерская: </span>
-                                    <a href="tel:+73012331212">+7(3012)331212</a>
-                                </li>
+                                {% endfor %}
                             </ul>
                             
                         </div>
@@ -136,10 +137,10 @@
                         <div class="price__col">{{service.name}}</div>
                         <div class="price__col">
                             <div class="price__row">
-                                <div class="price__col">от 300</div>
-                                <div class="price__col">от 700</div>
-                                <div class="price__col">скидки от 30%</div>
-                                <div class="price__col">нет акций</div>
+                                <div class="price__col">{{service.min_child}}</div>
+                                <div class="price__col">{{service.min_other}}</div>
+                                <div class="price__col">{{service.max_privilegies}}</div>
+                                <div class="price__col">{{service.get_promotion}}</div>
                             </div>
                         </div>
                     </div>
