@@ -1,21 +1,36 @@
-{% extends 'home/base2lv.html' %}
+{% extends 'home/base_dep.html' %}
 
 {% load static %}
 
-{% block sidebar %}
-<div>Тут подменю приложения сервисы (перечисляем сервисы по категориям)</div>
+{% block style %}
+<link rel="stylesheet" href="{% static 'home/css/2lv.css' %}">
+<link rel="stylesheet" href="{% static 'home/css/3lv.css' %}">
+<link rel="stylesheet" href="{% static 'home/css/4lv.css' %}">
 {% endblock %}
 
 {% block content %}
-<main class="container-fluid">
+<main class="wrapper">
   <div class="row">
-    <div class="col-md">
-      подробная детальная информация
-      {{ service }}
-      <img src='{{ service.icon.url }}'>
-      <img src='{{ service.photo.url }}'>
-      {{ service.description|safe }}
-    </div>
+    <h1>{{service.get_category_name}} {{service.sportarea.name}} {{service.get_object.short_name}}</h1>
+    <h2>{{service.typeservice.name}}</h2>
+    <h3>{{ service.name }}</h3>
+    <p>{{service.description|safe}}</p>
+    <ul>
+      {% for rate in service.get_all_rates%}
+        {{rate.name}} ({% if rate.forchild %}Детский{%else%}Взрослый{%endif%})<br>
+        {{rate.description|safe}}
+        {% if rate.get_disconts %}
+          <ul>
+          {% for discount in rate.get_disconts %}
+            <li>{{discount.name}} - {{discount.get_price}} руб.</li>
+          {% endfor %}
+          </ul>
+        {% else %}
+          <li>{{rate.price}} руб.</li>
+        {%endif%}
+      {% endfor %}
+    </ul>
+      
   </div>
 </main>
 {% endblock %}

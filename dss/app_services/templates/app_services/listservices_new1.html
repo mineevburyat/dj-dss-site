@@ -123,7 +123,7 @@
                     </div>
                     {% for service in services %}
                     <div class="price__row">
-                        <div class="price__col">{{service.name}}</div>
+                        <div class="price__col"><a href="{% url 'app_services:detail' service.slug%}">{{service.name}}</a></div>
                         <div class="price__col">
                             <div class="price__row">
                                 <div class="price__col">{{service.min_child}}</div>

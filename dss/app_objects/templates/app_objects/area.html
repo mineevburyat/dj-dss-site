@@ -88,11 +88,11 @@
                 </ul>
             </div>
               <div class="card-horizontal__right-text">
-                  {{area.name}} предоставляет следующие услуги: 
+                  {{area.name}} предоставляет следующие услуги:
                   <ul class="card-horizontal__right-list">
-                      <li><a href="#">разовое посещение бассейна</a></li>
-                      <li><a href="#">абонемент на посещение бассейна</a></li>
-                      <li><a href="#">сауна</a></li>
+                    {% for service in area.get_services %}
+                      <li><a href="{% url 'app_services:detail' service.slug %}">{{service.name}}</a></li>
+                    {% endfor %}
                   </ul>
               </div>
           </div>

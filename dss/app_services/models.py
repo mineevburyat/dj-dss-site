@@ -233,7 +233,12 @@ class Service(models.Model):
     def get_obj_name(self):
         return self.get_object().short_name
     get_obj_name.short_description = 'объект'
+        
+    def get_all_rates(self):
+        return self.servicerate.all()
     
+    def get_category_name(self):
+        return self.typeservice.get_category_display()
 
 class Rate(models.Model):
     class Meta:

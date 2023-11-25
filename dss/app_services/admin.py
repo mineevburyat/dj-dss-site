@@ -9,6 +9,7 @@ from django.db import models
 from django.forms import TextInput
 from django.template.loader import get_template
 from django_ace import AceWidget
+from django.contrib.admin import SimpleListFilter
 
 
 class RateInline(admin.TabularInline):
@@ -67,10 +68,24 @@ class TypeServiceAdmin(admin.ModelAdmin):
     )
     readonly_fields = ('icon_html_img',)
     
-    
+class CategoryFilter(SimpleListFilter):
+    title = 'категория услуг'
+    parameter_name = 'category'
+    def lookups(self, request, model_admin):
+        categories = set([(item.category, item.get_category_display()) for item in TypeService.objects.all()])
+        return categories
+
+    def queryset(self, request, queryset):
+        if self.value():
+            typeservices = TypeService.objects.filter(category=self.value())
+            return queryset.filter(typeservice__in=typeservices)
+        return queryset
+        
+
 @admin.register(TypeServiceGallery)
 class TypeServiceGalleryAdmin(admin.ModelAdmin):
     list_display = ('__str__', 'get_count_photo')
     readonly_fields = ('get_count_photo', )
     # list_filter = ('typeservice',)
     filter_horizontal = ('photos',)
+    list_filter = (CategoryFilter,)

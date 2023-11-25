@@ -203,6 +203,11 @@ class SportArea(models.Model):
         else:
             logger.warning(f"{self} не имеет контактов")
             return []
+        
+    def get_services(self):
+        return self.service_set.all()
+        
+        
 class ObjectGallery(models.Model):
     '''\
         Галерея фотографий объектов'''
