@@ -213,15 +213,18 @@ class Image(models.Model):
     thumbnail_html.short_description = 'миниатюра'
 
     def __str__(self):
-        return f"{self.title} ({self.pk})"
+        return f"{self.title} ({self.pk}) ({self.tags_list()})"
 
     def get_img_size(self):
         return f"{self.width}x{self.height} px"
     get_img_size.short_description = 'размер картинки'
 
+    def get_tags(self):
+        return self.tags.all()
+
     def tags_list(self):
         lst = [x[1] for x in self.tags.values_list()]
-        return mark_safe('<br>'.join(lst))
+        return mark_safe(', '.join(lst))
     tags_list.short_description = 'список тэгов'
 
     def is_caption(self):
@@ -275,6 +278,8 @@ class Image(models.Model):
             img.save(fimg, img.format)
             fsize = filesize(len(fimg.getvalue()))
             return mark_safe(f"<a href={self.thumbnail.url}>{name} ({width}x{height})  {fsize}</a>")
+        
+    
 
 
 @receiver(post_save, sender=Image)
