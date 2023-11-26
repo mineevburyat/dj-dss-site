@@ -7,6 +7,7 @@ from .models import (Object,
                      SportAreaGallery)
 from django import forms
 from django_ace import AceWidget
+from django.contrib.admin import SimpleListFilter
 
 # Register your models here.
 
@@ -109,6 +110,20 @@ class OblectGalleryAdmin(admin.ModelAdmin):
     filter_horizontal = ('photos',)
     
     
+class AreaFilter(SimpleListFilter):
+    title = 'объекты'
+    parameter_name = 'object'
+    def lookups(self, request, model_admin):
+        objs = set([(item.slug, item.short_name) for item in Object.objects.all()])
+        return objs
+
+    def queryset(self, request, queryset):
+        if self.value():
+            obj = Object.objects.get(slug=self.value())
+            area = SportArea.objects.filter(obj=obj)
+            return queryset.filter(sportarea__in=area)
+        return queryset
+        
 
 @admin.register(SportAreaGallery)
 class SportAreaGalleryAdmin(admin.ModelAdmin):
@@ -117,4 +132,4 @@ class SportAreaGalleryAdmin(admin.ModelAdmin):
     fields = ['sportarea', 'photos']
     readonly_fields = ('get_count_photos',)
     filter_horizontal = ('photos',)
-    
+    list_filter = [AreaFilter]
