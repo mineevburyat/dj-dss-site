@@ -70,11 +70,21 @@
                   <span class="card__label-phone">как проехать</span>
                 </li>
               </ul>
+              <ul class="card-horizontal__left-buttom">
+                {% for character in area.characteristics%}
+                  <li class="card-info">
+                      <span class="card-info__label">{{character.name}}</span>
+                      <span class="card-info__data">{{character.value}}</span>
+                  </li>
+                {% endfor %}
+              </ul>
           </div>
           </div>
           <div class="card-horizontal__right">
               <ul class="card-horizontal__right-listlinks">
-                  <li><a href="#">Расценки и скидки</a></li>
+                {%for typeservice in area.get_typeservices%}
+                  <li><a href="{% url 'app_services:listservice' typeservice.category typeservice.slug%}">{{typeservice.get_category_display}}</a></li>
+                {% endfor %}
                   <li><a href="#">Режим работы и расписание</a></li>
                   <li><a href="#">Требования и правила посещения</a></li>
               </ul>
@@ -88,26 +98,26 @@
                 </ul>
             </div>
               <div class="card-horizontal__right-text">
-                  {{area.name}} предоставляет следующие услуги:
-                  <ul class="card-horizontal__right-list">
-                    {% for service in area.get_services %}
-                      <li><a href="{% url 'app_services:detail' service.slug %}">{{service.name}}</a></li>
-                    {% endfor %}
-                  </ul>
+                  <h5>{{area.name}} предоставляет следующие услуги:</h5>
+                  <dl>
+                  {% for category, services in area.get_separate_services.items %}
+                    <dt>{{category}}</dt>
+                    <dd>
+                      <ul class="card-horizontal__right-list">
+                        {% for service in services %}
+                          <li><a href="{% url 'app_services:detail' service.slug %}">{{service.name}}</a></li>
+                        {% endfor %}
+                      </ul>
+                    </dd>
+                  {%endfor%}
+                  </dl>
               </div>
           </div>
       </div>
       {% comment %} <p class="card-horizontal__promo">
           {{area.inviting_mes}}
       </p> {% endcomment %}
-      <ul class="card-horizontal__left-buttom">
-        {% for character in area.characteristics%}
-          <li class="card-info">
-              <span class="card-info__label">{{character.name}}</span>
-              <span class="card-info__data">{{character.value}}</span>
-          </li>
-        {% endfor %}
-      </ul>
+      
   </section>
   <section class="wrapper event">
       <h4 class="event__header">Ближайшие события</h4>

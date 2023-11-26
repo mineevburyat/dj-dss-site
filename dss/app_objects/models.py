@@ -9,6 +9,8 @@ import random
 # from app_contacts.models import Contact
 import logging
 logger = logging.getLogger(__name__)
+# from app_services.models import TypeService
+
 
 class Object(models.Model):
     '''\
@@ -207,7 +209,20 @@ class SportArea(models.Model):
     def get_services(self):
         return self.service_set.all()
         
-        
+    def get_typeservices(self):
+        services = self.get_services()
+        typeservices = set([item.typeservice for item in services])
+        return set(typeservices)
+    
+    def get_separate_services(self):
+        typeservices = self.get_typeservices()
+        all_services = self.get_services()
+        result = {}
+        for typeservice in typeservices:
+            result[typeservice.get_category_display()] = all_services.filter(typeservice=typeservice)
+        print(result)
+        return result
+
 class ObjectGallery(models.Model):
     '''\
         Галерея фотографий объектов'''
