@@ -36,7 +36,20 @@
       <div class="about">
           <div class="about__body">
               <h2 class="about__title">Вакансии</h2>
-              <div>dfrfycbb </div>
+              <div>
+                <dl>
+                {% for obj_name, vacants in obj_vacants_dic.items %}
+                    <dt><h3>{{obj_name}}</h3></dt>
+                    <dd>
+                        <ul>
+                            {% for vacant in vacants %}
+                            <li>{{vacant.job_title}} ({{vacant.full_name}}) </li>
+                            {% endfor %}
+                        </ul>
+                    </dd>
+                {% endfor %}
+                </dl>
+              </div>
             </div>
             {% include 'app_about/submenu.html' %}
       </div>
