@@ -1,4 +1,6 @@
 from django.views.generic.base import TemplateView
+from django.views.generic import ListView
+from .models import Manager
 # from common.mixins import TitleMixin
 
 
@@ -6,8 +8,10 @@ class IndexView(TemplateView):
     template_name = 'app_about/index.html'
     # title = "Магазин Store - главная"
     
-class ManagmentView(TemplateView):
+class ManagmentView(ListView):
     template_name = 'app_about/managment.html'
+    model = Manager
+    context_object_name = 'pipls'
     
 class DTurView(TemplateView):
     template_name = 'app_about/3dtur.html'

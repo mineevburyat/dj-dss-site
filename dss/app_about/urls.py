@@ -1,5 +1,6 @@
 from django.contrib import admin
 from django.urls import path
+from django.shortcuts import redirect
 from .views import (IndexView,
                     ManagmentView,
                     DTurView,
@@ -11,8 +12,13 @@ from .views import (IndexView,
 
 app_name = 'app_objects'
 
+def redirect_view(request):
+    response = redirect('/about/managments/')
+    return response
+
 urlpatterns = [
-    path('', IndexView.as_view(), name='index'),
+    # path('', IndexView.as_view(), name='index'),
+    path('', redirect_view),
     path('managments/', ManagmentView.as_view(), name="managment"),
     path('3dtur/', DTurView.as_view(), name="3dtur"),
     path('documents/', DocumentsView.as_view(), name="documents"),

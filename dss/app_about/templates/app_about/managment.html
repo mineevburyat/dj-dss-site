@@ -37,42 +37,21 @@
           <div class="about__body">
               <h2 class="about__title">Руководство</h2>
               <div class="pipl-cards">
+                {%for pipl in pipls %}
                   <div class="pipl-card">
                       <div class="pipl-card__img">
-                          <img src="image/pipl1.png" alt="">
+                          <img src="{{pipl.photo.image.url}}" alt="{{pipl.photo.alt_txt}}">
                       </div>
                       <div class="pipl-card__text">
-                          <div class="job-title">Временно исполняющий обязанности директора</div>
-                          <div class="name">Покровский Григорий Иванович</div>
+                          <div class="job-title">{{pipl.job_title}}</div>
+                          <div class="name">{{pipl.full_name}}</div>
                           <div class="address">ул. Кирова, 1 (Центральный стадион), 4 этаж, каб. 408</div>
                           <div class="email">эл. адрес: dss-sport@govrb.ru</div>
                           <div class="phone">тел +7 (3012) 21-10-41, доб. 108</div>
                       </div>
                   </div>
-                  <div class="pipl-card">
-                      <div class="pipl-card__img">
-                          <img src="image/pipl1.png" alt="">
-                      </div>
-                      <div class="pipl-card__text">
-                          <div class="job-title">Временно исполняющий обязанности директора</div>
-                          <div class="name">Покровский Григорий Иванович</div>
-                          <div class="address">ул. Кирова, 1 (Центральный стадион), 4 этаж, каб. 408</div>
-                          <div class="email">эл. адрес: dss-sport@govrb.ru</div>
-                          <div class="phone">тел +7 (3012) 21-10-41, доб. 108</div>
-                      </div>
-                  </div>
-                  <div class="pipl-card">
-                      <div class="pipl-card__img">
-                          <img src="image/pipl1.png" alt="">
-                      </div>
-                      <div class="pipl-card__text">
-                          <div class="job-title">Временно исполняющий обязанности директора</div>
-                          <div class="name">Покровский Григорий Иванович</div>
-                          <div class="address">ул. Кирова, 1 (Центральный стадион), 4 этаж, каб. 408</div>
-                          <div class="email">эл. адрес: dss-sport@govrb.ru</div>
-                          <div class="phone">тел +7 (3012) 21-10-41, доб. 108</div>
-                      </div>
-                  </div>
+                  {% endfor %}
+                  
               </div>
           </div>
           {% include 'app_about/submenu.html' %}
