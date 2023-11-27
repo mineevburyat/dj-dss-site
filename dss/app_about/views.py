@@ -1,7 +1,9 @@
+from typing import Any
 from django.views.generic.base import TemplateView
 from django.views.generic import ListView
 from .models import Manager
 # from common.mixins import TitleMixin
+from app_contacts.models import Contact
 
 
 class IndexView(TemplateView):
@@ -21,6 +23,11 @@ class DocumentsView(TemplateView):
     
 class ContactsView(TemplateView):
     template_name = 'app_about/contacts.html'
+    def get_context_data(self, **kwargs: Any) -> dict[str, Any]:
+        context = super().get_context_data(**kwargs)
+        context['contacts'] = Contact.objects.dic_object_contacts()
+        print(context['contacts'])
+        return context
     
 class VacantView(TemplateView):
     template_name = 'app_about/jobs.html'

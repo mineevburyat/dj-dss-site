@@ -36,7 +36,23 @@
       <div class="about">
           <div class="about__body">
               <h2 class="about__title">Контакты</h2>
-              <div></div>
+              <div>
+                <dl>
+                    {% for obj_name, area_contacts in contacts.items %}
+                    <dt><h3>{{obj_name}}</h3></dt>
+                    <dd>
+                        {% for area_name, phones in area_contacts.items %}
+                        <h4>{{area_name}}</h4>
+                        <ul>
+                            {% for phone in phones %}
+                            <li>{{phone.name}} <a href="tel:{{phone.url}}">{{phone.phone}}</a></li>
+                            {% endfor %}
+                        </ul>
+                        {% endfor %}
+                    </dd>
+                    {% endfor %}
+                </dl>    
+              </div>
           </div>
           {% include 'app_about/submenu.html' %}        
       </div>

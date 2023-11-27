@@ -1,13 +1,35 @@
 from django.db import models
 from app_objects.models import Object, SportArea
 from django.utils.safestring import mark_safe
-
+from app_objects.models import Object, SportArea
 # Create your models here.
+
+class ContactManager(models.Manager):
+    def dic_object_contacts(self):
+        all = self.all()
+        result = {}
+        for contact in all:
+            obj_name = contact.sportarea.obj.name
+            area_name = contact.sportarea.name
+            phones = contact.phone_set.all()
+            dic_obj = result.get(obj_name)
+            if dic_obj:
+                dic_area = dic_obj.get(area_name)
+                if dic_area:
+                    dic_area.extend(phones)
+                else:
+                    result[obj_name] = {area_name: phones}
+            else:
+                result[obj_name] = {area_name:phones}
+            
+        return result
 
 class Contact(models.Model):
     class Meta:
         verbose_name = 'Контакт'
         verbose_name_plural = 'Контакты'
+    
+    objects = ContactManager()
     email = models.EmailField(
         'email',
         max_length=50,
@@ -30,9 +52,10 @@ class Contact(models.Model):
         for phone in self.phone_set.all():
             phones.append(phone.get_phone_str())
         if phones:
-            return mark_safe(',<br>'.join(phones))
+            return mark_safe(', '.join(phones))
         return None
     get_phones_str.short_description = 'телефоны'
+    
     
 class Phone(models.Model):
     class Meta:
