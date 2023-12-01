@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Manager, Vacant, Document, TypeDocument
+from .models import Manager, Vacant, Document, TypeDocument, WP_Page
 from app_mediafiles.models import Image
 # Register your models here.
 
@@ -23,4 +23,8 @@ class DocumentAdmin(admin.ModelAdmin):
     
 @admin.register(TypeDocument)
 class DocumentAdmin(admin.ModelAdmin):
+    pass
+
+@admin.register(WP_Page)
+class PagesAdmin(admin.ModelAdmin):
     pass

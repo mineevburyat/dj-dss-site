@@ -36,32 +36,17 @@
       <div class="about">
           <div class="about__body">
             <h2 class="about__title">Документы</h2>
+            {% for doctype, documents in dic_documents.items%}
             <div class="documents">
-                <h3 class="documents__title">УСТАВНЫЕ ДОКУМЕНТЫ</h3>
+                <h3 class="documents__title">{{doctype}}</h3>
                 <ul class="documents-list">
-                    <li class="documents-list__item"><a href="#">Приказ МСМП РБ №13 от 08.02.2023 года о назначении временно исполняющег обязанности директора ГАУ РБ «Дирекция спортивных сооружений» Покровского Г.И.</a></li>
-                    <li class="documents-list__item"><a href="#">Устав с изменениями 2021 года</a></li>
-                    <li class="documents-list__item"><a href="#">Выписка из ЕГРЮЛ 2023 г.</a></li>
-                    <li class="documents-list__item"><a href="#">Карточка организации с реквизитами</a></li>
-                    <li class="documents-list__item"><a href="#">Свидетельство о постановке в налоговую</a></li>
-                    <li class="documents-list__item"><a href="#">Свидетельство о регистрации </a></li>
-                    <li class="documents-list__item"><a href="#">Доступ к информационно-телекоммуникационным сетям Материально -техническое оснащение ФСК и ЦС</a></li>
+                    {%for document in documents%}
+                    <li class="documents-list__item"><a href="{{document.file_url}}" target="_blank">{{document.name}}</a></li>
+                    {% endfor %}
                 </ul>
             </div>
-            <div class="documents">
-                <h3 class="documents__title">РАСЦЕНКИ</h3>
-                <ul class="documents-list">
-                    <li class="documents-list__item"><a href="#">Приказ № 709 от 18.08.2023г на платные услуги по всем объектам ГАУ РБ «ДСС»</a></li>
-                    <li class="documents-list__item"><a href="#">Приказ №21 от 17.01.22 для СШ №3 о скидки на армспорт (до 31.05.22)</a></li>
-                </ul>
-            </div>
-            <div class="documents">
-                <h3 class="documents__title">ДОГОВОР</h3>
-                <ul class="documents-list">
-                    <li class="documents-list__item"><a href="#">Публичный договор на возмездное оказание услуг</a></li>
-                    <li class="documents-list__item"><a href="#">Публичный договор 2023 год.</a></li>
-                </ul>
-            </div>
+            {% endfor %}
+            
           </div>
           {% include 'app_about/submenu.html' %}
       </div>

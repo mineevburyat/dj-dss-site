@@ -131,6 +131,7 @@ font-size: 21px;
 font-style: normal;
 font-weight: 600;
 line-height: normal;
+text-transform: uppercase;
 }
 
 .documents-list {

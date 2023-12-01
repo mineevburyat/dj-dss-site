@@ -35,9 +35,16 @@
   <section class="wrapper">
       <div class="about">
             <div class="about__body">
-              <h2 class="about__title">Приёмная</h2>
-              <div>Закупки </div>
+              <h2 class="about__title">Закупки</h2>
+              <ul class="documents-list">
+                    {%for document in purchases%}
+                    <li class="documents-list__item"><a href="{{document.file_url}}" target="_blank">{{document.name}}</a></li>
+                    {% empty%}
+                    <li class="documents-list__item">Нет документов</li>
+                    {% endfor %}
+                </ul>
             </div>
+            
             {% include 'app_about/submenu.html' %} 
       </div>
   </section>

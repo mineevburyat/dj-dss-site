@@ -1,7 +1,18 @@
 from django.db import models
 from app_objects.models import Object
 from app_mediafiles.models import Image
+from django.utils import timezone
+from django.core.exceptions import ObjectDoesNotExist
 # Create your models here.
+
+class GetOrNoneManager(models.Manager):
+    """Adds get_or_none method to objects
+    """
+    def get_or_none(self, **kwargs):
+        try:
+            return self.get(**kwargs)
+        except ObjectDoesNotExist:
+            return None
 
 class Manager(models.Model):
     '''\
@@ -76,6 +87,21 @@ class Vacant(models.Model):
         return f"{self.job_title} ({self.obj.short_name})"
     
     
+class DocumentManager(models.Manager):
+    def dic_documents(self):
+        result = {}
+        doctype_ids = Document.objects.values_list('typedoc', flat=True).distinct()
+        for id in doctype_ids:
+            doctype = TypeDocument.objects.get(pk=id)
+            result[doctype.name] = Document.objects.filter(typedoc=doctype)
+        return result
+                
+    def only_purchases(self):
+        try:
+            doctype = TypeDocument.objects.get(name='закупки')
+        except:
+            return []
+        return Document.objects.filter(typedoc=doctype)
 class TypeDocument(models.Model):
     class Meta:
         verbose_name = 'тип документа'
@@ -93,6 +119,8 @@ class Document(models.Model):
         verbose_name = 'документ'
         verbose_name_plural = 'документы'
         
+    objects = DocumentManager()
+    
     typedoc = models.ForeignKey(
         TypeDocument,
         verbose_name='тип документа',
@@ -117,3 +145,29 @@ class Document(models.Model):
         
     def __str__(self):
         return f"{self.name} ({self.typedoc.name})"
+    
+class WP_Page(models.Model):
+    class Meta:
+        verbose_name = 'страница'
+        verbose_name_plural = 'страницы'
+    
+    objects = GetOrNoneManager()
+    
+    date = models.DateTimeField(
+        'дата создания',
+        default=timezone.now()
+    )
+    slug = models.SlugField(max_length=150)
+    status = models.CharField(max_length=25)
+    template = models.CharField(max_length=50)
+    old_link = models.URLField(max_length=500)
+    title = models.CharField(max_length=300)
+    content = models.TextField(max_length=3000)
+    excerpt = models.TextField(max_length=1500)
+    parent = models.ForeignKey(
+        'WP_Page',
+        verbose_name='родительская страница',
+        on_delete=models.PROTECT,
+        blank=True,
+        null=True
+    )
