@@ -3,6 +3,7 @@ from app_objects.models import Object
 from app_mediafiles.models import Image
 from django.utils import timezone
 from django.core.exceptions import ObjectDoesNotExist
+from ckeditor_uploader.fields import RichTextUploadingField
 # Create your models here.
 
 class GetOrNoneManager(models.Manager):
@@ -161,7 +162,7 @@ class WP_Page(models.Model):
     template = models.CharField(max_length=50)
     old_link = models.URLField(max_length=500)
     title = models.CharField(max_length=300)
-    content = models.TextField(max_length=3000)
+    content = RichTextUploadingField(max_length=3000)
     excerpt = models.TextField(max_length=1500)
     parent = models.ForeignKey(
         'WP_Page',
@@ -175,4 +176,4 @@ class WP_Page(models.Model):
         return bool(self.parent)
     
     def __str__(self):
-        return f"{self.title} ({self.is_parent()})"
+        return f"{self.id} {self.title} ({self.is_parent()})"

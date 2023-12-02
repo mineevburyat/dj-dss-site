@@ -26,22 +26,26 @@ class DocumentAdmin(admin.ModelAdmin):
 class DocumentAdmin(admin.ModelAdmin):
     pass
 
-class AreaFilter(SimpleListFilter):
+class PageFilter(SimpleListFilter):
     title = 'родители'
     parameter_name = 'parents'
     def lookups(self, request, model_admin):
-        objs = set([(item.slug, item.short_name) for item in Object.objects.all()])
+        all = WP_Page.objects.all()
+        rel_pages = []
+        for item in all:
+            if item.wp_page_set.all():
+                rel_pages.append(item)
+        objs = set([(item.slug, item.title) for item in rel_pages])
         return objs
 
     def queryset(self, request, queryset):
         if self.value():
-            obj = Object.objects.get(slug=self.value())
-            area = SportArea.objects.filter(obj=obj)
-            return queryset.filter(sportarea__in=area)
+            parent = WP_Page.objects.get(slug=self.value())
+            return queryset.filter(parent=parent)
         return queryset
 
 @admin.register(WP_Page)
 class PagesAdmin(admin.ModelAdmin):
     ordering = ('pk', )
-    list_filter = ('template', )
-    readonly_fields = ('slug', 'template', 'old_link', 'date', 'title', 'content', 'excerpt', 'parent')
+    list_filter = ('template', PageFilter)
+    readonly_fields = ('template', 'old_link', 'date', 'title', 'excerpt', 'parent')
