@@ -158,7 +158,6 @@ class WP_Page(models.Model):
         default=timezone.now()
     )
     slug = models.SlugField(max_length=150)
-    status = models.CharField(max_length=25)
     template = models.CharField(max_length=50)
     old_link = models.URLField(max_length=500)
     title = models.CharField(max_length=300)
@@ -167,7 +166,13 @@ class WP_Page(models.Model):
     parent = models.ForeignKey(
         'WP_Page',
         verbose_name='родительская страница',
-        on_delete=models.PROTECT,
+        on_delete=models.CASCADE,
         blank=True,
         null=True
     )
+    
+    def is_parent(self):
+        return bool(self.parent)
+    
+    def __str__(self):
+        return f"{self.title} ({self.is_parent()})"
