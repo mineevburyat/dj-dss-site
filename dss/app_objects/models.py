@@ -77,6 +77,10 @@ class Object(models.Model):
         'номер телефона',
         max_length=20,
         default='+7(3012)')
+    is_header = models.BooleanField(
+        'головная организация',
+        default=False
+    )
 
     def __str__(self):
         return f'{self.short_name} ({self.name})'

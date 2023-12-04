@@ -103,6 +103,7 @@ class DocumentManager(models.Manager):
         except:
             return []
         return Document.objects.filter(typedoc=doctype)
+    
 class TypeDocument(models.Model):
     class Meta:
         verbose_name = 'тип документа'
@@ -136,6 +137,25 @@ class Document(models.Model):
         upload_to='files',
         
     )
+    old_file_name = models.CharField(
+         'имя скаченного файла',
+         max_length=200,
+         blank=True,
+         null=True
+    )
+    content_type = models.CharField(
+        max_length=100,
+        verbose_name='тип скаченного файла',
+        blank=True,
+        null=True
+    )
+    old_url = models.URLField(
+        max_length=250,
+        verbose_name='старая ссылка',
+        blank=True,
+        null=True
+    )
+    
     @property
     def file_url(self):
         try:

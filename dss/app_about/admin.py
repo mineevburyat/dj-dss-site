@@ -19,8 +19,9 @@ class VacantAdmin(admin.ModelAdmin):
 
 @admin.register(Document)
 class DocumentAdmin(admin.ModelAdmin):
-    fields = ('typedoc', ('name', 'file'))
+    fields = ('typedoc', ('name', 'file'), ('old_url', 'old_file_name', 'content_type'))
     list_filter = ('typedoc',)
+    readonly_fields = ('old_url', 'old_file_name', 'content_type')
     
 @admin.register(TypeDocument)
 class DocumentAdmin(admin.ModelAdmin):

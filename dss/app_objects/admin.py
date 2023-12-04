@@ -35,7 +35,7 @@ class ObjectAdmin(admin.ModelAdmin):
     fieldsets = (
         ('Название и описание', {'fields': [
             ('short_name', 'slug', 'order'),
-            ('name', 'address'),
+            ('name', 'address', 'is_header'),
             ('icon_lib', 'icon_html_img'),
             'description',
               ]}),
