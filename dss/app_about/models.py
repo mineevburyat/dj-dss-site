@@ -99,7 +99,7 @@ class DocumentManager(models.Manager):
                 
     def only_purchases(self):
         try:
-            doctype = TypeDocument.objects.get(name='закупки')
+            doctype = TypeDocument.objects.get(name__icontains='закупки')
         except:
             return []
         return Document.objects.filter(typedoc=doctype)
