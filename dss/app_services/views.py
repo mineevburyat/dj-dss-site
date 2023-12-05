@@ -24,6 +24,26 @@ class DetailServiceView(TitleMixin, DetailView):
     template_name = 'app_services/detail.html'
     title = "ДСС: подробнее"
     
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['obj'] = self.object.get_object()
+        context['categoryname'] = self.object.get_category_name()
+        context['categoryslug'] = 'sport'
+        context['currenttype'] = self.object.typeservice
+        # txt_category = None
+        # context['categoryslug'] = category
+        # for item in CHOICE_CATEGORY:
+        #     if item[0] == category:
+        #         txt_category = item[1]
+        #         break
+        # if not txt_category:
+        #     raise Http404
+        # in_typeservice = get_object_or_404(TypeService, slug=typesrvc)
+        # context['currenttype'] = in_typeservice
+        # context['categoryname'] = txt_category
+        return context
+    
+    
 #/services/category/servtype (/sport/swimm, /relax/hostel)
 class ListServiceView(ListView):
     model = Service
