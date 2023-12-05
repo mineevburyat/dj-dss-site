@@ -1,0 +1,408 @@
+{% extends 'home/base_dep.html' %}
+
+{% load static %}
+
+{% block style %}
+<link rel="stylesheet" href="{% static 'home/css/2lv.css' %}">
+<link rel="stylesheet" href="{% static 'home/css/3lv.css' %}">
+<link rel="stylesheet" href="{% static 'home/css/4lv.css' %}">
+{% endblock %}
+
+{% block content %}
+<main class="main">
+  <div class="wrapper">
+      <div class="head">
+        <div class="head__column">
+          <h1 class="head__title">{{categoryname}} {{service.name}}</h1>
+          <ul class="bradcrumbs">
+              <li class="bradcrumbs__item">
+                  <a href="/" class="bradcrumbs__link">Главная</a>
+              </li>
+              <li class="bradcrumbs__item"><a href="{% url 'app_services:categoryservice' categoryslug %}" class="bradcrumbs__link">{{categoryname}}</a></li>
+              <li class="bradcrumbs__item"><a href="{% url 'app_services:listservice' categoryslug currenttype.slug%}" class="bradcrumbs__link">{{currenttype.name}}</a></li>
+              <li class="bradcrumbs__item"><a href="/objects/{{obj.slug}}" class="bradcrumbs__link">{{obj.short_name}}</a></li>
+              <li class="bradcrumbs__item">{{service.name}}</li>
+          </ul>
+      </div>
+          <div class="head__search">
+              <form class="search" action="search.html" method="get">
+                  <input type="search" value=""  class="search__input">
+                  <button type="submit" class="search__button">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                          <path d="M15.875 13.4423L12.3417 9.8641C12.9167 8.86019 13.2167 7.74382 13.2167 6.61911C13.2167 2.97006 10.25 0 6.60833 0C2.96667 0 0 2.97006 0 6.61911C0 10.2682 2.96667 13.2382 6.60833 13.2382C7.77083 13.2382 8.92083 12.9175 9.94583 12.3051L13.4625 15.8709C13.5417 15.95 13.6542 16 13.7667 16C13.8792 16 13.9917 15.9542 14.0708 15.8709L15.875 14.0463C16.0417 13.8756 16.0417 13.609 15.875 13.4423ZM6.60833 2.5785C8.83333 2.5785 10.6417 4.39052 10.6417 6.61911C10.6417 8.8477 8.83333 10.6597 6.60833 10.6597C4.38333 10.6597 2.575 8.8477 2.575 6.61911C2.575 4.39052 4.38333 2.5785 6.60833 2.5785Z" fill="#A8A8A8" fill-opacity="0.3"/>
+                        </svg>
+                  </button>
+              </form>
+          </div>
+      </div>
+  </div>
+  <div class="wrapper">
+    <p class="card-horizontal__promo">
+    {{area.inviting_mes}}
+    </p>
+  </div>
+  <section class="wrapper">
+    <div class="important-news">
+        {% for news in events %}
+        <div class="important-news__card important-news__card-{{news.level_importance}}">
+            <h3 class="important-news__title">
+                <a href="{% url 'news:detail' news.slug %}">{{news.title}}</a>
+            </h3>
+            <p class="important-news__text">{{news.excerpt}}</p>
+        </div>
+        {% endfor %}
+    </div>
+  </section>
+  <section class="wrapper">
+      <div class="card-horizontal">
+          <div class="card-horizontal__left">
+            <div class="card-horizontal__image">
+              <img src="{{service.sportarea.get_random_photo.url}}" class="card-horizontal__img">
+              <ul class="card__label">
+                <li class="card__label-bg">
+                  <span class="card__label-phone">3D тур</span>
+                </li>
+                <li class="card__label-bg">
+                  <span class="card__label-phone">фотогалерея</span>
+                </li>
+                <li class="card__label-bg">
+                  <span class="card__label-phone">как проехать</span>
+                </li>
+              </ul>
+              <ul class="card-horizontal__left-buttom">
+                {% for character in service.sportarea.characteristics%}
+                  <li class="card-info">
+                      <span class="card-info__label">{{character.name}}</span>
+                      <span class="card-info__data">{{character.value}}</span>
+                  </li>
+                {% endfor %}
+              </ul>
+          </div>
+          </div>
+          <div class="card-horizontal__right">
+              <ul class="card-horizontal__right-listlinks">
+                  <li><a href="#">Режим работы и расписание</a></li>
+                  <li><a href="#">Требования и правила посещения</a></li>
+              </ul>
+              <h3>{{ service.name }}</h3>
+    <p>{{service.description|safe}}</p>
+    <ul>
+      {% for rate in service.get_all_rates%}
+        {{rate.name}} ({% if rate.forchild %}Детский{%else%}Взрослый{%endif%})<br>
+        {{rate.description|safe}}
+        {% if rate.get_disconts %}
+          <ul>
+          {% for discount in rate.get_disconts %}
+            <li>{{discount.name}} - {{discount.get_price}} руб.</li>
+          {% endfor %}
+          </ul>
+        {% else %}
+          <li>{{rate.price}} руб.</li>
+        {%endif%}
+      {% endfor %}
+    </ul>
+              <div class="card-horizontal__right-text">
+                <h4>Контакты:</h4>
+                <ul class="card-horizontal__right-list">
+                  {% for phone in service.sportarea.get_phones%}
+                    <li><span>{{phone.name}}</span><a href="{{phone.url}}">{{phone.phone}}</a></li>
+                  {% endfor %}
+                </ul>
+            </div>
+              <div class="card-horizontal__right-text">
+                  <h5>{{service.sportarea.name}} на {{service.sportarea.obj.short_name}} предоставляет другие услуги:</h5>
+                  <dl>
+                  {% for category, services in service.sportarea.get_separate_services.items %}
+                    <dt>{{category}}</dt>
+                    <dd>
+                      <ul class="card-horizontal__right-list">
+                        {% for service in services %}
+                          <li><a href="{% url 'app_services:detail' service.slug %}">{{service.name}}</a></li>
+                        {% endfor %}
+                      </ul>
+                    </dd>
+                  {%endfor%}
+                  </dl>
+              </div>
+          </div>
+      </div>
+      {% comment %} <p class="card-horizontal__promo">
+          {{area.inviting_mes}}
+      </p> {% endcomment %}
+      
+  </section>
+  <section class="wrapper event">
+      <h4 class="event__header">Ближайшие события</h4>
+      <div class="event__list">
+          {% for news in objects_news %}
+          <div class="event-card">
+              <div class="event-card__left">
+                  <img src="{{news.featured_media.thumbnail.url}}" alt="">
+              </div>
+              <div class="event-card__right">
+                  <div class="event-card__date">{{news.date_public}}</div>
+                  <div class="event-card__title">{{news.title}}</div>
+                  <div class="event-card__text">{{news.excerpt|truncatechars:80}}</div>
+                  <div class="event-card__link">
+                    <a href="{% url 'news:detail' news.slug%}">Читать дальше</a></div>
+              </div>
+          </div>
+          {% endfor %}
+      </div>
+  </section>
+</main>
+{% endblock %}
+
+{% comment %} {% block sidebar %}
+<assert>
+  <div class="calendar">
+    <div class="calendar__header">
+      <h5>{{ today.0.day }} {{ today.1 }}</h5>
+      <p>{{ today.2 }}</p>
+    </div>
+    <div class="calendar__date">
+      <div class="calendar__day">Пн</div>
+      <div class="calendar__day">Вт</div>
+      <div class="calendar__day">Ср</div>
+      <div class="calendar__day">Чт</div>
+      <div class="calendar__day">Пт</div>
+      <div class="calendar__day">Сб</div>
+      <div class="calendar__day">Вс</div>
+      {% for day in days %}
+      <a class="calendar__number {% if day == today.0.day %}calendar__number--current {% endif %} {% if day in events %}calendar__number--event {%endif%}" {% if day in events %} {% for key, title in events.items %} {% if key == day %}data-toggle="tooltip" data-placement="top" title="{{title}}"{% endif%}
+      {% endfor %}
+      {% endif %}>
+        {% if day != 0 %} {{day}} {% endif %}
+      </a>
+      {% endfor %}
+    </div>
+  </div>
+</assert>
+{% endblock %} {% endcomment %}
+
+{% comment %} {% block bradcrumbs %}
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb" itemscope itemtype="https://schema.org/BreadcrumbList">
+    <li class="breadcrumb-item" itemprop='itemListElement' itemscope itemtype='https://schema.org/ListItem'>
+      <a href="{% url 'home:index' %}" itemprop="item">
+        <span itemprop="name">Главная</span>
+      </a>
+    </li>
+    <li class="breadcrumb-item" itemprop='itemListElement' itemscope itemtype='https://schema.org/ListItem'>
+      <a href="{% url 'objects:index' %}" itemprop="item">
+        <span itemprop="name">Объекты</span>
+      </a>
+    </li>
+    <li class="breadcrumb-item active" aria-current="page" itemprop='itemListElement' itemscope itemtype='https://schema.org/ListItem'>
+      <a href="{% url 'objects:detail' object.slug %}" itemprop="item"> 
+        <span itemprop="name">{{object.short_name}}</span>
+      </a>
+    </li>
+    <li class="breadcrumb-item dropdown">
+      <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      </a>
+      <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+        {% for object in objects %}
+        <a class="dropdown-item" href="{% url 'objects:detail' object.slug %}">{{object.short_name|upper}}</a>
+        {% endfor %}
+      </div>
+    </li>
+  </ol>
+</nav>
+{% endblock %} {% endcomment %}
+
+{% comment %} {% block promo_slider %}
+<div id="carouselPromo" class="carousel slide" data-ride="carousel">
+  <div class="carousel-inner">
+    {% for news in objects_news %}
+    <div class="carousel-item {% if forloop.counter == 1 %} active {% endif %}">
+      <img class="d-block w-100" src="{{news.featured_media.large.url}}" alt="{{news.title}}">
+      <a class="carousel-caption d-none d-md-block" href="{% url 'news:detail' news.slug %}">
+        <h5>{{news.title}}</h5>
+        <p>{{news.exerpt}}</p>
+      </a>
+    </div>
+    {% endfor %}
+  </div>
+{% endblock %} {% endcomment %}
+
+
+{% comment %} {% block content %}
+<main class="container-fluid">
+  <h2 class="text-center">{{ object.name }}</h2>
+  <div>
+    <h3 class="text-center h6 text-secondary">{{ object.short_name }}</h3>
+    <p>{{object.address}}</p>
+    <p>{{object.call_center}}</p>
+  </div>
+  <div class="row">
+    <assert class="col">
+      <div class="calendar">
+        <div class="calendar__header">
+          <h5>{{ today.0.day }} {{ today.1 }}</h5>
+          <p>{{ today.2 }}</p>
+        </div>
+        <div class="calendar__date">
+          <div class="calendar__day">Пн</div>
+          <div class="calendar__day">Вт</div>
+          <div class="calendar__day">Ср</div>
+          <div class="calendar__day">Чт</div>
+          <div class="calendar__day">Пт</div>
+          <div class="calendar__day">Сб</div>
+          <div class="calendar__day">Вс</div>
+          {% for day in days %}
+          <a class="calendar__number {% if day == today.0.day %}calendar__number--current {% endif %} {% if day in events %}calendar__number--event {%endif%}" {% if day in events %} {% for key, title in events.items %} {% if key == day %}data-toggle="tooltip" data-placement="top" title="{{title}}"{% endif%}
+          {% endfor %}
+          {% endif %}>
+            {% if day != 0 %} {{day}} {% endif %}
+          </a>
+          {% endfor %}
+        </div>
+      </div>
+    </assert>
+    <div class="col">
+      <div id="carouselPhotos" class="carousel slide carousel-fade" data-ride="carousel">
+        <div class="carousel-inner">
+          {% for photo in photos %}
+          <div class="carousel-item {% if forloop.first %} active {% endif %} ">
+            <img class="d-block img-fluid" src="{{photo.image.url}}" alt="{{photo.name}}">
+             <div class="carousel-caption">
+              <h5>{{photo.title}}</h5>
+              <p>{{photo.caption}}</p>
+            </div> 
+          </div>
+          {% endfor %}
+        </div>
+        <a class="carousel-control-prev" href="#carouselPhotos" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">предыдущий</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselPhotos" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">следующий</span>
+        </a>
+        <div class="carusel-btn-group">
+          <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
+            <div class="btn-group-vertical mr-2" role="group" aria-label="First group">
+              <button type="button" class="btn btn-outline-warning">Новости и события</button>
+              <button type="button" class="btn btn-outline-warning">Парнерам</button>
+              <button type="button" class="btn btn-outline-warning">Вакансии</button>
+            </div>
+          </div>
+          {% comment %} <ul class="nav nav-pills flex-column" id="pills-tab" role="tablist">
+            <li class="nav-item" role="presentation">
+              <a class="nav-link" id="pills-address-tab" data-toggle="pill" href="#nav-address" role="tab" aria-controls="pills-home" aria-selected="false">Адрес и контакты</a>
+            </li>
+            <li class="nav-item" role="presentation">
+              <a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false">Профиль</a>
+            </li>
+            <li class="nav-item" role="presentation">
+              <a class="nav-link" id="pills-contact-tab" data-toggle="pill" href="#pills-contact" role="tab" aria-controls="pills-contact" aria-selected="false">Контакт</a>
+            </li>
+          </ul> 
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row mt-1">
+    <div class="col">
+      <nav>
+        <div class="nav nav-tabs nav-justified" id="nav-tab" role="tablist">
+          <a class="nav-link active" id="nav-character-tab" data-toggle="tab" href="#nav-character" role="tab" aria-controls="nav-character" aria-selected="true">Характеристики</a>
+          <a class="nav-link" id="nav-address-tab" data-toggle="tab" href="#nav-address" role="tab" aria-controls="nav-address" aria-selected="false">Адрес и контакты</a>
+          <a class="nav-link" id="nav-sportservice-tab" data-toggle="tab" href="#nav-sportservice" role="tab" aria-controls="nav-sportservice" aria-selected="false">Спортивные услуги</a>
+          <a class="nav-link" id="nav-sportsections-tab" data-toggle="tab" href="#nav-sportsections" role="tab" aria-controls="nav-sportsections" aria-selected="false">Спортивные секции</a>
+          <a class="nav-link" id="nav-otherservice-tab" data-toggle="tab" href="#nav-otherservice" role="tab" aria-controls="nav-otherservice" aria-selected="false">Прочие услуги</a>
+        </div>
+      </nav>
+      <div class="tab-content" id="nav-tabContent">
+        <div class="tab-pane fade show active" id="nav-character" role="tabpanel" aria-labelledby="nav-character-tab">
+          <p>{{ object.description | safe}}</p>
+        </div>
+        <div class="tab-pane fade" id="nav-address" role="tabpanel" aria-labelledby="nav-address-tab">
+          <div class="row">
+            <div class="col">
+              <dl>
+                <dt>Адрес:</dt>
+                <dd>{{object.address}}</dd>
+                <dt>Контакты:</dt>
+                <dd>
+                  <ul>
+                  {%for contact in object.get_contacts_list%}
+                  <li>
+                    <b>{{contact.name}}</b><br>
+                    email: {{contact.email}}<br>
+                    тел: {{contact.get_phones_str}}
+                  </li>
+                  {%endfor%}
+                  </ul>
+                </dd>
+              </dl>
+            </div>
+            <div class="col">
+              <div style="position:relative;overflow:hidden;"><a href="https://yandex.ru/maps/198/ulan-ude/?utm_medium=mapframe&utm_source=maps" style="color:#eee;font-size:12px;position:absolute;top:0px;">Улан‑Удэ</a><a href="https://yandex.ru/maps/198/ulan-ude/house/ulitsa_ryleyeva_2/ZUkBaAFgTEcDWEJvYmJ5dXpqZAk=/?ll=107.605245%2C51.846901&utm_medium=mapframe&utm_source=maps&z=17" style="color:#eee;font-size:12px;position:absolute;top:14px;">Улица Рылеева, 2 — Яндекс Карты</a><iframe src="https://yandex.ru/map-widget/v1/?ll=107.605245%2C51.846901&mode=search&ol=geo&ouri=ymapsbm1%3A%2F%2Fgeo%3Fdata%3DCgoxNDg2OTUwNzk3EmDQoNC-0YHRgdC40Y8sINCg0LXRgdC_0YPQsdC70LjQutCwINCR0YPRgNGP0YLQuNGPLCDQo9C70LDQvS3Qo9C00Y0sINGD0LvQuNGG0LAg0KDRi9C70LXQtdCy0LAsIDIiCg3jNddCFTpjT0I%2C&z=17" width="560" height="350" frameborder="1" allowfullscreen="true" style="position:relative;"></iframe></div>
+            </div>
+            <div class="col">
+              <div id="3e056845-45cc-4b6d-b6c6-9f3ccc226fe8">
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="tab-pane fade" id="nav-sportservice" role="tabpanel" aria-labelledby="nav-sportservice-tab">
+          <div class="row">
+            <div class="col">
+              <h3>спортивные услуги</h3>
+              {% for service in services %}
+              <p>{{service.name}}</p>
+              <p>{{service.description|safe}}</p>
+              {% endfor %}
+            </div>
+          </div>
+        </div>
+        <div class="tab-pane fade" id="nav-sportsections" role="tabpanel" aria-labelledby="nav-sportsections-tab">
+          спортивные секции
+        </div>
+        <div class="tab-pane fade" id="nav-otherservice" role="tabpanel" aria-labelledby="nav-otherservice-tab">
+          прочие услуги
+        </div>
+      </div>
+      <h4>{{object.name}} включает в себя:</h4>
+      <div class="row">
+          {% for stock in object.typestocks.all %}
+          <div class="col-sm-6 col-12 mb-4">
+            <div class="card h-100">
+              <!-- <img src="" class="card-img-top" alt="..."> -->
+              <div class="card-body">
+                <h5 class="card-title">{{ stock.name }}</h5>
+                <p class="card-text">{{ stock.description|safe|truncatechars:260}}</p>
+              </div>
+              <div class="card-footer">
+                <div class="row align-content-end justify-content-end">
+                  <div class="col-12 col-sm-6">
+                    {{ stock.stock_services.all.0.typeservice.slug }}
+                    <div class="dropup">
+                      <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownService" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        список услуг
+                      </button>
+                      <div class="dropdown-menu" aria-labelledby="dropdownService">
+                        <a class="dropdown-item" href="{%url 'services:listservice' 'sport' 'gum' %}">
+                          все</a>
+                        {% for service in stock.stock_services.all%}
+                        <a class="dropdown-item" href="{% url 'services:listservice' 'sport' service.slug%}">{{service.name}}</a>
+                        {%endfor%}
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-12 col-sm-6">
+                    <a href="{% url 'objects:detail' object.slug %}" class="btn btn-primary">Подробнее...</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</main>
+{% endblock %} {% endcomment %}

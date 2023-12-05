@@ -21,7 +21,7 @@ from datetime import timedelta
 class DetailServiceView(TitleMixin, DetailView):
     model = Service
     context_object_name = 'service'
-    template_name = 'app_services/detail.html'
+    template_name = 'app_services/detail_new.html'
     title = "ДСС: подробнее"
     
     def get_context_data(self, **kwargs):

@@ -114,7 +114,9 @@ class Service(models.Model):
     )
     description = RichTextUploadingField(
         'краткое описание',
-        max_length=2500
+        max_length=2500,
+        blank=True,
+        null=True
     )
     slug = models.SlugField(
         'slug имя в url',

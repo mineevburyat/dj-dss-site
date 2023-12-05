@@ -224,7 +224,6 @@ class SportArea(models.Model):
         result = {}
         for typeservice in typeservices:
             result[typeservice.get_category_display()] = all_services.filter(typeservice=typeservice)
-        print(result)
         return result
 
 class ObjectGallery(models.Model):
