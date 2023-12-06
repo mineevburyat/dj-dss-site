@@ -36,14 +36,19 @@
       <div class="about">
           <div class="about__body">
               <h2 class="about__title">Вакансии</h2>
-              <div>
-                <dl>
+              <div class="jobcontainer">
+                <dl class="jobs">
                 {% for obj_name, vacants in obj_vacants_dic.items %}
-                    <dt><h3>{{obj_name}}</h3></dt>
-                    <dd>
-                        <ul>
+                    <dt class="jobs__head">
+                        <h3 class="jobs__title">{{obj_name}}</h3>
+                    </dt>
+                    <dd class="jobs__body">
+                        <ul class="jobs__list">
                             {% for vacant in vacants %}
-                            <li>{{vacant.job_title}} ({{vacant.full_name}}) </li>
+                            <li class="jobs__item">
+                                <span class="jobs__item-name">{{vacant.job_title}}</span> 
+                                <span class="jobs__item-descript">({{vacant.full_name}})</span>
+                            </li>
                             {% endfor %}
                         </ul>
                     </dd>

@@ -9,6 +9,7 @@ class ContactManager(models.Manager):
         all = self.all()
         result = {}
         for contact in all:
+            print(contact)
             obj_name = contact.sportarea.obj.name
             area_name = contact.sportarea.name
             phones = contact.phone_set.all()
@@ -16,12 +17,12 @@ class ContactManager(models.Manager):
             if dic_obj:
                 dic_area = dic_obj.get(area_name)
                 if dic_area:
-                    dic_area.extend(phones)
+                    dic_area.union(phones)
                 else:
-                    result[obj_name] = {area_name: phones}
+                    dic_obj.update({area_name: phones})
             else:
-                result[obj_name] = {area_name:phones}
-            
+                result[obj_name] = {area_name: phones}
+            print(result)
         return result
 
 class Contact(models.Model):

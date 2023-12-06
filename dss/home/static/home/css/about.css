@@ -151,3 +151,128 @@ font-weight: 400;
 line-height: 30px; /* 187.5% */
 text-decoration-line: underline;
 }
+
+.contacts {
+    margin-top: 6px;
+    padding: 6px;
+}
+
+.contact {
+    margin-top: 12px;
+}
+
+.contact__head {
+    margin-top: 12px;
+}
+
+.contact__title {
+    color: #000;
+font-family: Montserrat;
+font-size: 22px;
+font-style: normal;
+font-weight: 600;
+line-height: normal;
+text-transform: uppercase;
+}
+
+.contact__body {
+    margin-left: 24px;
+    margin-top: 6px;
+}
+
+.contact__subtitle {
+    color: #000;
+font-family: Montserrat;
+font-size: 18px;
+font-style: normal;
+font-weight: 600;
+line-height: normal;
+text-transform: uppercase;
+}
+
+.contact__phones {
+    list-style: inside;
+    margin-left: 16px;
+}
+
+.contact__phone {}
+
+.contact__phone-name {
+    list-style-position: outside;
+    /* color: rgba(0, 130, 201, 0.90); */
+font-family: Montserrat;
+font-size: 16px;
+font-style: normal;
+font-weight: 400;
+line-height: 30px; /* 187.5% */
+/* text-decoration-line: underline; */
+}
+
+.contact__phone-link {
+    /* padding-left: 16px; */
+    list-style-position: outside;
+    color: rgba(0, 130, 201, 0.90);
+font-family: Montserrat;
+font-size: 16px;
+font-style: normal;
+font-weight: 400;
+line-height: 30px; /* 187.5% */
+text-decoration-line: underline;
+}
+
+.jobcontainer {
+    margin-top: 12px;
+}
+
+.jobs {
+    /* margin-top: 12px; */
+}
+
+.jobs__head {
+    margin-top: 12px;
+}
+
+.jobs__title {
+    color: #000;
+font-family: Montserrat;
+font-size: 22px;
+font-style: normal;
+font-weight: 600;
+line-height: normal;
+text-transform: uppercase;
+}
+
+.jobs__body {
+
+}
+
+.jobs__list {
+    list-style: inside;
+    margin-left: 16px;
+}
+
+.jobs__item {
+
+}
+
+.jobs__item-name {
+    list-style-position: outside;
+    /* color: rgba(0, 130, 201, 0.90); */
+font-family: Montserrat;
+font-size: 16px;
+font-style: normal;
+font-weight: 400;
+line-height: 30px; /* 187.5% */
+/* text-decoration-line: underline; */
+}
+
+.jobs__item-descript {
+    list-style-position: outside;
+    /* color: rgba(0, 130, 201, 0.90); */
+font-family: Montserrat;
+font-size: 16px;
+font-style: normal;
+font-weight: 200;
+line-height: 30px; /* 187.5% */
+/* text-decoration-line: underline; */
+}

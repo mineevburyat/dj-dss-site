@@ -52,7 +52,6 @@ class VacantManager(models.Manager):
             vacants = self.filter(obj=obj)
             dic_obj = result.get(obj_name)
             if dic_obj:
-                print(dic_obj)
                 dic_obj.union(vacants)
             else:
                 result[obj_name] = vacants
