@@ -1,7 +1,20 @@
-with open('113.png', 'rb') as f:
+with open('Couple.bmp', 'rb') as f:
     sign = f.read(2)
     if sign != b'BM':
         print('Это не BMP файл')
         exit(1)
-    
-    
+    print(int.from_bytes(f.read(4), 'little'), '- размер файла')
+    print(int.from_bytes(f.read(2), 'little'), '- не используется')
+    print(int.from_bytes(f.read(2), 'little'), '- не используется')
+    print(int.from_bytes(f.read(4), 'little'), '- смещение, местонахождение данных растового массива')
+    print(int.from_bytes(f.read(4), 'little'), '- длинна заголовка')
+    print(int.from_bytes(f.read(4), 'little'), '- ширина изображения')
+    print(int.from_bytes(f.read(4), 'little'), '- высота изображения')
+    print(int.from_bytes(f.read(2), 'little'), '- число цветовых плоскостей')
+    print(int.from_bytes(f.read(2), 'little'), '- кол-во бит на пикседь')
+    print(int.from_bytes(f.read(4), 'little'), '- метод сжатия')
+    print(int.from_bytes(f.read(4), 'little'), '- длинна растового массива')
+    print(int.from_bytes(f.read(4), 'little'), '- горизонтальное разрешение')
+    print(int.from_bytes(f.read(4), 'little'), '- вертикальное разрешение')
+    print(int.from_bytes(f.read(4), 'little'), '- число цветов изображения')
+    print(int.from_bytes(f.read(4), 'little'), '- число основных цветов')
