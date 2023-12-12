@@ -34,23 +34,22 @@ class DetailObjectView(TitleMixin, ObjectsMixin, DetailView):
         context = super().get_context_data(**kwargs)
         obj = self.get_object()
         id = obj.pk
-        tags = Tag.objects.filter(tag__in=[obj.short_name, 'новость'])
         context['object_id'] = id
-        
         # вытащить новости и важные события связанные с конкретным объектом
-        startDate = timezone.now() - timedelta(days=30)
-        endDate = timezone.now() + timedelta(days=30)
-        object_news = []
-        events = []
-        for news in News.objects.filter(date_activation__range=(startDate, endDate)).order_by("-date_activation"):
-            if news.valid_until_date > timezone.now():
-                continue
-            if news.important:
-                events.append(news)
-            object_news.append(news)    
+        # startDate = timezone.now() - timedelta(days=30)
+        # endDate = timezone.now() + timedelta(days=30)
+        # object_news = []
+        # events = []
+        # for news in News.objects.filter(date_activation__range=(startDate, endDate)).order_by("-date_activation"):
+        #     if news.valid_until_date > timezone.now():
+        #         continue
+        #     if news.important:
+        #         events.append(news)
+        #     object_news.append(news)
+        tags = Tag.objects.filter(tag__in=[obj.short_name])
+        context['events'] = News.objects.get_actual_events(tags=tags)[:3]
+        context['objects_news'] = News.objects.get_actual_news(tags=tags)[:6]
         
-        context['objects_news'] = object_news[:6]
-        context['events'] = events[:3]
         # context['services'] = self.object.services.filter(object=self.object.pk).order_by('order')
         return context
 
